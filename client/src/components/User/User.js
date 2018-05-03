@@ -5,6 +5,7 @@ import axios from "axios";
 import FontAwesomeIcon from "@fortawesome/react-fontawesome";
 import RecipeCard from "./RecipeCard"
 import "./User.css"
+// import PiePlot from "../Graphs"
 // import Container from "./Container"
 // 
 class User extends React.Component {
@@ -171,7 +172,9 @@ class User extends React.Component {
                 { recipeCard }
                 {savedCard}
               </div>  
-
+            {/* <PiePlot
+              state= {this.state.data=this.state.data }
+              /> */}
         </div>
     )
   }
