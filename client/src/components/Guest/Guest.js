@@ -9,7 +9,7 @@ class Guest extends React.Component {
             <h4>Guest Page</h4>
             <h5>
               <Link to="/">
-                <FontAwesomeIcon icon="user-plus" /> Go Back Home
+                <FontAwesomeIcon icon="home" /> Go Back Home
               </Link>
             </h5>
         </div>

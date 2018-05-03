@@ -27,7 +27,7 @@ class Admin extends React.Component {
           <h4>User List</h4>
             <h5>
             <Link to="/">
-                <FontAwesomeIcon icon="user-plus" /> Go Back Home
+                <FontAwesomeIcon icon="home" /> Go Back Home
               </Link>
               <Link to="/create">
                 <FontAwesomeIcon icon="user-plus" /> Add User

@@ -18,11 +18,6 @@ if (process.env.NODE_ENV === "production") {
 // Add API Routes
 app.use("/api", abttruRoutes);
 
-// Import routes and give the server access to them.
-// const routes = require("./controllers/doctorController")(app);
-// app.use(express.static("/home", routes));
-// app.get("/", (req, res) => { res.redirect("/home") });
-
 // Send every request to the React app
 // Define any API routes before this runs
 app.get("*", function(req, res) {

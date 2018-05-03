@@ -1,0 +1,10 @@
+.delete.btn.btn-default  {
+    background-color:transparent;
+    color: #ff1744;
+    font-size: 24px;
+    font-style: italic;
+    position: relative;
+    top: -3px;
+    right: 5px;
+    cursor: pointer;
+  }

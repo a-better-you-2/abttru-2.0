@@ -24,7 +24,7 @@ class UserInfo extends React.Component {
 
   deleteUser = (id) => {
     axios.delete(`/api/abttru/${id}`)
-      .then(res => this.props.history.push("/")) // redirect to home page
+      .then(res => this.props.history.push("/admin")) // redirect to home page
       .catch(err => console.log(err));
   }
 
