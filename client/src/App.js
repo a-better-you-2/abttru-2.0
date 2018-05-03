@@ -8,14 +8,13 @@ import UserInfo from "./components/UserInfo";
 import User from "./components/User";
 import Recipes from "./components/Recipes";
 import Guest from "./components/Guest";
-import { Container } from "reactstrap";
 import "./App.css";
 
 class App extends Component {
   render() {
     return (
       <Router>
-        <Container className="app-wrapper">
+        <div className="">
           <Route exact path="/" component={Home} />
           <Route path="/admin" component={Admin} />
           <Route path="/create" component={CreateUser} />
@@ -24,7 +23,7 @@ class App extends Component {
           <Route path="/user" component={User} />
           <Route path="/recipes" component={Recipes} />
           <Route path="/guest" component={Guest} />
-        </Container>
+        </div>
       </Router>
     );
   }

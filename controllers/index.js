@@ -3,5 +3,6 @@ const app = express();
 
 module.exports = {
 doctorController: require("./doctorController"),
-userController: require("./userController")
+recipeController: require("./recipeController"),
+noteController: require("./noteController")
 }

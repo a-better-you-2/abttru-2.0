@@ -19,7 +19,7 @@ const userSchema = new mongoose.Schema({
     },
     recipes: [{
         type: Schema.Types.ObjectId,
-        ref: "Recipe"
+        ref: "Recipes"
     }],
     created: Date,
     updated: Date

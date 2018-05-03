@@ -5,7 +5,7 @@ import recipeData from './PlotData.json';
 
 class PiePlot extends Component {
     state = {
-        data: recipeData,
+        data: [],
         plotObjectsArray: [],
         showingPlot: [],
         plotLayout: [],

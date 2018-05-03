@@ -1,23 +1,27 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Form, FormGroup, Label, Input } from "reactstrap";
+import { Form, FormGroup, Label, Input, Container, Card, CardHeader, CardBody } from "reactstrap";
 import FontAwesomeIcon from "@fortawesome/react-fontawesome";
 // import "./UserList.css";
 
 class Home extends React.Component {
   render() {
     return (
-        <div>
+      <Container>
+        <Card>
+          <CardHeader>
             <h4>User List</h4>
+            </CardHeader>
+          <CardBody>
             <h5>
               <Link to="/guest">
-                <FontAwesomeIcon icon="user-plus" /> Continue as Guest
+                <FontAwesomeIcon icon="user" /> Continue as Guest
               </Link>
               <Link to="/admin">
-                <FontAwesomeIcon icon="user-plus" /> Continue to Admin
+                <FontAwesomeIcon icon="lock" /> Continue to Admin
               </Link>
               <Link to="/user">
-                <FontAwesomeIcon icon="user-plus" /> Continue to User 
+                <FontAwesomeIcon icon="user-circle" /> Continue to User 
               </Link>
             </h5>
             <Form>
@@ -30,7 +34,9 @@ class Home extends React.Component {
                     <Input type="password" name="password" id="examplePassword" placeholder="password placeholder" />
                 </FormGroup>
             </Form>
-        </div>
+          </CardBody>
+        </Card>
+      </Container>
     )
   }
 }

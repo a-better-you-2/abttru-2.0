@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import { Card, CardHeader, CardBody, Container, Button, Form, FormGroup, Label, Input} from "reactstrap";
+import { Card, CardHeader, CardBody, Container, Button, Form, FormGroup, Label, Input, Alert} from "reactstrap";
 import FontAwesomeIcon from "@fortawesome/react-fontawesome";
 
 class Create extends React.Component {
   state = {
-    // isbn: "",
+    user_id: "",
     name: "",
     password: "",
     risk_factor: "",
@@ -27,8 +27,9 @@ class Create extends React.Component {
       this.setState({
         isValid: true
       });
-      axios.post("/api/abttru", this.state)
-        .then(res => this.props.history.push("/")) // redirect to home page
+      console.log(this.state);
+      axios.post("/api/abttru/", this.state)
+        .then(res => this.props.history.push("/admin")) // redirect to admin page
         .catch(err => console.log(err));
     }
     else {
@@ -48,15 +49,11 @@ class Create extends React.Component {
           <CardBody>
             <Container>
               <h5>
-                <Link to="/">
-                  <FontAwesomeIcon icon="plus-circle" /> User List
+                <Link to="/admin">
+                  <FontAwesomeIcon icon="list" /> User List
                 </Link>
               </h5>
               <Form>
-                {/* <FormGroup>
-                  <Label for="user_id">* User ID:</Label>
-                  <Input type="text" name="user_id" value={this.state.user_id} onChange={this.onChange} placeholder="User ID" />
-                </FormGroup> */}
                 <FormGroup>
                   <Label for="name">* Name:</Label>
                   <Input type="text" name="name" value={this.state.name} onChange={this.onChange} placeholder="Name" />
@@ -77,18 +74,18 @@ class Create extends React.Component {
                   <Label for="diet_restriction">Diet Restrictions:</Label>
                   <Input type="text" name="diet_restriction" value={this.state.diet_restriction} onChange={this.onChange} placeholder="Diet Restrictions" />
                 </FormGroup>
-                <Button onClick={this.onSubmit} color="primary">Submit</Button>
+                <Button onClick={this.onSubmit.bind(this)} color="primary">Submit</Button>
               </Form>
             </Container>
           </CardBody>
         </Card>
         <br />
-        {/* { !this.state.isValid && (
+        { !this.state.isValid && (
             <Alert color="danger">
               Please fill the required form fields.
             </Alert>
           )
-        } */}
+        }
       </Container>
     )
   }

@@ -9,12 +9,16 @@ module.exports = {
       .catch(err => res.status(422).json(err))
   },
   findById: function (req, res) {
+    // var populateQuery = [{path: 'recipes'}, {path: 'notes', select: 'body'}]
     db.User
       .findById(req.params.id)
+      .populate({ path: 'recipes', 
+          populate: {path:'notes'}})
+      .exec()
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err))
   },
-  create: function (req, res) {
+  createUser: function (req, res) {
     db.User
       .create(req.body)
       .then(dbModel => res.json(dbModel))
