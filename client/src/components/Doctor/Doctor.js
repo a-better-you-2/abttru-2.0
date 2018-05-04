@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { Table } from "react-bootstrap";
 import FontAwesomeIcon from "@fortawesome/react-fontawesome";
-import "./Admin.css";
+import "./Doctor.css";
 
-class Admin extends React.Component {
+class Doctor extends React.Component {
 
   state = {
     users: []
@@ -23,20 +23,20 @@ class Admin extends React.Component {
 
   render() {
     return (
-        <div>
+        <div className="container">
           <h4>User List</h4>
             <h5>
             <Link to="/">
                 <FontAwesomeIcon icon="home" /> Go Back Home
               </Link>
               <Link to="/create">
-                <FontAwesomeIcon icon="user-plus" /> Add User
+                <FontAwesomeIcon icon="user-plus" /> Add Patient
               </Link>
             </h5>
             <Table hover striped responsive>
               <thead>
                 <tr>
-                  <th>User ID</th>
+                  <th>Patient ID</th>
                   <th>Name</th>
                   {/* <th>Password</th> */}
                   <th>Risk Factor</th>
@@ -63,4 +63,4 @@ class Admin extends React.Component {
   }
 }
 
-export default Admin;
+export default Doctor;

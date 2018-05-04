@@ -1,42 +1,42 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Form, FormGroup, Label, Input, Container, Card, CardHeader, CardBody } from "reactstrap";
+import {Panel, Form, FormGroup, FormControl, Label} from "react-bootstrap";
 import FontAwesomeIcon from "@fortawesome/react-fontawesome";
 // import "./UserList.css";
 
 class Home extends React.Component {
   render() {
     return (
-      <Container>
-        <Card>
-          <CardHeader>
-            <h4>User List</h4>
-            </CardHeader>
-          <CardBody>
+      <div className="container">
+        <Panel bsStyle="primary">
+          <Panel>
+              <Panel.Title componentClass="h4">User List</Panel.Title>
+          </Panel>
+          <Panel.Body>
             <h5>
               <Link to="/guest">
                 <FontAwesomeIcon icon="user" /> Continue as Guest
               </Link>
-              <Link to="/admin">
-                <FontAwesomeIcon icon="lock" /> Continue to Admin
+              <Link to="/doctor">
+                <FontAwesomeIcon icon="lock" /> Continue as Doctor
               </Link>
               <Link to="/user">
-                <FontAwesomeIcon icon="user-circle" /> Continue to User 
+                <FontAwesomeIcon icon="user-circle" /> Continue as Patient
               </Link>
             </h5>
             <Form>
                 <FormGroup>
-                    <Label for="exampleEmail">Email</Label>
-                    <Input type="email" name="email" id="exampleEmail" placeholder="with a placeholder" />
+                    <Label >Email</Label>
+                    <FormControl type="email" name="email" id="exampleEmail" placeholder="with a placeholder" />
                 </FormGroup>
                 <FormGroup>
-                    <Label for="examplePassword">Password</Label>
-                    <Input type="password" name="password" id="examplePassword" placeholder="password placeholder" />
+                    <Label >Password</Label>
+                    <FormControl type="password" name="password" id="examplePassword" placeholder="password placeholder" />
                 </FormGroup>
             </Form>
-          </CardBody>
-        </Card>
-      </Container>
+          </Panel.Body>
+        </Panel>
+      </div>
     )
   }
 }

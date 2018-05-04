@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import { Card, CardHeader, CardBody, Container, Button } from "reactstrap";
+import { Panel, Button } from "react-bootstrap";
 import FontAwesomeIcon from "@fortawesome/react-fontawesome";
 
 class UserInfo extends React.Component {
@@ -30,19 +30,20 @@ class UserInfo extends React.Component {
 
   render() {
     return (
-      <Card key={this.state._id}>
-        <CardHeader>
+      <div className="container">
+      <Panel key={this.state._id}>
+        <Panel>
           <h4>{this.state.name}</h4>
-        </CardHeader>
-        <CardBody>
-          <Container>
+        </Panel>
+        <Panel.Body>
+          <div>
             <h5>
-              <Link to="/admin">
-                <FontAwesomeIcon icon="list" /> User List
+              <Link to="/doctor">
+                <FontAwesomeIcon icon="list" /> Patient List
               </Link>
             </h5>
             <dl>
-              <dt>User ID:</dt>
+              <dt>Patient ID:</dt>
               <dd>{this.state._id}</dd>
               <dt>Name:</dt>
               <dd>{this.state.name}</dd>
@@ -57,9 +58,10 @@ class UserInfo extends React.Component {
             </dl>
             <Link to={`/edit/${this.state._id}`} className="btn btn-success">Edit</Link>&nbsp;
             <Button onClick={() => this.deleteUser(this.state._id)} color="danger">Delete</Button>
-          </Container>
-        </CardBody>
-      </Card>
+          </div>
+        </Panel.Body>
+      </Panel>
+      </div>
     )
   }
 }
