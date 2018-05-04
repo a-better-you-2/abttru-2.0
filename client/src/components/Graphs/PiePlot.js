@@ -4,6 +4,14 @@ import recipeData from './PlotData.json';
 // import './App.css';
 
 class PiePlot extends Component {
+
+    constructor(props) {
+        super();
+        console.log(this.props);
+
+    }
+
+
     state = {
         data: [],
         plotObjectsArray: [],
@@ -14,164 +22,170 @@ class PiePlot extends Component {
 
     }
 
+    componentDidMount() {
+        this.createPlot()
+    }
+
+
     createPlot = () => {
+        this.setState({ data: this.props });
         console.log(this.state.data);
 
         // create a copy of the data object
-        const dataCopy = this.state.data;
+        const dataCopy = this.props.data;
         // for each recipe 'hits', extract the 'digest' property within the 'recipe' property
         // as well as the yield by recipe
         let plotObjectsArray = [];
         let recipeDigestArray = [];
         let recipeYieldArray = [];
 
-        dataCopy.hits.forEach(result => {
-            // console.log(result.recipe.digest);
-            let recipeDigest = result.recipe.digest;
-            let recipeYield = result.recipe.yield;
+        // dataCopy.forEach(result => {
+        // console.log(result.recipe.digest);
+        let recipeDigest = this.props.digestData;
+        let recipeYield = this.props.yieldData;
 
-            // create object that will contain the 'data' property for each distinct plot (macros, fats, minerals, vitamins)
-            let plotObjects = [
-                {
-                    data: {
-                        values: [],
-                        labels: [],
-                        name: 'Macronutrients',
-                        hoverinfo: 'label+percent+name',
-                        hole: .6,
-                        type: 'pie'
-                    },
-                    layout: {
-                        title: 'Nutrient Breakdown',
-                        titlefont:
-                            {
-                                size: 30
-                            },
-                        paper_bgcolor: 'transparent',
-                        plot_bgcolor: 'transparent',
-                        annotations: [
-                            {
-                                font: {
-                                    size: 14
-                                },
-                                showarrow: false,
-                                text: 'Macros',
-                                x: 0.3,
-                                y: 0.5
-                            }
-                        ],
-                        showlegend: false,
-                        height: 430,
-                        width: 350
-                    }
+        // create object that will contain the 'data' property for each distinct plot (macros, fats, minerals, vitamins)
+        let plotObjects = [
+            {
+                data: {
+                    values: [],
+                    labels: [],
+                    name: 'Macronutrients',
+                    hoverinfo: 'label+percent+name',
+                    hole: .6,
+                    type: 'pie'
                 },
-                {
-                    data: {
-                        values: [],
-                        labels: [],
-                        text: 'Fats',
-                        textposition: 'inside',
-                        name: 'Lipids',
-                        hoverinfo: 'label+percent+name',
-                        hole: .6,
-                        type: 'pie'
-                    },
-                    layout: {
-                        title: 'Nutrient Breakdown',
-                        titlefont:
-                            {
-                                size: 30
+                layout: {
+                    title: 'Nutrient Breakdown',
+                    titlefont:
+                        {
+                            size: 30
+                        },
+                    paper_bgcolor: 'transparent',
+                    plot_bgcolor: 'transparent',
+                    annotations: [
+                        {
+                            font: {
+                                size: 14
                             },
-                        paper_bgcolor: 'transparent',
-                        plot_bgcolor: 'transparent',
-                        annotations: [
-                            {
-                                font: {
-                                    size: 14
-                                },
-                                showarrow: false,
-                                text: 'Fats',
-                                x: 0.5,
-                                y: 0.5
-                            }
-                        ],
-                        showlegend: false,
-                        height: 430,
-                        width: 350
-                    }
+                            showarrow: false,
+                            text: 'Macros',
+                            x: 0.3,
+                            y: 0.5
+                        }
+                    ],
+                    showlegend: false,
+                    height: 430,
+                    width: 350
+                }
+            },
+            {
+                data: {
+                    values: [],
+                    labels: [],
+                    text: 'Fats',
+                    textposition: 'inside',
+                    name: 'Lipids',
+                    hoverinfo: 'label+percent+name',
+                    hole: .6,
+                    type: 'pie'
                 },
-                {
-                    data: {
-                        values: [],
-                        labels: [],
-                        name: 'Minerals',
-                        hoverinfo: 'label+percent+name',
-                        hole: .6,
-                        type: 'pie'
-                    },
-                    layout: {
-                        title: 'Nutrient Breakdown',
-                        titlefont:
-                            {
-                                size: 30
+                layout: {
+                    title: 'Nutrient Breakdown',
+                    titlefont:
+                        {
+                            size: 30
+                        },
+                    paper_bgcolor: 'transparent',
+                    plot_bgcolor: 'transparent',
+                    annotations: [
+                        {
+                            font: {
+                                size: 14
                             },
-                        paper_bgcolor: 'transparent',
-                        plot_bgcolor: 'transparent',
-                        annotations: [
-                            {
-                                font: {
-                                    size: 14
-                                },
-                                showarrow: false,
-                                text: 'Minerals',
-                                x: 0.3,
-                                y: 0.5
-                            }
-                        ],
-                        showlegend: false,
-                        height: 430,
-                        width: 350
-                    }
+                            showarrow: false,
+                            text: 'Fats',
+                            x: 0.5,
+                            y: 0.5
+                        }
+                    ],
+                    showlegend: false,
+                    height: 430,
+                    width: 350
+                }
+            },
+            {
+                data: {
+                    values: [],
+                    labels: [],
+                    name: 'Minerals',
+                    hoverinfo: 'label+percent+name',
+                    hole: .6,
+                    type: 'pie'
                 },
-                {
-                    data: {
-                        values: [],
-                        labels: [],
-                        name: 'Vitamins',
-                        hoverinfo: 'label+percent+name',
-                        hole: .6,
-                        type: 'pie'
-                    },
-                    layout: {
-                        title: 'Nutrient Breakdown',
-                        titlefont:
-                            {
-                                size: 30
+                layout: {
+                    title: 'Nutrient Breakdown',
+                    titlefont:
+                        {
+                            size: 30
+                        },
+                    paper_bgcolor: 'transparent',
+                    plot_bgcolor: 'transparent',
+                    annotations: [
+                        {
+                            font: {
+                                size: 14
                             },
-                        paper_bgcolor: 'transparent',
-                        plot_bgcolor: 'transparent',
-                        annotations: [
-                            {
-                                font: {
-                                    size: 14
-                                },
-                                showarrow: false,
-                                text: 'Vitamins',
-                                x: 0.27,
-                                y: 0.5
-                            }
-                        ],
-                        showlegend: false,
-                        height: 430,
-                        width: 350
-                    }
+                            showarrow: false,
+                            text: 'Minerals',
+                            x: 0.3,
+                            y: 0.5
+                        }
+                    ],
+                    showlegend: false,
+                    height: 430,
+                    width: 350
+                }
+            },
+            {
+                data: {
+                    values: [],
+                    labels: [],
+                    name: 'Vitamins',
+                    hoverinfo: 'label+percent+name',
+                    hole: .6,
+                    type: 'pie'
+                },
+                layout: {
+                    title: 'Nutrient Breakdown',
+                    titlefont:
+                        {
+                            size: 30
+                        },
+                    paper_bgcolor: 'transparent',
+                    plot_bgcolor: 'transparent',
+                    annotations: [
+                        {
+                            font: {
+                                size: 14
+                            },
+                            showarrow: false,
+                            text: 'Vitamins',
+                            x: 0.27,
+                            y: 0.5
+                        }
+                    ],
+                    showlegend: false,
+                    height: 430,
+                    width: 350
+                }
 
-                }]
-            // console.log(plotObjects);
-            plotObjectsArray.push(plotObjects);
-            recipeDigestArray.push(recipeDigest);
-            recipeYieldArray.push(recipeYield);
-        })
+            }]
+        // console.log(plotObjects);
+        plotObjectsArray.push(plotObjects);
+        recipeDigestArray.push(recipeDigest);
+        recipeYieldArray.push(recipeYield);
+        // })
 
         console.log(plotObjectsArray);
         // console.log(recipeDigestArray);
@@ -255,21 +269,12 @@ class PiePlot extends Component {
     // console.log(this.state.plotData)
 
     render() {
-
         return (
             <div>
-                <header>
-
-                    <h1>Check out these pretty plots!</h1>
-                </header>
-
-                <button onClick={this.nextRecipe} value={0}>Next Recipe</button>
-                <button onClick={this.createPlot}>Search for a recipe!</button>
                 <button onClick={this.switchPlot} value={0}>Macros</button>
                 <button onClick={this.switchPlot} value={1}>Lipids</button>
                 <button onClick={this.switchPlot} value={2}>Minerals</button>
                 <button onClick={this.switchPlot} value={3}>Vitamins</button>
-
                 <Plot
                     data={[this.state.showingPlot]}
                     layout={this.state.plotLayout} />

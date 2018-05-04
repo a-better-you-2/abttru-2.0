@@ -15,7 +15,7 @@ router.route("/abttru/:id")
 router.route("/abttru/recipes/:id")
   // .get(recipeController.findOne)
   .post(recipeController.createRecipe) // creates a recipe
-  // .update(recipeController.updateRecipe) // updates recipe to join to user
+// .update(recipeController.updateRecipe) // updates recipe to join to user
 
 router.route("/abttru/recipes/notes/:id")
   .post(noteController.createNote) //creates a note for a recipe
