@@ -1,7 +1,7 @@
 const db = require("../models");
 
 module.exports = {
-  findAll: function(req, res) {
+  findAll: function (req, res) {
     db.User
       .find(req.query)
       .sort({ date: -1 })
@@ -12,8 +12,10 @@ module.exports = {
     // var populateQuery = [{path: 'recipes'}, {path: 'notes', select: 'body'}]
     db.User
       .findById(req.params.id)
-      .populate({ path: 'recipes', 
-          populate: {path:'notes'}})
+      .populate({
+        path: 'recipes',
+        populate: { path: 'notes' }
+      })
       .exec()
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err))

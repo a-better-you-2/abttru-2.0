@@ -10,8 +10,8 @@ class Home extends React.Component {
       <Container>
         <Card>
           <CardHeader>
-            <h4>User List</h4>
-            </CardHeader>
+            <h4>The Homepage</h4>
+          </CardHeader>
           <CardBody>
             <h5>
               <Link to="/guest">
@@ -21,18 +21,18 @@ class Home extends React.Component {
                 <FontAwesomeIcon icon="lock" /> Continue to Admin
               </Link>
               <Link to="/user">
-                <FontAwesomeIcon icon="user-circle" /> Continue to User 
+                <FontAwesomeIcon icon="user-circle" /> Continue to User
               </Link>
             </h5>
             <Form>
-                <FormGroup>
-                    <Label for="exampleEmail">Email</Label>
-                    <Input type="email" name="email" id="exampleEmail" placeholder="with a placeholder" />
-                </FormGroup>
-                <FormGroup>
-                    <Label for="examplePassword">Password</Label>
-                    <Input type="password" name="password" id="examplePassword" placeholder="password placeholder" />
-                </FormGroup>
+              <FormGroup>
+                <Label for="exampleEmail">Email</Label>
+                <Input type="email" name="email" id="exampleEmail" placeholder="with a placeholder" />
+              </FormGroup>
+              <FormGroup>
+                <Label for="examplePassword">Password</Label>
+                <Input type="password" name="password" id="examplePassword" placeholder="password placeholder" />
+              </FormGroup>
             </Form>
           </CardBody>
         </Card>
