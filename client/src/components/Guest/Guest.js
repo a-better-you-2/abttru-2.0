@@ -5,7 +5,7 @@ import FontAwesomeIcon from "@fortawesome/react-fontawesome";
 class Guest extends React.Component {
   render() {
     return (
-        <div>
+        <div className="container">
             <h4>Guest Page</h4>
             <h5>
               <Link to="/">

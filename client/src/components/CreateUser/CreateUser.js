@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import { Card, CardHeader, CardBody, Container, Button, Form, FormGroup, Label, Input, Alert} from "reactstrap";
+import {Panel, Button, Form, FormGroup, FormControl, Label, Alert} from "react-bootstrap";
 import FontAwesomeIcon from "@fortawesome/react-fontawesome";
 
 class Create extends React.Component {
@@ -29,7 +29,7 @@ class Create extends React.Component {
       });
       console.log(this.state);
       axios.post("/api/abttru/", this.state)
-        .then(res => this.props.history.push("/admin")) // redirect to admin page
+        .then(res => this.props.history.push("/doctor")) // redirect to admin page
         .catch(err => console.log(err));
     }
     else {
@@ -41,44 +41,44 @@ class Create extends React.Component {
 
   render() {
     return (
-      <Container>
-        <Card>
-          <CardHeader>
-            <h4>Add User</h4>
-          </CardHeader>
-          <CardBody>
-            <Container>
+      <div className="container">
+        <Panel>
+          <Panel>
+            <h4>Add Patient</h4>
+          </Panel>
+          <Panel.Body>
+            <div>
               <h5>
-                <Link to="/admin">
-                  <FontAwesomeIcon icon="list" /> User List
+                <Link to="/doctor">
+                  <FontAwesomeIcon icon="list" /> Patient List
                 </Link>
               </h5>
               <Form>
                 <FormGroup>
-                  <Label for="name">* Name:</Label>
-                  <Input type="text" name="name" value={this.state.name} onChange={this.onChange} placeholder="Name" />
+                  <Label>* Name:</Label>
+                  <FormControl type="text" name="name" value={this.state.name} onChange={this.onChange} placeholder="Name" />
                 </FormGroup>
                 <FormGroup>
-                  <Label for="password">Password:</Label>
-                  <Input type="text" name="password" value={this.state.password} onChange={this.onChange} placeholder="Password" />
+                  <Label>Password:</Label>
+                  <FormControl type="text" name="password" value={this.state.password} onChange={this.onChange} placeholder="Password" />
                 </FormGroup>
                 <FormGroup>
-                  <Label for="risk_factor">Risk Factor:</Label>
-                  <Input type="text" name="risk_factor" value={this.state.risk_factor} onChange={this.onChange} placeholder="Risk Factor"/>
+                  <Label>Risk Factor:</Label>
+                  <FormControl type="text" name="risk_factor" value={this.state.risk_factor} onChange={this.onChange} placeholder="Risk Factor"/>
                 </FormGroup>
                 <FormGroup>
-                  <Label for="diet_recommendation">Diet Recommendation:</Label>
-                  <Input type="text" name="diet_recommendation" value={this.state.diet_recommendation} onChange={this.onChange} placeholder="Diet Recommendation" />
+                  <Label>Diet Recommendation:</Label>
+                  <FormControl type="text" name="diet_recommendation" value={this.state.diet_recommendation} onChange={this.onChange} placeholder="Diet Recommendation" />
                 </FormGroup>
                 <FormGroup>
-                  <Label for="diet_restriction">Diet Restrictions:</Label>
-                  <Input type="text" name="diet_restriction" value={this.state.diet_restriction} onChange={this.onChange} placeholder="Diet Restrictions" />
+                  <Label>Diet Restrictions:</Label>
+                  <FormControl type="text" name="diet_restriction" value={this.state.diet_restriction} onChange={this.onChange} placeholder="Diet Restrictions" />
                 </FormGroup>
                 <Button onClick={this.onSubmit.bind(this)} color="primary">Submit</Button>
               </Form>
-            </Container>
-          </CardBody>
-        </Card>
+            </div>
+          </Panel.Body>
+        </Panel>
         <br />
         { !this.state.isValid && (
             <Alert color="danger">
@@ -86,7 +86,7 @@ class Create extends React.Component {
             </Alert>
           )
         }
-      </Container>
+      </div>
     )
   }
 }
