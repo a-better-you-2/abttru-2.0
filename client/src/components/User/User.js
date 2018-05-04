@@ -44,7 +44,7 @@ class User extends React.Component {
                 <FontAwesomeIcon icon="home" /> Home
               </Link>
               <Link to="/savedrecipes">
-                <FontAwesomeIcon icon="utensils" /> Recipes
+                <FontAwesomeIcon icon="utensils" /> Saved Recipes
               </Link>
             </h5>
               <Table striped responsive hover >
@@ -67,10 +67,7 @@ class User extends React.Component {
                   </tr>  
               </tbody>
             </Table>
-              {/* <Button onClick={this.getRecipes.bind(this)} color="primary">Get Recipes</Button> */}
-              {<ControlledCarousel
-                data={this.state.data}
-              />}
+              {<ControlledCarousel/>}
         </div>
     )
   }

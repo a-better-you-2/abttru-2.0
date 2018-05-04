@@ -76,11 +76,11 @@ class ControlledCarousel extends React.Component {
             </div>
         </div>
         </div>
-        
+          //   const firstSearchCard = searchedRecipeCard[0];
+          //   firstSearchCard.classList.add("active");
       )
 
-    //   const firstSearchCard = searchedRecipeCard[0];
-    //   firstSearchCard.classList.add("active");
+  
   
       return (
         <div className="container">
@@ -90,15 +90,12 @@ class ControlledCarousel extends React.Component {
           direction={direction}
           onSelect={this.handleSelect}
         >
-         <Carousel.Item>{searchedRecipeCard[0]}</Carousel.Item>
-         <Carousel.Item>{searchedRecipeCard[1]}</Carousel.Item>
-         <Carousel.Item>{searchedRecipeCard[2]}</Carousel.Item>
-         <Carousel.Item>{searchedRecipeCard[3]}</Carousel.Item>
-         <Carousel.Item>{searchedRecipeCard[4]}</Carousel.Item>
-
-
-          
-      </Carousel>
+          <Carousel.Item>{searchedRecipeCard[0]}</Carousel.Item>
+          <Carousel.Item>{searchedRecipeCard[1]}</Carousel.Item>
+          <Carousel.Item>{searchedRecipeCard[2]}</Carousel.Item>
+          <Carousel.Item>{searchedRecipeCard[3]}</Carousel.Item>
+          <Carousel.Item>{searchedRecipeCard[4]}</Carousel.Item>    
+        </Carousel>
       </div>
       );
       
