@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+
 import {Table} from "react-bootstrap";
 import axios from "axios";
 import FontAwesomeIcon from "@fortawesome/react-fontawesome";
@@ -28,12 +29,15 @@ class User extends React.Component {
         })
         .catch(err => console.log(err));
     }
-
-    onChange = (e) => {
-      this.setState({
-        [e.target.name]: e.target.value
-      });
-    }
+  componentDidMount() {
+    // axios.get(`/api/abttru/${this.props.match.params.id}`)
+    axios.get(`/api/abttru/${"5aeb78c5e56e853d84a60546"}`)
+      .then(res => {
+        console.log(res.data);
+        this.setState(res.data);
+      })
+      .catch(err => console.log(err));
+  }
 
   render() {
     return (
@@ -68,7 +72,10 @@ class User extends React.Component {
               </tbody>
             </Table>
               {<ControlledCarousel/>}
+
         </div>
+
+      </div>
     )
   }
 }

@@ -8,8 +8,9 @@ const recipeSchema = new mongoose.Schema({
     recipe_img: String,
     recipe_link: String,
     recipe_uri: String,
+    recipe_data: Object,
     favorite: {
-        type: Boolean, 
+        type: Boolean,
         default: false
     },
     notes: [{

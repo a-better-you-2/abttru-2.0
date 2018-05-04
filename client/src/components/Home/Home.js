@@ -13,6 +13,7 @@ class Home extends React.Component {
               <Panel.Title componentClass="h4">User List</Panel.Title>
           </Panel>
           <Panel.Body>
+      
             <h5>
               <Link to="/guest">
                 <FontAwesomeIcon icon="user" /> Continue as Guest
@@ -21,6 +22,7 @@ class Home extends React.Component {
                 <FontAwesomeIcon icon="lock" /> Continue as Doctor
               </Link>
               <Link to="/user">
+
                 <FontAwesomeIcon icon="user-circle" /> Continue as Patient
               </Link>
             </h5>
@@ -33,6 +35,7 @@ class Home extends React.Component {
                     <Label >Password</Label>
                     <FormControl type="password" name="password" id="examplePassword" placeholder="password placeholder" />
                 </FormGroup>
+
             </Form>
           </Panel.Body>
         </Panel>
