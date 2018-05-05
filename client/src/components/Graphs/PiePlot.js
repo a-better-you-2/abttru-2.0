@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Plot from 'react-plotly.js';
 import recipeData from './PlotData.json';
+import { Button, Carousel, Row, Col } from "react-bootstrap";
 // import './App.css';
 
 class PiePlot extends Component {
@@ -102,7 +103,7 @@ class PiePlot extends Component {
                     ],
                     showlegend: false,
                     height: 430,
-                    width: 350
+                    width: 400
                 }
             },
             {
@@ -131,7 +132,7 @@ class PiePlot extends Component {
                     ],
                     showlegend: false,
                     height: 430,
-                    width: 350
+                    width: 400
                 }
             },
             {
@@ -160,7 +161,7 @@ class PiePlot extends Component {
                     ],
                     showlegend: false,
                     height: 430,
-                    width: 350
+                    width: 400
                 }
 
             }]
@@ -253,14 +254,22 @@ class PiePlot extends Component {
 
     render() {
         return (
-            <div className="graphButtons">
-                <button onClick={this.switchPlot} value={0}>Macros</button>
-                <button onClick={this.switchPlot} value={1}>Lipids</button>
-                <button onClick={this.switchPlot} value={2}>Minerals</button>
-                <button onClick={this.switchPlot} value={3}>Vitamins</button>
-                <Plot
-                    data={[this.state.showingPlot]}
-                    layout={this.state.plotLayout} />
+            <div>
+                <Row>
+                    <Col xs={12}>
+                        <div className="graphButtons">
+                            <Button onClick={this.switchPlot} value={0}>Macros</Button>
+                            <Button onClick={this.switchPlot} value={1}>Lipids</Button>
+                            <Button onClick={this.switchPlot} value={2}>Minerals</Button>
+                            <Button onClick={this.switchPlot} value={3}>Vitamins</Button>
+                        </div>
+                    </Col>
+                </Row>
+                <Row>
+                    <Plot
+                        data={[this.state.showingPlot]}
+                        layout={this.state.plotLayout} />
+                </Row>
             </div>
         );
     }
