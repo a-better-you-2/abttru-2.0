@@ -56,11 +56,6 @@ class PiePlot extends Component {
                     type: 'pie'
                 },
                 layout: {
-                    title: 'Nutrient Breakdown',
-                    titlefont:
-                        {
-                            size: 30
-                        },
                     paper_bgcolor: 'transparent',
                     plot_bgcolor: 'transparent',
                     annotations: [
@@ -76,7 +71,7 @@ class PiePlot extends Component {
                     ],
                     showlegend: false,
                     height: 430,
-                    width: 350
+                    width: 400
                 }
             },
             {
@@ -91,11 +86,7 @@ class PiePlot extends Component {
                     type: 'pie'
                 },
                 layout: {
-                    title: 'Nutrient Breakdown',
-                    titlefont:
-                        {
-                            size: 30
-                        },
+
                     paper_bgcolor: 'transparent',
                     plot_bgcolor: 'transparent',
                     annotations: [
@@ -124,11 +115,7 @@ class PiePlot extends Component {
                     type: 'pie'
                 },
                 layout: {
-                    title: 'Nutrient Breakdown',
-                    titlefont:
-                        {
-                            size: 30
-                        },
+
                     paper_bgcolor: 'transparent',
                     plot_bgcolor: 'transparent',
                     annotations: [
@@ -157,11 +144,7 @@ class PiePlot extends Component {
                     type: 'pie'
                 },
                 layout: {
-                    title: 'Nutrient Breakdown',
-                    titlefont:
-                        {
-                            size: 30
-                        },
+
                     paper_bgcolor: 'transparent',
                     plot_bgcolor: 'transparent',
                     annotations: [
@@ -270,7 +253,7 @@ class PiePlot extends Component {
 
     render() {
         return (
-            <div>
+            <div className="graphButtons">
                 <button onClick={this.switchPlot} value={0}>Macros</button>
                 <button onClick={this.switchPlot} value={1}>Lipids</button>
                 <button onClick={this.switchPlot} value={2}>Minerals</button>
