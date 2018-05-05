@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, Carousel, Row, Col } from "react-bootstrap";
 import PiePlot from "../Graphs/PiePlot";
+import "./Carousel.css"
 import axios from "axios";
 
 class ControlledCarousel extends React.Component {
@@ -19,7 +20,7 @@ class ControlledCarousel extends React.Component {
   }
 
   getRecipes() {
-    axios.get("https://api.edamam.com/search?q=potatoes&app_id=76461587&app_key=b829a690de0595f2fa5b7cb02db4cd99&calories=591-722&Diet=&Health=")
+    axios.get("https://api.edamam.com/search?q=steak&app_id=76461587&app_key=b829a690de0595f2fa5b7cb02db4cd99&calories=591-722&Diet=&Health=")
       .then(res => {
         console.log(res);
         console.log(res.data.hits);
@@ -67,22 +68,24 @@ class ControlledCarousel extends React.Component {
         <Carousel.Item>
           <Row>
             <Col md={1}></Col>
-            <Col xs={6} md={4}>
+            <Col xs={12} md={4}>
               <img width={400} height={400} alt="recipeImage" src={data.recipe.image} />
             </Col>
             <Col md={1}></Col>
-            <Col md={6}>
+            <br /><br />
+            <Col xs={12} md={6}>
               <PiePlot
+                className="pieTry"
                 digestData={this.state.data[index].recipe.digest}
                 yieldData={this.state.data[index].recipe.yield}
               />
             </Col>
           </Row>
-
+          <br /><br />
           <Carousel.Caption>
-            <h3>Third slide label</h3>
-            <h1><a href={data.recipe.url} target="_blank">Tap HERE for the recipe</a></h1>
-            <Button className="save" id={data.recipe.uri} name={data.recipe.label} img={data.recipe.image} link={data.recipe.url} onClick={this.saveRecipe}>SAVE RECIPE</Button>
+            <h1 id="recipe-title">{data.recipe.label}</h1>
+            <h1 id="recipe-link"><a href={data.recipe.url} target="_blank">Tap HERE for the recipe</a></h1>
+            <Button className="save-button" id={data.recipe.uri} name={data.recipe.label} img={data.recipe.image} link={data.recipe.url} onClick={this.saveRecipe}>SAVE RECIPE</Button>
           </Carousel.Caption>
         </Carousel.Item>
 
