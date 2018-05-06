@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import {Panel, Button, Form, FormGroup, FormControl, Label, Alert} from "react-bootstrap";
 import FontAwesomeIcon from "@fortawesome/react-fontawesome";
+import CreatePatientForm from "../formComponents/FullForm";
+import FullForm from "../formComponents/FullForm";
 
 class Create extends React.Component {
   state = {
@@ -86,6 +88,7 @@ class Create extends React.Component {
             </Alert>
           )
         }
+        <FullForm />
       </div>
     )
   }

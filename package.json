@@ -9,7 +9,8 @@
     "express": "^4.15.4",
     "express-session": "^1.15.6",
     "mongoose": "^5.0.15",
-    "react-bootstrap": "^0.32.1"
+    "react-bootstrap": "^0.32.1",
+    "react-stepzilla": "^4.7.2"
   },
   "devDependencies": {
     "concurrently": "^3.5.0",

@@ -4,6 +4,9 @@
     text-align: center;
 }
 
+.item {
+    height: 550px;
+}
 
 @media screen and (max-width: 600px) {
     .svg-container {
