@@ -1,23 +1,4 @@
-.svg-container {
-    top: 10px;
-    right: -80px;
-    height: 50px;
-}
 
-
-#recipe-title {
-    position: absolute;
-    right: -60px;
-    bottom: 380px;
-    text-align: center;
-}
-
-#recipe-link {
-    position: absolute;
-    right: -40px;
-    bottom: 340px;
-    text-align: center;
-}
 
 .graphButtons {
     text-align: center;

@@ -71,9 +71,16 @@ class PiePlot extends Component {
                         }
                     ],
                     showlegend: false,
-                    height: 430,
-                    width: 400
+                    height: 350,
+                    width: 350,
+                    margin: {
+                        l: 25,
+                        r: 25,
+                        t: 25,
+                        b: 25,
+                    }
                 }
+
             },
             {
                 data: {
@@ -102,8 +109,14 @@ class PiePlot extends Component {
                         }
                     ],
                     showlegend: false,
-                    height: 430,
-                    width: 400
+                    height: 350,
+                    width: 350,
+                    margin: {
+                        l: 25,
+                        r: 25,
+                        t: 25,
+                        b: 25,
+                    }
                 }
             },
             {
@@ -131,8 +144,14 @@ class PiePlot extends Component {
                         }
                     ],
                     showlegend: false,
-                    height: 430,
-                    width: 400
+                    height: 350,
+                    width: 350,
+                    margin: {
+                        l: 25,
+                        r: 25,
+                        t: 25,
+                        b: 25,
+                    }
                 }
             },
             {
@@ -160,8 +179,14 @@ class PiePlot extends Component {
                         }
                     ],
                     showlegend: false,
-                    height: 430,
-                    width: 400
+                    height: 350,
+                    width: 350,
+                    margin: {
+                        l: 25,
+                        r: 25,
+                        t: 25,
+                        b: 25,
+                    }
                 }
 
             }]
