@@ -101,7 +101,7 @@ class ControlledCarousel extends React.Component {
         {this.state.showCarousel ? (
           <div>
 
-            <Carousel
+            <Carousel className="Carousel"
               activeIndex={index}
               direction={direction}
               onSelect={this.handleSelect}
