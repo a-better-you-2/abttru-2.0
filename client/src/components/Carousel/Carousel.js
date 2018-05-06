@@ -106,16 +106,9 @@ class ControlledCarousel extends React.Component {
               direction={direction}
               onSelect={this.handleSelect}
             >
-              <Carousel.Item>{searchedRecipeCard[0]}</Carousel.Item>
-              <Carousel.Item>{searchedRecipeCard[1]}</Carousel.Item>
-              <Carousel.Item>{searchedRecipeCard[2]}</Carousel.Item>
-              <Carousel.Item>{searchedRecipeCard[3]}</Carousel.Item>
-              <Carousel.Item>{searchedRecipeCard[4]}</Carousel.Item>
-              <Carousel.Item>{searchedRecipeCard[5]}</Carousel.Item>
-              <Carousel.Item>{searchedRecipeCard[6]}</Carousel.Item>
-              <Carousel.Item>{searchedRecipeCard[7]}</Carousel.Item>
-              <Carousel.Item>{searchedRecipeCard[8]}</Carousel.Item>
-              <Carousel.Item>{searchedRecipeCard[9]}</Carousel.Item>
+              {searchedRecipeCard.map(c => {
+                return <Carousel.Item>{c}</Carousel.Item>
+              })}
             </Carousel>
           </div>)
           : null}

@@ -14,7 +14,7 @@ router.route("/abttru/:id")
   .delete(doctorController.delete) // delete a user by id
 
 router.route("/abttru/userLogin")
-  .post(userController.findOne)
+  .post(userController.login)
 
 router.route("/abttru/recipes/:id")
   // .get(recipeController.findOne)

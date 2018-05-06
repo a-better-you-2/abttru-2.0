@@ -5,6 +5,13 @@ const abttruRoutes = require("./routes/abttruAPI");
 const path = require("path");
 const PORT = process.env.PORT || 3001;
 const app = express();
+const session = require("express-session");
+
+var sess = {
+  secret: 'keyboard cat',
+  cookie: {}
+}
+app.use(session(sess));
 
 // Configure to use body parser for AJAX requests
 app.use(bodyParser.urlencoded({ extended: true }));
