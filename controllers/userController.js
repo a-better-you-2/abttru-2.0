@@ -1,15 +1,17 @@
 const db = require("../models");
 
 module.exports = {
-    findOne: function (req, res) {
+    login: function (req, res) {
         console.log(req.body)
         db.User
             .findOne({})
             .where('name').equals(req.body.name)
             .where('password').equals(req.body.password)
-            .then(dbModel => {
-                res.json(dbModel)
-                console.log(req.body)
+            .then(user => {
+                req.session.user = user;
+                res.json(user);
+                console.log(req.body);
+                console.log(req.session);
             })
             .catch(err => res.status(422).json(err))
     }
