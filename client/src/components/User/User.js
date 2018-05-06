@@ -8,9 +8,12 @@ import "./User.css"
 import ControlledCarousel from "../Carousel";
 
 class User extends React.Component {
+  constructor(props) {
+    super(props)
+  }
   state = {
     data: [],
-    user_id: "5aeccb14e21ebe39bce2f568",
+    user_id: this.props.match.params.id,
     recipe_id: "",
     name: "",
     password: "",
@@ -22,7 +25,7 @@ class User extends React.Component {
 
   componentDidMount() {
     // axios.get(`/api/abttru/${this.props.match.params.id}`)
-    axios.get(`/api/abttru/${"5aeccb14e21ebe39bce2f568"}`)
+    axios.get(`/api/abttru/${this.props.match.params.id}`)
       .then(res => {
         console.log(res.data);
         this.setState(res.data);
@@ -40,7 +43,7 @@ class User extends React.Component {
           <Link to="/">
             <FontAwesomeIcon icon="home" /> Home
               </Link>
-          <Link to="/savedrecipes">
+          <Link to={{ pathname: "/savedrecipes/", params: { userId: this.state.user_id } }} >
             <FontAwesomeIcon icon="utensils" /> Saved Recipes
               </Link>
         </h5>
@@ -64,9 +67,9 @@ class User extends React.Component {
             </tr>
           </tbody>
         </Table>
-        {<ControlledCarousel />}
+        {<ControlledCarousel userId={this.state.user_id} />}
 
-      </div>
+      </div >
     )
   }
 }

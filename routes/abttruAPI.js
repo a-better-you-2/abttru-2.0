@@ -2,6 +2,7 @@ const router = require("express").Router();
 const doctorController = require("../controllers/doctorController");
 const recipeController = require("../controllers/recipeController");
 const noteController = require("../controllers/noteController");
+const userController = require("../controllers/userController");
 
 router.route("/abttru/")
   .get(doctorController.findAll) // get all users
@@ -11,6 +12,9 @@ router.route("/abttru/:id")
   .get(doctorController.findById) // get a user by id
   .put(doctorController.update) // update a user by id
   .delete(doctorController.delete) // delete a user by id
+
+router.route("/abttru/userLogin")
+  .post(userController.findOne)
 
 router.route("/abttru/recipes/:id")
   // .get(recipeController.findOne)
