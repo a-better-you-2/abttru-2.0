@@ -8,7 +8,7 @@ class PiePlot extends Component {
 
     constructor(props) {
         super();
-        console.log(this.props);
+        // console.log(this.props);
 
     }
 
@@ -30,7 +30,7 @@ class PiePlot extends Component {
 
     createPlot = () => {
         this.setState({ data: this.props });
-        console.log(this.state.data);
+        // console.log(this.state.data);
 
         // create a copy of the data object
         const dataCopy = this.props.data;
@@ -171,7 +171,7 @@ class PiePlot extends Component {
         recipeYieldArray.push(recipeYield);
         // })
 
-        console.log(plotObjectsArray);
+        // console.log(plotObjectsArray);
         // console.log(recipeDigestArray);
         // console.log(recipeYieldArray);
         recipeDigestArray.forEach((recipeDigest, index) => {
@@ -208,7 +208,7 @@ class PiePlot extends Component {
 
             })
         })
-        console.log(plotObjectsArray);
+        // console.log(plotObjectsArray);
 
         this.setState(
             {
@@ -236,7 +236,7 @@ class PiePlot extends Component {
     }
 
     switchPlot = (event) => {
-        console.log(event.target.value);
+        // console.log(event.target.value);
         let plotObjectsArrayCopy = this.state.plotObjectsArray;
         let recipeIndexCopy = this.state.recipeIndex;
         let nutrientIndex = event.target.value;

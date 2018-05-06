@@ -14,12 +14,13 @@ class ControlledCarousel extends React.Component {
       data: [],
       index: 0,
       direction: null,
-      user_id: "5aeccb14e21ebe39bce2f568",
+      user_id: this.props.userId,
       showCarousel: false
     };
   }
 
   getRecipes() {
+    console.log(this.props)
     axios.get("https://api.edamam.com/search?q=steak&app_id=76461587&app_key=b829a690de0595f2fa5b7cb02db4cd99&calories=591-722&Diet=&Health=")
       .then(res => {
         console.log(res);
@@ -38,6 +39,7 @@ class ControlledCarousel extends React.Component {
   saveRecipe = (event) => {
     const target = event.target;
     const id = this.state.user_id;
+    console.log(id);
     const recipeObj = {
       user_id: id,
       recipe_name: target.getAttribute("name"),

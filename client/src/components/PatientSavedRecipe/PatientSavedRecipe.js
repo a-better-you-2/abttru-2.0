@@ -8,9 +8,12 @@ import "./PatientSavedRecipe.css"
 
 
 class PatientSavedRecipe extends React.Component {
+  constructor(props) {
+    super(props)
+  }
   state = {
     data: [],
-    user_id: "5aeccb14e21ebe39bce2f568",
+    user_id: "",
     recipe_id: "",
     name: "",
     password: "",
@@ -22,9 +25,12 @@ class PatientSavedRecipe extends React.Component {
     note_text: ""
   };
 
+
+
   componentDidMount() {
+    console.log(this.props.location.params.userId)
     // axios.get(`/api/abttru/${this.props.match.params.id}`)
-    axios.get(`/api/abttru/${"5aeccb14e21ebe39bce2f568"}`)
+    axios.get(`/api/abttru/${this.props.location.params.userId}`)
       .then(res => {
         console.log(res.data);
         this.setState(res.data);
@@ -63,7 +69,7 @@ class PatientSavedRecipe extends React.Component {
         this.setState({ note_text: "" });
       })
       .then(() => {
-        axios.get(`/api/abttru/${"5aeccb14e21ebe39bce2f568"}`)
+        axios.get(`/api/abttru/${this.props.location.params.userId}`)
           .then(res => {
             console.log(res.data);
             this.setState(res.data);
@@ -80,7 +86,7 @@ class PatientSavedRecipe extends React.Component {
         console.log(res);
       })
       .then(() => {
-        axios.get(`/api/abttru/${"5aeccb14e21ebe39bce2f568"}`)
+        axios.get(`/api/abttru/${this.props.location.params.userId}`)
           .then(res => {
             console.log(res.data);
             this.setState(res.data);
@@ -89,6 +95,7 @@ class PatientSavedRecipe extends React.Component {
       .catch(err => console.log(err));
   }
   render() {
+    const id = this.props.location.params.userId
     const patientSavedCard = this.state.recipes.map(recipe => (
       <div key={recipe._id}>
         <RecipeCard
@@ -110,7 +117,7 @@ class PatientSavedRecipe extends React.Component {
           <Link to="/">
             <FontAwesomeIcon icon="user-plus" /> Go Back Home
               </Link>
-          <Link to="/user">
+          <Link to={{ pathname: `/user/${id}` }}>
             <FontAwesomeIcon icon="user-plus" /> Go Back To User
               </Link>
         </h5>
