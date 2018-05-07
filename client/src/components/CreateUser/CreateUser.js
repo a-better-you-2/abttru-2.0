@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { Panel, Button, Form, FormGroup, FormControl, Label, Alert } from "react-bootstrap";
 import FontAwesomeIcon from "@fortawesome/react-fontawesome";
-import CreatePatientForm from "../formComponents/FullForm";
+// import CreatePatientForm from "../formComponents/FullForm";
 import FullForm from "../formComponents/FullForm";
 
 class Create extends React.Component {
@@ -32,8 +32,10 @@ class Create extends React.Component {
 
   onSubmit = (e) => {
     e.preventDefault();
+
     console.log(this.props.location.params.doctorId);
     if (this.state.first_name && this.state.password) {
+
       this.setState({
         isValid: true
       });
