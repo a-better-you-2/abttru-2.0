@@ -70,7 +70,7 @@ class User extends React.Component {
         </Table>
         {<ControlledCarousel userId={this.state.user_id} />}
 
-      </div >
+      </div>
     )
   }
 }

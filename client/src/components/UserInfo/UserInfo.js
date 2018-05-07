@@ -20,7 +20,9 @@ class UserInfo extends React.Component {
       .then(res => {
         this.setState(res.data);
       })
+      .then(console.log(this.state.doctor_id))
       .catch(err => console.log(err));
+
   }
 
   // deleteUser = (id) => {
@@ -33,7 +35,7 @@ class UserInfo extends React.Component {
     const id = event.target.id;
     console.log(id);
     axios.delete(`/api/abttru/user/${id}`)
-      .then(res => this.props.history.push("/doctor"))
+      .then(res => this.props.history.push(`/doctor/${this.props.match.params.id}`))
       // .then(res => this.props.history.push("/doctor")) // redirect to home page
       // .then(() => {
       //   axios.get(`/api/abttru/user/${this.props.location.params.userId}`)
