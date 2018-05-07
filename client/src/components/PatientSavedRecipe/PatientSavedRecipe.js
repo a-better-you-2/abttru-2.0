@@ -30,7 +30,7 @@ class PatientSavedRecipe extends React.Component {
   componentDidMount() {
     console.log(this.props.location.params.userId)
     // axios.get(`/api/abttru/${this.props.match.params.id}`)
-    axios.get(`/api/abttru/${this.props.location.params.userId}`)
+    axios.get(`/api/abttru/user/${this.props.location.params.userId}`)
       .then(res => {
         console.log(res.data);
         this.setState(res.data);
@@ -69,7 +69,7 @@ class PatientSavedRecipe extends React.Component {
         this.setState({ note_text: "" });
       })
       .then(() => {
-        axios.get(`/api/abttru/${this.props.location.params.userId}`)
+        axios.get(`/api/abttru/user/${this.props.location.params.userId}`)
           .then(res => {
             console.log(res.data);
             this.setState(res.data);
@@ -86,7 +86,7 @@ class PatientSavedRecipe extends React.Component {
         console.log(res);
       })
       .then(() => {
-        axios.get(`/api/abttru/${this.props.location.params.userId}`)
+        axios.get(`/api/abttru/user/${this.props.location.params.userId}`)
           .then(res => {
             console.log(res.data);
             this.setState(res.data);
@@ -94,12 +94,31 @@ class PatientSavedRecipe extends React.Component {
       })
       .catch(err => console.log(err));
   }
+
+  deleteRecipe = (event) => {
+    const id = event.target.id;
+    console.log(id);
+    axios.delete(`/api/abttru/recipes/${id}`)
+      .then(res => {
+        console.log(res);
+      })
+      .then(() => {
+        axios.get(`/api/abttru/user/${this.props.location.params.userId}`)
+          .then(res => {
+            console.log(res.data);
+            this.setState(res.data);
+          })
+      })
+      .catch(err => console.log(err));
+  }
+
   render() {
     const id = this.props.location.params.userId
     const patientSavedCard = this.state.recipes.map(recipe => (
       <div key={recipe._id}>
         <RecipeCard
           saveNote={this.saveNote}
+          deleteRecipe={this.deleteRecipe}
           key={recipe._id}
           recipe_img={recipe.recipe_img}
           recipe_name={recipe.recipe_name}

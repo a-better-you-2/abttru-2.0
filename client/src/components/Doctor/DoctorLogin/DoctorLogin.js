@@ -24,11 +24,30 @@ class DoctorLogin extends Component {
 
     handleFormSubmit = event => {
         // When the form is submitted, prevent its default behavior, get recipes update the recipes state
-        event.preventDefault();
-        axios.getArticles(this.state.articleSearch, this.state.startDate, this.state.endDate)
-            .then(res => this.setState({ articles: res.data.response.docs }))
-            .catch(err => console.log(err));
-        console.log(this.state.articles);
+        // event.preventDefault();
+        // axios.getArticles(this.state.articleSearch, this.state.startDate, this.state.endDate)
+        //     .then(res => this.setState({ articles: res.data.response.docs }))
+        //     .catch(err => console.log(err));
+        // console.log(this.state.articles);
+
+                // When the form is submitted, prevent its default behavior, get recipes update the recipes state
+                event.preventDefault();
+                axios.post(`/api/abttru/doctorLogin`, this.state)
+                    .then(res => {
+        
+                        if (res.data == null) {
+                            this.props.history.push("/doctorLogin")
+                        }
+                        else {
+                            let id = res.data._id;
+                            this.setState({
+                                _id: id
+                            })
+                            this.props.history.push(`/doctor/${id}`);
+                        }
+        
+                        console.log(this.state);
+                    })
     };
 
     render() {

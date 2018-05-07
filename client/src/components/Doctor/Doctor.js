@@ -8,20 +8,24 @@ import "./Doctor.css";
 class Doctor extends React.Component {
 
   state = {
-    users: []
+    name: "",
+    _id: "",
+    patients: []
   };
 
   componentDidMount() {
-    axios.get("/api/abttru")
+    axios.get("/api/abttru/doctor/5af0a4c58588f838ccd27f82")
     .then(res => {
-      this.setState( {
-        users: res.data
-      });
+      console.log(res.data);
+      this.setState(res.data);
     })
     .catch(err => console.log(err));
   }
 
   render() {
+    // const patients = this.state.patients.map((user) =>
+    
+    // )
     return (
         <div className="container">
           <h4>User List</h4>
@@ -33,23 +37,23 @@ class Doctor extends React.Component {
                 <FontAwesomeIcon icon="user-plus" /> Add Patient
               </Link>
             </h5>
+            <h1>{this.state.name}</h1>
+            <h2>{this.state._id}</h2>
             <Table hover striped responsive>
               <thead>
                 <tr>
                   <th>Patient ID</th>
                   <th>Name</th>
-                  {/* <th>Password</th> */}
                   <th>Risk Factor</th>
                   <th>Diet Recommendation</th>
                   <th>Diet Restrictions</th>
                 </tr>
               </thead>
               <tbody>
-                { this.state.users.map(user =>
+                { this.state.patients.map(user =>
                   <tr key={user._id}>
                     <td className="id"><Link to={`/show/${user._id}`}>{user._id}</Link></td>
-                    <td className="name"><FontAwesomeIcon icon="user-circle"/> {user.name}</td>
-                    {/* <td className="password"><FontAwesomeIcon icon="user-circle"/> {user.password}</td> */}
+                    <td className="name"><FontAwesomeIcon icon="user-circle"/> {user.first_name} {user.last_name}</td>
                     <td className="risk_factor"><FontAwesomeIcon icon="heartbeat"/> {user.risk_factor}</td>
                     <td className="diet_recommendation"><FontAwesomeIcon icon="utensils"/> {user.diet_recommendation}</td>
                     <td className="diet_restriction"><FontAwesomeIcon icon="allergies"/> {user.diet_restriction}</td>

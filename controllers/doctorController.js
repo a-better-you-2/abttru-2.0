@@ -1,6 +1,20 @@
 const db = require("../models");
 
 module.exports = {
+  login: function (req, res) {
+    console.log(req.body)
+    db.Doctor
+        .findOne({})
+        .where('email').equals(req.body.email)
+        .where('password').equals(req.body.password)
+        .then(doctor => {
+            req.session.doctor = doctor;
+            res.json(doctor);
+            console.log(req.body);
+            console.log(req.session);
+        })
+        .catch(err => res.status(422).json(err))
+  },
   findAll: function (req, res) {
     db.User
       .find(req.query)
@@ -9,6 +23,18 @@ module.exports = {
       .catch(err => res.status(422).json(err))
   },
   findById: function (req, res) {
+    // var populateQuery = [{path: 'recipes'}, {path: 'notes', select: 'body'}]
+    db.Doctor
+      .findById(req.params.id)
+      .populate({
+        path: 'patients',
+        populate: { path: 'patients' }
+      })
+      .exec()
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err))
+  },
+  findPatientById: function (req, res) {
     // var populateQuery = [{path: 'recipes'}, {path: 'notes', select: 'body'}]
     db.User
       .findById(req.params.id)
@@ -23,7 +49,14 @@ module.exports = {
   createUser: function (req, res) {
     db.User
       .create(req.body)
-      .then(dbModel => res.json(dbModel))
+      .then(dbUser => {
+          console.log(dbUser);
+          res.json(dbUser);
+          return db.Doctor.findOneAndUpdate({ _id: dbUser.doctor_id }, { $push: { patients: dbUser } }, { upsert: true, new: true })})
+      .then(dbDoctor => {
+        // If we were able to successfully update an Doctor, send it back to the client
+        console.log(dbDoctor.map(x => x.recipes));
+    })
       .catch(err => res.status(422).json(err))
   },
   update: function (req, res) {
@@ -33,10 +66,19 @@ module.exports = {
       .catch(err => res.status(422).json(err))
   },
   delete: function (req, res) {
-    db.User
+      db.User
       .findById({ _id: req.params.id })
       .then(dbModel => dbModel.remove())
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err))
+      .then((dbUser) => {
+        console.log("deleted User");
+        return db.Doctor.findByIdAndUpdate({ _id: dbUser.doctor_id}, {$pull: {patients: dbUser}})
+      })
+      .then(dbDoctor => {
+        // If we were able to successfully update an Recipe, send it back to the client
+        console.log(dbDoctor.map(x => x.notes));
+      })
+       // If an error occurred, send it to the client
+      .catch((err) => {res.json(err);});
   }
+
 }

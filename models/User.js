@@ -3,8 +3,18 @@ const mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
 const userSchema = new mongoose.Schema({
-    name: String,
+    doctor_id: String,
+    first_name: String,
+    last_name: String,
+    email: String,
     password:  String,
+    dob: Date,
+    sex: String,
+    height: Number,
+    weight: Number,
+    waist: Number,
+    bp_systolic: String,
+    bp_diastolic: String,
     risk_factor: {
         type: String,
         require: true
