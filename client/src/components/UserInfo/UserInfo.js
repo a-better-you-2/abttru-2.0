@@ -7,6 +7,7 @@ import FontAwesomeIcon from "@fortawesome/react-fontawesome";
 class UserInfo extends React.Component {
   state = {
     id: "",
+    doctor_id: "",
     name: "",
     password: "",
     risk_factor: "",
@@ -15,16 +16,32 @@ class UserInfo extends React.Component {
   };
 
   componentDidMount() {
-    axios.get(`/api/abttru/${this.props.match.params.id}`)
+    axios.get(`/api/abttru/user/${this.props.match.params.id}`)
       .then(res => {
         this.setState(res.data);
       })
       .catch(err => console.log(err));
   }
 
-  deleteUser = (id) => {
-    axios.delete(`/api/abttru/${id}`)
-      .then(res => this.props.history.push("/doctor")) // redirect to home page
+  // deleteUser = (id) => {
+  //   axios.delete(`/api/abttru/user/${id}`)
+  //     .then(res => this.props.history.push("/doctor")) // redirect to home page
+  //     .catch(err => console.log(err));
+  // }
+
+  deletePatient = (event) => {
+    const id = event.target.id;
+    console.log(id);
+    axios.delete(`/api/abttru/user/${id}`)
+      .then(res => this.props.history.push("/doctor"))
+      // .then(res => this.props.history.push("/doctor")) // redirect to home page
+      // .then(() => {
+      //   axios.get(`/api/abttru/user/${this.props.location.params.userId}`)
+      //     .then(res => {
+      //       console.log(res.data);
+      //       this.setState(res.data);
+      //     })
+      // })
       .catch(err => console.log(err));
   }
 
@@ -57,7 +74,7 @@ class UserInfo extends React.Component {
                 <dd>{this.state.diet_restriction}</dd>
               </dl>
               <Link to={`/edit/${this.state._id}`} className="btn btn-success">Edit</Link>&nbsp;
-            <Button onClick={() => this.deleteUser(this.state._id)} color="danger">Delete</Button>
+              <Button id={this.state._id} onClick={this.deletePatient.bind(this)} color="danger">Delete</Button>
             </div>
           </Panel.Body>
         </Panel>

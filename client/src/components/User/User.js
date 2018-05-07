@@ -15,7 +15,8 @@ class User extends React.Component {
     data: [],
     user_id: this.props.match.params.id,
     recipe_id: "",
-    name: "",
+    first_name: "",
+    last_name: "",
     password: "",
     risk_factor: "",
     diet_recommendation: "",
@@ -25,7 +26,7 @@ class User extends React.Component {
 
   componentDidMount() {
     // axios.get(`/api/abttru/${this.props.match.params.id}`)
-    axios.get(`/api/abttru/${this.props.match.params.id}`)
+    axios.get(`/api/abttru/user/${this.props.match.params.id}`)
       .then(res => {
         console.log(res.data);
         this.setState(res.data);
@@ -60,7 +61,7 @@ class User extends React.Component {
           <tbody>
             <tr>
               <td className="id"><Link to={`/user`}>{this.state._id}</Link></td>
-              <td className="name"><FontAwesomeIcon icon="user-circle" />{this.state.name}</td>
+              <td className="name"><FontAwesomeIcon icon="user-circle" />{this.state.first_name} {this.state.last_name}</td>
               <td className="risk_factor"><FontAwesomeIcon icon="heartbeat" /> {this.state.risk_factor}</td>
               <td className="diet_recommendation"><FontAwesomeIcon icon="utensils" /> {this.state.diet_recommendation}</td>
               <td className="diet_restriction"><FontAwesomeIcon icon="allergies" />{this.state.diet_restriction}</td>

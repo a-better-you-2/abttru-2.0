@@ -16,9 +16,10 @@ module.exports = {
         .catch(err => res.status(422).json(err))
   }, 
   deleteNote: (req, res) => {
-    db.Note.findOneAndRemove({_id: req.params.id})
-    .then((dbNote) => {
-      console.log("deleted");
+    db.Note
+      .findOneAndRemove({_id: req.params.id})
+      .then((dbNote) => {
+      console.log("deleted note");
       return db.Recipe.findByIdAndUpdate({ _id: dbNote.recipe_id}, {$pull: {notes: dbNote}})
       .then(dbRecipe => {
         // If we were able to successfully update an Recipe, send it back to the client

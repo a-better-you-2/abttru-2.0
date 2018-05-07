@@ -14,14 +14,16 @@ mongoose.connect(
 const doctorSeed = [
     {
         name: "Doogie Howser",
-        user_name: "Doogie",
+        email: "doogie@gmail.com",
         password: "NPH",
+        patients: [],
         created: Date(Date.now())
     },
     {
         name: "James Smith",
-        user_name: "Jimmy",
+        email: "jimmy@gmail.com",
         password: "password",
+        patients: [],
         created: Date(Date.now())
     }
 ]
@@ -38,33 +40,33 @@ db.Doctor
         process.exit(1);
     });
 
-const userSeed = [
-    {
-        name: "John Doe",
-        password: "default password",
-        risk_factor: "high-cholesterol",
-        diet_recommendation: "low-sodium",
-        diet_restriction: "vegan",
-        created: Date(Date.now())
-    },
-    {
-        name: "Jane Doe",
-        password: "default password",
-        risk_factor: "healthy",
-        diet_recommendation: "balanced",
-        diet_restriction: "vegetarian",
-        created: Date(Date.now())
-    }
-]
+// const userSeed = [
+//     {
+//         name: "John Doe",
+//         password: "default password",
+//         risk_factor: "high-cholesterol",
+//         diet_recommendation: "low-sodium",
+//         diet_restriction: "vegan",
+//         created: Date(Date.now())
+//     },
+//     {
+//         name: "Jane Doe",
+//         password: "default password",
+//         risk_factor: "healthy",
+//         diet_recommendation: "balanced",
+//         diet_restriction: "vegetarian",
+//         created: Date(Date.now())
+//     }
+// ]
 
-db.User
-    .remove({})
-    .then(() => db.User.collection.insertMany(userSeed))
-    .then(data => {
-        // console.log(data.userSeed.length + " users inserted");
-        process.exit(0)
-    })
-    .catch(err => {
-        console.log(err);
-        process.exit(1);
-    });
+// db.User
+//     .remove({})
+//     .then(() => db.User.collection.insertMany(userSeed))
+//     .then(data => {
+//         // console.log(data.userSeed.length + " users inserted");
+//         process.exit(0)
+//     })
+//     .catch(err => {
+//         console.log(err);
+//         process.exit(1);
+//     });

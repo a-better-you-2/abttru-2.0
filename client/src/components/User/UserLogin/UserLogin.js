@@ -10,7 +10,9 @@ class UserLogin extends Component {
     state = {
         diet_recommendation: "",
         diet_restriction: "",
-        name: "",
+        first_name: "",
+        last_name: "",
+        email: "",
         password: "",
         recipes: [],
         risk_factor: "",
@@ -61,8 +63,8 @@ class UserLogin extends Component {
                                     <Row>
                                         <Col size="xs-9 sm-10">
                                             <Input
-                                                name="name"
-                                                value={this.state.name}
+                                                name="email"
+                                                value={this.state.email}
                                                 onChange={this.handleInputChange}
                                                 placeholder="Enter Email"
                                             />
