@@ -24,6 +24,7 @@ const SavedRecipeCard = props => (
                         <FormControl type="text" name="note_text" id={props.recipe_id} value={props.note_text} onChange={props.onChange} placeholder="Type note here" />
                     </FormGroup>
                     <a><i className="fa fa-plus"><Button className="save" id={props.recipe_id} onClick={props.saveNote}>ADD NOTES</Button></i></a>
+                    <a><Button className="delete_recipe" id={props.recipe_id} onClick={props.deleteRecipe}>DELETE RECIPE</Button></a>
                 </div>
             </div>
         </div>

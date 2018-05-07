@@ -15,7 +15,7 @@ class EditUser extends React.Component {
   };
 
   componentDidMount() {
-    axios.get(`/api/abttru/${this.props.match.params.id}`)
+    axios.get(`/api/abttru/user/${this.props.match.params.id}`)
     .then(res => {
       this.setState(res.data);
     })
@@ -30,7 +30,7 @@ class EditUser extends React.Component {
 
   onSubmit = (e) => {
     e.preventDefault();
-    axios.put(`/api/abttru/${this.props.match.params.id}`, this.state)
+    axios.put(`/api/abttru/user/${this.props.match.params.id}`, this.state)
       .then(res => this.props.history.push(`/show/${this.props.match.params.id}`)) // redirect back to the show page
       .catch(err => console.log(err));
   }

@@ -15,7 +15,8 @@ class User extends React.Component {
     data: [],
     user_id: this.props.match.params.id,
     recipe_id: "",
-    name: "",
+    first_name: "",
+    last_name: "",
     password: "",
     risk_factor: "",
     diet_recommendation: "",
@@ -26,7 +27,7 @@ class User extends React.Component {
 
   componentDidMount() {
     // axios.get(`/api/abttru/${this.props.match.params.id}`)
-    axios.get(`/api/abttru/${this.props.match.params.id}`)
+    axios.get(`/api/abttru/user/${this.props.match.params.id}`)
       .then(res => {
         console.log(res.data);
         this.setState(res.data);
@@ -66,6 +67,7 @@ class User extends React.Component {
             <FontAwesomeIcon icon="utensils" /> Saved Recipes
               </Link>
         </h5>
+
         {/* <Grid> */}
         <Jumbotron>
           <Row>
@@ -123,6 +125,7 @@ class User extends React.Component {
             Tab 3 content
         </Tab>
         </Tabs> */}
+
 
 
 

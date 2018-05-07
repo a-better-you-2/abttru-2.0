@@ -24,6 +24,7 @@ class Home extends React.Component {
               <Link to="/guest">
                 <FontAwesomeIcon icon="user" /> Continue as Guest
               </Link>
+              {/* <Link to="/doctorLogin"> */}
               <Link to="/doctorLogin">
                 <FontAwesomeIcon icon="lock" /> Continue as Doctor
               </Link>

@@ -8,8 +8,11 @@ import FullForm from "../formComponents/FullForm";
 
 class Create extends React.Component {
   state = {
+    doctor_id: "5af0a4c58588f838ccd27f82",
     user_id: "",
-    name: "",
+    first_name: "",
+    last_name: "",
+    email: "",
     password: "",
     risk_factor: "",
     diet_recommendation: "",
@@ -25,12 +28,14 @@ class Create extends React.Component {
 
   onSubmit = (e) => {
     e.preventDefault();
-    if (this.state.name && this.state.password) {
+
+    if(this.state.first_name && this.state.password) {
+
       this.setState({
         isValid: true
       });
       console.log(this.state);
-      axios.post("/api/abttru/", this.state)
+      axios.post("/api/abttru/doctor/5aefa22aa7d3b23ffcb3ce3a", this.state)
         .then(res => this.props.history.push("/doctor")) // redirect to admin page
         .catch(err => console.log(err));
     }
@@ -57,8 +62,16 @@ class Create extends React.Component {
               </h5>
               <Form>
                 <FormGroup>
-                  <Label>* Name:</Label>
-                  <FormControl type="text" name="name" value={this.state.name} onChange={this.onChange} placeholder="Name" />
+                  <Label>* First Name:</Label>
+                  <FormControl type="text" name="first_name" value={this.state.first_name} onChange={this.onChange} placeholder="First Name" />
+                </FormGroup>
+                <FormGroup>
+                  <Label>* Last Name:</Label>
+                  <FormControl type="text" name="last_name" value={this.state.last_name} onChange={this.onChange} placeholder="Last Name" />
+                </FormGroup>
+                <FormGroup>
+                  <Label>Email:</Label>
+                  <FormControl type="text" name="email" value={this.state.email} onChange={this.onChange} placeholder="Password" />
                 </FormGroup>
                 <FormGroup>
                   <Label>Password:</Label>
