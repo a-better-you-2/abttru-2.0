@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import {Panel, Button, Form, FormGroup, FormControl, Label, Alert} from "react-bootstrap";
+import { Panel, Button, Form, FormGroup, FormControl, Label, Alert } from "react-bootstrap";
 import FontAwesomeIcon from "@fortawesome/react-fontawesome";
-import CreatePatientForm from "../formComponents/FullForm";
+// import CreatePatientForm from "../formComponents/FullForm";
 import FullForm from "../formComponents/FullForm";
 
 class Create extends React.Component {
@@ -28,7 +28,9 @@ class Create extends React.Component {
 
   onSubmit = (e) => {
     e.preventDefault();
+
     if(this.state.first_name && this.state.password) {
+
       this.setState({
         isValid: true
       });
@@ -77,7 +79,7 @@ class Create extends React.Component {
                 </FormGroup>
                 <FormGroup>
                   <Label>Risk Factor:</Label>
-                  <FormControl type="text" name="risk_factor" value={this.state.risk_factor} onChange={this.onChange} placeholder="Risk Factor"/>
+                  <FormControl type="text" name="risk_factor" value={this.state.risk_factor} onChange={this.onChange} placeholder="Risk Factor" />
                 </FormGroup>
                 <FormGroup>
                   <Label>Diet Recommendation:</Label>
@@ -93,11 +95,11 @@ class Create extends React.Component {
           </Panel.Body>
         </Panel>
         <br />
-        { !this.state.isValid && (
-            <Alert color="danger">
-              Please fill the required form fields.
+        {!this.state.isValid && (
+          <Alert color="danger">
+            Please fill the required form fields.
             </Alert>
-          )
+        )
         }
         <FullForm />
       </div>

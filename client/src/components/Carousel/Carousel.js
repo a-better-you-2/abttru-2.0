@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, Carousel, Row, Col } from "react-bootstrap";
 import PiePlot from "../Graphs/PiePlot";
+import Input from "../Input/Input";
 import "./Carousel.css"
 import axios from "axios";
 
@@ -15,13 +16,26 @@ class ControlledCarousel extends React.Component {
       index: 0,
       direction: null,
       user_id: this.props.userId,
-      showCarousel: false
+      showCarousel: false,
+      name: "",
+      diet_recommendation: this.props.diet_label,
+      diet_restriction: this.props.health_label
     };
+  }
+
+  handleInputChange = event => {
+    // Destructure the name and value properties off of event.target
+    // Update the appropriate state
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value
+    });
+    console.log(this.state);
   }
 
   getRecipes() {
     console.log(this.props)
-    axios.get("https://api.edamam.com/search?q=steak&app_id=76461587&app_key=b829a690de0595f2fa5b7cb02db4cd99&calories=591-722&Diet=&Health=")
+    axios.get(`https://api.edamam.com/search?q=${this.state.name}&app_id=76461587&app_key=b829a690de0595f2fa5b7cb02db4cd99&calories=591-722&diet=${this.props.diet_label}&health=${this.props.health_label}`)
       .then(res => {
         console.log(res);
         console.log(res.data.hits);
@@ -97,6 +111,12 @@ class ControlledCarousel extends React.Component {
 
     return (
       <div className="container">
+        <Input
+          name="name"
+          value={this.state.name}
+          onChange={this.handleInputChange}
+          placeholder="Search ingredients(e.g. chicken)"
+        /><br />
         <Button onClick={this.getRecipes.bind(this)} color="primary">Get Recipes</Button>
         {this.state.showCarousel ? (
           <div>
