@@ -7,8 +7,12 @@ import FontAwesomeIcon from "@fortawesome/react-fontawesome";
 import FullForm from "../formComponents/FullForm";
 
 class Create extends React.Component {
+  constructor(props) {
+    super(props)
+  }
+
   state = {
-    doctor_id: "5af0a4c58588f838ccd27f82",
+    doctor_id: this.props.location.params.doctorId,
     user_id: "",
     first_name: "",
     last_name: "",
@@ -29,14 +33,15 @@ class Create extends React.Component {
   onSubmit = (e) => {
     e.preventDefault();
 
-    if(this.state.first_name && this.state.password) {
+    console.log(this.props.location.params.doctorId);
+    if (this.state.first_name && this.state.password) {
 
       this.setState({
         isValid: true
       });
       console.log(this.state);
-      axios.post("/api/abttru/doctor/5aefa22aa7d3b23ffcb3ce3a", this.state)
-        .then(res => this.props.history.push("/doctor")) // redirect to admin page
+      axios.post(`/api/abttru/doctor/${this.props.location.params.doctorId}`, this.state)
+        .then(res => this.props.history.push(`/doctor/${this.props.location.params.doctorId}`)) // redirect to admin page
         .catch(err => console.log(err));
     }
     else {
@@ -56,7 +61,7 @@ class Create extends React.Component {
           <Panel.Body>
             <div>
               <h5>
-                <Link to="/doctor">
+                <Link to={`/doctor/${this.props.location.params.doctorId}`}>
                   <FontAwesomeIcon icon="list" /> Patient List
                 </Link>
               </h5>
