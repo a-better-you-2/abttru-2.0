@@ -17,7 +17,12 @@ const StepFour = (props) => (
         <p>Blood Pressure -- Systolic: {props.bp_systolic}</p>
         <p>Blood Pressure -- Diastolic: {props.bp_diastolic}</p>
         <p>Health Risk Factor: {props.risk_factor}</p>
+<<<<<<< HEAD
         <p>Diet Recommendation: {props.dietRecommendation}</p>
+=======
+        <p>Diet Recommendation: {props.diet_recommendation}</p>
+        <p>Diet restriction: {props.diet_restriction}</p>
+>>>>>>> b3b126210fd4fb78ebbf866b6a2a281f29ebae09
     </div>
 )
 

@@ -57,12 +57,23 @@ const StepThree = (props) => (
             <br /><br />
             <label>
                 Diet Recommendation: {"  "}
-                <select value={props.dietRecommendation} name="dietRecommendation" onChange={props.onChange}>
+                <select value={props.diet_recommendation} name="diet_recommendation" onChange={props.onChange}>
                     <option value="" disabled>Please Select...</option>
                     <option value="Balanced">Balanced</option>
                     <option value="High-Protein">High-Protein</option>
                     <option value="Low-Carb">Low-Carb</option>
                     <option value="Low-Fat">Low-Fat</option>
+                </select>
+            </label>
+            <br /><br />
+            <label>
+                Diet Restriction: {"  "}
+                <select value={props.diet_restriction} name="diet_restriction" onChange={props.onChange}>
+                    <option value="" disabled>Please Select...</option>
+                    <option value="None">None</option>
+                    <option value="Gluten-Free">Gluten-Free</option>
+                    <option value="Low-Sugar">Low-Sugar</option>
+                    <option value="Vegan">Vegan</option>
                 </select>
             </label>
             <br /><br />
