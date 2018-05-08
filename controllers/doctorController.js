@@ -52,10 +52,11 @@ module.exports = {
       .then(dbUser => {
           console.log(dbUser);
           res.json(dbUser);
-          return db.Doctor.findOneAndUpdate({ _id: dbUser.doctor_id }, { $push: { patients: dbUser } }, { upsert: true, new: true })})
+          return db.Doctor.findOneAndUpdate({ _id: dbUser.doctor_id }, { $push: { patients: dbUser } }, { upsert: true, new: true })
       .then(dbDoctor => {
         // If we were able to successfully update an Doctor, send it back to the client
         console.log(dbDoctor.map(x => x.recipes));
+      })
     })
       .catch(err => res.status(422).json(err))
   },
