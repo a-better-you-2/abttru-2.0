@@ -134,6 +134,7 @@ class Create extends React.Component {
                   <FontAwesomeIcon icon="list" /> Patient List
                 </Link>
               </h5>
+
               <div className="App">
 
                 <div className='step-progress'>
@@ -163,6 +164,7 @@ class Create extends React.Component {
 
               </div>
               <Button className="btn-lg btn-danger" onClick={this.onSubmit} color="primary">Submit</Button>
+
 
             </div>
           </Panel.Body>

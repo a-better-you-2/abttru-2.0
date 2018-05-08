@@ -19,10 +19,12 @@ module.exports = {
       .findOneAndRemove({_id: req.params.id})
       .then((dbRecipe) => {
       console.log("deleted recipe");
-      return db.User.findByIdAndUpdate({ _id: dbRecipe.user_id}, {$pull: {recipes: dbRecipe}})
+      console.log(dbRecipe.user_id);
+       return db.User
+      .findByIdAndUpdate({ _id: dbRecipe.user_id}, {$pull: {recipes: dbRecipe._id}}, {new: true})
       .then(dbUser => {
         // If we were able to successfully update an Recipe, send it back to the client
-        console.log(dbUser.map(x => x.notes));
+        console.log(dbUser.map(x => x.recipes));
       })
     })
      // If an error occurred, send it to the client

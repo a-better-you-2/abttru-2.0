@@ -30,7 +30,7 @@ class ControlledCarousel extends React.Component {
     this.setState({
       [name]: value
     });
-    console.log(this.state);
+    // console.log(this.state);
   }
 
   getRecipes() {
@@ -61,7 +61,7 @@ class ControlledCarousel extends React.Component {
       recipe_link: target.getAttribute("link"),
       recipe_uri: target.id
     }
-    console.log(recipeObj);
+    // console.log(recipeObj);
     axios.post(`/api/abttru/recipes/${id}`, recipeObj)
       .then(res => { console.log(res); })
       .catch(err => console.log(err));

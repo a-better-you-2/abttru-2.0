@@ -40,18 +40,16 @@ module.exports = {
             // .then(dbModel => res.json(dbModel))
             // .catch(err => res.status(422).json(err))
         db.User
-            .findById({ _id: req.params.id })
-            .then(dbModel => dbModel.remove())
-            .then((dbUser) => {
-              console.log("deleted User");
-              return db.Doctor.findByIdAndUpdate({ _id: dbUser.doctor_id}, {$pull: {patients: dbUser}})
-            })
+          .findOneAndRemove({_id: req.params.id})
+          .then((dbUser) => {
+            console.log("deleted User");
+            return db.Doctor.findByIdAndUpdate({ _id: dbUser.doctor_id}, {$pull: {patients: dbUser._id}}, {new: true}) 
             .then(dbDoctor => {
               // If we were able to successfully update an Recipe, send it back to the client
               console.log(dbDoctor.map(x => x.notes));
             })
              // If an error occurred, send it to the client
             .catch((err) => {res.json(err);});
-          
+          })
     }
 }
