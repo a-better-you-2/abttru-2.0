@@ -46,7 +46,7 @@ class UserLogin extends Component {
                     this.props.history.push(`/user/${id}`);
                 }
 
-                console.log(this.state);
+                // console.log(this.state);
             })
     }
 
