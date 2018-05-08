@@ -8,9 +8,9 @@ const StepTwo = (props) => (
             <label>
                 Date of Birth: {"  "}
                 <input type="date"
-                    name="dateOfBirth"
+                    name="dob"
                     placeholder="DOB"
-                    value={props.dateOfBirth}
+                    value={props.dob}
                     onChange={props.onChange}
                 />
             </label>
@@ -74,9 +74,9 @@ const StepTwo = (props) => (
 
                 Waist Measurement: {"  "}
                 <select
-                    name="waistMeas"
+                    name="waist"
                     placeholder="Waist Measurement"
-                    value={props.waistMeas}
+                    value={props.waist}
                     onChange={props.onChange}
                 >
                     <option value="24">24"</option>
