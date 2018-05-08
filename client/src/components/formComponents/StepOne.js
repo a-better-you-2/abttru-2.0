@@ -11,9 +11,9 @@ const StepOne = (props) => (
         <form>
             <label>
                 First Name:{"  "}
-                <input type="text" name="firstName"
+                <input type="text" name="first_name"
                     placeholder="First Name"
-                    value={props.firstName}
+                    value={props.first_name}
                     onChange={props.onChange}
                 />
             </label>
@@ -21,9 +21,9 @@ const StepOne = (props) => (
             <label>
                 Last Name:{"  "}
                 <input type="text"
-                    name="lastName"
+                    name="last_name"
                     placeholder="Last Name"
-                    value={props.lastName}
+                    value={props.last_name}
                     onChange={props.onChange}
                 />
             </label>
