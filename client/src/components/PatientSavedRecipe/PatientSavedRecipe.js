@@ -5,6 +5,7 @@ import axios from "axios";
 import FontAwesomeIcon from "@fortawesome/react-fontawesome";
 import RecipeCard from "./SavedRecipeCard"
 import "./PatientSavedRecipe.css"
+import PiePlot from "../Graphs";
 
 
 class PatientSavedRecipe extends React.Component {
@@ -44,7 +45,7 @@ class PatientSavedRecipe extends React.Component {
       
       .then((recipe) => {
       console.log(recipe);
-      // this.setState(res.data);
+      this.setState(recipe.data);
       })
       .catch(err => console.log(err));
     })
@@ -135,6 +136,13 @@ class PatientSavedRecipe extends React.Component {
       <option key={recipe._id}  id={recipe.recipe_uri}><div><img src={recipe.recipe_img}></img></div>{recipe.recipe_name}</option>
   ))
 
+  // const savedRecipe = this.state.recipes.map(recipe => (
+  //   <PiePlot
+  //   className="pieTry"
+  //   digestData={this.state.data.recipe.digest}
+  //   yieldData={this.state.data.recipe.yield}
+  // />
+  // ))
     return (
       <div className="container">
         <h4>Recipe Page</h4>
@@ -181,7 +189,9 @@ class PatientSavedRecipe extends React.Component {
             {patientSavedCard}
           </div>
         </div>
-       
+        <div className="row">
+        
+        </div>
       </div>
 
     )
