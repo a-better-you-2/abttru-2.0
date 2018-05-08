@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import {Panel, Button, Form, FormGroup, FormControl, Label} from "react-bootstrap";
+import { Panel, Button, Form, FormGroup, FormControl, Label } from "react-bootstrap";
 import FontAwesomeIcon from "@fortawesome/react-fontawesome";
 
 class EditUser extends React.Component {
@@ -15,11 +15,12 @@ class EditUser extends React.Component {
   };
 
   componentDidMount() {
+    console.log(this.props);
     axios.get(`/api/abttru/user/${this.props.match.params.id}`)
-    .then(res => {
-      this.setState(res.data);
-    })
-    .catch(err => console.log(err));
+      .then(res => {
+        this.setState(res.data);
+      })
+      .catch(err => console.log(err));
   }
 
   onChange = (e) => {
@@ -30,26 +31,27 @@ class EditUser extends React.Component {
 
   onSubmit = (e) => {
     e.preventDefault();
+    console.log(this.state);
     axios.put(`/api/abttru/user/${this.props.match.params.id}`, this.state)
-      .then(res => this.props.history.push(`/show/${this.props.match.params.id}`)) // redirect back to the show page
+      .then(res => this.props.history.push({ pathname: `/show/${this.props.match.params.id}`, params: { data: this.state, doctor_id: this.props.location.params.doctor_id } })) // redirect back to the show page
       .catch(err => console.log(err));
   }
 
   render() {
     return (
       <div className="container">
-      <Panel>
         <Panel>
-          <h4>Edit User</h4>
-        </Panel>
-        <Panel.Body>
-          <div>
-            <h5>
-              <Link to={`/show/${this.props.match.params.id}`}>
-                <FontAwesomeIcon icon="angle-left" /> Back
+          <Panel>
+            <h4>Edit User</h4>
+          </Panel>
+          <Panel.Body>
+            <div>
+              <h5>
+                <Link to={{ pathname: `/show/${this.props.location.params.data.patient_id}`, params: { data: this.state } }}>
+                  <FontAwesomeIcon icon="angle-left" /> Back
               </Link>
-            </h5>
-            <Form>
+              </h5>
+              <Form>
                 <FormGroup>
                   <Label for="user_id">* User ID:</Label>
                   <FormControl type="text" name="user_id" value={this.state._id} onChange={this.onChange} placeholder="User ID" />
@@ -64,7 +66,7 @@ class EditUser extends React.Component {
                 </FormGroup>
                 <FormGroup>
                   <Label for="risk_factor">Risk Factor:</Label>
-                  <FormControl type="text" name="risk_factor" value={this.state.risk_factor} onChange={this.onChange} placeholder="Risk Factor"/>
+                  <FormControl type="text" name="risk_factor" value={this.state.risk_factor} onChange={this.onChange} placeholder="Risk Factor" />
                 </FormGroup>
                 <FormGroup>
                   <Label for="diet_recommendation">Diet Recommendation:</Label>
@@ -76,10 +78,10 @@ class EditUser extends React.Component {
                 </FormGroup>
                 <Button onClick={this.onSubmit} color="primary">Submit</Button>
               </Form>
-          </div>
-        </Panel.Body>
-      </Panel>
-      </div>
+            </div>
+          </Panel.Body>
+        </Panel>
+      </div >
     )
   }
 }
