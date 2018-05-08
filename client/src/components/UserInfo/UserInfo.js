@@ -7,7 +7,7 @@ import FontAwesomeIcon from "@fortawesome/react-fontawesome";
 class UserInfo extends React.Component {
   state = {
     id: "",
-    doctor_id: "",
+    doctor_id: this.props.location.params.doctorId,
     name: "",
     password: "",
     risk_factor: "",
@@ -16,6 +16,7 @@ class UserInfo extends React.Component {
   };
 
   componentDidMount() {
+    console.log(this.props.location.params.doctorId)
     axios.get(`/api/abttru/user/${this.props.match.params.id}`)
       .then(res => {
         this.setState(res.data);
@@ -57,7 +58,7 @@ class UserInfo extends React.Component {
           <Panel.Body>
             <div>
               <h5>
-                <Link to="/doctor">
+                <Link to={`/doctor/${this.state.doctor_id}`}>
                   <FontAwesomeIcon icon="list" /> Patient List
               </Link>
               </h5>
