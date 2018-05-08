@@ -79,7 +79,7 @@ class Create extends React.Component {
                 </FormGroup>
                 <FormGroup>
                   <Label>Email:</Label>
-                  <FormControl type="text" name="email" value={this.state.email} onChange={this.onChange} placeholder="Password" />
+                  <FormControl type="text" name="email" value={this.state.email} onChange={this.onChange} placeholder="Email" />
                 </FormGroup>
                 <FormGroup>
                   <Label>Password:</Label>

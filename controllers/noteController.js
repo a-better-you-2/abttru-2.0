@@ -20,7 +20,7 @@ module.exports = {
       .findOneAndRemove({_id: req.params.id})
       .then((dbNote) => {
       console.log("deleted note");
-      return db.Recipe.findByIdAndUpdate({ _id: dbNote.recipe_id}, {$pull: {notes: dbNote}})
+      return db.Recipe.findByIdAndUpdate({ _id: dbNote.recipe_id}, {$pull: {notes: dbNote._id}}, {new:true})
       .then(dbRecipe => {
         // If we were able to successfully update an Recipe, send it back to the client
         console.log(dbRecipe.map(x => x.notes));
