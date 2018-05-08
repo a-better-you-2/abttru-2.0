@@ -67,7 +67,7 @@ class UserInfo extends React.Component {
                 <dt>Patient ID:</dt>
                 <dd>{this.state._id}</dd>
                 <dt>Name:</dt>
-                <dd>{this.state.name}</dd>
+                <dd>{this.state.first_name + " " + this.state.last_name}</dd>
                 <dt>Password:</dt>
                 <dd>{this.state.password}</dd>
                 <dt>Risk Factor:</dt>
@@ -77,7 +77,7 @@ class UserInfo extends React.Component {
                 <dt>Diet Restriction:</dt>
                 <dd>{this.state.diet_restriction}</dd>
               </dl>
-              <Link to={{ pathname: `/edit/${this.state._id}`, params: { data: this.state } }} className="btn btn-success">Edit</Link>&nbsp;
+              <Link to={{ pathname: `/edit/${this.state._id}`, params: { data: this.state, doctor_id: this.props.location.params.doctor_id } }} className="btn btn-success">Edit</Link>&nbsp;
               <Button id={this.state._id} onClick={this.deletePatient.bind(this)} color="danger">Delete</Button>
             </div>
           </Panel.Body>
