@@ -6,9 +6,7 @@ import FontAwesomeIcon from "@fortawesome/react-fontawesome";
 import "./Doctor.css";
 
 class Doctor extends React.Component {
-  constructor(props) {
-    super(props)
-  }
+
 
   state = {
     name: "",

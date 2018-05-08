@@ -8,9 +8,7 @@ import "./PatientSavedRecipe.css"
 
 
 class PatientSavedRecipe extends React.Component {
-  constructor(props) {
-    super(props)
-  }
+
   state = {
     data: [],
     user_id: "",

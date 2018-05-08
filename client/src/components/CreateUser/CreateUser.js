@@ -7,9 +7,6 @@ import FontAwesomeIcon from "@fortawesome/react-fontawesome";
 import FullForm from "../formComponents/FullForm";
 
 class Create extends React.Component {
-  constructor(props) {
-    super(props)
-  }
 
   state = {
     doctor_id: this.props.location.params.data.doctor_id,
@@ -23,6 +20,9 @@ class Create extends React.Component {
     diet_restriction: "",
     isValid: true
   };
+  componentDidMount() {
+    console.log(this.props);
+  }
 
   onChange = (e) => {
     this.setState({
@@ -109,7 +109,7 @@ class Create extends React.Component {
             </Alert>
         )
         }
-        <FullForm />
+        <FullForm doctor_id={this.state.doctor_id} />
       </div>
     )
   }
