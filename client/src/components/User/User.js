@@ -75,7 +75,7 @@ class User extends React.Component {
             <Col xs={12} md={12} lg={12}>
               <Col xs={3} md={3} lg={3}>
                 <Image src="https://thefinanser.com/wp-content/uploads/2015/12/6a01053620481c970b01b7c7617a9f970b-600wi.jpg" circle responsive />
-                <h5>{this.state.name}</h5>
+                <h5>{this.state.first_name} {this.state.last_name}</h5>
               </Col>
               <Col xs={3} md={3} lg={3}>
                 <h5>Cholesterol Status</h5>

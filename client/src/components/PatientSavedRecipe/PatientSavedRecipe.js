@@ -35,18 +35,19 @@ class PatientSavedRecipe extends React.Component {
         console.log(res.data);
         this.setState(res.data);
       })
-      // .then(() =>{
-      // let recipeUri="http://www.edamam.com/ontologies/edamam.owl#recipe_742c0d0fa853481f3c142885a9e30940"
+      .then(() =>{
+      let recipeUri="http://www.edamam.com/ontologies/edamam.owl#recipe_742c0d0fa853481f3c142885a9e30940"
       // let recipeUri=`http%3A%2F%2Fwww.edamam.com%2Fontologies%2Fedamam.owl%23recipe_742c0d0fa853481f3c142885a9e30940`
-      // let edemamUri = recipeUri.replace(/[#]/gi, '%23')
+      let edemamUri = recipeUri.replace(/[#]/gi, '%23', /[:]/gi, '%3A', /[/]/, '%2F')
       //NEED TO REPLACE # with %23!!//
-      // axios.get(`https://api.edamam.com/search?r=${recipeUri}&app_id=76461587&app_key=b829a690de0595f2fa5b7cb02db4cd99`)
-      // })
-      // .then(res => {
-      // console.log(res);
+      axios.get(`https://api.edamam.com/search?r=${edemamUri}&app_id=76461587&app_key=b829a690de0595f2fa5b7cb02db4cd99`)
+      
+      .then((recipe) => {
+      console.log(recipe);
       // this.setState(res.data);
-      // })
+      })
       .catch(err => console.log(err));
+    })
   }
 
   onChange = (e) => {
@@ -129,6 +130,11 @@ class PatientSavedRecipe extends React.Component {
         />
       </div>
     ))
+
+  const savedSelect = this.state.recipes.map(recipe => (
+      <option key={recipe._id}  id={recipe.recipe_uri}><div><img src={recipe.recipe_img}></img></div>{recipe.recipe_name}</option>
+  ))
+
     return (
       <div className="container">
         <h4>Recipe Page</h4>
@@ -164,8 +170,18 @@ class PatientSavedRecipe extends React.Component {
           </Table>
         </div>
         <div className="row">
-          {patientSavedCard}
+          <div className="col-md-4">
+            <div className="form-group">
+              <select className="form-control">
+                {savedSelect}
+              </select>
+            </div>
+          </div>
+          <div className="col-md-8">
+            {patientSavedCard}
+          </div>
         </div>
+       
       </div>
 
     )
