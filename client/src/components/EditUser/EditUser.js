@@ -31,8 +31,9 @@ class EditUser extends React.Component {
 
   onSubmit = (e) => {
     e.preventDefault();
+    console.log(this.state);
     axios.put(`/api/abttru/user/${this.props.match.params.id}`, this.state)
-      .then(res => this.props.history.push(`/show/${this.props.match.params.id}`)) // redirect back to the show page
+      .then(res => this.props.history.push({ pathname: `/show/${this.props.match.params.id}`, params: { data: this.state, doctor_id: this.props.location.params.doctor_id } })) // redirect back to the show page
       .catch(err => console.log(err));
   }
 

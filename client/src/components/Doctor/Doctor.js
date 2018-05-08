@@ -39,7 +39,13 @@ class Doctor extends React.Component {
           <Link to="/">
             <FontAwesomeIcon icon="home" /> Go Back Home
               </Link>
-          <Link to={{ pathname: "/create/", params: { data: this.state } }} >
+          <Link to={{
+            pathname: "/create/",
+            params: {
+              data: this.state,
+              doctor_id: this.props.match.params.id
+            }
+          }} >
             <FontAwesomeIcon icon="user-plus" /> Add Patient
               </Link>
         </h5>
@@ -58,7 +64,7 @@ class Doctor extends React.Component {
           <tbody>
             {this.state.patients.map(user =>
               <tr key={user._id}>
-                <td className="id"><Link to={{ pathname: `/show/${user._id}`, params: { data: this.state } }}>{user._id}</Link></td>
+                <td className="id"><Link to={{ pathname: `/show/${user._id}`, params: { data: this.state, doctor_id: this.props.match.params.id } }}>{user._id}</Link></td>
                 <td className="name"><FontAwesomeIcon icon="user-circle" /> {user.first_name} {user.last_name}</td>
                 <td className="risk_factor"><FontAwesomeIcon icon="heartbeat" /> {user.risk_factor}</td>
                 <td className="diet_recommendation"><FontAwesomeIcon icon="utensils" /> {user.diet_recommendation}</td>
