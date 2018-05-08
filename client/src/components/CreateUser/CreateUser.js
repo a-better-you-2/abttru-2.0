@@ -12,7 +12,7 @@ class Create extends React.Component {
   }
 
   state = {
-    doctor_id: this.props.location.params.doctorId,
+    doctor_id: this.props.location.params.data.doctor_id,
     user_id: "",
     first_name: "",
     last_name: "",
@@ -33,15 +33,15 @@ class Create extends React.Component {
   onSubmit = (e) => {
     e.preventDefault();
 
-    console.log(this.props.location.params.doctorId);
+    console.log(this.props);
     if (this.state.first_name && this.state.password) {
 
       this.setState({
         isValid: true
       });
       console.log(this.state);
-      axios.post(`/api/abttru/doctor/${this.props.location.params.doctorId}`, this.state)
-        .then(res => this.props.history.push(`/doctor/${this.props.location.params.doctorId}`)) // redirect to admin page
+      axios.post(`/api/abttru/doctor/${this.props.location.params.data.doctor_id}`, this.state)
+        .then(res => this.props.history.push(`/doctor/${this.props.location.params.data.doctor_id}`)) // redirect to admin page
         .catch(err => console.log(err));
     }
     else {
@@ -61,7 +61,10 @@ class Create extends React.Component {
           <Panel.Body>
             <div>
               <h5>
-                <Link to={`/doctor/${this.props.location.params.doctorId}`}>
+                <Link to={{
+                  pathname: `/doctor/${this.props.location.params.data.doctor_id}`,
+                  params: { data: this.props.location.params.data }
+                }}>
                   <FontAwesomeIcon icon="list" /> Patient List
                 </Link>
               </h5>

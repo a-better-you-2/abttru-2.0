@@ -6,8 +6,8 @@ import FontAwesomeIcon from "@fortawesome/react-fontawesome";
 
 class UserInfo extends React.Component {
   state = {
-    id: "",
-    doctor_id: this.props.location.params.doctorId,
+    patient_id: this.props.match.params.id,
+    doctor_id: this.props.location.params.doctor_id,
     name: "",
     password: "",
     risk_factor: "",
@@ -16,12 +16,13 @@ class UserInfo extends React.Component {
   };
 
   componentDidMount() {
-    console.log(this.props.location.params.doctorId)
-    axios.get(`/api/abttru/user/${this.props.match.params.id}`)
+    console.log(this.props)
+    axios.get(`/api/abttru/user/${this.state.patient_id}`)
       .then(res => {
         this.setState(res.data);
+        console.log(this.state);
       })
-      .then(console.log(this.state.doctor_id))
+
       .catch(err => console.log(err));
 
   }
@@ -36,7 +37,7 @@ class UserInfo extends React.Component {
     const id = event.target.id;
     console.log(id);
     axios.delete(`/api/abttru/user/${id}`)
-      .then(res => this.props.history.push(`/doctor/${this.props.match.params.id}`))
+      .then(res => this.props.history.push(`/doctor/${this.state.doctor_id}`))
       // .then(res => this.props.history.push("/doctor")) // redirect to home page
       // .then(() => {
       //   axios.get(`/api/abttru/user/${this.props.location.params.userId}`)
@@ -76,7 +77,7 @@ class UserInfo extends React.Component {
                 <dt>Diet Restriction:</dt>
                 <dd>{this.state.diet_restriction}</dd>
               </dl>
-              <Link to={`/edit/${this.state._id}`} className="btn btn-success">Edit</Link>&nbsp;
+              <Link to={{ pathname: `/edit/${this.state._id}`, params: { data: this.state } }} className="btn btn-success">Edit</Link>&nbsp;
               <Button id={this.state._id} onClick={this.deletePatient.bind(this)} color="danger">Delete</Button>
             </div>
           </Panel.Body>
