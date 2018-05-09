@@ -293,7 +293,8 @@ class PiePlot extends Component {
                 <Row>
                     <Plot
                         data={[this.state.showingPlot]}
-                        layout={this.state.plotLayout} />
+                        layout={this.state.plotLayout} 
+                    />
                 </Row>
             </div>
         );

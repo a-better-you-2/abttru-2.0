@@ -5,8 +5,7 @@ import axios from "axios";
 import FontAwesomeIcon from "@fortawesome/react-fontawesome";
 import RecipeCard from "./SavedRecipeCard"
 import "./PatientSavedRecipe.css"
-import PiePlotTwo from "./PiePlotTwo";
-import recipeData from './PlotData.json';
+import PiePlot from "../Graphs/PiePlot";
 
 
 
@@ -42,14 +41,16 @@ class PatientSavedRecipe extends React.Component {
         this.setState(res.data);
       })
       .then(() =>{
-      // let recipeUri="http://www.edamam.com/ontologies/edamam.owl#recipe_742c0d0fa853481f3c142885a9e30940"
-      // let edemamUri = recipeUri.replace(/[#]/gi, '%23', /[:]/gi, '%3A', /[/]/, '%2F')
-      // axios.get(`https://api.edamam.com/search?r=${edemamUri}&app_id=76461587&app_key=b829a690de0595f2fa5b7cb02db4cd99`)
-      axios.get("https://api.edamam.com/search?q=tacos&app_id=76461587&app_key=b829a690de0595f2fa5b7cb02db4cd99&from=0&to=5&calories=591-722&Diet=&Health=")
+      let recipeUri="http://www.edamam.com/ontologies/edamam.owl#recipe_742c0d0fa853481f3c142885a9e30940"
+      let edemamUri = recipeUri.replace(/[#]/gi, '%23', /[:]/gi, '%3A', /[/]/, '%2F')
+      axios.get(`https://api.edamam.com/search?r=${edemamUri}&app_id=76461587&app_key=b829a690de0595f2fa5b7cb02db4cd99`)
+      // axios.get("https://api.edamam.com/search?q=tacos&app_id=76461587&app_key=b829a690de0595f2fa5b7cb02db4cd99&from=0&to=5&calories=591-722&Diet=&Health=")
       .then((recipe) => {
-      console.log(recipe);
-      this.setState({fave_recipe: recipe});
+      console.log(recipe.data);
+      this.setState({fave_recipe: recipe.data});
       console.log(this.state.fave_recipe);
+      console.log(this.state.fave_recipe.map(recipe => (recipe.digest)));
+      console.log(this.state.fave_recipe.map(recipe => (recipe.yield)));
       })
       .catch(err => console.log(err));
     })
@@ -136,17 +137,19 @@ class PatientSavedRecipe extends React.Component {
       </div>
     ))
 
+    const piePlot = this.state.fave_recipe.map(recipe => (
+      <div key={recipe.uri}>
+        <PiePlot
+          digestData={recipe.digest}
+          yieldData={recipe.yield}
+        />
+      </div>
+    ))
+
   const savedSelect = this.state.recipes.map(recipe => (
       <option key={recipe._id} id={recipe.recipe_uri}>{recipe.recipe_name}</option>
   ))
 
-  // const savedRecipe = this.state.recipes.map(recipe => (
-  //   <PiePlot
-  //   className="pieTry"
-  //   digestData={this.state.data.recipe.digest}
-  //   yieldData={this.state.data.recipe.yield}
-  // />
-  // ))
     return (
       <div className="container">
         <h4>Recipe Page</h4>
@@ -192,16 +195,12 @@ class PatientSavedRecipe extends React.Component {
         </div>
         <div className="row">
             <div className="col-md-4">
+              {piePlot}
               {patientSavedCard}
             </div>
         </div>
           <div className="col-md-8"></div>
-          <PiePlotTwo 
-            dupe={this.state.msg}
-            faveRecipe={this.state.data}
-            // showingPlot={this.state.plotObjects[0][0].data}
-            // plotLayout={this.state.plotObjects[0][0].layout}
-          />
+ 
       </div>
     )
   }

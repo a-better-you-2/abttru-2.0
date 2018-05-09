@@ -12,10 +12,9 @@ class PiePlotTwo extends Component {
 
     state = {
         // data: this.props.faveRecipe,
-        // data: [],
-        data: recipeData.hits,
+        data: [],
+        // data: this.props.data,
         dupe_data: this.props.dupe,
-        results: [],
         plotObjectsArr: [],
         showingPlot: [],
         plotLayout: [],
@@ -24,18 +23,26 @@ class PiePlotTwo extends Component {
 
     }
 
-    createPlot = () => {
-        // this.setState({data: recipeData});
-        console.log(this.state.data);
+    componentDidMount() {
+        this.createPlot()
+    }
 
-        // as well as the yield by recipe
-        let recipeDigest = this.state.data.map((data) =>
-           data.recipe.digest
-        );
+    createPlot = () => {
+        this.setState({data: this.props});
+        console.log(this.state.data);
+        const dataCopy = this.props.data;
+
+        let recipeDigest = this.props.digestData;
+        let recipeYield = this.props.yieldData;
+        
+        // // as well as the yield by recipe
+        // let recipeDigest = this.state.data.map((data) =>
+        //    data.recipe.digest
+        // );
         console.log(recipeDigest);
-        let recipeYield = this.state.data.map((data) =>
-            data.recipe.yield
-        );
+        // let recipeYield = this.state.data.map((data) =>
+        //     data.recipe.yield
+        // );
         console.log(recipeYield);
         let plotObjects = this.state.data.map((recipe) =>
             [
@@ -193,10 +200,11 @@ class PiePlotTwo extends Component {
 
         console.log(plotObjects);
         let obj = plotObjects;
+        this.setState((state) => ({plotObjectsArr: plotObjects}));
         this.setState(
             {plotObjectsArr: plotObjects},
-            // {showingPlot: plotObjects[0][0].data},
-            // {plotLayout: plotObjects[0][0].layout}
+            {showingPlot: plotObjects[0][0].data},
+            {plotLayout: plotObjects[0][0].layout}
         );
         console.log(this.state.plotObjectsArr);
         console.log(this.state.dupe_data);
@@ -229,16 +237,16 @@ class PiePlotTwo extends Component {
                   <h1>Check out these pretty plots!</h1>
                 </header>
 
-                <button onClick={this.nextRecipe.bind(this)} value={0}>Next Recipe</button>
-                <button onClick={this.createPlot.bind(this)}>Search for a recipe!</button>
+                {/* <button onClick={this.nextRecipe.bind(this)} value={0}>Next Recipe</button> */}
+                {/* <button onClick={this.createPlot.bind(this)}>Search for a recipe!</button> */}
                 <button onClick={this.switchPlot.bind(this)} value={0}>Macros</button>
                 <button onClick={this.switchPlot.bind(this)} value={1}>Lipids</button>
                 <button onClick={this.switchPlot.bind(this)} value={2}>Minerals</button>
                 <button onClick={this.switchPlot.bind(this)} value={3}>Vitamins</button>
 
                 <Plot
-                    // data={[this.state.showingPlot]}
-                    // layout={this.state.plotLayout} 
+                    data={[this.state.showingPlot]}
+                    layout={this.state.plotLayout} 
                 />
             </div>
         );
