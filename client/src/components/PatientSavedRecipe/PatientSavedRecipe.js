@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Button, Table } from "react-bootstrap";
+import { Button, Table, FormGroup, FormControl } from "react-bootstrap";
 import axios from "axios";
 import FontAwesomeIcon from "@fortawesome/react-fontawesome";
 import RecipeCard from "./SavedRecipeCard"
@@ -50,6 +50,7 @@ class PatientSavedRecipe extends React.Component {
   }
 
   onChange = (e) => {
+    console.log(this.state);
     this.setState({
       [e.target.name]: e.target.value
     });
@@ -132,8 +133,17 @@ class PatientSavedRecipe extends React.Component {
 
     const savedSelect = this.state.recipes.map(recipe => (
       <li id={recipe.recipe_uri}>
-        <a href="#" title={recipe.recipe_name}>
-          <img src={recipe.recipe_img}></img>{recipe.recipe_name}</a>
+        <a href={recipe.recipe_link} title={recipe.recipe_name}>
+          <img src={recipe.recipe_img}></img>
+        </a>
+        {recipe.recipe_name}
+        <div>{recipe.notes.map(note => <div key={note._id} className="notes">{note.body}<Button className="delete" id={note._id} onClick={this.deleteNote}>x</Button></div>)}</div>
+        <FormGroup>
+          <FormControl type="text" name="note_text" id={recipe.recipe_id} value={this.state.note_text} onChange={this.onChange} placeholder="Type note here" />
+        </FormGroup>
+        <a><i className="fa fa-plus"><Button className="btn save btn-success" id={recipe._id} onClick={this.saveNote}>ADD NOTES</Button></i></a>
+        <a><Button className="delete_recipe" id={recipe.recipe_id} onClick={this.deleteRecipe}>DELETE RECIPE</Button></a>
+
       </li>
 
     ))
@@ -190,7 +200,7 @@ class PatientSavedRecipe extends React.Component {
             </div>
           </div>
           <div class="btn-group">
-            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
               Select a Recipe
             </button>
             <ul class="dropdown-menu scrollable-menu" role="menu">
