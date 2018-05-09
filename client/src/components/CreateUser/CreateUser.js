@@ -3,28 +3,41 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { Panel, Button, Form, FormGroup, FormControl, Label, Alert } from "react-bootstrap";
 import FontAwesomeIcon from "@fortawesome/react-fontawesome";
-// import CreatePatientForm from "../formComponents/FullForm";
-import FullForm from "../formComponents/FullForm";
+import Step1 from '../formComponents/StepOne';
+import Step2 from '../formComponents/StepTwo';
+import Step3 from '../formComponents/StepThree';
+import Step4 from '../formComponents/StepFour';
+import StepZilla from 'react-stepzilla';
+import "../formComponents/Dropdown.css";
 
 class Create extends React.Component {
   constructor(props) {
     super(props)
+
+    this.state = {
+      doctor_id: this.props.location.params.data.doctor_id,
+      user_id: "",
+      first_name: "",
+      last_name: "",
+      email: "",
+      password: "",
+      dob: "",
+      sex: "",
+      heightFoot: "",
+      heightInch: "",
+      weight: "",
+      waist: "",
+      bp_systolic: "",
+      bp_diastolic: "",
+      risk_factor: "",
+      diet_recommendation: "",
+      diet_restriction: "",
+      isValid: true
+    };
   }
 
-  state = {
-    doctor_id: this.props.location.params.data.doctor_id,
-    user_id: "",
-    first_name: "",
-    last_name: "",
-    email: "",
-    password: "",
-    risk_factor: "",
-    diet_recommendation: "",
-    diet_restriction: "",
-    isValid: true
-  };
-
   onChange = (e) => {
+    console.log(this.state);
     this.setState({
       [e.target.name]: e.target.value
     });
@@ -52,6 +65,59 @@ class Create extends React.Component {
   }
 
   render() {
+    const steps =
+      [
+        {
+          name: 'General Patient Info', component: <Step1
+            first_name={this.state.first_name}
+            last_name={this.state.last_name}
+            email={this.state.email}
+            password={this.state.password}
+            onChange={this.onChange}
+          />
+        },
+        {
+          name: 'Patient Statistics', component: <Step2
+            dob={this.state.dob}
+            sex={this.state.sex}
+            heightFoot={this.state.heightFoot}
+            heightInch={this.state.heightInch}
+            weight={this.state.weight}
+            waist={this.state.waist}
+            onChange={this.onChange}
+          />
+        },
+        {
+          name: 'Patient Health Factors', component: <Step3
+            bp_systolic={this.state.bp_systolic}
+            bp_diastolic={this.state.bp_diastolic}
+            risk_factor={this.state.risk_factor}
+            diet_recommendation={this.state.diet_recommendation}
+            diet_restriction={this.state.diet_restriction}
+            onChange={this.onChange}
+
+          />
+        },
+        {
+          name: 'Confirm & Save', component: <Step4
+            first_name={this.state.first_name}
+            last_name={this.state.last_name}
+            email={this.state.email}
+            password={this.state.password}
+            dob={this.state.dob}
+            sex={this.state.sex}
+            heightFoot={this.state.heightFoot}
+            heightInch={this.state.heightInch}
+            weight={this.state.weight}
+            waist={this.state.waist}
+            bp_systolic={this.state.bp_systolic}
+            bp_diastolic={this.state.bp_diastolic}
+            risk_factor={this.state.risk_factor}
+            diet_recommendation={this.state.diet_recommendation}
+            diet_restriction={this.state.diet_restriction}
+          />
+        }
+      ]
     return (
       <div className="container">
         <Panel>
@@ -68,37 +134,38 @@ class Create extends React.Component {
                   <FontAwesomeIcon icon="list" /> Patient List
                 </Link>
               </h5>
-              <Form>
-                <FormGroup>
-                  <Label>* First Name:</Label>
-                  <FormControl type="text" name="first_name" value={this.state.first_name} onChange={this.onChange} placeholder="First Name" />
-                </FormGroup>
-                <FormGroup>
-                  <Label>* Last Name:</Label>
-                  <FormControl type="text" name="last_name" value={this.state.last_name} onChange={this.onChange} placeholder="Last Name" />
-                </FormGroup>
-                <FormGroup>
-                  <Label>Email:</Label>
-                  <FormControl type="text" name="email" value={this.state.email} onChange={this.onChange} placeholder="Email" />
-                </FormGroup>
-                <FormGroup>
-                  <Label>Password:</Label>
-                  <FormControl type="text" name="password" value={this.state.password} onChange={this.onChange} placeholder="Password" />
-                </FormGroup>
-                <FormGroup>
-                  <Label>Risk Factor:</Label>
-                  <FormControl type="text" name="risk_factor" value={this.state.risk_factor} onChange={this.onChange} placeholder="Risk Factor" />
-                </FormGroup>
-                <FormGroup>
-                  <Label>Diet Recommendation:</Label>
-                  <FormControl type="text" name="diet_recommendation" value={this.state.diet_recommendation} onChange={this.onChange} placeholder="Diet Recommendation" />
-                </FormGroup>
-                <FormGroup>
-                  <Label>Diet Restrictions:</Label>
-                  <FormControl type="text" name="diet_restriction" value={this.state.diet_restriction} onChange={this.onChange} placeholder="Diet Restrictions" />
-                </FormGroup>
-                <Button onClick={this.onSubmit.bind(this)} color="primary">Submit</Button>
-              </Form>
+
+              <div className="App">
+
+                <div className='step-progress'>
+                  <StepZilla
+
+                    steps={steps}
+
+                    showNavigation={true}
+
+                    showSteps={true}
+
+                    stepsNavigation={true}
+
+                    preventEnterSubmission={true}
+
+                    nextTextOnFinalActionStep={"Click to Review Data"}
+
+                    hocValidationAppliedTo={[3]}
+
+                    startAtStep={0}
+
+                    prevBtnOnLastStep={true}
+
+                    onStepChange={(step) => window.sessionStorage.setItem('step', step)}
+                  />
+                </div>
+
+              </div>
+              <Button className="btn-lg btn-danger" onClick={this.onSubmit} color="primary">Submit</Button>
+
+
             </div>
           </Panel.Body>
         </Panel>
@@ -109,7 +176,6 @@ class Create extends React.Component {
             </Alert>
         )
         }
-        <FullForm />
       </div>
     )
   }

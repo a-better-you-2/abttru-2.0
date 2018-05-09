@@ -22,3 +22,40 @@
   .card {
     z-index: 1;
   }
+
+  body { 
+    padding: 40px; 
+  }
+
+.dropdown-toggle { 
+  width: 100px;
+  height: 20px;
+
+}
+.dropdown-menu {
+  width: 500px;
+}
+
+.btn-group img {
+  height: 80px;
+  float: left;
+}
+
+.dropdown-menu>li>a:hover { 
+  background: #f1f9fd 
+} 
+
+/* $search-blue */
+.dropdown-header { 
+  background: #ccc; font-size: 14px; font-weight: 700; padding-top: 5px; padding-bottom: 5px; margin-top: 10px; margin-bottom: 5px 
+}
+
+.scrollable-menu {
+  height: auto;
+  max-height: 300px;
+  overflow-x: hidden;
+}
+
+.card-holder {
+  padding-top: 50px;
+}
