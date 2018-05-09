@@ -142,7 +142,7 @@ class PatientSavedRecipe extends React.Component {
           <FormControl type="text" name="note_text" id={recipe.recipe_id} value={this.state.note_text} onChange={this.onChange} placeholder="Type note here" />
         </FormGroup>
         <a><i className="fa fa-plus"><Button className="btn save btn-success" id={recipe._id} onClick={this.saveNote}>ADD NOTES</Button></i></a>
-        <a><Button className="delete_recipe" id={recipe.recipe_id} onClick={this.deleteRecipe}>DELETE RECIPE</Button></a>
+        <a><Button className="delete_recipe" id={recipe._id} onClick={this.deleteRecipe}>DELETE RECIPE</Button></a>
 
       </li>
 
