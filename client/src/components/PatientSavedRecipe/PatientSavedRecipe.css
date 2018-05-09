@@ -27,22 +27,19 @@
     padding: 40px; 
   }
 
-.dropdown-toggle, .dropdown-menu { 
-  width: 500px;
+.dropdown-toggle { 
+  width: 100px;
+  height: 20px;
+
+}
+.dropdown-menu {
+  width: 300px;
 }
 
 .btn-group img {
   height: 80px;
-  margin-right: 10px 
+  float: left;
 }
-
-.dropdown-toggle { 
-  padding-right: 50px 
-}
-
-.dropdown-toggle .glyphicon { 
-  margin-left: 20px; margin-right: -40px
- }
 
 .dropdown-menu>li>a:hover { 
   background: #f1f9fd 
@@ -55,6 +52,6 @@
 
 .scrollable-menu {
   height: auto;
-  max-height: 200px;
+  max-height: 300px;
   overflow-x: hidden;
 }

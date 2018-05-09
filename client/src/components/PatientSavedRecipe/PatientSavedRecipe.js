@@ -191,9 +191,7 @@ class PatientSavedRecipe extends React.Component {
           </div>
           <div class="btn-group">
             <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <img src="http://lorempixel.com/75/50/abstract/"></img>
               Select a Recipe
-            <span class="glyphicon glyphicon-chevron-down"></span>
             </button>
             <ul class="dropdown-menu scrollable-menu" role="menu">
               {savedSelect}
