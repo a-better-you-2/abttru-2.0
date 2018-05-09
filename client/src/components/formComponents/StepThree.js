@@ -70,7 +70,7 @@ const StepThree = (props) => (
                 Diet Restriction: {"  "}
                 <select value={props.diet_restriction} name="diet_restriction" onChange={props.onChange}>
                     <option value="" disabled>Please Select...</option>
-                    <option value="None">None</option>
+                    <option value="">None</option>
                     <option value="Gluten-Free">Gluten-Free</option>
                     <option value="Low-Sugar">Low-Sugar</option>
                     <option value="Vegan">Vegan</option>

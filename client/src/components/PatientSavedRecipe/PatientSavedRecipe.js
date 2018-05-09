@@ -9,9 +9,7 @@ import PiePlot from "../Graphs";
 
 
 class PatientSavedRecipe extends React.Component {
-  constructor(props) {
-    super(props)
-  }
+
   state = {
     data: [],
     user_id: "",
@@ -36,19 +34,19 @@ class PatientSavedRecipe extends React.Component {
         console.log(res.data);
         this.setState(res.data);
       })
-      .then(() =>{
-      let recipeUri="http://www.edamam.com/ontologies/edamam.owl#recipe_742c0d0fa853481f3c142885a9e30940"
-      // let recipeUri=`http%3A%2F%2Fwww.edamam.com%2Fontologies%2Fedamam.owl%23recipe_742c0d0fa853481f3c142885a9e30940`
-      let edemamUri = recipeUri.replace(/[#]/gi, '%23', /[:]/gi, '%3A', /[/]/, '%2F')
-      //NEED TO REPLACE # with %23!!//
-      axios.get(`https://api.edamam.com/search?r=${edemamUri}&app_id=76461587&app_key=b829a690de0595f2fa5b7cb02db4cd99`)
-      
-      .then((recipe) => {
-      console.log(recipe);
-      this.setState(recipe.data);
+      .then(() => {
+        let recipeUri = "http://www.edamam.com/ontologies/edamam.owl#recipe_742c0d0fa853481f3c142885a9e30940"
+        // let recipeUri=`http%3A%2F%2Fwww.edamam.com%2Fontologies%2Fedamam.owl%23recipe_742c0d0fa853481f3c142885a9e30940`
+        let edemamUri = recipeUri.replace(/[#]/gi, '%23', /[:]/gi, '%3A', /[/]/, '%2F')
+        //NEED TO REPLACE # with %23!!//
+        axios.get(`https://api.edamam.com/search?r=${edemamUri}&app_id=76461587&app_key=b829a690de0595f2fa5b7cb02db4cd99`)
+
+          .then((recipe) => {
+            console.log(recipe);
+            this.setState(recipe.data);
+          })
+          .catch(err => console.log(err));
       })
-      .catch(err => console.log(err));
-    })
   }
 
   onChange = (e) => {
@@ -132,17 +130,23 @@ class PatientSavedRecipe extends React.Component {
       </div>
     ))
 
-  const savedSelect = this.state.recipes.map(recipe => (
-      <option key={recipe._id}  id={recipe.recipe_uri}><div><img src={recipe.recipe_img}></img></div>{recipe.recipe_name}</option>
-  ))
+    const savedSelect = this.state.recipes.map(recipe => (
+      <li id={recipe.recipe_uri}>
+        <a href="#" title={recipe.recipe_name}>
+          <img src={recipe.recipe_img}></img>{recipe.recipe_name}</a>
+      </li>
 
-  // const savedRecipe = this.state.recipes.map(recipe => (
-  //   <PiePlot
-  //   className="pieTry"
-  //   digestData={this.state.data.recipe.digest}
-  //   yieldData={this.state.data.recipe.yield}
-  // />
-  // ))
+    ))
+
+
+
+    // const savedRecipe = this.state.recipes.map(recipe => (
+    //   <PiePlot
+    //   className="pieTry"
+    //   digestData={this.state.data.recipe.digest}
+    //   yieldData={this.state.data.recipe.yield}
+    // />
+    // ))
     return (
       <div className="container">
         <h4>Recipe Page</h4>
@@ -185,12 +189,19 @@ class PatientSavedRecipe extends React.Component {
               </select>
             </div>
           </div>
-          <div className="col-md-8">
-            {patientSavedCard}
+          <div class="btn-group">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <img src="http://lorempixel.com/75/50/abstract/"></img>
+              Select a Recipe
+            <span class="glyphicon glyphicon-chevron-down"></span>
+            </button>
+            <ul class="dropdown-menu scrollable-menu" role="menu">
+              {savedSelect}
+            </ul>
           </div>
         </div>
-        <div className="row">
-        
+        <div className="col-md-8">
+          {patientSavedCard}
         </div>
       </div>
 

@@ -176,7 +176,6 @@ class Create extends React.Component {
             </Alert>
         )
         }
-
       </div>
     )
   }

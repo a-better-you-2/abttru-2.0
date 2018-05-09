@@ -8,8 +8,10 @@
     "body-parser": "^1.18.2",
     "express": "^4.15.4",
     "express-session": "^1.15.6",
+    "history": "^4.7.2",
     "mongoose": "^5.0.15",
     "react-bootstrap": "^0.32.1",
+    "react-history": "^0.18.2",
     "react-stepzilla": "^4.7.2"
   },
   "devDependencies": {
