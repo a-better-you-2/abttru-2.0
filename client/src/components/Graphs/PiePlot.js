@@ -29,7 +29,7 @@ class PiePlot extends Component {
 
 
     createPlot = () => {
-        this.setState({ data: this.props });
+        // this.setState({ data: this.props });
         // console.log(this.state.data);
 
         // create a copy of the data object

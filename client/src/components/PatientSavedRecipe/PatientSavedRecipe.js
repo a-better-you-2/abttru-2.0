@@ -22,36 +22,50 @@ class PatientSavedRecipe extends React.Component {
     diet_restriction: "",
     recipes: [],
     recipe_data: [],
-    recipe_index: 2,
+    recipe_index: 0,
     notes: [],
     note_text: "",
     msg: "I'm setting the state here!",
     propsObjectArr: []
   };
 
-
-
   componentDidMount() {
     // console.log(this.props.location.params.userId)
     axios.get(`/api/abttru/user/${this.props.location.params.userId}`)
       .then(res => {
         // console.log(res.data);
-        // console.log(res.data.recipes.length);
         this.setState(res.data);
       })
       .then(() =>{
-        let allUri= this.state.recipes.map(recipe => (recipe.recipe_uri));
-        let recipeUri = allUri[this.state.recipe_index];
-        let edemamUri = recipeUri.replace(/[#]/gi, '%23', /[:]/gi, '%3A', /[/]/, '%2F')
-        axios.get(`https://api.edamam.com/search?r=${edemamUri}&app_id=76461587&app_key=b829a690de0595f2fa5b7cb02db4cd99`)
-          .then((recipe) => {
-          // console.log(recipe.data);
-          this.setState({recipe_data: recipe.data});
-        })
-        this.makeCard();
-        
+        this.getData();
       });
-      
+  }
+
+  getData = () => {
+    let allUri= this.state.recipes.map(recipe => (recipe.recipe_uri));
+    console.log(this.state.recipe_index);
+    let recipeUri = allUri[this.state.recipe_index];
+    console.log(recipeUri);
+    let edemamUri = recipeUri.replace(/[#]/gi, '%23', /[:]/gi, '%3A', /[/]/, '%2F');
+    axios.get(`https://api.edamam.com/search?r=${edemamUri}&app_id=76461587&app_key=b829a690de0595f2fa5b7cb02db4cd99`)
+      .then((recipe) => {
+      // console.log(recipe.data);
+      this.setState({recipe_data: recipe.data})
+      console.log(this.state.recipe_data[0]);
+    })
+  }
+
+  changeRecipe = (e) => {
+    console.log(e.target.id);
+    const id= e.target.id;
+    const uri = id.replace(/[#]/gi, '%23', /[:]/gi, '%3A', /[/]/, '%2F');
+    axios.get(`https://api.edamam.com/search?r=${uri}&app_id=76461587&app_key=b829a690de0595f2fa5b7cb02db4cd99`)
+    .then((recipe) => {
+    console.log(recipe.data);
+    const pos = this.state.recipes.map(function(e) { return e.recipe_uri; }).indexOf(id);
+    console.log(pos)
+    this.setState({recipe_data: recipe.data, recipe_index: pos});
+    })
   }
 
   makeCard = () => {
@@ -63,6 +77,7 @@ class PatientSavedRecipe extends React.Component {
           key={recipe._id}
           recipe_img={recipe.recipe_img}
           recipe_name={recipe.recipe_name}
+          recipe_link={recipe.recipe_link}
           recipe_id={recipe._id}
           notes={recipe.notes.map(note => <div key={note._id} className="notes">{note.body}<Button className="delete" id={note._id} onClick={this.deleteNote}>x</Button></div>)}
           note_text={this.state.note_text}
@@ -70,49 +85,10 @@ class PatientSavedRecipe extends React.Component {
         />
       </div>
     ))
-    // console.log(savedCard[this.state.recipe_index])
     return savedCard[this.state.recipe_index];
-    // this.makeDrop();
-  }
-
-  makeDrop = () => {
-    var str = "";
-    for (var i = 0; i < 9; i++) {
-        str = str + i;
-    }
-      console.log(str);
-    // expected output: "012345678"
-
-    // let recipes=this.state.recipes.length;
-    // console.log(recipes);
-    // for(let i=0; i<recipes; i++) {
-    //   console.log(i);
-    //   console.log(this.state.recipes[i]);
-    //   console.log(this.state.recipes[i].recipe_name);
-    //   const savedSelect = 
-    //     <li id={this.state.recipes[i].recipe_uri} key={this.state.recipes[i]._id}>
-    //       <a href={this.state.recipes[i].recipe_link} title={this.state.recipes[i].recipe_name}>
-    //         <img src={this.state.recipes[i].recipe_img}></img>
-    //       </a>
-    //       <h4>{this.state.recipes[i].recipe_name}</h4>
-    //     </li>
-    //   return savedSelect;
-      
-    // }
-    // const savedSelect = this.state.recipes.map(recipe => (
-    //   <li id={recipe.recipe_uri} key={recipe._id}>
-    //     <a href={recipe.recipe_link} title={recipe.recipe_name}>
-    //       <img src={recipe.recipe_img}></img>
-    //     </a>
-    //     <h4>{recipe.recipe_name}</h4>
-    //   </li>
-    // ))
-
-    // return savedSelect;
   }
 
   onChange = (e) => {
-    console.log(this.state);
     this.setState({
       [e.target.name]: e.target.value
     });
@@ -120,20 +96,14 @@ class PatientSavedRecipe extends React.Component {
 
   saveNote = (event) => {
     const id = event.target.id;
-    const noteObj = {
-      recipe_id: id,
-      body: this.state.note_text
-    }
-    console.log(noteObj);
+    const noteObj = { recipe_id: id, body: this.state.note_text}
     axios.post(`/api/abttru/recipes/notes/${id}`, noteObj)
       .then(res => {
-        console.log(res);
         this.setState({ note_text: "" });
       })
       .then(() => {
         axios.get(`/api/abttru/user/${this.props.location.params.userId}`)
           .then(res => {
-            console.log(res.data);
             this.setState(res.data);
           })
       })
@@ -142,15 +112,11 @@ class PatientSavedRecipe extends React.Component {
 
   deleteNote = (event) => {
     const id = event.target.id;
-    console.log(id);
     axios.delete(`/api/abttru/recipes/notes/${id}`)
-      .then(res => {
-        console.log(res);
-      })
+      .then(res => { console.log(res); })
       .then(() => {
         axios.get(`/api/abttru/user/${this.props.location.params.userId}`)
           .then(res => {
-            console.log(res.data);
             this.setState(res.data);
           })
       })
@@ -159,15 +125,11 @@ class PatientSavedRecipe extends React.Component {
 
   deleteRecipe = (event) => {
     const id = event.target.id;
-    console.log(id);
     axios.delete(`/api/abttru/recipes/${id}`)
-      .then(res => {
-        console.log(res);
-      })
+      .then(res => { console.log(res); })
       .then(() => {
         axios.get(`/api/abttru/user/${this.props.location.params.userId}`)
           .then(res => {
-            console.log(res.data);
             this.setState(res.data);
           })
       })
@@ -175,37 +137,21 @@ class PatientSavedRecipe extends React.Component {
   }
 
   render() {
-    const id = this.props.location.params.userId
-    // const savedCard = this.state.recipes.map(recipe => (
-    //   <div key={recipe._id}>
-    //     <RecipeCard
-    //       saveNote={this.saveNote}
-    //       deleteRecipe={this.deleteRecipe}
-    //       key={recipe._id}
-    //       recipe_img={recipe.recipe_img}
-    //       recipe_name={recipe.recipe_name}
-    //       recipe_id={recipe._id}
-    //       notes={recipe.notes.map(note => <div key={note._id} className="notes">{note.body}<Button className="delete" id={note._id} onClick={this.deleteNote}>x</Button></div>)}
-    //       note_text={this.state.note_text}
-    //       onChange={this.onChange}
-    //     />
-    //   </div>
-    // ))
+    const id = this.props.location.params.userId;
 
-    // const savedSelect = this.state.recipes.map(recipe => (
-    //   <li id={recipe.recipe_uri} key={recipe._id}>
-    //     <a href={recipe.recipe_link} title={recipe.recipe_name}>
-    //       <img src={recipe.recipe_img}></img>
-    //     </a>
-    //     <h4>{recipe.recipe_name}</h4>
-    //     {/* <div>{recipe.notes.map(note => <div key={note._id} className="notes">{note.body}<Button className="delete" id={note._id} onClick={this.deleteNote}>x</Button></div>)}</div> */}
-    //     {/* <FormGroup> */}
-    //       {/* <FormControl type="text" name="note_text" id={recipe.recipe_id} value={this.state.note_text} onChange={this.onChange} placeholder="Type note here" /> */}
-    //     {/* </FormGroup> */}
-    //     {/* <a><i className="fa fa-plus"><Button className="btn save btn-success" id={recipe._id} onClick={this.saveNote}>ADD NOTES</Button></i></a> */}
-    //     {/* <a><Button className="delete_recipe" id={recipe._id} onClick={this.deleteRecipe}>DELETE RECIPE</Button></a> */}
-    //   </li>
-    // ))
+    const savedSelect = this.state.recipes.map(recipe => (
+      <li id={recipe.recipe_uri} key={recipe._id}>
+      <div className="pic">
+        <a href={recipe.recipe_link} title={recipe.recipe_name} target="_blank">
+          <img src={recipe.recipe_img}></img>
+        </a>
+        </div>
+        <div className="info">
+          <h4>{recipe.recipe_name}</h4>
+          <div className="button" id={recipe.recipe_uri} onClick={this.changeRecipe}>GET RECIPE CARD</div>
+        </div>
+      </li>
+    ))
 
     const piePlot = this.state.recipe_data.map(recipe => (
       <div key={recipe.uri}>
@@ -241,7 +187,7 @@ class PatientSavedRecipe extends React.Component {
             <tbody>
               <tr key={this.state._id}>
                 <td className="id"><Link to={`/user`}>{this.state._id}</Link></td>
-                <td className="name"><FontAwesomeIcon icon="user-circle" />{this.state.name}</td>
+                <td className="name"><FontAwesomeIcon icon="user-circle" />{this.state.first_name} {this.state.last_name}</td>
                 <td className="risk_factor"><FontAwesomeIcon icon="heartbeat" /> {this.state.risk_factor}</td>
                 <td className="diet_recommendation"><FontAwesomeIcon icon="utensils" /> {this.state.diet_recommendation}</td>
                 <td className="diet_restriction"><FontAwesomeIcon icon="allergies" />{this.state.diet_restriction}</td>
@@ -249,30 +195,33 @@ class PatientSavedRecipe extends React.Component {
             </tbody>
           </Table>
           </div>
-          <div className="row">
-            <div className="col-md-12">
+
+            <div className="row">
+            <div className="col-md-1"></div>
+            <div className="col-md-4">
+              <div className="card-holder">
+              {this.makeCard()}
+              </div>
+            </div>
+            <div className="col-md-2"></div>
+            <div className="col-md-4">
+              {piePlot}
+            </div>
+            <div className="col-md-1"></div>
+            </div>
+            <div className="row">
+            <div className="col-md-1"></div>
+            <div className="col-md-6">
               <div className="btn-group">
                 <button type="button" className="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
                   Select a Recipe
                 </button>
                 <ul className="dropdown-menu scrollable-menu" role="menu">
-                {this.makeDrop()}
-                  {/* {savedSelect} */}
+                  {savedSelect}
                 </ul>
               </div>
             </div>
-            <div className="row">
-            
-            <div className="col-md-4">
-              <div className="card-holder">
-                {this.makeCard()}
-              </div>
-            </div>
             <div className="col-md-4"></div>
-            <div className="col-md-4">
-              {piePlot}
-            </div>
-            </div>
         </div>
       </div>
     )

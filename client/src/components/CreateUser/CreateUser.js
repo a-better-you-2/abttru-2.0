@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import { Panel, Button, Form, FormGroup, FormControl, Label, Alert } from "react-bootstrap";
+import { Panel, Button, Alert } from "react-bootstrap";
 import FontAwesomeIcon from "@fortawesome/react-fontawesome";
 import Step1 from '../formComponents/StepOne';
 import Step2 from '../formComponents/StepTwo';
@@ -37,7 +37,7 @@ class Create extends React.Component {
   }
 
   onChange = (e) => {
-    console.log(this.state);
+    // console.log(this.state);
     this.setState({
       [e.target.name]: e.target.value
     });
