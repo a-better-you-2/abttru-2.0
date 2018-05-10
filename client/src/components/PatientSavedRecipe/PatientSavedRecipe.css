@@ -33,11 +33,11 @@
 
 }
 .dropdown-menu {
-  width: 500px;
+  width: 100%;
 }
 
 .btn-group img {
-  height: 80px;
+  height: 50px;
   float: left;
 }
 
@@ -54,4 +54,21 @@
   height: auto;
   max-height: 300px;
   overflow-x: hidden;
+}
+
+.info {
+  padding: 10px;
+  margin-left: 50px;
+}
+
+.pic {
+  padding: 5px;
+}
+
+.card-holder {
+  padding-top: 50px;
+}
+
+.open {
+  width: 100%;
 }
