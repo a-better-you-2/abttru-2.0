@@ -3,8 +3,9 @@ import { Link } from "react-router-dom";
 import { Button, Table } from "react-bootstrap";
 import axios from "axios";
 import FontAwesomeIcon from "@fortawesome/react-fontawesome";
-import RecipeCard from "./SavedRecipeCard"
-import "./PatientSavedRecipe.css"
+import RecipeCard from "./SavedRecipeCard";
+import UserJumbotron from '../UserJumbotron/'
+import "./PatientSavedRecipe.css";
 
 
 class PatientSavedRecipe extends React.Component {
@@ -13,7 +14,7 @@ class PatientSavedRecipe extends React.Component {
   }
   state = {
     data: [],
-    user_id: "",
+    user_id: this.props.location.params.userId,
     recipe_id: "",
     name: "",
     password: "",
@@ -22,13 +23,15 @@ class PatientSavedRecipe extends React.Component {
     diet_restriction: "",
     recipes: [],
     notes: [],
-    note_text: ""
+    note_text: "",
+    isUserPage: false
   };
 
 
 
   componentDidMount() {
     console.log(this.props.location.params.userId)
+    console.log(this.state.user_id);
     // axios.get(`/api/abttru/${this.props.match.params.id}`)
     axios.get(`/api/abttru/user/${this.props.location.params.userId}`)
       .then(res => {
@@ -113,7 +116,7 @@ class PatientSavedRecipe extends React.Component {
   }
 
   render() {
-    const id = this.props.location.params.userId
+    // const id = this.props.location.params.userId
     const patientSavedCard = this.state.recipes.map(recipe => (
       <div key={recipe._id}>
         <RecipeCard
@@ -130,38 +133,21 @@ class PatientSavedRecipe extends React.Component {
       </div>
     ))
     return (
-      <div className="container">
+      <div>
         <h4>Recipe Page</h4>
         <h5>
           <Link to="/">
             <FontAwesomeIcon icon="user-plus" /> Go Back Home
               </Link>
-          <Link to={{ pathname: `/user/${id}` }}>
-            <FontAwesomeIcon icon="user-plus" /> Go Back To User
-              </Link>
         </h5>
         <div>
-          <Table hover striped responsive>
-            <thead>
-              <tr>
-                <th>User ID</th>
-                <th>Name</th>
-                <th>Risk Factor</th>
-                <th>Diet Recommendation</th>
-                <th>Diet Restrictions</th>
-                change something on here
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td className="id"><Link to={`/user`}>{this.state._id}</Link></td>
-                <td className="name"><FontAwesomeIcon icon="user-circle" />{this.state.name}</td>
-                <td className="risk_factor"><FontAwesomeIcon icon="heartbeat" /> {this.state.risk_factor}</td>
-                <td className="diet_recommendation"><FontAwesomeIcon icon="utensils" /> {this.state.diet_recommendation}</td>
-                <td className="diet_restriction"><FontAwesomeIcon icon="allergies" />{this.state.diet_restriction}</td>
-              </tr>
-            </tbody>
-          </Table>
+          <UserJumbotron
+            className={"col-md-12"}
+            userId={this.state.user_id}
+            risk_factor={this.state.risk_factor}
+            diet_label={this.state.diet_recommendation}
+            health_label={this.state.diet_restriction}
+            isUserPage={this.state.isUserPage} />
         </div>
         <div className="row">
           {patientSavedCard}

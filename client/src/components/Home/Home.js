@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Panel, Form, FormGroup, FormControl, Label } from "react-bootstrap";
 import FontAwesomeIcon from "@fortawesome/react-fontawesome";
 import Login from "./Login";
+import NavigationBar from '../NavigationBar';
 // import "./UserList.css";
 
 class Home extends React.Component {
@@ -13,7 +14,8 @@ class Home extends React.Component {
 
   render() {
     return (
-      <div className="container">
+      <div>
+        {/* <NavigationBar /> */}
         <Panel bsStyle="primary">
           <Panel>
             <Panel.Title componentClass="h4">User List</Panel.Title>
