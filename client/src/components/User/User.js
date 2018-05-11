@@ -76,34 +76,40 @@ class User extends React.Component {
                 <h5>{this.state.first_name} {this.state.last_name}</h5>
               </Col>
               <Col xs={3} md={3} lg={3}>
-                <h5>Cholesterol Status</h5>
                 <FontAwesomeIcon icon="vial" size="4x" color={this.fontAwesomeColor()} />
-                <h5>{this.state.risk_factor}</h5>
+                <h6>{this.state.risk_factor}</h6>
+                <h7>Cholesterol Status:</h7>
+                
               </Col>
               <Col xs={3} md={3} lg={3}>
-                <h5>Blood Pressure</h5>
                 <FontAwesomeIcon icon="heartbeat" size="4x" color="green" />
-                <h5>Normal</h5>
+                <h6>Normal</h6>
+                <h6>Blood Pressure</h6>
+               
               </Col>
               <Col xs={3} md={3} lg={3}>
-                <h5>Blood Glucose</h5>
                 <FontAwesomeIcon icon="cube" size="4x" color="green" />
-                <h5>Normal</h5>
+                <h6>Normal</h6>
+                <h6>Blood Glucose</h6>
+                
               </Col>
               <Col xs={3} md={3} lg={3}>
-                <h5>Waist Circumference</h5>
                 <FontAwesomeIcon icon="tape" size="4x" color="green" />
-                <h5>Normal</h5>
+                <h6>Normal</h6>
+                <h6>Waist Circumference</h6>
+                
               </Col>
               <Col xs={3} md={3} lg={3}>
-                <h5>Diet Recommendation</h5>
                 <FontAwesomeIcon icon="utensils" size="4x" color="blue" />
-                <h5>{this.state.diet_recommendation}</h5>
+                <h6>{this.state.diet_recommendation}</h6>
+                <h6>Diet Recommendation</h6>
+                
               </Col>
               <Col xs={3} md={3} lg={3}>
-                <h5>Diet Restriction</h5>
                 <FontAwesomeIcon icon="ban" size="4x" color="red" />
-                <h5>{this.state.diet_restriction}</h5>
+                <h6>{this.state.diet_restriction}</h6>
+                <h6>Diet Restriction</h6>
+                
               </Col>
             </Col>
           </Row>
