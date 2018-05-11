@@ -243,6 +243,7 @@ class PatientSavedRecipe extends React.Component {
               </div>
               <div className="col-xs-0 col-sm-0 col-md-2 cold-lg-2"></div>
               </div>
+  
             </div>
     )
   }
