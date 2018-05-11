@@ -1,11 +1,10 @@
 html,
 body,
 #root {
+  /* overflow: visible; */
   height: 100%;
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  background-image: url("./test.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color: rgb(168, 168, 172);
 }

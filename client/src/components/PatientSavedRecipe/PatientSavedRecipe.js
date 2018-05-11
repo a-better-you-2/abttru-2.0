@@ -25,8 +25,6 @@ class PatientSavedRecipe extends React.Component {
     recipe_index: 0,
     notes: [],
     note_text: "",
-    msg: "I'm setting the state here!",
-    propsObjectArr: []
   };
 
   componentDidMount() {
@@ -43,6 +41,12 @@ class PatientSavedRecipe extends React.Component {
 
   getData = () => {
     let allUri= this.state.recipes.map(recipe => (recipe.recipe_uri));
+    console.log(allUri.length);
+    let length = allUri.length;
+    console.log(length);
+    let randomRecipe = Math.floor((Math.random() * length) + 1);
+    console.log(randomRecipe);
+    this.setState({recipe_index: randomRecipe})
     console.log(this.state.recipe_index);
     let recipeUri = allUri[this.state.recipe_index];
     console.log(recipeUri);
@@ -215,33 +219,31 @@ class PatientSavedRecipe extends React.Component {
           </div>
 
             <div className="row">
-            <div className="col-md-2"></div>
-            <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-              <div className="card-holder">
-              {this.makeCard()}
+              <div className="col-xs-12 col-sm-12 col-md-6">
+                <div className="btn-group">
+                  <button type="button" className="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
+                     RECIPE BOX
+                  </button>
+                  <ul className="dropdown-menu scrollable-menu" role="menu">
+                    {savedSelect}
+                  </ul>
+                </div>
               </div>
-            </div>
-            {/* <div className="col-md-2"></div> */}
-            <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-              {piePlot}
-            </div>
-            <div className="col-md-2"></div>
+              <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4"></div>
             </div>
             <div className="row">
-            <div className="col-md-1"></div>
-            <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-              <div className="btn-group">
-                <button type="button" className="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
-                  Select a Recipe
-                </button>
-                <ul className="dropdown-menu scrollable-menu" role="menu">
-                  {savedSelect}
-                </ul>
+            <div className="col-xs-0 col-sm-0 col-md-2 cold-lg-2"></div>
+              <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                  <div className="card-holder">
+                    {this.makeCard()}
+                  </div>
+              </div>
+              <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                {piePlot}
+              </div>
+              <div className="col-xs-0 col-sm-0 col-md-2 cold-lg-2"></div>
               </div>
             </div>
-            <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6"></div>
-        </div>
-      </div>
     )
   }
 }
