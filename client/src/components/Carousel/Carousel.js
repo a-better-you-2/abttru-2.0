@@ -35,7 +35,9 @@ class ControlledCarousel extends React.Component {
 
   getRecipes() {
     console.log(this.props)
-    axios.get(`https://api.edamam.com/search?q=${this.state.name}&app_id=76461587&app_key=b829a690de0595f2fa5b7cb02db4cd99&calories=591-722&Diet=${this.props.diet_label}&Health=${this.props.health_label}`)
+    let firstIndex = Math.floor(Math.random() * 90) + 1;
+    console.log(firstIndex);
+    axios.get(`https://api.edamam.com/search?q=${this.state.name}&app_id=76461587&app_key=b829a690de0595f2fa5b7cb02db4cd99&calories=591-722&from=${firstIndex}&Diet=${this.props.diet_label}&Health=${this.props.health_label}`)
       .then(res => {
         console.log(res);
         console.log(res.data.hits);
