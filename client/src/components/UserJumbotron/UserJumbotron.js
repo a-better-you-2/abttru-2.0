@@ -3,6 +3,7 @@ import { Row, Col, Jumbotron, Grid, Image, Tabs, Tab } from "react-bootstrap";
 import FontAwesomeIcon from "@fortawesome/react-fontawesome";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import './UserJumbotron.css';
 
 
 class UserJumbotron extends React.Component {
@@ -14,7 +15,9 @@ class UserJumbotron extends React.Component {
             risk_factor: this.props.risk_factor,
             diet_recommendation: this.props.diet_label,
             diet_restriction: this.props.health_label,
-            isUserPage: this.props.isUserPage
+            isUserPage: this.props.isUserPage,
+            savedTab: "",
+            profileTab: ""
         };
     }
 
@@ -25,6 +28,23 @@ class UserJumbotron extends React.Component {
         }
         else {
             return "black";
+        }
+    }
+
+    profileTabColor = () => {
+        if (this.props.isUserPage) {
+            return "red";
+        }
+        else {
+            return "";
+        }
+    }
+    savedTabColor = () => {
+        if (this.props.isUserPage) {
+            return "";
+        }
+        else {
+            return "red";
         }
     }
 
@@ -72,16 +92,19 @@ class UserJumbotron extends React.Component {
 
                         </Col>
                     </Row>
-                    {this.state.isUserPage ?
+                    <Row>
+
+                    </Row>
+                    <div className="tabGroup">
+                        <Link to={{ pathname: `/user/${this.state.user_id}` }}>
+                            <button id="profileTab" style={{ backgroundColor: this.profileTabColor() }}><FontAwesomeIcon icon="user-plus" /> Go Back To Profile </button>
+                        </Link>
+
                         <Link to={{ pathname: "/savedrecipes/", params: { userId: this.state.user_id } }} >
-                            <FontAwesomeIcon icon="utensils" /> Saved Recipes
-                    </Link>
-                        : <Link to={{ pathname: `/user/${this.state.user_id}` }}>
-                            <FontAwesomeIcon icon="user-plus" /> Go Back To Profile
-                    </Link>}
+                            <button id="savedTab" style={{ backgroundColor: this.savedTabColor() }}> <FontAwesomeIcon icon="utensils" /> Saved Recipes </button>
+                        </Link>
+                    </div>
                 </Jumbotron>
-
-
 
             </div>
         );

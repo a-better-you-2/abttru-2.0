@@ -1,0 +1,11 @@
+#profileTab {
+    border-radius: 0 0 0 80px;
+}
+
+#savedTab {
+    border-radius: 0 0 80px 0;
+}
+
+.tabGroup {
+    position: absolute;
+}

@@ -4,6 +4,7 @@ import { Panel, Form, FormGroup, FormControl, Label } from "react-bootstrap";
 import FontAwesomeIcon from "@fortawesome/react-fontawesome";
 import Login from "./Login";
 import NavigationBar from '../NavigationBar';
+import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
 // import "./UserList.css";
 
 class Home extends React.Component {
@@ -14,7 +15,8 @@ class Home extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="container">
+
         {/* <NavigationBar /> */}
         <Panel bsStyle="primary">
           <Panel>
