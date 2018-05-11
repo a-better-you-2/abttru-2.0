@@ -1,3 +1,4 @@
+
 .delete.btn.btn-default  {
     background-color:transparent;
     color: #ff1744;
@@ -37,12 +38,15 @@
 }
 
 .btn-group img {
-  height: 50px;
+  width: 100%;
+  height: auto;
   float: left;
+  margin-bottom: 5px;
 }
 
 .dropdown-menu>li>a:hover { 
-  background: #f1f9fd 
+  background: #f1f9fd ;
+  width: 100%;
 } 
 
 /* $search-blue */
@@ -51,6 +55,7 @@
 }
 
 .scrollable-menu {
+  width: 100%;
   height: auto;
   max-height: 300px;
   overflow-x: hidden;
@@ -58,17 +63,34 @@
 
 .info {
   padding: 10px;
-  margin-left: 50px;
+  margin-left: 35px;
+  float:left;
 }
 
 .pic {
-  padding: 5px;
+  padding-top: 5px;
+  width: 25%;
+  height: auto;
 }
 
 .card-holder {
-  padding-top: 50px;
+  padding: 60px 20px 20px 20px;
 }
 
 .open {
   width: 100%;
 }
+
+.open>.dropdown-menu {
+  width: 350px;
+  height: auto;
+  display: block;
+}
+/* 
+@media screen and (max-width: 600px) {
+  .js-plotly-plot {
+    margin-top: 150px;
+    margin-left: -350px;
+  }
+} */
+

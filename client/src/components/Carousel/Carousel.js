@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, Carousel, Row, Col } from "react-bootstrap";
 import PiePlot from "../Graphs/PiePlot";
+import PiePlotTwo from "../PatientSavedRecipe";
 import Input from "../Input/Input";
 import "./Carousel.css"
 import axios from "axios";
@@ -34,6 +35,7 @@ class ControlledCarousel extends React.Component {
   }
 
   getRecipes() {
+    this.setState({showCarousel: false})
     console.log(this.props)
     axios.get(`https://api.edamam.com/search?q=${this.state.name}&app_id=76461587&app_key=b829a690de0595f2fa5b7cb02db4cd99&calories=591-722&Diet=${this.props.diet_label}&Health=${this.props.health_label}`)
       .then(res => {
@@ -42,8 +44,8 @@ class ControlledCarousel extends React.Component {
         for (var i = 0; i < res.data.hits.length; i++) {
           this.setState({
             data: res.data.hits,
-            showCarousel: true
-
+            showCarousel: true,
+            name: ""
           })
         }
       })
@@ -74,6 +76,17 @@ class ControlledCarousel extends React.Component {
     });
   }
 
+  makePlot = () => {
+    const piePlot = this.state.data.map((data) => {
+      <div>
+      <PiePlotTwo
+        digestData={data.digest}
+        yieldData={data.yield}
+      />
+    </div>
+    })
+    return piePlot[this.state.index]
+  }
 
 
   render() {
@@ -108,6 +121,7 @@ class ControlledCarousel extends React.Component {
       </div>
     )
 
+ 
 
     return (
       <div className="container">
@@ -118,6 +132,7 @@ class ControlledCarousel extends React.Component {
           placeholder="Search ingredients(e.g. chicken)"
         /><br />
         <Button onClick={this.getRecipes.bind(this)} color="primary">Get Recipes</Button>
+        {this.makePlot()}
         {this.state.showCarousel ? (
           <div>
 
@@ -133,7 +148,7 @@ class ControlledCarousel extends React.Component {
           </div>)
           : null}
 
-
+          
       </div>
     );
 

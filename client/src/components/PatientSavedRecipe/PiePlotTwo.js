@@ -1,21 +1,21 @@
 import React, { Component } from 'react';
 import Plot from 'react-plotly.js';
 import recipeData from './PlotData.json';
+import { Button, Carousel, Row, Col } from "react-bootstrap";
 // import './App.css';
 
-class PiePlotTwo extends Component {
+class PiePlot extends Component {
+
     constructor(props) {
-        super(props);
+        super();
         // console.log(this.props);
 
     }
 
+
     state = {
-        // data: this.props.faveRecipe,
         data: [],
-        // data: this.props.data,
-        dupe_data: this.props.dupe,
-        plotObjectsArr: [],
+        plotObjectsArray: [],
         showingPlot: [],
         plotLayout: [],
         recipeIndex: 0,
@@ -27,26 +27,27 @@ class PiePlotTwo extends Component {
         this.createPlot()
     }
 
-    createPlot = () => {
-        this.setState({data: this.props});
-        console.log(this.state.data);
-        const dataCopy = this.props.data;
 
+    createPlot = () => {
+        // this.setState({ data: this.props });
+        // console.log(this.state.data);
+
+        // create a copy of the data object
+        const dataCopy = this.props.data;
+        // for each recipe 'hits', extract the 'digest' property within the 'recipe' property
+        // as well as the yield by recipe
+        let plotObjectsArray = [];
+        let recipeDigestArray = [];
+        let recipeYieldArray = [];
+
+        // dataCopy.forEach(result => {
+        // console.log(result.recipe.digest);
         let recipeDigest = this.props.digestData;
         let recipeYield = this.props.yieldData;
-        
-        // // as well as the yield by recipe
-        // let recipeDigest = this.state.data.map((data) =>
-        //    data.recipe.digest
-        // );
-        console.log(recipeDigest);
-        // let recipeYield = this.state.data.map((data) =>
-        //     data.recipe.yield
-        // );
-        console.log(recipeYield);
-        let plotObjects = this.state.data.map((recipe) =>
-            [
-              {
+
+        // create object that will contain the 'data' property for each distinct plot (macros, fats, minerals, vitamins)
+        let plotObjects = [
+            {
                 data: {
                     values: [],
                     labels: [],
@@ -56,14 +57,13 @@ class PiePlotTwo extends Component {
                     type: 'pie'
                 },
                 layout: {
-                    title: 'Nutrient Breakdown',
-                    titlefont:
-                        {size: 30},
                     paper_bgcolor: 'transparent',
                     plot_bgcolor: 'transparent',
                     annotations: [
                         {
-                            font: {size: 14},
+                            font: {
+                                size: 14
+                            },
                             showarrow: false,
                             text: 'Macros',
                             x: 0.3,
@@ -71,11 +71,18 @@ class PiePlotTwo extends Component {
                         }
                     ],
                     showlegend: false,
-                    height: 430,
-                    width: 350
+                    height: 350,
+                    width: 350,
+                    margin: {
+                        l: 25,
+                        r: 25,
+                        t: 25,
+                        b: 25,
+                    }
                 }
-              },
-              {
+
+            },
+            {
                 data: {
                     values: [],
                     labels: [],
@@ -87,16 +94,14 @@ class PiePlotTwo extends Component {
                     type: 'pie'
                 },
                 layout: {
-                    title: 'Nutrient Breakdown',
-                    titlefont:
-                        {
-                            size: 30
-                        },
+
                     paper_bgcolor: 'transparent',
                     plot_bgcolor: 'transparent',
                     annotations: [
                         {
-                            font: {size: 14},
+                            font: {
+                                size: 14
+                            },
                             showarrow: false,
                             text: 'Fats',
                             x: 0.5,
@@ -104,11 +109,17 @@ class PiePlotTwo extends Component {
                         }
                     ],
                     showlegend: false,
-                    height: 430,
-                    width: 350
+                    height: 350,
+                    width: 350,
+                    margin: {
+                        l: 25,
+                        r: 25,
+                        t: 25,
+                        b: 25,
+                    }
                 }
-              },
-              {
+            },
+            {
                 data: {
                     values: [],
                     labels: [],
@@ -118,14 +129,14 @@ class PiePlotTwo extends Component {
                     type: 'pie'
                 },
                 layout: {
-                    title: 'Nutrient Breakdown',
-                    titlefont:
-                        {size: 30},
+
                     paper_bgcolor: 'transparent',
                     plot_bgcolor: 'transparent',
                     annotations: [
                         {
-                            font: {size: 14},
+                            font: {
+                                size: 14
+                            },
                             showarrow: false,
                             text: 'Minerals',
                             x: 0.3,
@@ -133,11 +144,17 @@ class PiePlotTwo extends Component {
                         }
                     ],
                     showlegend: false,
-                    height: 430,
-                    width: 350
+                    height: 350,
+                    width: 350,
+                    margin: {
+                        l: 25,
+                        r: 25,
+                        t: 25,
+                        b: 25,
+                    }
                 }
-              },
-              {
+            },
+            {
                 data: {
                     values: [],
                     labels: [],
@@ -147,14 +164,14 @@ class PiePlotTwo extends Component {
                     type: 'pie'
                 },
                 layout: {
-                    title: 'Nutrient Breakdown',
-                    titlefont:
-                        {size: 30},
+
                     paper_bgcolor: 'transparent',
                     plot_bgcolor: 'transparent',
                     annotations: [
                         {
-                            font: {size: 14},
+                            font: {
+                                size: 14
+                            },
                             showarrow: false,
                             text: 'Vitamins',
                             x: 0.27,
@@ -162,95 +179,126 @@ class PiePlotTwo extends Component {
                         }
                     ],
                     showlegend: false,
-                    height: 430,
-                    width: 350
+                    height: 350,
+                    width: 350,
+                    margin: {
+                        l: 25,
+                        r: 25,
+                        t: 25,
+                        b: 25,
+                    }
                 }
-              }
-            ]
-        );
-        console.log(plotObjects);
+
+            }]
+        // console.log(plotObjects);
+        plotObjectsArray.push(plotObjects);
+        recipeDigestArray.push(recipeDigest);
+        recipeYieldArray.push(recipeYield);
+        // })
+
+        // console.log(plotObjectsArray);
         // console.log(recipeDigestArray);
         // console.log(recipeYieldArray);
-        recipeDigest.forEach((recipe, index) => {
-            recipe.forEach((nutrient, i) => {
+        recipeDigestArray.forEach((recipeDigest, index) => {
+            recipeDigest.forEach((nutrient, i) => {
                 // push nutrient servings for each nutrient
                 if (nutrient.label === "Fat" || nutrient.label === "Carbs" || nutrient.label === "Protein") {
-                    plotObjects[index][0].data.values.push(nutrient.total / recipeYield[index]);
-                    plotObjects[index][0].data.labels.push(nutrient.label);
+                    plotObjectsArray[index][0].data.values.push(nutrient.total / recipeYieldArray[index]);
+                    plotObjectsArray[index][0].data.labels.push(nutrient.label);
 
                     if (nutrient.label === "Fat") {
                         nutrient.sub.forEach(fat => {
-                            plotObjects[index][1].data.values.push(fat.total / recipeYield[index]);
-                            plotObjects[index][1].data.labels.push(fat.label);
+
+                            plotObjectsArray[index][1].data.values.push(fat.total / recipeYieldArray[index]);
+                            plotObjectsArray[index][1].data.labels.push(fat.label);
                         })
+
                     }
-                } else if (i > 3 & i < 11) {
-                    // console.log(nutrient, i);
-                    // console.log(.slice(1, 5));
-                    plotObjects[index][2].data.values.push((nutrient.total) / recipeYield[index]);
-                    plotObjects[index][2].data.labels.push(nutrient.label);
-                } else if (i > 10 & i < 24) {
-                    // console.log(nutrient, i);
-                    // console.log(.slice(1, 5));
-                    plotObjects[index][3].data.values.push(nutrient.total / recipeYield[index]);
-                    plotObjects[index][3].data.labels.push(nutrient.label);
                 }
+
+                else if (i > 3 & i < 11) {
+                    // console.log(nutrient, i);
+                    // console.log(arrayDigest.slice(1, 5));
+                    plotObjectsArray[index][2].data.values.push((nutrient.total) / recipeYieldArray[index]);
+                    plotObjectsArray[index][2].data.labels.push(nutrient.label);
+
+                }
+                else if (i > 10 & i < 24) {
+                    // console.log(nutrient, i);
+                    // console.log(arrayDigest.slice(1, 5));
+                    plotObjectsArray[index][3].data.values.push(nutrient.total / recipeYieldArray[index]);
+                    plotObjectsArray[index][3].data.labels.push(nutrient.label);
+
+                }
+
             })
         })
+        // console.log(plotObjectsArray);
 
-        console.log(plotObjects);
-        let obj = plotObjects;
-        this.setState((state) => ({plotObjectsArr: plotObjects}));
         this.setState(
-            {plotObjectsArr: plotObjects},
-            {showingPlot: plotObjects[0][0].data},
-            {plotLayout: plotObjects[0][0].layout}
-        );
-        console.log(this.state.plotObjectsArr);
-        console.log(this.state.dupe_data);
+            {
+                plotObjectsArray: plotObjectsArray,
+                showingPlot: plotObjectsArray[0][0].data,
+                plotLayout: plotObjectsArray[0][0].layout
+            });
+
+        // console.log(this.state.plotObjectsArray);
+
     }
 
     nextRecipe = (event) => {
-        console.log(event.target.value);
-        this.setState(
-            {recipeIndex: this.state.recipeIndex + 1},
-            {showingPlot: this.state.plotObjects[this.state.recipeIndex][this.state.nutrientIndex].data}
-        );
-        console.log(this.state.recipeIndex);
-        console.log(this.state.showingPlot);
+        // console.log(event.target.value);
+        // console.log(this.state.recipeIndex);
+        // console.log(this.state.plotObjectsArray);
+        let plotObjectsArrayCopy = this.state.plotObjectsArray;
+        let recipeIndexCopy = this.state.recipeIndex;
+        let nutrientIndex = this.state.nutrientIndex;
+        recipeIndexCopy++;
+        this.setState({
+            showingPlot: plotObjectsArrayCopy[recipeIndexCopy][nutrientIndex].data,
+            recipeIndex: recipeIndexCopy
+        });
     }
 
     switchPlot = (event) => {
-        console.log(event.target.value);
-        this.setState({showingPlot: this.state.plotObjects[this.state.recipeIndex][this.state.nutrientIndex].data},
-            {nutrientIndex: this.state.nutrientIndex},
-            {plotLayout: this.state.plotObjects[this.state.recipeIndex][this.state.nutrientIndex].layout}
-        )
+        // console.log(event.target.value);
+        let plotObjectsArrayCopy = this.state.plotObjectsArray;
+        let recipeIndexCopy = this.state.recipeIndex;
+        let nutrientIndex = event.target.value;
+        this.setState({
+            showingPlot: plotObjectsArrayCopy[recipeIndexCopy][nutrientIndex].data,
+            nutrientIndex: nutrientIndex,
+            plotLayout: plotObjectsArrayCopy[recipeIndexCopy][nutrientIndex].layout
+        })
     }
+
+
+
+
     // console.log(this.state.plotData)
 
     render() {
-
         return (
             <div>
-                <header>
-                  <h1>Check out these pretty plots!</h1>
-                </header>
-
-                {/* <button onClick={this.nextRecipe.bind(this)} value={0}>Next Recipe</button> */}
-                {/* <button onClick={this.createPlot.bind(this)}>Search for a recipe!</button> */}
-                <button onClick={this.switchPlot.bind(this)} value={0}>Macros</button>
-                <button onClick={this.switchPlot.bind(this)} value={1}>Lipids</button>
-                <button onClick={this.switchPlot.bind(this)} value={2}>Minerals</button>
-                <button onClick={this.switchPlot.bind(this)} value={3}>Vitamins</button>
-
-                <Plot
-                    data={[this.state.showingPlot]}
-                    layout={this.state.plotLayout} 
-                />
+                {/* <Row> */}
+                    {/* <Col xs={12}> */}
+                        <div className="graphButtons">
+                            <Button onClick={this.switchPlot} value={0}>Macros</Button>
+                            <Button onClick={this.switchPlot} value={1}>Lipids</Button>
+                            <Button onClick={this.switchPlot} value={2}>Minerals</Button>
+                            <Button onClick={this.switchPlot} value={3}>Vitamins</Button>
+                        </div>
+                    {/* </Col> */}
+                {/* </Row> */}
+                {/* <Row> */}
+                    <Plot
+                        data={[this.state.showingPlot]}
+                        layout={this.state.plotLayout} 
+                    />
+                {/* </Row> */}
             </div>
         );
     }
 }
 
-export default PiePlotTwo;
+export default PiePlot;

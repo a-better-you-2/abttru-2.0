@@ -8,7 +8,7 @@
     height: 550px;
 }
 
-@media screen and (max-width: 600px) {
+/* @media screen and (max-width: 600px) {
     .svg-container {
         top: -90px;
         left: -60px;
@@ -23,4 +23,4 @@
     .graphButtons {
         text-align: center;
     }
-    }
+    } */

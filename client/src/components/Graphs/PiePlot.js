@@ -280,22 +280,22 @@ class PiePlot extends Component {
     render() {
         return (
             <div>
-                <Row>
-                    <Col xs={12}>
+                {/* <Row> */}
+                    {/* <Col xs={12}> */}
                         <div className="graphButtons">
                             <Button onClick={this.switchPlot} value={0}>Macros</Button>
                             <Button onClick={this.switchPlot} value={1}>Lipids</Button>
                             <Button onClick={this.switchPlot} value={2}>Minerals</Button>
                             <Button onClick={this.switchPlot} value={3}>Vitamins</Button>
                         </div>
-                    </Col>
-                </Row>
-                <Row>
+                    {/* </Col> */}
+                {/* </Row> */}
+                {/* <Row> */}
                     <Plot
                         data={[this.state.showingPlot]}
                         layout={this.state.plotLayout} 
                     />
-                </Row>
+                {/* </Row> */}
             </div>
         );
     }

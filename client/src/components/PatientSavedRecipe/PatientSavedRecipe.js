@@ -25,8 +25,6 @@ class PatientSavedRecipe extends React.Component {
     recipe_index: 0,
     notes: [],
     note_text: "",
-    msg: "I'm setting the state here!",
-    propsObjectArr: []
   };
 
   componentDidMount() {
@@ -43,6 +41,12 @@ class PatientSavedRecipe extends React.Component {
 
   getData = () => {
     let allUri= this.state.recipes.map(recipe => (recipe.recipe_uri));
+    console.log(allUri.length);
+    let length = allUri.length;
+    console.log(length);
+    let randomRecipe = Math.floor((Math.random() * length) + 1);
+    console.log(randomRecipe);
+    this.setState({recipe_index: randomRecipe})
     console.log(this.state.recipe_index);
     let recipeUri = allUri[this.state.recipe_index];
     console.log(recipeUri);
@@ -74,6 +78,7 @@ class PatientSavedRecipe extends React.Component {
         <RecipeCard
           saveNote={this.saveNote}
           deleteRecipe={this.deleteRecipe}
+          flipCard={this.flipCard}
           key={recipe._id}
           recipe_img={recipe.recipe_img}
           recipe_name={recipe.recipe_name}
@@ -86,6 +91,23 @@ class PatientSavedRecipe extends React.Component {
       </div>
     ))
     return savedCard[this.state.recipe_index];
+  }
+
+  flipCard = (e) => {
+    console.log(e.target);
+    const card = document.querySelector("#cardDiv");
+    const target = e.target.id;
+    console.log(target);
+    const isFlipped = e.target.getAttribute("isflipped");
+    // card.classList.remove("hover");
+    if (isFlipped === "false") {
+      document.getElementById(target).setAttribute("ispicked", "true");
+      card.classList.toggle("hover");
+      return;
+    } else if (isFlipped === "true") {
+      card.classList.toggle("hover");
+      return;
+    }
   }
 
   onChange = (e) => {
@@ -143,7 +165,7 @@ class PatientSavedRecipe extends React.Component {
       <li id={recipe.recipe_uri} key={recipe._id}>
       <div className="pic">
         <a href={recipe.recipe_link} title={recipe.recipe_name} target="_blank">
-          <img src={recipe.recipe_img}></img>
+          <img className="img-responsive" src={recipe.recipe_img}></img>
         </a>
         </div>
         <div className="info">
@@ -163,7 +185,7 @@ class PatientSavedRecipe extends React.Component {
     ))
 
     return (
-      <div className="container">
+      <div className="savedPage">
         <h4>Recipe Page</h4>
         <h5>
           <Link to="/">
@@ -197,33 +219,31 @@ class PatientSavedRecipe extends React.Component {
           </div>
 
             <div className="row">
-            <div className="col-md-1"></div>
-            <div className="col-md-4">
-              <div className="card-holder">
-              {this.makeCard()}
+              <div className="col-xs-12 col-sm-12 col-md-6">
+                <div className="btn-group">
+                  <button type="button" className="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
+                     RECIPE BOX
+                  </button>
+                  <ul className="dropdown-menu scrollable-menu" role="menu">
+                    {savedSelect}
+                  </ul>
+                </div>
               </div>
-            </div>
-            <div className="col-md-2"></div>
-            <div className="col-md-4">
-              {piePlot}
-            </div>
-            <div className="col-md-1"></div>
+              <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4"></div>
             </div>
             <div className="row">
-            <div className="col-md-1"></div>
-            <div className="col-md-6">
-              <div className="btn-group">
-                <button type="button" className="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
-                  Select a Recipe
-                </button>
-                <ul className="dropdown-menu scrollable-menu" role="menu">
-                  {savedSelect}
-                </ul>
+            <div className="col-xs-0 col-sm-0 col-md-2 cold-lg-2"></div>
+              <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                  <div className="card-holder">
+                    {this.makeCard()}
+                  </div>
+              </div>
+              <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                {piePlot}
+              </div>
+              <div className="col-xs-0 col-sm-0 col-md-2 cold-lg-2"></div>
               </div>
             </div>
-            <div className="col-md-4"></div>
-        </div>
-      </div>
     )
   }
 }
