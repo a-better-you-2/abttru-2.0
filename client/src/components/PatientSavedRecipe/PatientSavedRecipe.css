@@ -1,3 +1,4 @@
+
 .delete.btn.btn-default  {
     background-color:transparent;
     color: #ff1744;
@@ -22,3 +23,77 @@
   .card {
     z-index: 1;
   }
+
+  body { 
+    padding: 40px; 
+  }
+
+.dropdown-toggle { 
+  width: 100px;
+  height: 20px;
+
+}
+.dropdown-menu {
+  width: 100%;
+}
+
+.btn-group img {
+  width: 100%;
+  height: auto;
+  float: left;
+  margin-bottom: 5px;
+}
+
+.dropdown-menu>li>a:hover { 
+  background: #f1f9fd ;
+  width: 100%;
+} 
+
+/* $search-blue */
+.dropdown-header { 
+  background: #ccc; font-size: 14px; font-weight: 700; padding-top: 5px; padding-bottom: 5px; margin-top: 10px; margin-bottom: 5px 
+}
+
+.scrollable-menu {
+  width: 100%;
+  height: auto;
+  max-height: 300px;
+  overflow-x: hidden;
+}
+
+.info {
+  padding: 10px;
+  float:left;
+}
+
+.pic {
+  padding-top: 5px;
+  width: 25%;
+  height: auto;
+}
+
+.card-holder {
+  padding: 60px 20px 20px 20px;
+}
+
+.open {
+  width: 100%;
+}
+
+.open>.dropdown-menu {
+  width: 350px;
+  height: auto;
+  display: block;
+}
+
+panel {
+  width: 100%;
+}
+/* 
+@media screen and (max-width: 600px) {
+  .js-plotly-plot {
+    margin-top: 150px;
+    margin-left: -350px;
+  }
+} */
+

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import { Panel, Button, Form, FormGroup, FormControl, Label, Alert } from "react-bootstrap";
+import { Panel, Button, Alert } from "react-bootstrap";
 import FontAwesomeIcon from "@fortawesome/react-fontawesome";
 import Step1 from '../formComponents/StepOne';
 import Step2 from '../formComponents/StepTwo';
@@ -37,7 +37,7 @@ class Create extends React.Component {
   }
 
   onChange = (e) => {
-    console.log(this.state);
+    // console.log(this.state);
     this.setState({
       [e.target.name]: e.target.value
     });
@@ -134,6 +134,7 @@ class Create extends React.Component {
                   <FontAwesomeIcon icon="list" /> Patient List
                 </Link>
               </h5>
+
               <div className="App">
 
                 <div className='step-progress'>
@@ -164,6 +165,7 @@ class Create extends React.Component {
               </div>
               <Button className="btn-lg btn-danger" onClick={this.onSubmit} color="primary">Submit</Button>
 
+
             </div>
           </Panel.Body>
         </Panel>
@@ -174,7 +176,6 @@ class Create extends React.Component {
             </Alert>
         )
         }
-
       </div>
     )
   }

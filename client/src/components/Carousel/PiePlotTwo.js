@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import Plot from 'react-plotly.js';
-import recipeData from './PlotData.json';
 import { Button, Carousel, Row, Col } from "react-bootstrap";
 // import './App.css';
 
-class PiePlot extends Component {
+class PiePlotTwo extends Component {
 
     constructor(props) {
         super();
@@ -301,4 +300,4 @@ class PiePlot extends Component {
     }
 }
 
-export default PiePlot;
+export default PiePlotTwo;

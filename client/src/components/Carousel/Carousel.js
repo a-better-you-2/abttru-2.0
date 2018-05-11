@@ -30,7 +30,7 @@ class ControlledCarousel extends React.Component {
     this.setState({
       [name]: value
     });
-    console.log(this.state);
+    // console.log(this.state);
   }
 
   getRecipes() {
@@ -63,7 +63,7 @@ class ControlledCarousel extends React.Component {
       recipe_link: target.getAttribute("link"),
       recipe_uri: target.id
     }
-    console.log(recipeObj);
+    // console.log(recipeObj);
     axios.post(`/api/abttru/recipes/${id}`, recipeObj)
       .then(res => { console.log(res); })
       .catch(err => console.log(err));
@@ -85,44 +85,50 @@ class ControlledCarousel extends React.Component {
       <div>
         <Carousel.Item>
           <Row>
-            <Col md={1}></Col>
-            <Col xs={12} md={4}>
-              <img width={400} height={400} alt="recipeImage" src={data.recipe.image} />
-            </Col>
-            <Col md={1}></Col>
-            <br /><br />
-            <Col xs={12} md={6}>
+          <Col xs={0} sm={0} md={1} lg={1}></Col>
+            <Col xs={12} sm={12} md={5} lg={5}>
+            {/* <Carousel.Caption> */}
+            <h2 id="recipe-title">{data.recipe.label}</h2>
+            <img width={250} height={250} alt="recipeImage" id="pic" src={data.recipe.image} />
+            <h2 id="recipe-link"><a href={data.recipe.url} target="_blank">Tap HERE for the recipe</a></h2>
+            <Button className="save-button" id={data.recipe.uri} name={data.recipe.label} img={data.recipe.image} link={data.recipe.url} onClick={this.saveRecipe}>SAVE RECIPE</Button>
+          {/* </Carousel.Caption> */}
+          </Col>
+          <Col xs={12} sm={12} md={5} lg={5}>
               <PiePlot
                 className="pieTry"
                 digestData={this.state.data[index].recipe.digest}
                 yieldData={this.state.data[index].recipe.yield}
               />
             </Col>
+            <Col xs={0} sm={0} md={1} lg={1}></Col>
           </Row>
-          <br /><br />
-          <Carousel.Caption>
-            <h1 id="recipe-title">{data.recipe.label}</h1>
-            <h1 id="recipe-link"><a href={data.recipe.url} target="_blank">Tap HERE for the recipe</a></h1>
-            <Button className="save-button" id={data.recipe.uri} name={data.recipe.label} img={data.recipe.image} link={data.recipe.url} onClick={this.saveRecipe}>SAVE RECIPE</Button>
-          </Carousel.Caption>
         </Carousel.Item>
 
       </div>
     )
 
-
     return (
-      <div className="container">
+      <div className="">
+        <Row>
+        <Col xs={0} sm={0} md={2} lg={2}></Col>
+        <Col xs={12} sm={12} md={8} lg={8}>
         <Input
           name="name"
           value={this.state.name}
           onChange={this.handleInputChange}
           placeholder="Search ingredients(e.g. chicken)"
-        /><br />
+        />
+        <br />
         <Button onClick={this.getRecipes.bind(this)} color="primary">Get Recipes</Button>
+        </Col>
+        <Col xs={0} sm={0} md={2} lg={2}></Col>
+        </Row>
+        <Row>
+        <Col xs={0} sm={0} md={2} lg={2}></Col>
+        <Col xs={12} sm={12} md={8} lg={8}>
         {this.state.showCarousel ? (
           <div>
-
             <Carousel className="Carousel"
               activeIndex={index}
               direction={direction}
@@ -134,6 +140,9 @@ class ControlledCarousel extends React.Component {
             </Carousel>
           </div>)
           : null}
+          </Col>
+          <Col xs={0} sm={0} md={2} lg={2}></Col>
+        </Row>
 
 
       </div>

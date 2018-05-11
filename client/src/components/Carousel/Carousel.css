@@ -1,14 +1,25 @@
-
+#pic {
+    margin: 10px 0px 0px 40px;
+}
 
 .graphButtons {
     text-align: center;
 }
 
 .item {
-    height: 550px;
+    height: 500x;
+    /* margin-bottom: 20px; */
 }
 
+
 @media screen and (max-width: 600px) {
+  .js-plotly-plot {
+    /* margin-top: 150px; */
+    margin-left: -10px;
+  }
+}
+
+/* @media screen and (max-width: 600px) {
     .svg-container {
         top: -90px;
         left: -60px;
@@ -23,4 +34,4 @@
     .graphButtons {
         text-align: center;
     }
-    }
+    } */

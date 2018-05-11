@@ -8,9 +8,7 @@ import UserJumbotron from '../UserJumbotron/'
 import ControlledCarousel from "../Carousel";
 
 class User extends React.Component {
-  constructor(props) {
-    super(props)
-  }
+
   state = {
     data: [],
     user_id: this.props.match.params.id,
