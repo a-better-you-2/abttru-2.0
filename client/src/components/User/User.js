@@ -68,7 +68,7 @@ class User extends React.Component {
 
         <UserJumbotron
           className={"col-md-12"}
-          userId={this.state.user_id}
+          userId={this.props.match.params.id}
           risk_factor={this.state.risk_factor}
           diet_label={this.state.diet_recommendation}
           health_label={this.state.diet_restriction}

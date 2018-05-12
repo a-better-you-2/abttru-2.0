@@ -15,8 +15,8 @@ class PatientSavedRecipe extends React.Component {
 
   state = {
     data: [],
-    initial_user_id: this.props.location.params.userId,
-    user_id: "",
+    initial_user_id: this.props.match.params.id,
+    user_id: this.props.match.params.id,
     recipe_id: "",
     name: "",
     password: "",
@@ -32,8 +32,9 @@ class PatientSavedRecipe extends React.Component {
   };
 
   componentDidMount() {
+    console.log(this.props);
     this.setState({
-      user_id: this.state.initial_user_id
+      user_id: this.props.match.params.userId
     })
     // console.log(this.props.location.params.userId)
     // console.log(this.state.user_id);

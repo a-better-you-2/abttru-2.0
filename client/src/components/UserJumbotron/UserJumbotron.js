@@ -96,11 +96,11 @@ class UserJumbotron extends React.Component {
 
                     </Row>
                     <div className="tabGroup">
-                        <Link to={{ pathname: `/user/${this.state.user_id}` }}>
+                        <Link to={{ pathname: `/user/${this.state.user_id}`, params: { id: this.state.user_id } }}>
                             <button id="profileTab" style={{ backgroundColor: this.profileTabColor() }}><FontAwesomeIcon icon="user-plus" /> Go Back To Profile </button>
                         </Link>
 
-                        <Link to={{ pathname: "/savedrecipes/", params: { userId: this.state.user_id } }} >
+                        <Link to={{ pathname: `/savedrecipes/${this.state.user_id}`, params: { id: this.state.user_id } }} >
                             <button id="savedTab" style={{ backgroundColor: this.savedTabColor() }}> <FontAwesomeIcon icon="utensils" /> Saved Recipes </button>
                         </Link>
                     </div>
