@@ -5,7 +5,6 @@ module.exports = {
     db.Note
       .create(req.body)
       .then(dbNote => {
-
         console.log(dbNote);
         console.log("adding note");
         res.json(dbNote);

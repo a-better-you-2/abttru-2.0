@@ -15,7 +15,8 @@ class PatientSavedRecipe extends React.Component {
 
   state = {
     data: [],
-    user_id: this.props.location.params.userId,
+    initial_user_id: this.props.location.params.userId,
+    user_id: "",
     recipe_id: "",
     name: "",
     password: "",
@@ -31,54 +32,56 @@ class PatientSavedRecipe extends React.Component {
   };
 
   componentDidMount() {
-
+    this.setState({
+      user_id: this.state.initial_user_id
+    })
     // console.log(this.props.location.params.userId)
     // console.log(this.state.user_id);
     // axios.get(`/api/abttru/${this.props.match.params.id}`)
 
     // console.log(this.props.location.params.userId)
 
-    axios.get(`/api/abttru/user/${this.props.location.params.userId}`)
+    axios.get(`/api/abttru/user/${this.state.initial_user_id}`)
       .then(res => {
         // console.log(res.data);
         this.setState(res.data);
       })
-      .then(() =>{
+      .then(() => {
         this.getData();
       });
   }
 
   getData = () => {
-    let allUri= this.state.recipes.map(recipe => (recipe.recipe_uri));
+    let allUri = this.state.recipes.map(recipe => (recipe.recipe_uri));
     console.log(allUri.length);
     let length = allUri.length;
     console.log(length);
     let randomRecipe = Math.floor((Math.random() * length) + 1);
     console.log(randomRecipe);
-    this.setState({recipe_index: randomRecipe})
+    this.setState({ recipe_index: randomRecipe })
     console.log(this.state.recipe_index);
     let recipeUri = allUri[this.state.recipe_index];
     console.log(recipeUri);
     let edemamUri = recipeUri.replace(/[#]/gi, '%23', /[:]/gi, '%3A', /[/]/, '%2F');
     axios.get(`https://api.edamam.com/search?r=${edemamUri}&app_id=76461587&app_key=b829a690de0595f2fa5b7cb02db4cd99`)
       .then((recipe) => {
-      // console.log(recipe.data);
-      this.setState({recipe_data: recipe.data})
-      console.log(this.state.recipe_data[0]);
-    })
+        // console.log(recipe.data);
+        this.setState({ recipe_data: recipe.data })
+        console.log(this.state.recipe_data[0]);
+      })
   }
 
   changeRecipe = (e) => {
     console.log(e.target.id);
-    const id= e.target.id;
+    const id = e.target.id;
     const uri = id.replace(/[#]/gi, '%23', /[:]/gi, '%3A', /[/]/, '%2F');
     axios.get(`https://api.edamam.com/search?r=${uri}&app_id=76461587&app_key=b829a690de0595f2fa5b7cb02db4cd99`)
-    .then((recipe) => {
-    console.log(recipe.data);
-    const pos = this.state.recipes.map(function(e) { return e.recipe_uri; }).indexOf(id);
-    console.log(pos)
-    this.setState({recipe_data: recipe.data, recipe_index: pos});
-    })
+      .then((recipe) => {
+        console.log(recipe.data);
+        const pos = this.state.recipes.map(function (e) { return e.recipe_uri; }).indexOf(id);
+        console.log(pos)
+        this.setState({ recipe_data: recipe.data, recipe_index: pos });
+      })
   }
 
   makeCard = () => {
@@ -127,13 +130,13 @@ class PatientSavedRecipe extends React.Component {
 
   saveNote = (event) => {
     const id = event.target.id;
-    const noteObj = { recipe_id: id, body: this.state.note_text}
+    const noteObj = { recipe_id: id, body: this.state.note_text }
     axios.post(`/api/abttru/recipes/notes/${id}`, noteObj)
       .then(res => {
         this.setState({ note_text: "" });
       })
       .then(() => {
-        axios.get(`/api/abttru/user/${this.props.location.params.userId}`)
+        axios.get(`/api/abttru/user/${this.state.user_id}`)
           .then(res => {
             this.setState(res.data);
           })
@@ -146,7 +149,7 @@ class PatientSavedRecipe extends React.Component {
     axios.delete(`/api/abttru/recipes/notes/${id}`)
       .then(res => { console.log(res); })
       .then(() => {
-        axios.get(`/api/abttru/user/${this.props.location.params.userId}`)
+        axios.get(`/api/abttru/user/${this.state.user_id}`)
           .then(res => {
             this.setState(res.data);
           })
@@ -159,7 +162,7 @@ class PatientSavedRecipe extends React.Component {
     axios.delete(`/api/abttru/recipes/${id}`)
       .then(res => { console.log(res); })
       .then(() => {
-        axios.get(`/api/abttru/user/${this.props.location.params.userId}`)
+        axios.get(`/api/abttru/user/${this.state.user_id}`)
           .then(res => {
             this.setState(res.data);
           })
@@ -169,14 +172,14 @@ class PatientSavedRecipe extends React.Component {
 
   render() {
 
-    const id = this.props.location.params.userId;
+    const id = this.state.user_id;
 
     const savedSelect = this.state.recipes.map(recipe => (
       <li id={recipe.recipe_uri} key={recipe._id}>
-      <div className="pic">
-        <a href={recipe.recipe_link} title={recipe.recipe_name} target="_blank">
-          <img className="img-responsive" src={recipe.recipe_img}></img>
-        </a>
+        <div className="pic">
+          <a href={recipe.recipe_link} title={recipe.recipe_name} target="_blank">
+            <img className="img-responsive" src={recipe.recipe_img}></img>
+          </a>
         </div>
         <div className="info">
           <h4>{recipe.recipe_name}</h4>
@@ -195,58 +198,57 @@ class PatientSavedRecipe extends React.Component {
     ))
 
     return (
+      <div>
+        <div className="savedPage">
 
-      <div className="savedPage">
-
-        <h4>Recipe Page</h4>
-        <h5>
-          <Link to="/">
-            <FontAwesomeIcon icon="user-plus" /> Go Back Home
+          <h4>Recipe Page</h4>
+          <h5>
+            <Link to="/">
+              <FontAwesomeIcon icon="user-plus" /> Go Back Home
               </Link>
-        </h5>
-        <div>
+          </h5>
+          <div>
 
-          <UserJumbotron
-            className={"col-md-12"}
-            userId={this.state.user_id}
-            risk_factor={this.state.risk_factor}
-            diet_label={this.state.diet_recommendation}
-            health_label={this.state.diet_restriction}
-            isUserPage={this.state.isUserPage} />
+            <UserJumbotron
+              className={"col-md-12"}
+              userId={this.state.initial_user_id}
+              risk_factor={this.state.risk_factor}
+              diet_label={this.state.diet_recommendation}
+              health_label={this.state.diet_restriction}
+              isUserPage={this.state.isUserPage} />
+          </div>
+
         </div>
-        <div className="row">
-          {patientSavedCard}
+
+        <div>
+          <div className="row">
+            <div className="col-xs-12 col-sm-12 col-md-6">
+              <div className="btn-group">
+                <button type="button" className="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
+                  RECIPE BOX
+                  </button>
+                <ul className="dropdown-menu scrollable-menu" role="menu">
+                  {savedSelect}
+                </ul>
+              </div>
+            </div>
+            <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4"></div>
+          </div>
+          <div className="row">
+            <div className="col-xs-0 col-sm-0 col-md-2 cold-lg-2"></div>
+            <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+              <div className="card-holder">
+                {this.makeCard()}
+              </div>
+            </div>
+            <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+              {piePlot}
+            </div>
+            <div className="col-xs-0 col-sm-0 col-md-2 cold-lg-2"></div>
+          </div>
         </div>
       </div>
 
-
-            <div className="row">
-              <div className="col-xs-12 col-sm-12 col-md-6">
-                <div className="btn-group">
-                  <button type="button" className="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
-                     RECIPE BOX
-                  </button>
-                  <ul className="dropdown-menu scrollable-menu" role="menu">
-                    {savedSelect}
-                  </ul>
-                </div>
-              </div>
-              <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4"></div>
-            </div>
-            <div className="row">
-            <div className="col-xs-0 col-sm-0 col-md-2 cold-lg-2"></div>
-              <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                  <div className="card-holder">
-                    {this.makeCard()}
-                  </div>
-              </div>
-              <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                {piePlot}
-              </div>
-              <div className="col-xs-0 col-sm-0 col-md-2 cold-lg-2"></div>
-              </div>
-  
-            </div>
     )
   }
 }
