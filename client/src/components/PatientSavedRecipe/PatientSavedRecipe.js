@@ -44,7 +44,7 @@ class PatientSavedRecipe extends React.Component {
 
     axios.get(`/api/abttru/user/${this.state.initial_user_id}`)
       .then(res => {
-        // console.log(res.data);
+        console.log(res.data);
         this.setState(res.data);
       })
       .then(() => {
@@ -54,7 +54,7 @@ class PatientSavedRecipe extends React.Component {
 
   getData = () => {
     let allUri = this.state.recipes.map(recipe => (recipe.recipe_uri));
-    console.log(allUri.length);
+    console.log(allUri);
     let length = allUri.length;
     console.log(length);
     let randomRecipe = Math.floor((Math.random() * length) + 1);
@@ -137,7 +137,7 @@ class PatientSavedRecipe extends React.Component {
         this.setState({ note_text: "" });
       })
       .then(() => {
-        axios.get(`/api/abttru/user/${this.state.user_id}`)
+        axios.get(`/api/abttru/user/${this.props.match.params.id}`)
           .then(res => {
             this.setState(res.data);
           })
@@ -150,7 +150,7 @@ class PatientSavedRecipe extends React.Component {
     axios.delete(`/api/abttru/recipes/notes/${id}`)
       .then(res => { console.log(res); })
       .then(() => {
-        axios.get(`/api/abttru/user/${this.state.user_id}`)
+        axios.get(`/api/abttru/user/${this.props.match.params.id}`)
           .then(res => {
             this.setState(res.data);
           })
@@ -163,7 +163,7 @@ class PatientSavedRecipe extends React.Component {
     axios.delete(`/api/abttru/recipes/${id}`)
       .then(res => { console.log(res); })
       .then(() => {
-        axios.get(`/api/abttru/user/${this.state.user_id}`)
+        axios.get(`/api/abttru/user/${this.props.match.params.id}`)
           .then(res => {
             this.setState(res.data);
           })

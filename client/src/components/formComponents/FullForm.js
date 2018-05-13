@@ -17,6 +17,7 @@ class FullForm extends Component {
         last_name: "",
         email: "",
         password: "",
+        user_photo: "",
         dob: "",
         sex: "",
         heightFoot: "",
@@ -32,7 +33,7 @@ class FullForm extends Component {
     }
 
     onChangeHandler = e => {
-        console.log(this.props);
+        console.log(this.state);
         const name = e.target.name;
         const value = e.target.value;
         this.setState({
@@ -79,6 +80,7 @@ class FullForm extends Component {
                         last_name={this.state.last_name}
                         email={this.state.email}
                         password={this.state.password}
+                        user_photo={this.state.user_photo}
                         onChange={this.onChangeHandler}
                     />
                 },
@@ -108,6 +110,7 @@ class FullForm extends Component {
                         last_name={this.state.last_name}
                         email={this.state.email}
                         password={this.state.password}
+                        user_photo={this.state.user_photo}
                         dob={this.state.dob}
                         sex={this.state.sex}
                         heightFoot={this.state.heightFoot}

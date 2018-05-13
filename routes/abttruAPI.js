@@ -12,7 +12,7 @@ router.route("/abttru/doctor/:id")
   .get(doctorController.findById) // get all users
   .post(doctorController.createUser) // create a user
 
-  router.route("/abttru/doctorLogin")
+router.route("/abttru/doctorLogin")
   .post(doctorController.login)
 
 router.route("/abbtru/patient/:id")

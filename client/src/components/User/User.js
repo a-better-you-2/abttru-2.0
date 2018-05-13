@@ -16,10 +16,12 @@ class User extends React.Component {
     first_name: "",
     last_name: "",
     password: "",
+    user_photo: "",
     risk_factor: "",
     diet_recommendation: "",
     diet_restriction: "",
     recipes: [],
+    passwordHasBeenUpdated: "",
     tabKey: 1,
     isUserPage: true
   };
@@ -45,14 +47,6 @@ class User extends React.Component {
     }
   }
 
-  // this.tabHandler = this.tabHandler.bind(this);
-
-  // tabHandler = (tabKey) => {
-  //   console.log(tabKey)
-  //   this.setState({ tabKey })
-
-  // }
-
 
   render() {
     return (
@@ -69,6 +63,7 @@ class User extends React.Component {
         <UserJumbotron
           className={"col-md-12"}
           userId={this.props.match.params.id}
+          user_photo={this.state.user_photo}
           risk_factor={this.state.risk_factor}
           diet_label={this.state.diet_recommendation}
           health_label={this.state.diet_restriction}

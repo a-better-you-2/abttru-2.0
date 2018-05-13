@@ -46,6 +46,15 @@ const StepOne = (props) => (
                     onChange={props.onChange} />
             </label>
             <br /><br />
+            <label>
+                Link to photo:{"  "}
+                <input type="text"
+                    name="user_photo"
+                    placeholder="Link to photo url..."
+                    value={props.user_photo}
+                    onChange={props.onChange} />
+            </label>
+            <br /><br />
         </form>
     </div>
 )

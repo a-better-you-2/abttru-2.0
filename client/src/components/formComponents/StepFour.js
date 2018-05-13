@@ -9,6 +9,7 @@ const StepFour = (props) => (
                 <p>Last Name: {props.last_name}</p>
                 <p>Email: {props.email}</p>
                 <p>Password: {props.password}</p>
+                <p>Photo Link: {props.user_photo}</p>
                 <p>DOB: {props.dob}</p>
                 <p>Sex: {props.sex}</p>
                 <p>Height: {props.heightFoot}' {props.heightInch}"</p>

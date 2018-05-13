@@ -21,6 +21,7 @@ class Create extends React.Component {
       last_name: "",
       email: "",
       password: "",
+      user_photo: "",
       dob: "",
       sex: "",
       heightFoot: "",
@@ -32,12 +33,13 @@ class Create extends React.Component {
       risk_factor: "",
       diet_recommendation: "",
       diet_restriction: "",
+      user_photo: "",
       isValid: true
     };
   }
 
   onChange = (e) => {
-    // console.log(this.state);
+    console.log(this.state);
     this.setState({
       [e.target.name]: e.target.value
     });
@@ -73,6 +75,7 @@ class Create extends React.Component {
             last_name={this.state.last_name}
             email={this.state.email}
             password={this.state.password}
+            user_photo={this.state.user_photo}
             onChange={this.onChange}
           />
         },
@@ -104,6 +107,7 @@ class Create extends React.Component {
             last_name={this.state.last_name}
             email={this.state.email}
             password={this.state.password}
+            user_photo={this.state.user_photo}
             dob={this.state.dob}
             sex={this.state.sex}
             heightFoot={this.state.heightFoot}

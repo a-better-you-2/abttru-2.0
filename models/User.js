@@ -28,6 +28,10 @@ const userSchema = new mongoose.Schema({
         type: String,
         require: true
     },
+    user_photo: {
+        type: String,
+        require: true,
+    },
     recipes: [{
         type: Schema.Types.ObjectId,
         ref: "Recipes"
