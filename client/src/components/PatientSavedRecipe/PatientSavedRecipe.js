@@ -20,6 +20,7 @@ class PatientSavedRecipe extends React.Component {
     recipe_id: "",
     name: "",
     password: "",
+    user_photo: "",
     risk_factor: "",
     diet_recommendation: "",
     diet_restriction: "",
@@ -57,13 +58,14 @@ class PatientSavedRecipe extends React.Component {
     console.log(allUri);
     let length = allUri.length;
     console.log(length);
-    let randomRecipe = Math.floor((Math.random() * length) + 1);
+    let randomRecipe = Math.floor(Math.random() * length);
     console.log(randomRecipe);
-    this.setState({ recipe_index: randomRecipe })
+    this.setState({ recipe_index: randomRecipe });
     console.log(this.state.recipe_index);
     let recipeUri = allUri[this.state.recipe_index];
     console.log(recipeUri);
     let edemamUri = recipeUri.replace(/[#]/gi, '%23', /[:]/gi, '%3A', /[/]/, '%2F');
+    console.log(edemamUri);
     axios.get(`https://api.edamam.com/search?r=${edemamUri}&app_id=76461587&app_key=b829a690de0595f2fa5b7cb02db4cd99`)
       .then((recipe) => {
         // console.log(recipe.data);
@@ -216,7 +218,9 @@ class PatientSavedRecipe extends React.Component {
               risk_factor={this.state.risk_factor}
               diet_label={this.state.diet_recommendation}
               health_label={this.state.diet_restriction}
-              isUserPage={this.state.isUserPage} />
+              isUserPage={this.state.isUserPage}
+              user_photo={this.state.user_photo}
+            />
           </div>
 
         </div>

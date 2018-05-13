@@ -33,11 +33,12 @@ class ControlledCarousel extends React.Component {
     // console.log(this.state);
   }
 
-  getRecipes() {
+  getRecipes(e) {
+    e.preventDefault();
     console.log(this.props)
-    let firstIndex = Math.floor(Math.random() * 90) + 1;
+    let firstIndex = Math.floor(Math.random() * 20);
     console.log(firstIndex);
-    axios.get(`https://api.edamam.com/search?q=${this.state.name}&app_id=76461587&app_key=b829a690de0595f2fa5b7cb02db4cd99&calories=591-722&from=${firstIndex}&Diet=${this.props.diet_label}&Health=${this.props.health_label}`)
+    axios.get(`https://api.edamam.com/search?q=${this.state.name}&app_id=6ee418a4&app_key=38910f6a58e3c348dd000cd7a9fc1139&calories=591-722&from=${firstIndex}&Diet=${this.props.diet_label}&Health=${this.props.health_label}`)
       .then(res => {
         console.log(res);
         console.log(res.data.hits);
@@ -85,16 +86,16 @@ class ControlledCarousel extends React.Component {
       <div>
         <Carousel.Item>
           <Row>
-          <Col xs={0} sm={0} md={1} lg={1}></Col>
+            <Col xs={0} sm={0} md={1} lg={1}></Col>
             <Col xs={12} sm={12} md={5} lg={5}>
-            {/* <Carousel.Caption> */}
-            <h2 id="recipe-title">{data.recipe.label}</h2>
-            <img width={250} height={250} alt="recipeImage" id="pic" src={data.recipe.image} />
-            <h2 id="recipe-link"><a href={data.recipe.url} target="_blank">Tap HERE for the recipe</a></h2>
-            <Button className="save-button" id={data.recipe.uri} name={data.recipe.label} img={data.recipe.image} link={data.recipe.url} onClick={this.saveRecipe}>SAVE RECIPE</Button>
-          {/* </Carousel.Caption> */}
-          </Col>
-          <Col xs={12} sm={12} md={5} lg={5}>
+              {/* <Carousel.Caption> */}
+              <h2 id="recipe-title">{data.recipe.label}</h2>
+              <img width={250} height={250} alt="recipeImage" id="pic" src={data.recipe.image} />
+              <h2 id="recipe-link"><a href={data.recipe.url} target="_blank">Tap HERE for the recipe</a></h2>
+              <Button className="save-button" id={data.recipe.uri} name={data.recipe.label} img={data.recipe.image} link={data.recipe.url} onClick={this.saveRecipe}>SAVE RECIPE</Button>
+              {/* </Carousel.Caption> */}
+            </Col>
+            <Col xs={12} sm={12} md={5} lg={5}>
               <PiePlot
                 className="pieTry"
                 digestData={this.state.data[index].recipe.digest}
@@ -111,35 +112,37 @@ class ControlledCarousel extends React.Component {
     return (
       <div className="">
         <Row>
-        <Col xs={0} sm={0} md={2} lg={2}></Col>
-        <Col xs={12} sm={12} md={8} lg={8}>
-        <Input
-          name="name"
-          value={this.state.name}
-          onChange={this.handleInputChange}
-          placeholder="Search ingredients(e.g. chicken)"
-        />
-        <br />
-        <Button onClick={this.getRecipes.bind(this)} color="primary">Get Recipes</Button>
-        </Col>
-        <Col xs={0} sm={0} md={2} lg={2}></Col>
+          <Col xs={0} sm={0} md={2} lg={2}></Col>
+          <Col xs={12} sm={12} md={8} lg={8}>
+            <form onSubmit={this.getRecipes.bind(this)}>
+              <Input
+                name="name"
+                value={this.state.name}
+                onChange={this.handleInputChange}
+                placeholder="Search ingredients(e.g. chicken)"
+              />
+              <br />
+              <Button onClick={this.getRecipes.bind(this)} color="primary">Get Recipes</Button>
+            </form>
+          </Col>
+          <Col xs={0} sm={0} md={2} lg={2}></Col>
         </Row>
         <Row>
-        <Col xs={0} sm={0} md={2} lg={2}></Col>
-        <Col xs={12} sm={12} md={8} lg={8}>
-        {this.state.showCarousel ? (
-          <div>
-            <Carousel className="Carousel"
-              activeIndex={index}
-              direction={direction}
-              onSelect={this.handleSelect}
-            >
-              {searchedRecipeCard.map(c => {
-                return <Carousel.Item>{c}</Carousel.Item>
-              })}
-            </Carousel>
-          </div>)
-          : null}
+          <Col xs={0} sm={0} md={2} lg={2}></Col>
+          <Col xs={12} sm={12} md={8} lg={8}>
+            {this.state.showCarousel ? (
+              <div>
+                <Carousel className="Carousel"
+                  activeIndex={index}
+                  direction={direction}
+                  onSelect={this.handleSelect}
+                >
+                  {searchedRecipeCard.map(c => {
+                    return <Carousel.Item>{c}</Carousel.Item>
+                  })}
+                </Carousel>
+              </div>)
+              : null}
           </Col>
           <Col xs={0} sm={0} md={2} lg={2}></Col>
         </Row>
