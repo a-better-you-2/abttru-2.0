@@ -17,3 +17,11 @@
   .diet_restriction {
     width: 25%;
   }
+
+  .img-responsive {
+    margin-right: 10px;
+    margin-left: 10px;
+    height: 100px;
+  }
+
+  
