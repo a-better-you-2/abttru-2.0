@@ -27,9 +27,19 @@ class Doctor extends React.Component {
   }
 
   render() {
-    // const patients = this.state.patients.map((user) =>
-
-    // )
+    const savedSelect = this.state.patients.map(patient => (
+      <li id={patient._id} key={patient._id}>
+        <div className="pic">
+          <Link to={{ pathname: `/show/${patient._id}`, params: { data: this.state, doctor_id: this.props.match.params.id } }}>
+            <img className="img-responsive" src={patient.user_photo
+            }></img>
+          </Link>
+        </div>
+        <div className="info">
+          <h4>{patient.first_name}{" "}{patient.last_name}</h4>
+        </div>
+      </li>
+    ))
     return (
       <div className="container">
         <h4>User List</h4>
@@ -72,6 +82,19 @@ class Doctor extends React.Component {
             }
           </tbody>
         </Table>
+        <div className="row">
+          <div className="col-xs-12 col-sm-12 col-md-6">
+            <div className="btn-group">
+              <button type="button" className="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
+                Patients
+              </button>
+              <ul className="dropdown-menu scrollable-menu" role="menu">
+                {savedSelect}
+              </ul>
+            </div>
+          </div>
+          <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4"></div>
+        </div>
       </div>
     )
   }

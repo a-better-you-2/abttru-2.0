@@ -1,6 +1,6 @@
 import React from "react";
 import { Button, Carousel, Row, Col } from "react-bootstrap";
-import { PacmanLoader } from 'react-spinners';
+import { MoonLoader } from 'react-spinners';
 import PiePlot from "../Graphs/PiePlot";
 import Input from "../Input/Input";
 import "./Carousel.css"
@@ -138,10 +138,10 @@ class ControlledCarousel extends React.Component {
         <div className="row">
           <div className="col-xs-0 col-sm-0 col-md-4 cold-lg-4"></div>
           <div className="col-md-8 sweet-loader">
-            <PacmanLoader
+            <MoonLoader
               loading={this.state.loading}
-              size={200}
-              color={'#659765'}
+              size={300}
+              color={'#915659'}
             />
           </div>
           <div className="col-xs-0 col-sm-0 col-md-4 cold-lg-4"></div>
