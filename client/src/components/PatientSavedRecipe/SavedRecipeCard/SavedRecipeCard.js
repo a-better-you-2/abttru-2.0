@@ -1,5 +1,6 @@
 import React from "react";
 import { FormGroup, FormControl, Button } from "react-bootstrap";
+import Input from '../../Input/Input';
 import "./SavedRecipeCard.css";
 
 
@@ -20,11 +21,33 @@ const SavedRecipeCard = props => (
                     <div className="card text-center" id="card" isflipped="false">
                         <h3 className="card-title"><a href={props.recipe_link} target="_blank">{props.recipe_name}</a></h3>
                         <div>{props.notes}</div>
-                        <form onSubmit={this.saveNote}>
-                            <FormControl type="text" name="note_text" id={props.recipe_id} value={props.note_text} onChange={props.onChange} placeholder="Type note here" />
-                        </form>
-                        <a><i className="fa fa-plus"><Button className="save" id={props.recipe_id} onClick={props.saveNote}>ADD NOTES</Button></i></a>
-                        <a><Button className="delete_recipe" id={props.recipe_id} onClick={props.deleteRecipe}>DELETE RECIPE</Button></a>
+                        <div className="row">
+                            <div className="col-xs-0 col-sm-0 col-md-2 cold-lg-2"></div>
+                            <div className="col-xs-12 col-sm-12 col-md-8 cold-lg-8">
+                                <form
+                                    onSubmit={props.saveNote}
+                                    id={props.recipe_id}>
+                                    <Input
+                                        name="note_text"
+                                        value={props.note_text}
+                                        onChange={props.onChange}
+                                        placeholder="Add A Note..."
+
+                                    />
+                                    <br />
+                                </form>
+                            </div>
+                            <div className="col-xs-0 col-sm-0 col-md-4 cold-lg-4"></div>
+                        </div>
+                        <a>
+                            <Button
+                                className="save-note note-btn btn btn-success"
+                                id={props.recipe_id}
+                                onClick={props.saveNote}>
+                                ADD NOTES
+                            </Button>
+                        </a>
+                        <a><Button className="delete_recipe note-btn btn btn-danger" id={props.recipe_id} onClick={props.deleteRecipe}>DELETE RECIPE</Button></a>
                     </div>
                 </div>
             </div>

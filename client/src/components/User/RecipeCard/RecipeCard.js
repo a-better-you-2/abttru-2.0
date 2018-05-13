@@ -23,12 +23,12 @@ const RecipeCard = props => (
                         <FormGroup>
                             <FormControl type="text" name="note_text" id={props.recipe_id} value={props.note_text} onChange={props.onChange} placeholder="Type note here" />
                         </FormGroup>
-                        <a><i class="fa fa-plus"><Button className="save" id={props.recipe_id} onClick={props.saveNote}>ADD NOTES</Button></i></a>
+                        <a><i class="fa fa-plus"><Button className="save" id={props.recipe_id} onClick={props.saveNote}>POOOOOOOOOOOOOOOOOOOP</Button></i></a>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </div >
 )
 
 export default RecipeCard;

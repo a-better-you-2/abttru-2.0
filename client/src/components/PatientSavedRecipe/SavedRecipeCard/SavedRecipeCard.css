@@ -128,6 +128,16 @@ section .section-title {
     background-color: #eee;
     height: 50px;
 }
+
+.save-note {
+    margin: 0 auto;
+
+}
+
+.note-btn{
+    width:40%;
+}
+
 /* .frontside .card .card-body img {
     width: 120px;
     height: 120px;
