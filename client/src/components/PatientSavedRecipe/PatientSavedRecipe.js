@@ -33,10 +33,6 @@ class PatientSavedRecipe extends React.Component {
   };
 
   componentDidMount() {
-    console.log(this.props);
-    this.setState({
-      user_id: this.props.match.params.userId
-    })
     // console.log(this.props.location.params.userId)
     // console.log(this.state.user_id);
     // axios.get(`/api/abttru/${this.props.match.params.id}`)

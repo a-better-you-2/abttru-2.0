@@ -11,9 +11,14 @@
 .tabGroup {
     text-align: center;
     padding-top: 20px;
+    font-size: 13px;
 }
 
 
 .jumbotron, .jumbo {
     padding-bottom: 0px !important;
   }
+
+#user_photo {
+    border-radius: 50%;
+}

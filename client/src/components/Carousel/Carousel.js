@@ -1,5 +1,6 @@
 import React from "react";
 import { Button, Carousel, Row, Col } from "react-bootstrap";
+import { PacmanLoader } from 'react-spinners';
 import PiePlot from "../Graphs/PiePlot";
 import Input from "../Input/Input";
 import "./Carousel.css"
@@ -19,8 +20,9 @@ class ControlledCarousel extends React.Component {
       showCarousel: false,
       name: "",
       diet_recommendation: this.props.diet_label,
-      diet_restriction: this.props.health_label
-    };
+      diet_restriction: this.props.health_label,
+      loading: false
+    }
   }
 
   handleInputChange = event => {
@@ -35,20 +37,23 @@ class ControlledCarousel extends React.Component {
 
   getRecipes(e) {
     e.preventDefault();
+    this.setState({
+      showCarousel: false,
+      loading: true
+    });
     console.log(this.props)
     let firstIndex = Math.floor(Math.random() * 20);
     console.log(firstIndex);
     axios.get(`https://api.edamam.com/search?q=${this.state.name}&app_id=6ee418a4&app_key=38910f6a58e3c348dd000cd7a9fc1139&calories=591-722&from=${firstIndex}&Diet=${this.props.diet_label}&Health=${this.props.health_label}`)
       .then(res => {
         console.log(res);
-        console.log(res.data.hits);
-        for (var i = 0; i < res.data.hits.length; i++) {
-          this.setState({
-            data: res.data.hits,
-            showCarousel: true
+        console.log(res.data);
+        this.setState({
+          data: res.data.hits,
+          showCarousel: true,
+          loading: false
 
-          })
-        }
+        })
       })
       .catch(err => console.log(err));
   }
@@ -84,6 +89,7 @@ class ControlledCarousel extends React.Component {
 
     const searchedRecipeCard = this.state.data.map((data, index) =>
       <div>
+
         <Carousel.Item>
           <Row>
             <Col xs={0} sm={0} md={1} lg={1}></Col>
@@ -98,8 +104,8 @@ class ControlledCarousel extends React.Component {
             <Col xs={12} sm={12} md={5} lg={5}>
               <PiePlot
                 className="pieTry"
-                digestData={this.state.data[index].recipe.digest}
-                yieldData={this.state.data[index].recipe.yield}
+                digestData={data.recipe.digest}
+                yieldData={data.recipe.yield}
               />
             </Col>
             <Col xs={0} sm={0} md={1} lg={1}></Col>
@@ -109,11 +115,12 @@ class ControlledCarousel extends React.Component {
       </div>
     )
 
+
     return (
       <div className="">
-        <Row>
-          <Col xs={0} sm={0} md={2} lg={2}></Col>
-          <Col xs={12} sm={12} md={8} lg={8}>
+        <div className="row">
+          <div className="col-xs-0 col-sm-0 col-md-2 cold-lg-2"></div>
+          <div className="col-xs-12 col-sm-12 col-md-8 cold-lg-8">
             <form onSubmit={this.getRecipes.bind(this)}>
               <Input
                 name="name"
@@ -124,13 +131,24 @@ class ControlledCarousel extends React.Component {
               <br />
               <Button onClick={this.getRecipes.bind(this)} color="primary">Get Recipes</Button>
             </form>
-          </Col>
-          <Col xs={0} sm={0} md={2} lg={2}></Col>
-        </Row>
-        <Row>
-          <Col xs={0} sm={0} md={2} lg={2}></Col>
-          <Col xs={12} sm={12} md={8} lg={8}>
+          </div>
+          <div className="col-xs-0 col-sm-0 col-md-4 cold-lg-4"></div>
+        </div>
+        <div className="row">
+          <div className="col-xs-0 col-sm-0 col-md-4 cold-lg-4"></div>
+          <div className="col-md-8 sweet-loader">
+            <PacmanLoader
+              loading={this.state.loading}
+              size={200}
+            />
+          </div>
+          <div className="col-xs-0 col-sm-0 col-md-4 cold-lg-4"></div>
+        </div>
+        <div className="row">
+          <div className="col-xs-0 col-sm-0 col-md-2 cold-lg-2"></div>
+          <div className="col-xs-12 col-sm-12 col-md-8 cold-lg-8">
             {this.state.showCarousel ? (
+
               <div>
                 <Carousel className="Carousel"
                   activeIndex={index}
@@ -141,14 +159,15 @@ class ControlledCarousel extends React.Component {
                     return <Carousel.Item>{c}</Carousel.Item>
                   })}
                 </Carousel>
-              </div>)
+              </div>
+            )
               : null}
-          </Col>
-          <Col xs={0} sm={0} md={2} lg={2}></Col>
-        </Row>
+          </div>
+          <div className="col-xs-0 col-sm-0 col-md-2 cold-lg-2"></div>
+        </div>
 
 
-      </div>
+      </div >
     );
 
   }

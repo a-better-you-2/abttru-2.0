@@ -19,19 +19,7 @@
   }
 }
 
-/* @media screen and (max-width: 600px) {
-    .svg-container {
-        top: -90px;
-        left: -60px;
-        z-index: -1;
-    
-
-    }
-    img {
-        height: 300px;
-        width: 300px;
-    }
-    .graphButtons {
-        text-align: center;
-    }
-    } */
+.sweet-loader {
+    text-align: center;
+    padding-top: 20px;
+}
