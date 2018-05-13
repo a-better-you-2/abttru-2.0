@@ -1,11 +1,19 @@
 #profileTab {
-    border-radius: 0 0 0 80px;
+    border-radius: 80px 0 0 0;
+    width: 50%;
 }
 
 #savedTab {
-    border-radius: 0 0 80px 0;
+    border-radius: 0 80px 0 0;
+    width: 50%;
 }
 
 .tabGroup {
-    position: absolute;
+    text-align: center;
+    padding-top: 20px;
 }
+
+
+.jumbotron, .jumbo {
+    padding-bottom: 0px !important;
+  }
