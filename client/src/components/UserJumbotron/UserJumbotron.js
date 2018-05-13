@@ -57,7 +57,7 @@ class UserJumbotron extends React.Component {
                     </div>
                     <div className="col-xs-10 col-md-1 col-lg-1">
                         <Image id="user_photo" src={this.props.user_photo} circle responsive />
-                        {/* <h5>{this.state.name}</h5> */}
+                        <h5>{this.props.first_name}{" "}{this.props.last_name}</h5>
                     </div>
                     <div className="col-xs-12 col-md-1 col-lg-1">
                     </div>
