@@ -23,3 +23,11 @@
     text-align: center;
     padding-top: 20px;
 }
+
+input,
+select,
+textarea,
+form {
+    width: 100%;
+    padding-left: 0;
+}

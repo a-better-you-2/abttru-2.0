@@ -10,8 +10,10 @@ const linkStyle = {
 // or manually wrapping the input with a form-group div
 // All of the props passed to this component are spread onto the input element
 const Input = props => (
-    <div className="input-group input-group-lg">
-        <input className="form-control" type="text" {...props} style={linkStyle} />
+    <div className="form-group row">
+        <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <input className="form-control" type="text" {...props} style={linkStyle} />
+        </div>
     </div>
 );
 

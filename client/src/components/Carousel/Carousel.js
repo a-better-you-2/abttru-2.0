@@ -121,12 +121,13 @@ class ControlledCarousel extends React.Component {
         <div className="row">
           <div className="col-xs-0 col-sm-0 col-md-2 cold-lg-2"></div>
           <div className="col-xs-12 col-sm-12 col-md-8 cold-lg-8">
-            <form onSubmit={this.getRecipes.bind(this)}>
+            <form onSubmit={this.getRecipes.bind(this)} >
               <Input
                 name="name"
                 value={this.state.name}
                 onChange={this.handleInputChange}
                 placeholder="Search ingredients(e.g. chicken)"
+
               />
               <br />
               <Button onClick={this.getRecipes.bind(this)} color="primary">Get Recipes</Button>
@@ -140,6 +141,7 @@ class ControlledCarousel extends React.Component {
             <PacmanLoader
               loading={this.state.loading}
               size={200}
+              color={'#659765'}
             />
           </div>
           <div className="col-xs-0 col-sm-0 col-md-4 cold-lg-4"></div>
@@ -167,7 +169,7 @@ class ControlledCarousel extends React.Component {
         </div>
 
 
-      </div >
+      </div>
     );
 
   }
