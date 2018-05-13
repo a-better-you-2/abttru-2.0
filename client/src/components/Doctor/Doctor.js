@@ -4,12 +4,12 @@ import axios from "axios";
 import { Table } from "react-bootstrap";
 import FontAwesomeIcon from "@fortawesome/react-fontawesome";
 import "./Doctor.css";
+import DoctorJumbotron from '../DoctorJumbotron/DoctorJumbotron'
 
 class Doctor extends React.Component {
 
 
   state = {
-    name: "",
     doctor_id: this.props.match.params.id,
     patients: []
   };
@@ -68,8 +68,13 @@ class Doctor extends React.Component {
             <FontAwesomeIcon icon="user-plus" /> Add Patient
               </Link>
         </h5>
-        <h1>{this.state.name}</h1>
-        <h2>{this.state.doctor_id}</h2>
+        <DoctorJumbotron
+          name={this.state.name}
+          facility_name={this.state.facility_name}
+          specialty={this.state.specialty}
+          doctor_photo={this.state.doctor_photo}
+        />
+
         <div className="row">
           <div className="col-xs-12 col-sm-12 col-md-6">
             <div className="btn-group">

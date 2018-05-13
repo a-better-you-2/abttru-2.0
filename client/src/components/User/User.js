@@ -68,6 +68,8 @@ class User extends React.Component {
           diet_label={this.state.diet_recommendation}
           health_label={this.state.diet_restriction}
           isUserPage={this.state.isUserPage}
+          first_name={this.state.first_name}
+          last_name={this.state.last_name}
         />
 
 
