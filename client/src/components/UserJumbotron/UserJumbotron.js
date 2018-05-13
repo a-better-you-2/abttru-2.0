@@ -101,17 +101,17 @@ class UserJumbotron extends React.Component {
                     </div>
                 </div>
                 <div className="row">
-
-                    <div className="col-xs-12 col-md-12 col-lg-12 tabGroup">
+                    <div className="col-xs-1 col-md-1 col-lg-1 col-xs-1 "></div>
+                    <div className="col-xs-10 col-md-10 col-lg-10 col-xs-10 tabGroup">
                         <Link to={{ pathname: `/user/${this.props.userId}`, params: { id: this.props.userId } }}>
-                            <button id="profileTab" style={{ backgroundColor: this.profileTabColor() }}><FontAwesomeIcon icon="user-plus" /> Go Back To Profile </button>
+                            <button id="profileTab" style={{ backgroundColor: this.profileTabColor() }}><FontAwesomeIcon icon="user-plus" />New Search </button>
                         </Link>
 
                         <Link to={{ pathname: `/savedrecipes/${this.props.userId}`, params: { id: this.props.userId } }} >
                             <button id="savedTab" style={{ backgroundColor: this.savedTabColor() }}> <FontAwesomeIcon icon="utensils" /> Saved Recipes </button>
                         </Link>
                     </div>
-
+                    <div className="col-xs-1 col-md-1 col-lg-1 col-xs-1 "></div>
                 </div>
             </Jumbotron>
         );

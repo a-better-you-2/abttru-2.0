@@ -33,12 +33,6 @@ class PatientSavedRecipe extends React.Component {
   };
 
   componentDidMount() {
-    // console.log(this.props.location.params.userId)
-    // console.log(this.state.user_id);
-    // axios.get(`/api/abttru/${this.props.match.params.id}`)
-
-    // console.log(this.props.location.params.userId)
-
     axios.get(`/api/abttru/user/${this.state.initial_user_id}`)
       .then(res => {
         console.log(res.data);
@@ -128,6 +122,7 @@ class PatientSavedRecipe extends React.Component {
   }
 
   saveNote = (event) => {
+    event.preventDefault();
     const id = event.target.id;
     const noteObj = { recipe_id: id, body: this.state.note_text }
     axios.post(`/api/abttru/recipes/notes/${id}`, noteObj)
