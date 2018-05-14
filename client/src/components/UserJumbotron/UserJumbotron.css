@@ -17,6 +17,9 @@
 
 .jumbotron, .jumbo {
     padding-bottom: 0px !important;
+    background-color: #197278 !important;
+    display: block;
+
   }
 
 #user_photo {

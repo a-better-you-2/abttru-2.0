@@ -1,5 +1,5 @@
 import React from "react";
-// import "./Nav.css";
+import "./Nav.css";
 import { Link } from "react-router-dom";
 import { Row } from '../Grid';
 
@@ -7,11 +7,16 @@ const linkStyle = {
   color: "black",
   boxShadow: "3px 3px 10px black"
 }
+const navStyle = {
+  backgroundColor: "#315659 !important;"
+  
+  
+}
 
 const Nav = () => (
-  <nav className="navbar navbar-dark bg-dark">
+  <nav className="navbar navbar-dark" style={navStyle}>
     <a className="navbar-brand" href="/">
-      NYT Article Search -- With React!!
+      <h1>Welcome to ABTTRU</h1>
     </a>
 
     <Row>

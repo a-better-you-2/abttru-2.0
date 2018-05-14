@@ -56,7 +56,7 @@ class UserJumbotron extends React.Component {
                     <div className="col-xs-2 col-md-1 col-lg-1">
                     </div>
                     <div className="col-xs-10 col-md-1 col-lg-1">
-                        <Image id="user_photo" src={this.props.user_photo} circle responsive />
+                        <Image id="user_photo" src={this.props.user_photo} thumbnail responsive />
                         <h5>{this.props.first_name}{" "}{this.props.last_name}</h5>
                     </div>
                     <div className="col-xs-12 col-md-1 col-lg-1">
@@ -111,7 +111,7 @@ class UserJumbotron extends React.Component {
                             <button id="savedTab" style={{ backgroundColor: this.savedTabColor() }}> <FontAwesomeIcon icon="utensils" /> Saved Recipes </button>
                         </Link>
                     </div>
-                    <div className="col-xs-1 col-md-1 col-lg-1 col-xs-1 "></div>
+                    <div className="col-xs-1 col-md-1 col-lg-1 col-sm-1"></div>
                 </div>
             </Jumbotron>
         );

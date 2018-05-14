@@ -11,6 +11,7 @@
     "history": "^4.7.2",
     "mongoose": "^5.0.15",
     "react-bootstrap": "^0.32.1",
+    "react-helmet": "^5.2.0",
     "react-history": "^0.18.2",
     "react-loader": "^2.4.5",
     "react-spinners": "^0.3.2",
