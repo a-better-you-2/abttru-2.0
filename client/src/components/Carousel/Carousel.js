@@ -57,7 +57,7 @@ class ControlledCarousel extends React.Component {
 
   saveRecipe = (event) => {
     const target = event.target;
-    const id = this.state.user_id;
+    const id = this.props.userId;
     console.log(id);
     const recipeObj = {
       user_id: id,

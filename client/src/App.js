@@ -21,7 +21,7 @@ class App extends Component {
       <BrowserRouter keyLength={12}>
         <div id="davey-test">
           <NavigationBar style="background-color: #315659 !important" />
-          <div className="col-xs-12 col-sm-12">
+          <div className="">
             <Route exact path="/" component={Home} />
             <Route path="/doctor/:id" component={Doctor} />
             <Route path="/doctorLogin" component={DoctorLogin} />
