@@ -35,6 +35,18 @@ const DoctorJumbotron = (props) => {
                             {/* <FontAwesomeIcon icon="heartbeat" size="4x" color="green" /> */}
                             {props.facility_name}</h3>
                     </div>
+                    <div className="col-xs-12 col-md-12 col-lg-12">
+                        <Link to={{
+                            pathname: "/create/",
+                            params: {
+                                data: props.data,
+                                doctor_id: props.doctor_id
+                            }
+                        }} > <button className="btn btn-success">
+                                <FontAwesomeIcon icon="user-plus" /> Add Patient
+                            </button>
+                        </Link>
+                    </div>
                 </div>
                 <div className="col-xs-2 col-md-1 col-lg-1">
                 </div>
