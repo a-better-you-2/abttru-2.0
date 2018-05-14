@@ -53,26 +53,14 @@ class Doctor extends React.Component {
     ))
     return (
       <div className="container">
-        <h4>User List</h4>
-        <h5>
-          <Link to="/">
-            <FontAwesomeIcon icon="home" /> Go Back Home
-              </Link>
-          <Link to={{
-            pathname: "/create/",
-            params: {
-              data: this.state,
-              doctor_id: this.props.match.params.id
-            }
-          }} >
-            <FontAwesomeIcon icon="user-plus" /> Add Patient
-              </Link>
-        </h5>
+
         <DoctorJumbotron
           name={this.state.name}
           facility_name={this.state.facility_name}
           specialty={this.state.specialty}
           doctor_photo={this.state.doctor_photo}
+          data={this.state}
+          doctor_id={this.props.match.params.id}
         />
 
         <div className="row">
