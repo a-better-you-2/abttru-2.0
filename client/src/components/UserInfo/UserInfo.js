@@ -8,7 +8,7 @@ import "./UserInfo.css";
 class UserInfo extends React.Component {
   state = {
     patient_id: this.props.match.params.id,
-    doctor_id: this.props.location.params.doctor_id,
+    doctor_id: "",
     name: "",
     password: "",
     risk_factor: "",
@@ -93,7 +93,7 @@ class UserInfo extends React.Component {
               </div>
 
 
-              <Link to={{ pathname: `/edit/${this.state._id}`, params: { data: this.state, doctor_id: this.props.location.params.doctor_id } }} className="btn btn-success">Edit</Link>&nbsp;
+              <Link to={{ pathname: `/edit/${this.state._id}`, params: { data: this.state, doctor_id: this.state.doctor_id } }} className="btn btn-success">Edit</Link>&nbsp;
               <Button id={this.state._id} onClick={this.deletePatient.bind(this)} color="danger">Delete</Button>
             </div>
           </Panel.Body>
