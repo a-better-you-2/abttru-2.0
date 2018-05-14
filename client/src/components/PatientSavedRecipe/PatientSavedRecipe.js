@@ -7,7 +7,8 @@ import RecipeCard from "./SavedRecipeCard";
 import UserJumbotron from '../UserJumbotron/'
 import "./PatientSavedRecipe.css"
 import PiePlot from "../Graphs/PiePlot";
-import { MoonLoader } from 'react-spinners';
+import { MoonLoader, PacmanLoader } from 'react-spinners';
+import { css } from 'emotion';
 
 
 
@@ -215,10 +216,10 @@ class PatientSavedRecipe extends React.Component {
             <div className="row">
               <div className="col-xs-0 col-sm-0 col-md-4 cold-lg-4"></div>
               <div className="col-md-8 sweet-loader">
-                <MoonLoader
+                <PacmanLoader
                   loading={this.state.loading}
-                  size={300}
-                  color={'#915659'}
+                  size={200}
+                  color={'#197278'}
                 />
               </div>
               <div className="col-xs-0 col-sm-0 col-md-4 cold-lg-4"></div>
