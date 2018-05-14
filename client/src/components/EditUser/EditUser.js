@@ -3,15 +3,15 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { Panel, Button, Form, FormGroup, FormControl, Label } from "react-bootstrap";
 import FontAwesomeIcon from "@fortawesome/react-fontawesome";
+import Step1 from '../formComponents/StepOne';
+import Step2 from '../formComponents/StepTwo';
+import Step3 from '../formComponents/StepThree';
+import Step4 from '../formComponents/StepFour';
+import StepZilla from 'react-stepzilla';
 
 class EditUser extends React.Component {
   state = {
-    isbn: "",
-    name: "",
-    password: "",
-    risk_factor: "",
-    diet_recommendation: "",
-    diet_restriction: ""
+
   };
 
   componentDidMount() {
@@ -24,64 +24,114 @@ class EditUser extends React.Component {
   }
 
   onChange = (e) => {
+    console.log(this.props);
+    console.log(this.state);
     this.setState({
       [e.target.name]: e.target.value
     });
+    console.log(this.state);
   }
 
   onSubmit = (e) => {
     e.preventDefault();
     console.log(this.state);
     axios.put(`/api/abttru/user/${this.props.match.params.id}`, this.state)
-      .then(res => this.props.history.push({ pathname: `/show/${this.props.match.params.id}`, params: { data: this.state, doctor_id: this.props.location.params.doctor_id } })) // redirect back to the show page
+      .then(res => this.props.history.push({ pathname: `/show/${this.state._id}`, params: { data: this.state, doctor_id: this.state.doctor_id } })) // redirect back to the show page
       .catch(err => console.log(err));
   }
 
   render() {
+    const steps =
+      [
+        {
+          name: 'General Patient Info', component: <Step1
+            first_name={this.state.first_name}
+            last_name={this.state.last_name}
+            email={this.state.email}
+            password={this.state.password}
+            user_photo={this.state.user_photo}
+            onChange={this.onChange}
+          />
+        },
+        {
+          name: 'Patient Statistics', component: <Step2
+            pathName={this.props.match.path}
+            sex={this.state.sex}
+            heightFoot={this.state.heightFoot}
+            heightInch={this.state.heightInch}
+            weight={this.state.weight}
+            waist={this.state.waist}
+            onChange={this.onChange}
+          />
+        },
+        {
+          name: 'Patient Health Factors', component: <Step3
+            bp_systolic={this.state.bp_systolic}
+            bp_diastolic={this.state.bp_diastolic}
+            risk_factor={this.state.risk_factor}
+            diet_recommendation={this.state.diet_recommendation}
+            diet_restriction={this.state.diet_restriction}
+            onChange={this.onChange}
+
+          />
+        },
+        {
+          name: 'Confirm & Save', component: <Step4
+            first_name={this.state.first_name}
+            last_name={this.state.last_name}
+            email={this.state.email}
+            password={this.state.password}
+            user_photo={this.state.user_photo}
+            dob={this.state.dob}
+            sex={this.state.sex}
+            heightFoot={this.state.heightFoot}
+            heightInch={this.state.heightInch}
+            weight={this.state.weight}
+            waist={this.state.waist}
+            bp_systolic={this.state.bp_systolic}
+            bp_diastolic={this.state.bp_diastolic}
+            risk_factor={this.state.risk_factor}
+            diet_recommendation={this.state.diet_recommendation}
+            diet_restriction={this.state.diet_restriction}
+          />
+        }
+      ]
+
     return (
       <div className="container">
         <Panel>
-          <Panel>
-            <h4>Edit User</h4>
-          </Panel>
-          <Panel.Body>
-            <div>
-              <h5>
-                <Link to={{ pathname: `/show/${this.props.location.params.data.patient_id}`, params: { data: this.state } }}>
-                  <FontAwesomeIcon icon="angle-left" /> Back
-              </Link>
-              </h5>
-              <Form>
-                <FormGroup>
-                  <Label for="user_id">* User ID:</Label>
-                  <FormControl type="text" name="user_id" value={this.state._id} onChange={this.onChange} placeholder="User ID" />
-                </FormGroup>
-                <FormGroup>
-                  <Label for="name">* Name:</Label>
-                  <FormControl type="text" name="name" value={this.state.name} onChange={this.onChange} placeholder="Title" />
-                </FormGroup>
-                <FormGroup>
-                  <Label for="password">Password:</Label>
-                  <FormControl type="text" name="password" value={this.state.password} onChange={this.onChange} placeholder="Author" />
-                </FormGroup>
-                <FormGroup>
-                  <Label for="risk_factor">Risk Factor:</Label>
-                  <FormControl type="text" name="risk_factor" value={this.state.risk_factor} onChange={this.onChange} placeholder="Risk Factor" />
-                </FormGroup>
-                <FormGroup>
-                  <Label for="diet_recommendation">Diet Recommendation:</Label>
-                  <FormControl type="text" name="diet_recommendation" value={this.state.diet_recommendation} onChange={this.onChange} placeholder="Diet Recommendation" />
-                </FormGroup>
-                <FormGroup>
-                  <Label for="diet_restriction">Diet Restrictions:</Label>
-                  <FormControl type="text" name="diet_restriction" value={this.state.diet_restriction} onChange={this.onChange} placeholder="Diet Restriction" />
-                </FormGroup>
-                <Button onClick={this.onSubmit} color="primary">Submit</Button>
-              </Form>
+          <div className="App">
+
+            <div className='step-progress'>
+              <StepZilla
+
+                steps={steps}
+
+                showNavigation={true}
+
+                showSteps={true}
+
+                stepsNavigation={true}
+
+                preventEnterSubmission={true}
+
+                nextTextOnFinalActionStep={"Click to Review Data"}
+
+                hocValidationAppliedTo={[3]}
+
+                startAtStep={0}
+
+                prevBtnOnLastStep={true}
+
+                onStepChange={(step) => window.sessionStorage.setItem('step', step)}
+              />
             </div>
-          </Panel.Body>
+
+          </div>
+          <Button className="btn-lg btn-danger" onClick={this.onSubmit} color="primary">Submit</Button>
         </Panel>
-      </div >
+
+      </div>
     )
   }
 }

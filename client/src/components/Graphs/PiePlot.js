@@ -7,8 +7,8 @@ import { Button, Carousel, Row, Col } from "react-bootstrap";
 class PiePlot extends Component {
 
     constructor(props) {
-        super();
-        // console.log(this.props);
+        super(props);
+        console.log(this.props);
 
     }
 
@@ -24,7 +24,9 @@ class PiePlot extends Component {
     }
 
     componentDidMount() {
-        this.createPlot()
+        console.log(this.props);
+        this.createPlot();
+
     }
 
 
@@ -277,27 +279,46 @@ class PiePlot extends Component {
 
     // console.log(this.state.plotData)
 
+
     render() {
-        return (
-            <div>
-                {/* <Row> */}
+        if (this.props.pathName === "/guest") {
+            return (
+                <div>
+                    {/* <Row> */}
                     {/* <Col xs={12}> */}
-                        <div className="graphButtons">
-                            <Button onClick={this.switchPlot} value={0}>Macros</Button>
-                            <Button onClick={this.switchPlot} value={1}>Lipids</Button>
-                            <Button onClick={this.switchPlot} value={2}>Minerals</Button>
-                            <Button onClick={this.switchPlot} value={3}>Vitamins</Button>
-                        </div>
                     {/* </Col> */}
-                {/* </Row> */}
-                {/* <Row> */}
+                    {/* </Row> */}
+                    {/* <Row> */}
                     <Plot
                         data={[this.state.showingPlot]}
-                        layout={this.state.plotLayout} 
+                        layout={this.state.plotLayout}
                     />
-                {/* </Row> */}
-            </div>
-        );
+                    {/* </Row> */}
+                </div>
+            );
+        }
+        else {
+            return (
+                <div>
+                    {/* <Row> */}
+                    {/* <Col xs={12}> */}
+                    <div className="graphButtons">
+                        <Button onClick={this.switchPlot} value={0}>Macros</Button>
+                        <Button onClick={this.switchPlot} value={1}>Lipids</Button>
+                        <Button onClick={this.switchPlot} value={2}>Minerals</Button>
+                        <Button onClick={this.switchPlot} value={3}>Vitamins</Button>
+                    </div>
+                    {/* </Col> */}
+                    {/* </Row> */}
+                    {/* <Row> */}
+                    <Plot
+                        data={[this.state.showingPlot]}
+                        layout={this.state.plotLayout}
+                    />
+                    {/* </Row> */}
+                </div>
+            );
+        }
     }
 }
 

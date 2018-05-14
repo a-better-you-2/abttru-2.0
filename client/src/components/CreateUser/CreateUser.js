@@ -15,7 +15,7 @@ class Create extends React.Component {
     super(props)
 
     this.state = {
-      doctor_id: this.props.match.params.doctor_id,
+      doctor_id: this.props.match.params.id,
       user_id: "",
       first_name: "",
       last_name: "",
@@ -50,6 +50,7 @@ class Create extends React.Component {
     e.preventDefault();
 
     console.log(this.props);
+    console.log(this.state);
     if (this.state.first_name && this.state.password) {
 
       this.setState({

@@ -7,8 +7,8 @@ import "./Carousel.css"
 import axios from "axios";
 
 class ControlledCarousel extends React.Component {
-  constructor(props, context) {
-    super(props, context);
+  constructor(props) {
+    super(props);
 
     this.handleSelect = this.handleSelect.bind(this);
 
@@ -16,11 +16,7 @@ class ControlledCarousel extends React.Component {
       data: [],
       index: 0,
       direction: null,
-      user_id: this.props.userId,
       showCarousel: false,
-      name: "",
-      diet_recommendation: this.props.diet_label,
-      diet_restriction: this.props.health_label,
       loading: false
     }
   }
@@ -28,6 +24,7 @@ class ControlledCarousel extends React.Component {
   handleInputChange = event => {
     // Destructure the name and value properties off of event.target
     // Update the appropriate state
+    console.log(this.props.pathName);
     const { name, value } = event.target;
     this.setState({
       [name]: value
@@ -86,34 +83,63 @@ class ControlledCarousel extends React.Component {
 
   render() {
     const { index, direction } = this.state;
+    const pathName = this.props.pathName;
+    let searchedRecipeCard;
+    if (pathName === "/guest") {
+      searchedRecipeCard = this.state.data.map((data, index) =>
+        <div>
+          <Carousel.Item>
+            <Row>
+              <Col xs={0} sm={0} md={1} lg={1}></Col>
+              <Col xs={12} sm={12} md={5} lg={5}>
+                {/* <Carousel.Caption> */}
+                <h2 id="recipe-title">{data.recipe.label}</h2>
+                <img width={250} height={250} alt="recipeImage" id="pic" src={data.recipe.image} />
+                <h2 id="recipe-link"><a href={data.recipe.url} target="_blank">Tap HERE for the recipe</a></h2>
+                {/* </Carousel.Caption> */}
+              </Col>
+              <Col xs={12} sm={12} md={5} lg={5}>
+                <PiePlot
+                  pathName={this.props.pathName}
+                  className="pieTry"
+                  digestData={data.recipe.digest}
+                  yieldData={data.recipe.yield}
+                />
+              </Col>
+              <Col xs={0} sm={0} md={1} lg={1}></Col>
+            </Row>
+          </Carousel.Item>
+        </div>
+      )
+    }
+    else {
+      searchedRecipeCard = this.state.data.map((data, index) =>
+        <div>
+          <Carousel.Item>
+            <Row>
+              <Col xs={0} sm={0} md={1} lg={1}></Col>
+              <Col xs={12} sm={12} md={5} lg={5}>
+                {/* <Carousel.Caption> */}
+                <h2 id="recipe-title">{data.recipe.label}</h2>
+                <img width={250} height={250} alt="recipeImage" id="pic" src={data.recipe.image} />
+                <h2 id="recipe-link"><a href={data.recipe.url} target="_blank">Tap HERE for the recipe</a></h2>
+                <Button className="save-button" id={data.recipe.uri} name={data.recipe.label} img={data.recipe.image} link={data.recipe.url} onClick={this.saveRecipe}>SAVE RECIPE</Button>
+                {/* </Carousel.Caption> */}
+              </Col>
+              <Col xs={12} sm={12} md={5} lg={5}>
+                <PiePlot
+                  className="pieTry"
+                  digestData={data.recipe.digest}
+                  yieldData={data.recipe.yield}
+                />
+              </Col>
+              <Col xs={0} sm={0} md={1} lg={1}></Col>
+            </Row>
+          </Carousel.Item>
+        </div>
+      )
+    }
 
-    const searchedRecipeCard = this.state.data.map((data, index) =>
-      <div>
-
-        <Carousel.Item>
-          <Row>
-            <Col xs={0} sm={0} md={1} lg={1}></Col>
-            <Col xs={12} sm={12} md={5} lg={5}>
-              {/* <Carousel.Caption> */}
-              <h2 id="recipe-title">{data.recipe.label}</h2>
-              <img width={250} height={250} alt="recipeImage" id="pic" src={data.recipe.image} />
-              <h2 id="recipe-link"><a href={data.recipe.url} target="_blank">Tap HERE for the recipe</a></h2>
-              <Button className="save-button" id={data.recipe.uri} name={data.recipe.label} img={data.recipe.image} link={data.recipe.url} onClick={this.saveRecipe}>SAVE RECIPE</Button>
-              {/* </Carousel.Caption> */}
-            </Col>
-            <Col xs={12} sm={12} md={5} lg={5}>
-              <PiePlot
-                className="pieTry"
-                digestData={data.recipe.digest}
-                yieldData={data.recipe.yield}
-              />
-            </Col>
-            <Col xs={0} sm={0} md={1} lg={1}></Col>
-          </Row>
-        </Carousel.Item>
-
-      </div>
-    )
 
 
     return (
