@@ -37,7 +37,7 @@ const DoctorJumbotron = (props) => {
                     </div>
                     <div className="col-xs-12 col-md-12 col-lg-12">
                         <Link to={{
-                            pathname: "/create/",
+                            pathname: `/create/${props.doctor_id}`,
                             params: {
                                 data: props.data,
                                 doctor_id: props.doctor_id

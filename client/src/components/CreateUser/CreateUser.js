@@ -15,7 +15,7 @@ class Create extends React.Component {
     super(props)
 
     this.state = {
-      doctor_id: this.props.location.params.data.doctor_id,
+      doctor_id: this.props.match.params.doctor_id,
       user_id: "",
       first_name: "",
       last_name: "",
@@ -39,6 +39,7 @@ class Create extends React.Component {
   }
 
   onChange = (e) => {
+    console.log(this.props);
     console.log(this.state);
     this.setState({
       [e.target.name]: e.target.value
@@ -55,8 +56,8 @@ class Create extends React.Component {
         isValid: true
       });
       console.log(this.state);
-      axios.post(`/api/abttru/doctor/${this.props.location.params.data.doctor_id}`, this.state)
-        .then(res => this.props.history.push(`/doctor/${this.props.location.params.data.doctor_id}`)) // redirect to admin page
+      axios.post(`/api/abttru/doctor/${this.props.match.params.id}`, this.state)
+        .then(res => this.props.history.push(`/doctor/${this.props.match.params.id}`)) // redirect to admin page
         .catch(err => console.log(err));
     }
     else {
@@ -132,8 +133,7 @@ class Create extends React.Component {
             <div>
               <h5>
                 <Link to={{
-                  pathname: `/doctor/${this.props.location.params.data.doctor_id}`,
-                  params: { data: this.props.location.params.data }
+                  pathname: `/doctor/${this.props.match.params.id}`
                 }}>
                   <FontAwesomeIcon icon="list" /> Patient List
                 </Link>
