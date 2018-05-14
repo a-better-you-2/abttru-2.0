@@ -12,6 +12,8 @@ import UserLogin from "./components/User/UserLogin/UserLogin";
 import DoctorLogin from "./components/Doctor/DoctorLogin/DoctorLogin";
 import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
 import NavigationBar from './components/NavigationBar';
+import Footer from './components/Footer/Footer';
+
 import "./App.css";
 
 class App extends Component {
@@ -33,6 +35,7 @@ class App extends Component {
             <Route path="/savedrecipes/:id" component={PatientSavedRecipe} />
             <Route path="/guest" component={Guest} />
           </div>
+          <Footer />
         </div>
       </BrowserRouter>
 
