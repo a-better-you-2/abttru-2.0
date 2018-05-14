@@ -51,15 +51,6 @@ class User extends React.Component {
   render() {
     return (
       <div>
-        <h4>User Home Page</h4>
-        <h1>{this.state.data}</h1>
-        <h5>
-          <Link to="/">
-            <FontAwesomeIcon icon="home" /> Home
-              </Link>
-
-        </h5>
-
         <UserJumbotron
           className={"col-md-12"}
           userId={this.props.match.params.id}
