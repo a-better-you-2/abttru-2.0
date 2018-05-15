@@ -1,7 +1,7 @@
 import React from "react";
 import "./Nav.css";
-import { Link } from "react-router-dom";
-import { Row } from '../Grid';
+// import { Link } from "react-router-dom";
+// import { Row } from '../Grid';
 
 
 const linkStyle = {
@@ -11,22 +11,23 @@ const linkStyle = {
    // boxShadow: "3px 3px 10px black"
 }
 
-const brandStyle = {
-  float: "left",
-  fontSize: "24px",
-  color: "white"
-}
+// const brandStyle = {
+//   float: "left",
+//   fontSize: "24px",
+//   color: "white"
+// }
 
 const navStyle = {
-  backgroundColor: "#315659 !important;",
+  backgroundColor: "#315659 !important",
   display: "inline-block",
   float: "right",
   color: "white",
-  padding: "10px"
+  // padding: "10px"
 }
 
-const imgSrc = {
-  backgroundImage: "https://diymarketers.com/wp-content/uploads/2011/01/finishline.jpg"
+const logoStyle = {
+  width: "75px",
+  height: "auto"
 }
 
 const Nav = () => (
@@ -39,8 +40,8 @@ const Nav = () => (
     <span className="icon-bar" ></span>
     <span className="icon-bar" ></span>
     </button>
-    <div className="logo" style={imgSrc}></div>
-    <a className="navbar-brand" href="" style={brandStyle}>A Better You</a>
+    <a href="" className="navbar-left logo"><img src={require('./ABTTRU-LOGO.png')} style={logoStyle} alt="logo"/></a>
+    {/* <a className="navbar-brand" href="" style={brandStyle}>A Better You</a> */}
   </div>
   <div className="collapse navbar-collapse" id="navigationbar" style={linkStyle}>
     <ul className="nav navbar-nav">

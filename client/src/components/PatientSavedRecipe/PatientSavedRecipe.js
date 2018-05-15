@@ -1,16 +1,14 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { Button, Table, FormGroup, FormControl } from "react-bootstrap";
+// import { Link } from "react-router-dom";
+import { Button } from "react-bootstrap";
 import axios from "axios";
-import FontAwesomeIcon from "@fortawesome/react-fontawesome";
+// import FontAwesomeIcon from "@fortawesome/react-fontawesome";
 import RecipeCard from "./SavedRecipeCard";
 import UserJumbotron from '../UserJumbotron/'
 import "./PatientSavedRecipe.css"
 import PiePlot from "../Graphs/PiePlot";
-import { MoonLoader, PacmanLoader } from 'react-spinners';
-import { css } from 'emotion';
-
-
+import { PacmanLoader } from 'react-spinners';
+// import { css } from 'emotion';
 
 
 class PatientSavedRecipe extends React.Component {
@@ -177,20 +175,19 @@ class PatientSavedRecipe extends React.Component {
         axios.get(`/api/abttru/user/${this.props.match.params.id}`)
           .then(res => {
             this.setState(res.data);
+            this.getData();
           })
       })
       .catch(err => console.log(err));
   }
 
   render() {
-
-    const id = this.state.user_id;
-
+    // const id = this.state.user_id;
     const savedSelect = this.state.recipes.map(recipe => (
       <li id={recipe.recipe_uri} key={recipe._id}>
         <div className="pic">
           <a href={recipe.recipe_link} title={recipe.recipe_name} target="_blank">
-            <img className="img-responsive" src={recipe.recipe_img}></img>
+            <img className="img-responsive" src={recipe.recipe_img} alt="alt"></img>
           </a>
         </div>
         <div className="info">
@@ -212,25 +209,7 @@ class PatientSavedRecipe extends React.Component {
     return (
       <div>
         <div className="savedPage">
-
-          <h4>Recipe Page</h4>
-          <h5>
-            <Link to="/">
-              <FontAwesomeIcon icon="user-plus" /> Go Back Home
-              </Link>
-          </h5>
           <div>
-            <div className="row">
-              <div className="col-xs-0 col-sm-0 col-md-4 cold-lg-4"></div>
-              <div className="col-md-8 sweet-loader">
-                <PacmanLoader
-                  loading={this.state.loading}
-                  size={200}
-                  color={'#197278'}
-                />
-              </div>
-              <div className="col-xs-0 col-sm-0 col-md-4 cold-lg-4"></div>
-            </div>
             {this.state.showJumbo ?
               <div>
                 <UserJumbotron
@@ -243,6 +222,17 @@ class PatientSavedRecipe extends React.Component {
                   user_photo={this.state.user_photo}
                 />
                 <div>
+                <div className="row">
+              <div className="col-xs-0 col-sm-0 col-md-4 cold-lg-4"></div>
+              <div className="col-xs-12 col-sm-12 col-md-4 cold-lg-4 sweet-loader">
+                <PacmanLoader
+                  loading={this.state.loading}
+                  size={200}
+                  color={'#197278'}
+                />
+              </div>
+              <div className="col-xs-0 col-sm-0 col-md-4 cold-lg-4"></div>
+              </div>
                   <div className="row">
                     <div className="col-xs-12 col-sm-12 col-md-6">
                       <div className="btn-group">
@@ -263,7 +253,7 @@ class PatientSavedRecipe extends React.Component {
                         {this.makeCard()}
                       </div>
                     </div>
-                    <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4">
                       {piePlot}
                     </div>
                     <div className="col-xs-0 col-sm-0 col-md-2 cold-lg-2"></div>

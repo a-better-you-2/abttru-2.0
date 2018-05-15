@@ -55,39 +55,32 @@ class UserLogin extends Component {
         return (
             <div>
                 <Container>
-                    <h1>USER LOG-EEEEN</h1>
+                    <h1>USER LOGIN</h1>
                     <Row>
-                        <Col size="md-12">
+                        <Col size="xs-12 sm- 12 md-12 lg-12">
                             <form>
-                                <Container>
-                                    <Row>
-                                        <Col size="xs-9 sm-10">
-                                            <Input
-                                                name="email"
-                                                value={this.state.email}
-                                                onChange={this.handleInputChange}
-                                                placeholder="Enter Email"
+                                <Row>
+                                <Col size="xs-0 sm-0 md-4 lg-4"></Col>
+                                    <Col size="xs-12 sm-12 md-4 lg-4">
+                                        <Input
+                                            name="email"
+                                            value={this.state.email}
+                                            onChange={this.handleInputChange}
+                                            placeholder="Enter Email"
+                                        />
+                                        <br />
+                                        <Input
+                                            name="password"
+                                            value={this.state.password}
+                                            onChange={this.handleInputChange}
+                                            placeholder="Password"
                                             />
-                                            <br />
-                                            <Input
-                                                name="password"
-                                                value={this.state.password}
-                                                onChange={this.handleInputChange}
-                                                placeholder="Password"
-                                            />
-                                            <br />
-                                        </Col>
-                                        <Col size="xs-3 sm-2">
-                                            <Button
-                                                onClick={this.handleFormSubmit}
-                                                type="success"
-                                                className="input-lg"
-                                            >
-                                                Login
-                          </Button>
-                                        </Col>
-                                    </Row>
-                                </Container>
+                                        <br />
+                                    </Col>
+                                    <Col size="xs-0 sm-0 md-4 lg-4">
+                                        <Button className="input-lg" onClick={this.handleFormSubmit}type="success">Login</Button>
+                                    </Col>
+                                </Row>
                             </form>
                         </Col>
                     </Row>

@@ -19,9 +19,15 @@
     padding-bottom: 0px !important;
     background-color: #197278 !important;
     display: block;
+    color: #EFFFFA;
 
   }
 
 #user_photo {
     border-radius: 50%;
+}
+
+.prof {
+    padding: 0 !important;
+    /* margin: 5px; */
 }

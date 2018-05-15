@@ -4,22 +4,30 @@ body,
   height: 100%;
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: 'Montserrat', sans-serif;
   background-color: #EFFFFA;
-  padding-bottom: 150px;
-}
-
-body {
-  margin: 0px;
-}
-
-body {
-  margin-bottom: 100px;
-}
-
-#davey-test {
+  /* overflow: auto; */
   box-sizing: border-box;
 }
+
+body {
+  position: relative;
+  margin: 0;
+  padding-bottom: 6rem;
+  min-height: 100%;
+}
+
+.navbar {
+  background-color: #315659 !important;
+  width: 100%;
+  margin-bottom: 0px;
+}
+
+
+/* #davey-test { */
+  /* box-sizing: border-box; */
+  /* flex: 1 0 auto; */
+/* } */
 
 .jumbo-div {
   margin-bottom: 50px;

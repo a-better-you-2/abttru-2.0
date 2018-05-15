@@ -1,8 +1,8 @@
 
 import React from "react";
-import { Row, Col, Jumbotron, Grid, Image, Tabs, Tab } from "react-bootstrap";
+import { Jumbotron, Image } from "react-bootstrap";
 import FontAwesomeIcon from "@fortawesome/react-fontawesome";
-import axios from "axios";
+// import axios from "axios";
 import { Link } from "react-router-dom";
 
 

@@ -73,7 +73,7 @@
 }
 
 .card-holder {
-  padding: 60px 20px 20px 20px;
+  padding: 25px 10px 10px 15px;
 }
 
 .open {
@@ -81,7 +81,7 @@
 }
 
 .open>.dropdown-menu {
-  width: 350px;
+  width: 500px;
   height: auto;
   display: block;
 }

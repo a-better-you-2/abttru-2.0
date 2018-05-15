@@ -1,12 +1,75 @@
-.footer {
-    position: relative;
+/* .footer {
+    background-color: #315659 !important;
+    color: white;
+    height: 135px;
+    width: 100%;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    overflow: visible;
+} */
+
+/* .footer {
+    background-color: #315659 !important;
+    color: white;
+    position: fixed;
     left:0;
     bottom:0;
     right:0;
     clear: both;
     padding: 10px;
+    z-index: 0;
+} */
+
+.footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: #315659;
+    border-top: 10px solid #197278;
+    color:white;
+    text-align: center;
+    padding-bottom: 0px;
+  }
+
+@media screen and (max-width: 600px) {
+    .footer {
+        background-color: #315659 !important;
+        color: white;
+        position: relative;
+        left:0;
+        bottom:0;
+        right:0;
+        clear: both;
+        padding: 10px;
+    }
 }
 
 .bitmoji {
-    width: 75%;
+    width: 50px;
+    height: auto;
+    float: left;
 }
+
+.blah {
+    width: 50% !important;
+}
+
+.hermanos,
+.copy {
+    display: table;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h5 {
+    text-align: center;
+}
+
+.icon {
+    margin: 5px;
+}
+
+
