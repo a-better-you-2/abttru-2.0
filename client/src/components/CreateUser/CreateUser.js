@@ -33,7 +33,6 @@ class Create extends React.Component {
       risk_factor: "",
       diet_recommendation: "",
       diet_restriction: "",
-      user_photo: "",
       isValid: true
     };
   }

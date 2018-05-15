@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Panel, Form, FormGroup, FormControl, Label } from "react-bootstrap";
+import { Panel } from "react-bootstrap";
 import FontAwesomeIcon from "@fortawesome/react-fontawesome";
-import Login from "./Login";
-import NavigationBar from '../NavigationBar';
-import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
+// import Login from "./Login";
+// import NavigationBar from '../NavigationBar';
+// import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
 // import "./UserList.css";
 
 class Home extends React.Component {

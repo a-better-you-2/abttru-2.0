@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Plot from 'react-plotly.js';
-import recipeData from './PlotData.json';
-import { Button, Carousel, Row, Col } from "react-bootstrap";
+// import recipeData from './PlotData.json';
+import { Button } from "react-bootstrap";
 // import './App.css';
 
 class PiePlot extends Component {
@@ -12,7 +12,6 @@ class PiePlot extends Component {
 
     }
 
-
     state = {
         data: [],
         plotObjectsArray: [],
@@ -20,13 +19,11 @@ class PiePlot extends Component {
         plotLayout: [],
         recipeIndex: 0,
         nutrientIndex: 0
-
     }
 
     componentDidMount() {
         console.log(this.props);
         this.createPlot();
-
     }
 
 
@@ -35,7 +32,7 @@ class PiePlot extends Component {
         // console.log(this.state.data);
 
         // create a copy of the data object
-        const dataCopy = this.props.data;
+        // const dataCopy = this.props.data;
         // for each recipe 'hits', extract the 'digest' property within the 'recipe' property
         // as well as the yield by recipe
         let plotObjectsArray = [];
@@ -76,10 +73,10 @@ class PiePlot extends Component {
                     height: 300,
                     width: 300,
                     margin: {
-                        l: 25,
-                        r: 25,
-                        t: 25,
-                        b: 25,
+                        l: 20,
+                        r: 20,
+                        t: 20,
+                        b: 20,
                     }
                 }
 
@@ -114,10 +111,10 @@ class PiePlot extends Component {
                     height: 300,
                     width: 300,
                     margin: {
-                        l: 25,
-                        r: 25,
-                        t: 25,
-                        b: 25,
+                        l: 20,
+                        r: 20,
+                        t: 20,
+                        b: 20,
                     }
                 }
             },
@@ -149,10 +146,10 @@ class PiePlot extends Component {
                     height: 300,
                     width: 300,
                     margin: {
-                        l: 25,
-                        r: 25,
-                        t: 25,
-                        b: 25,
+                        l: 20,
+                        r: 20,
+                        t: 20,
+                        b: 20,
                     }
                 }
             },
@@ -184,10 +181,10 @@ class PiePlot extends Component {
                     height: 300,
                     width: 300,
                     margin: {
-                        l: 25,
-                        r: 25,
-                        t: 25,
-                        b: 25,
+                        l: 20,
+                        r: 20,
+                        t: 20,
+                        b: 20,
                     }
                 }
 

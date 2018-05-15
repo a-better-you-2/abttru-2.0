@@ -1,8 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { Row, Col, Jumbotron, Grid, Image, Tabs, Tab } from "react-bootstrap";
+// import { Link } from "react-router-dom";
+// import { Row, Col, Jumbotron, Grid, Image, Tabs, Tab } from "react-bootstrap";
 import axios from "axios";
-import FontAwesomeIcon from "@fortawesome/react-fontawesome";
+// import FontAwesomeIcon from "@fortawesome/react-fontawesome";
 import "./User.css"
 import UserJumbotron from '../UserJumbotron/'
 import ControlledCarousel from "../Carousel";
@@ -52,7 +52,7 @@ class User extends React.Component {
     return (
       <div className="jumbo-div">
         <UserJumbotron
-          className={"col-md-12"}
+          // className={"col-md-12"}
           userId={this.props.match.params.id}
           user_photo={this.state.user_photo}
           risk_factor={this.state.risk_factor}

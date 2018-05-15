@@ -121,7 +121,7 @@ class ControlledCarousel extends React.Component {
               <Col xs={12} sm={12} md={5} lg={5}>
                 {/* <Carousel.Caption> */}
                 <h2 id="recipe-title">{data.recipe.label}</h2>
-                <img width={175} height={175} alt="recipeImage" id="pic" src={data.recipe.image} />
+                <img width={225} height={225} alt="recipeImage" id="pic" src={data.recipe.image} />
                 <h2 id="recipe-link"><a href={data.recipe.url} target="_blank">Tap HERE for the recipe</a></h2>
                 <Button className="save-button" id={data.recipe.uri} name={data.recipe.label} img={data.recipe.image} link={data.recipe.url} onClick={this.saveRecipe}>SAVE RECIPE</Button>
                 {/* </Carousel.Caption> */}
@@ -140,43 +140,41 @@ class ControlledCarousel extends React.Component {
       )
     }
 
-
-
     return (
-      <div className="">
+      <div className="container">
         <div className="row">
-          <div className="col-xs-0 col-sm-0 col-md-1 col-lg-2"></div>
-          <div className="col-xs-12 col-sm-12 col-md-10 cold-lg-8">
+          <div className="col-xs-0 col-sm-0 col-md-3 col-lg-2"></div>
+          <div className="col-xs-12 col-sm-12 col-md-6 col-lg-8">
             <form onSubmit={this.getRecipes.bind(this)} >
               <Input
                 name="name"
                 value={this.state.name}
                 onChange={this.handleInputChange}
                 placeholder="Search ingredients(e.g. chicken)"
-
               />
               <br />
               <Button onClick={this.getRecipes.bind(this)} color="primary">Get Recipes</Button>
             </form>
           </div>
-          <div className="col-xs-0 col-sm-0 col-md-1 col-lg-2"></div>
+          <div className="col-xs-0 col-sm-0 col-md-3 col-lg-2"></div>
         </div>
+      {/* START MAIN DISPLAY */}
         <div className="row">
-          <div className="col-xs-0 col-sm-0 col-md-4 cold-lg-4"></div>
-          <div className="col-md-8 sweet-loader">
+          <div className="col-xs-0 col-sm-0 col-md-4 col-lg-4"></div>
+          <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4 cosweet-loader">
             <MoonLoader
               loading={this.state.loading}
-              size={300}
+              size={200}
               color={'#915659'}
             />
           </div>
-          <div className="col-xs-0 col-sm-0 col-md-4 cold-lg-4"></div>
+          <div className="col-xs-0 col-sm-0 col-md-4 col-lg-4"></div>
         </div>
-        <div className="row">
-          <div className="col-xs-0 col-sm-0 col-md-1 cold-lg-2"></div>
-          <div className="col-xs-12 col-sm-12 col-md-10 cold-lg-8">
-            {this.state.showCarousel ? (
 
+        <div className="row">
+          <div className="col-xs-0 col-sm-0 col-md-1 col-lg-2"></div>
+          <div className="col-xs-12 col-sm-12 col-md-10 col-lg-8">
+            {this.state.showCarousel ? (
               <div>
                 <Carousel className="Carousel"
                   activeIndex={index}
@@ -191,7 +189,7 @@ class ControlledCarousel extends React.Component {
             )
               : null}
           </div>
-          <div className="col-xs-0 col-sm-0 col-md-1 cold-lg-2"></div>
+          <div className="col-xs-0 col-sm-0 col-md-1 col-lg-2"></div>
         </div>
 
 

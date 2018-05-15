@@ -1,65 +1,61 @@
 import React from "react";
 import "./Footer.css";
-import { Link } from "react-router-dom";
-import { Row } from '../Grid';
+// import { Link } from "react-router-dom";
+// import { Row } from '../Grid';
 
-const linkStyle = {
-    color: "black",
-    boxShadow: "3px 3px 10px black"
-}
-const navStyle = {
-    backgroundColor: "#315659 !important;"
+// const linkStyle = {
+//     color: "black",
+//     boxShadow: "3px 3px 10px black"
+// }
+// const navStyle = {
+//     backgroundColor: "#315659 !important;"
+// }
 
-
-}
+const logoStyle = {
+    width: "50px",
+    height: "auto",
+    margin: "2px"
+  }
 
 const Footer = () => (
 
     <footer className="footer">
         
             <div className="row">
-                <div className="col-xs-12 col-sm-12 col-md-4">
-                    
-                        <h5>Logo goes here</h5>
-                        Our application was created with a passion for food and connects you to recipes from all over the web,
-                            and helps your dietitian convey their recommendations to you dynamically.
-                    You pick your ingredients, we make a better you.
-                
-
+                <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4 about">
+                        <a href="" className="navbar-left logo"><img src={require('./ABTTRU-LOGO.png')} style={logoStyle} alt="logo"/></a>
+                        <p className="mission">Our application was created with a passion for food and connects you to recipes from all over the web,
+                        and helps your dietitian convey their recommendations to you dynamically.
+                        You pick your ingredients, we make a better you.</p>
                 </div>
-                <div className="col-xs-12 col-sm-4 col-md-4">
-                    <div className="col-xs-6 col-sm-6 col-md-6">
+                <div className="col-xs-12 col-sm-12 col-md-5 col-lg-5 ">
+                    <div className="col-xs-3 col-sm-3 col-md-4 col-lg-4">
                         <h5> Resources </h5>
                         <ul className="list-unstyled quick-links">
-                            <li><a href="#"><i className="fa fa-angle-double-right"></i>Readme</a></li>
+                            <li><a href=""><i className="fa fa-angle-double-right"></i>Readme</a></li>
                         </ul>
                     </div>
-                    <div className="col-xs-6 col-sm-6 col-md-6">
+                    <div className="col-xs-3 col-sm-3 col-md-4 col-lg-4">
                         <h5> Navigation </h5>
                         <ul className="list-unstyled quick-links">
-                            <li><a href="#"><i className="fa fa-angle-double-right"></i>For Dietitians</a></li>
-                            <li><a href="#"><i className="fa fa-angle-double-right"></i>For Patients</a></li>
+                            <li><a href=""><i className="fa fa-angle-double-right"></i>For Dietitians</a></li>
+                            <li><a href=""><i className="fa fa-angle-double-right"></i>For Patients</a></li>
                         </ul>
                     </div>
-                </div>
-                <div className="col-xs-4 col-sm-4 col-md-4">
+                    {/* <div className="col-xs-3 col-sm-3 col-md-4 col-lg-4"> */}
                     <h5>Connect with our team!</h5>
-                    <div className="col-xs-12 col-sm-4 col-md-4">
-                        <a href="https://github.com/a-vargasmarte" target="_blank"><img className="bitmoji" src={require('./bitmojiAlberto.png')} alt="bitmoji of alberto" />Alberto Vargas</a>
-                    </div>
-
-                    <div className="col-xs-12 col-sm-4 col-md-4">
-                        <a href="https://github.com/JBohde" target="_blank"><img className="bitmoji" src={require('./bitmojiJoshua.png')} alt="bitmoji of joshua" /></a> Joshua Bohde
-                    </div>
-                    <div className="col-xs-12 col-sm-4 col-md-4">
-                        <a href="https://github.com/DaveyStacks" target="_blank"><img className="bitmoji" src={require('./bitmojiDavey.png')} alt="bitmoji of davey" /></a>
+                    {/* </div> */}
+                </div>
+                <div className="col-xs-12 col-sm-12 col-md-3 col-lg-3 ">
+                    <div className="hermanos" >
+                    
+                        <a href="https://github.com/a-vargasmarte" target="_blank" rel="noopener noreferrer"><img className="bitmoji" src={require('./bitmojiAlberto.png')} alt="bitmoji of alberto" /></a>
+                        <a href="https://github.com/JBohde" target="_blank" rel="noopener noreferrer"><img className="bitmoji" src={require('./bitmojiJoshua2.png')} alt="bitmoji of joshua" /></a>
+                        <a href="https://github.com/DaveyStacks" target="_blank" rel="noopener noreferrer"><img className="bitmoji" src={require('./bitmojiDavey.png')} alt="bitmoji of davey" /></a>
                     </div>
                 </div>
             </div>
-            <div className="row text-center text-xs-center text-sm-left text-md-left">
-                <p>&copy; A Better You 2018</p>
-            </div>
-        
+            {/* <div className="copy">&copy; A Better You 2018</div> */}
     </footer>
 
 );
