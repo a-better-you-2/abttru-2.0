@@ -50,7 +50,7 @@ class User extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="jumbo-div">
         <UserJumbotron
           className={"col-md-12"}
           userId={this.props.match.params.id}

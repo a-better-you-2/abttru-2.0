@@ -1,0 +1,12 @@
+.footer {
+    position: relative;
+    left:0;
+    bottom:0;
+    right:0;
+    clear: both;
+    padding: 10px;
+}
+
+.bitmoji {
+    width: 75%;
+}

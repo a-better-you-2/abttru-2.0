@@ -1,14 +1,26 @@
 html,
 body,
 #root {
-  /* overflow: visible; */
   height: 100%;
   margin: 0;
   padding: 0;
   font-family: sans-serif;
   background-color: #EFFFFA;
+  padding-bottom: 150px;
 }
 
 body {
   margin: 0px;
+}
+
+body {
+  margin-bottom: 100px;
+}
+
+#davey-test {
+  box-sizing: border-box;
+}
+
+.jumbo-div {
+  margin-bottom: 50px;
 }

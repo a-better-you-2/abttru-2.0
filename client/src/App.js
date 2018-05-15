@@ -12,6 +12,8 @@ import UserLogin from "./components/User/UserLogin/UserLogin";
 import DoctorLogin from "./components/Doctor/DoctorLogin/DoctorLogin";
 import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
 import NavigationBar from './components/NavigationBar';
+import Footer from './components/Footer/Footer';
+
 import "./App.css";
 
 class App extends Component {
@@ -21,7 +23,8 @@ class App extends Component {
       <BrowserRouter keyLength={12}>
         <div id="davey-test">
           <NavigationBar style="background-color: #315659 !important" />
-          <div className="">
+          <div className="col-xs-12 col-sm-12 main">
+
             <Route exact path="/" component={Home} />
             <Route path="/doctor/:id" component={Doctor} />
             <Route path="/doctorLogin" component={DoctorLogin} />
@@ -33,6 +36,7 @@ class App extends Component {
             <Route path="/savedrecipes/:id" component={PatientSavedRecipe} />
             <Route path="/guest" component={Guest} />
           </div>
+          <Footer />
         </div>
       </BrowserRouter>
 
