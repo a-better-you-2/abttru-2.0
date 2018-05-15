@@ -73,8 +73,8 @@ class PiePlot extends Component {
                         }
                     ],
                     showlegend: false,
-                    height: 350,
-                    width: 350,
+                    height: 300,
+                    width: 300,
                     margin: {
                         l: 25,
                         r: 25,
@@ -111,8 +111,8 @@ class PiePlot extends Component {
                         }
                     ],
                     showlegend: false,
-                    height: 350,
-                    width: 350,
+                    height: 300,
+                    width: 300,
                     margin: {
                         l: 25,
                         r: 25,
@@ -146,8 +146,8 @@ class PiePlot extends Component {
                         }
                     ],
                     showlegend: false,
-                    height: 350,
-                    width: 350,
+                    height: 300,
+                    width: 300,
                     margin: {
                         l: 25,
                         r: 25,
@@ -181,8 +181,8 @@ class PiePlot extends Component {
                         }
                     ],
                     showlegend: false,
-                    height: 350,
-                    width: 350,
+                    height: 300,
+                    width: 300,
                     margin: {
                         l: 25,
                         r: 25,
