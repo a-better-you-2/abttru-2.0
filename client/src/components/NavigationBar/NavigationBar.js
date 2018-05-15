@@ -3,45 +3,52 @@ import "./Nav.css";
 import { Link } from "react-router-dom";
 import { Row } from '../Grid';
 
+
 const linkStyle = {
-  color: "black",
-  boxShadow: "3px 3px 10px black"
+  color: "white",
+  fontSize: "16px",
+  float: "right"
+   // boxShadow: "3px 3px 10px black"
 }
+
+const brandStyle = {
+  float: "left",
+  fontSize: "24px",
+  color: "white"
+}
+
 const navStyle = {
-  backgroundColor: "#315659 !important;"
-  
-  
+  backgroundColor: "#315659 !important;",
+  display: "inline-block",
+  float: "right",
+  color: "white",
+  padding: "10px"
+}
+
+const imgSrc = {
+  backgroundImage: "https://diymarketers.com/wp-content/uploads/2011/01/finishline.jpg"
 }
 
 const Nav = () => (
-  <nav className="navbar navbar-dark" style={navStyle}>
-    <a className="navbar-brand" href="/">
-      <h1>Welcome to ABTTRU</h1>
-    </a>
-
-    <Row>
-    
-        <Link to={"/"} >
-        <button className="btn btn-success" style={linkStyle}>
-          <strong>
-          Search for Articles
-          
-          </strong>
-          </button>
-        </Link>
-    
-      
-      <Link to={"/saved"}>
-      <button className="btn btn-success"  style={linkStyle}>
-        <strong>
-          Saved Articles Page
-          </strong>
-          </button>
-      </Link>
-      
-    </Row>
-
-  </nav>
+  <nav className="navbar navbar-default" >
+  <div className="container-fluid" id="navfluid" style={navStyle}>
+  <div className="navbar-header">
+    <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#navigationbar">
+    <span className="sr-only">Toggle navigation</span>
+    <span className="icon-bar" ></span>
+    <span className="icon-bar" ></span>
+    <span className="icon-bar" ></span>
+    </button>
+    <div className="logo" style={imgSrc}></div>
+    <a className="navbar-brand" href="" style={brandStyle}>A Better You</a>
+  </div>
+  <div className="collapse navbar-collapse" id="navigationbar" style={linkStyle}>
+    <ul className="nav navbar-nav">
+    <li><a href="#section2" style={linkStyle}>Log Out</a></li>  
+    </ul>
+  </div> {/* <!-- /.navbar-collapse --> */}
+  </div>{/* <!-- /.container-fluid --> */}
+</nav>
 );
 
 export default Nav;

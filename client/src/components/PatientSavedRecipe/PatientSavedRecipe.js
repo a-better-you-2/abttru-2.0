@@ -48,10 +48,12 @@ class PatientSavedRecipe extends React.Component {
           loading: false,
           showJumbo: true
         });
+        if (res.data.recipes.length < 1) {
+          return;
+        } else {
+          this.getData();
+        }
       })
-      .then(() => {
-        this.getData();
-      });
   }
 
   getData = () => {
@@ -59,10 +61,15 @@ class PatientSavedRecipe extends React.Component {
     console.log(allUri);
     let length = allUri.length;
     console.log(length);
-    let randomRecipe = Math.floor(Math.random() * length);
-    console.log(randomRecipe);
-    this.setState({ recipe_index: randomRecipe });
-    console.log(this.state.recipe_index);
+    if (length === 0) {
+        this.setState({recipe_index: 0});
+    } else {
+        let randomRecipe = Math.floor(Math.random() * length);
+        console.log(randomRecipe);
+        this.setState({ recipe_index: randomRecipe });
+        console.log(this.state.recipe_index);
+    }
+ 
     let recipeUri = allUri[this.state.recipe_index];
     console.log(recipeUri);
     let edemamUri = recipeUri.replace(/[#]/gi, '%23', /[:]/gi, '%3A', /[/]/, '%2F');
