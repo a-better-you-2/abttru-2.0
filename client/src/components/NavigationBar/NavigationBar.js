@@ -11,11 +11,11 @@ const linkStyle = {
    // boxShadow: "3px 3px 10px black"
 }
 
-const brandStyle = {
-  float: "left",
-  fontSize: "24px",
-  color: "white"
-}
+// const brandStyle = {
+//   float: "left",
+//   fontSize: "24px",
+//   color: "white"
+// }
 
 const navStyle = {
   backgroundColor: "#315659 !important",

@@ -28,24 +28,24 @@ const Footer = () => (
                         and helps your dietitian convey their recommendations to you dynamically.
                         You pick your ingredients, we make a better you.</p>
                 </div>
-                <div className="col-xs-12 col-sm-12 col-md-5 col-lg-5 ">
-                    <div className="col-xs-3 col-sm-3 col-md-4 col-lg-4">
+                {/* <div className="col-xs-12 col-sm-12 col-md-5 col-lg-5 "> */}
+                    <div className="col-xs-3 col-sm-3 col-md-2 col-lg-2">
                         <h5> Resources </h5>
                         <ul className="list-unstyled quick-links">
                             <li><a href=""><i className="fa fa-angle-double-right"></i>Readme</a></li>
                         </ul>
                     </div>
-                    <div className="col-xs-3 col-sm-3 col-md-4 col-lg-4">
+                    <div className="col-xs-3 col-sm-3 col-md-2 col-lg-2">
                         <h5> Navigation </h5>
                         <ul className="list-unstyled quick-links">
                             <li><a href=""><i className="fa fa-angle-double-right"></i>For Dietitians</a></li>
                             <li><a href=""><i className="fa fa-angle-double-right"></i>For Patients</a></li>
                         </ul>
                     </div>
-                    {/* <div className="col-xs-3 col-sm-3 col-md-4 col-lg-4"> */}
+                    <div className="col-xs-3 col-sm-3 col-md-1 col-lg-1">
                     <h5>Connect with our team!</h5>
-                    {/* </div> */}
-                </div>
+                    </div>
+                {/* </div> */}
                 <div className="col-xs-12 col-sm-12 col-md-3 col-lg-3 ">
                     <div className="hermanos" >
                     

@@ -55,12 +55,13 @@ class DoctorLogin extends Component {
             <div>
                 <Container>
                     <Row>
-                        <Col size="md-12">
+                        <Col size="xs-12 sm- 12 md-12 lg-12">
                             <form>
                                 <h1>HELLO DOCTOR!!</h1>
-                                <Container>
+                                
                                     <Row>
-                                        <Col size="xs-9 sm-10">
+                                    <Col size="xs-0 sm-0 md-4 lg-4"></Col>
+                                        <Col size="xs-12 sm-12 md-4 lg-4">
                                             <Input
                                                 name="email"
                                                 value={this.state.email}
@@ -76,17 +77,11 @@ class DoctorLogin extends Component {
                                             />
                                             <br />
                                         </Col>
-                                        <Col size="xs-3 sm-2">
-                                            <Button
-                                                onClick={this.handleFormSubmit}
-                                                type="success"
-                                                className="input-lg"
-                                            >
-                                                Login
-                          </Button>
+                                        <Col size="xs-0 sm-0 md-4 lg-4">
+                                            <Button onClick={this.handleFormSubmit} type="success" className="input-lg login">Login</Button>
                                         </Col>
                                     </Row>
-                                </Container>
+        
                             </form>
                         </Col>
                     </Row>

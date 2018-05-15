@@ -11,8 +11,6 @@ import { PacmanLoader } from 'react-spinners';
 // import { css } from 'emotion';
 
 
-
-
 class PatientSavedRecipe extends React.Component {
 
   state = {
