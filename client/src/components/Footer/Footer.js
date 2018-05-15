@@ -1,5 +1,7 @@
 import React from "react";
 import "./Footer.css";
+import FontAwesomeIcon from "@fortawesome/react-fontawesome";
+
 // import { Link } from "react-router-dom";
 // import { Row } from '../Grid';
 
@@ -29,26 +31,23 @@ const Footer = () => (
                         You pick your ingredients, we make a better you.</p>
                 </div>
                 {/* <div className="col-xs-12 col-sm-12 col-md-5 col-lg-5 "> */}
-                    <div className="col-xs-3 col-sm-3 col-md-2 col-lg-2">
+                    <div className="col-xs-6 col-sm-6 col-md-2 col-lg-2 blah">
                         <h5> Resources </h5>
                         <ul className="list-unstyled quick-links">
                             <li><a href=""><i className="fa fa-angle-double-right"></i>Readme</a></li>
                         </ul>
                     </div>
-                    <div className="col-xs-3 col-sm-3 col-md-2 col-lg-2">
+                    <div className="col-xs-6 col-sm-6 col-md-2 col-lg-2 blah">
                         <h5> Navigation </h5>
                         <ul className="list-unstyled quick-links">
-                            <li><a href=""><i className="fa fa-angle-double-right"></i>For Dietitians</a></li>
-                            <li><a href=""><i className="fa fa-angle-double-right"></i>For Patients</a></li>
+                            <li><h4><a href=""><FontAwesomeIcon icon="user-md" className="icon"/> </a><a href=""><FontAwesomeIcon icon="user-circle" className="icon"/></a></h4></li>
                         </ul>
                     </div>
-                    <div className="col-xs-3 col-sm-3 col-md-1 col-lg-1">
-                    <h5>Connect with our team!</h5>
-                    </div>
+
                 {/* </div> */}
-                <div className="col-xs-12 col-sm-12 col-md-3 col-lg-3 ">
+                <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4 ">
                     <div className="hermanos" >
-                    
+                    <h5>Connect with our team!</h5>
                         <a href="https://github.com/a-vargasmarte" target="_blank" rel="noopener noreferrer"><img className="bitmoji" src={require('./bitmojiAlberto.png')} alt="bitmoji of alberto" /></a>
                         <a href="https://github.com/JBohde" target="_blank" rel="noopener noreferrer"><img className="bitmoji" src={require('./bitmojiJoshua2.png')} alt="bitmoji of joshua" /></a>
                         <a href="https://github.com/DaveyStacks" target="_blank" rel="noopener noreferrer"><img className="bitmoji" src={require('./bitmojiDavey.png')} alt="bitmoji of davey" /></a>
