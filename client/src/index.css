@@ -41,3 +41,10 @@ body {
   margin-left: 1px;
   margin-right: 1px;
 }
+
+.add-panel,
+.patient-panel,
+.container {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}

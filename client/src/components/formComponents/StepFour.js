@@ -8,7 +8,7 @@ const StepFour = (props) => (
                 <h5 className="review-info">First Name:{" "}{props.first_name}</h5>
                 <h5 className="review-info">Last Name:{" "}{props.last_name}</h5>
                 <h5 className="review-info">Email:{" "}{props.email}</h5>
-                <h5 className="review-info">Password:{" "} {props.password}</h5>
+                <h5 className="review-info">Password:{" "} ****************************</h5>
                 <h5 className="review-info">IMG:{" "} {props.user_photo}</h5>
                 <h5 className="review-info">DOB: {" "}{props.dob}</h5>
                 <h5 className="review-info">Sex:{" "}{props.sex}</h5>
