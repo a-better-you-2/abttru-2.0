@@ -54,33 +54,34 @@ class UserLogin extends Component {
         return (
             <div>
                 <Container>
-                <div className="row">
-                    <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4"></div>
-                    <Logo className="col-xs-4 col-sm-4 col-md-4 col-lg-4" />
-                    <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4"></div>
-                </div>
+                    <div className="row">
+                        <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4"></div>
+                        <Logo className="col-xs-4 col-sm-4 col-md-4 col-lg-4" />
+                        <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4"></div>
+                    </div>
                     <Row>
-                            <form className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                    <Col size="xs-0 sm-0 md-4 lg-4"></Col>
-                                    <Col size="xs-12 sm-12 md-4 lg-4">
-                                        <Input
-                                            name="email"
-                                            value={this.state.email}
-                                            onChange={this.handleInputChange}
-                                            placeholder="Enter Email"
-                                        />
-                                        <br />
-                                        <Input
-                                            name="password"
-                                            value={this.state.password}
-                                            onChange={this.handleInputChange}
-                                            placeholder="Password"
-                                        />
-                                        <br />
-                                        <button className="input-lg login" id="login" onClick={this.handleFormSubmit}>Login</button>
-                                    </Col>
-                                    <Col size="xs-0 sm-0 md-4 lg-4"></Col>
-                            </form>
+                        <form className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <Col size="xs-0 sm-0 md-4 lg-4"></Col>
+                            <Col size="xs-12 sm-12 md-4 lg-4">
+                                <Input
+                                    name="email"
+                                    value={this.state.email}
+                                    onChange={this.handleInputChange}
+                                    placeholder="Enter Email"
+                                />
+                                <br />
+                                <Input
+                                    name="password"
+                                    type="password"
+                                    value={this.state.password}
+                                    onChange={this.handleInputChange}
+                                    placeholder="Password"
+                                />
+                                <br />
+                                <button className="input-lg login" id="login" onClick={this.handleFormSubmit}>Login</button>
+                            </Col>
+                            <Col size="xs-0 sm-0 md-4 lg-4"></Col>
+                        </form>
                     </Row>
                 </Container>
             </div >
