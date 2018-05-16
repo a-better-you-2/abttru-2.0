@@ -34,7 +34,7 @@ const Footer = () => (
                     <div className="col-xs-6 col-sm-6 col-md-2 col-lg-2 blah">
                         <h5> Resources </h5>
                         <ul className="list-unstyled quick-links">
-                            <li><a href=""><i className="fa fa-angle-double-right"></i>Readme</a></li>
+                            <li><a href=""><p className="icon"><i className="fa fa-angle-double-right"></i>Readme</p></a></li>
                         </ul>
                     </div>
                     <div className="col-xs-6 col-sm-6 col-md-2 col-lg-2 blah">

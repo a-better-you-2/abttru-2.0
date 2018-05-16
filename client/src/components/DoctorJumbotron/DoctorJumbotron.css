@@ -1,0 +1,31 @@
+.jumbotron {
+    padding-bottom: 50px;
+    /* background-color: #197278 !important;
+    display: block;
+    color: #EFFFFA; */
+  }
+
+#doctor_photo {
+    border-radius: 50%;
+    width: 150px;
+    height: auto;
+    display: table;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+    #doctor_photo {
+        border-radius: 50%;
+        width: 200px;
+        height: auto;
+        display: table;
+        margin: 0 auto;
+        text-align: center;
+    }
+}
+
+.prof {
+    padding: 0 !important;
+    /* margin: 5px; */
+}

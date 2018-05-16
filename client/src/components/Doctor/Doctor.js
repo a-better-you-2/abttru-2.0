@@ -51,8 +51,8 @@ class Doctor extends React.Component {
       </li>
     ))
     return (
-      <div className="container">
-
+      
+      <div>
         <DoctorJumbotron
           name={this.state.name}
           facility_name={this.state.facility_name}
@@ -61,7 +61,7 @@ class Doctor extends React.Component {
           data={this.state}
           doctor_id={this.props.match.params.id}
         />
-
+        <div className="container">
         <div className="row">
           <div className="col-xs-12 col-sm-12 col-md-6">
             <div className="btn-group">
@@ -75,6 +75,7 @@ class Doctor extends React.Component {
           </div>
           <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4"></div>
         </div>
+      </div>
       </div>
     )
   }
