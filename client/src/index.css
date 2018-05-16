@@ -82,3 +82,20 @@ ol.progtrckr,
  li.progtrckr-todo:before {
    background-color: #315659 !important;
  }
+
+ li.progtrckr-doing:before{
+   background-color: #315659 !important;
+   color: #EFFFFA !important;
+   border: 1px solid #EFFFFA;
+ }
+
+ ol.progtrckr, li.progtrckr-todo {
+   color: #EFFFFA !important;
+ }
+ .progtrckr-doing {
+   border-bottom: 4px solid #EFFFFA !important;
+ }
+
+ li.progtrckr-todo {
+  border-bottom: 4px solid #EFFFFA !important;
+ }
