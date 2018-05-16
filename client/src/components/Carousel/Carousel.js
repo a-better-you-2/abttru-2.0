@@ -144,7 +144,7 @@ class ControlledCarousel extends React.Component {
       <div className="container">
         <div className="row">
           <div className="col-xs-0 col-sm-0 col-md-3 col-lg-2"></div>
-          <div className="col-xs-12 col-sm-12 col-md-6 col-lg-8">
+          <div className="col-xs-12 col-sm-12 col-md-6 col-lg-8 carousel-div">
             <form onSubmit={this.getRecipes.bind(this)} >
               <Input
                 name="name"
@@ -158,14 +158,14 @@ class ControlledCarousel extends React.Component {
           </div>
           <div className="col-xs-0 col-sm-0 col-md-3 col-lg-2"></div>
         </div>
-      {/* START MAIN DISPLAY */}
+        {/* START MAIN DISPLAY */}
         <div className="row">
           <div className="col-xs-0 col-sm-0 col-md-4 col-lg-4"></div>
           <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4 cosweet-loader">
             <MoonLoader
               loading={this.state.loading}
-              size={200}
-              color={'#915659'}
+              size={250}
+              color={'#197278'}
             />
           </div>
           <div className="col-xs-0 col-sm-0 col-md-4 col-lg-4"></div>
@@ -175,16 +175,18 @@ class ControlledCarousel extends React.Component {
           <div className="col-xs-0 col-sm-0 col-md-1 col-lg-2"></div>
           <div className="col-xs-12 col-sm-12 col-md-10 col-lg-8">
             {this.state.showCarousel ? (
-              <div>
-                <Carousel className="Carousel"
-                  activeIndex={index}
-                  direction={direction}
-                  onSelect={this.handleSelect}
-                >
-                  {searchedRecipeCard.map(c => {
-                    return <Carousel.Item>{c}</Carousel.Item>
-                  })}
-                </Carousel>
+              <div className="Carousel-outer">
+                <div>
+                  <Carousel className="Carousel"
+                    activeIndex={index}
+                    direction={direction}
+                    onSelect={this.handleSelect}
+                  >
+                    {searchedRecipeCard.map(c => {
+                      return <Carousel.Item>{c}</Carousel.Item>
+                    })}
+                  </Carousel>
+                </div>
               </div>
             )
               : null}

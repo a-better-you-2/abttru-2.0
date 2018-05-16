@@ -9,6 +9,7 @@ import Step3 from '../formComponents/StepThree';
 import Step4 from '../formComponents/StepFour';
 import StepZilla from 'react-stepzilla';
 import "../formComponents/Dropdown.css";
+import "./CreateUser.css";
 
 class Create extends React.Component {
   constructor(props) {
@@ -125,7 +126,7 @@ class Create extends React.Component {
       ]
     return (
       <div className="container">
-        <Panel>
+        <Panel className="add-panel">
           <Panel>
             <h4>Add Patient</h4>
           </Panel>
