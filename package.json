@@ -10,6 +10,7 @@
     "express": "^4.15.4",
     "express-session": "^1.15.6",
     "history": "^4.7.2",
+    "moment": "^2.22.1",
     "mongoose": "^5.0.15",
     "react-bootstrap": "^0.32.1",
     "react-helmet": "^5.2.0",
