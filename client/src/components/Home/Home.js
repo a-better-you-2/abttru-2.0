@@ -25,7 +25,7 @@ class Home extends React.Component {
             <Panel>
               <Panel.Body>
                 <h3 className="welcome">
-                  <Link to="/guest">
+                  <Link to="/guest" id="nav-link">
                     <FontAwesomeIcon icon="user" /> Continue as Guest
               </Link>
                 </h3>
@@ -34,7 +34,7 @@ class Home extends React.Component {
             <Panel>
               <Panel.Body>
                 <h3 className="welcome">
-                  <Link to="/doctorLogin">
+                  <Link to="/doctorLogin" id="nav-link">
                     {/* <FontAwesomeIcon icon="user-md" />  */}
                     <FontAwesomeIcon icon="user-md"/> Login as Doctor
               </Link>
@@ -44,7 +44,7 @@ class Home extends React.Component {
             <Panel>
               <Panel.Body>
                 <h3 className="welcome">
-                  <Link to="/userLogin">
+                  <Link to="/userLogin" id="nav-link">
                     <FontAwesomeIcon icon="user-circle" /> Login as Patient
               </Link>
                 </h3>
