@@ -128,15 +128,15 @@ class Create extends React.Component {
       <div className="container">
         <Panel className="add-panel">
           <Panel>
-            <h4>Add Patient</h4>
+            <h3><strong>Add Patient</strong></h3>
           </Panel>
           <Panel.Body>
             <div>
-              <h5>
+              <h5 >
                 <Link to={{
-                  pathname: `/doctor/${this.props.match.params.id}`
-                }}>
-                  <FontAwesomeIcon icon="list" /> Patient List
+                  pathname: `/doctor/${this.props.match.params.id}` 
+                }}  id="doc-home">
+                  <FontAwesomeIcon icon="list"  /> Doctor Home
                 </Link>
               </h5>
 

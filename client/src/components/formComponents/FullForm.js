@@ -152,7 +152,7 @@ class FullForm extends Component {
                         onStepChange={(step) => window.sessionStorage.setItem('step', step)}
                     />
                 </div>
-                <Button onClick={this.onSubmit.bind(this)} color="primary">Submit</Button>
+                <Button onClick={this.onSubmit.bind(this)} >Submit</Button>
 
             </div>
         );

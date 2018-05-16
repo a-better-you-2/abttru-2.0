@@ -33,12 +33,11 @@ class Doctor extends React.Component {
           </Link>
         </div>
         <div className="info">
-          <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <h4>{patient.first_name}{" "}{patient.last_name}</h4>
-            <h6>{patient.risk_factor}</h6>
+            <h6><strong>Risk Factor: </strong>{patient.risk_factor}</h6>
             <br/>
-            <h6>{patient.diet_recommendation}</h6>
-          </div>
+            <h6><strong>Diet Recommendation: </strong>{patient.diet_recommendation}</h6>
+
         </div>
       </li>
     ))

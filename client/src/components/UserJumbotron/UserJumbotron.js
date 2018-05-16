@@ -1,6 +1,6 @@
 import React from "react";
 import { Jumbotron, Image } from "react-bootstrap";
-import FontAwesomeIcon from "@fortawesome/react-fontawesome";
+// import FontAwesomeIcon from "@fortawesome/react-fontawesome";
 // import axios from "axios";
 import { Link } from "react-router-dom";
 import cholesterolIcon from './cholesterol.png';

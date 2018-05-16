@@ -23,8 +23,6 @@ body {
   margin-bottom: 0px;
 }
 
-
-
 /* #davey-test { */
   /* box-sizing: border-box; */
   /* flex: 1 0 auto; */
@@ -33,8 +31,6 @@ body {
 .jumbo-div {
   margin-bottom: 50px;
 }
-
-
 
 #height{
   width: 49%;
@@ -49,6 +45,28 @@ body {
   margin-bottom: 30px;
 }
 
+.add-panel,
+.patient-panel,
+.progtrckr-todo::before {
+
+  background-color: #315659
+}
+
+.progtrckr-doing {
+  color: rgb(96, 195, 228) !important;
+}
+
+.progtrckr-todo,
+.progtrckr-done {
+  color:#EFFFFA !important;
+}
+
+.input-wizard {
+  background-color: #EFFFFA;
+  color: #315659
+}
+
 .steppy {
-  padding-left: 4px;
+  padding-left: 10%;
+  color: #EFFFFA;
 }

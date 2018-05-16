@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { Panel } from "react-bootstrap";
 import Logo from './Logo/Logo';
 import FontAwesomeIcon from "@fortawesome/react-fontawesome";
-import doctorIcon from './doctor-female.png'
 import "./Home.css";
 
 class Home extends React.Component {
@@ -26,8 +25,8 @@ class Home extends React.Component {
             <Panel>
               <Panel.Body>
                 <h3 className="welcome">
-                  <Link to="/guest">
-                    <FontAwesomeIcon icon="user" color="#EFFFFA" /> Continue as Guest
+                  <Link to="/guest" id="nav-link">
+                    <FontAwesomeIcon icon="user" /> Continue as Guest
               </Link>
                 </h3>
               </Panel.Body>
@@ -35,7 +34,7 @@ class Home extends React.Component {
             <Panel>
               <Panel.Body>
                 <h3 className="welcome">
-                  <Link to="/doctorLogin">
+                  <Link to="/doctorLogin" id="nav-link">
                     {/* <FontAwesomeIcon icon="user-md" />  */}
                     <FontAwesomeIcon icon="user-md" color="#EFFFFA" /> Login as Doctor
               </Link>
@@ -45,8 +44,9 @@ class Home extends React.Component {
             <Panel>
               <Panel.Body>
                 <h3 className="welcome">
-                  <Link to="/userLogin">
-                    <FontAwesomeIcon icon="user-circle" color="#EFFFFA" /> Login as Patient
+
+                  <Link to="/userLogin" id="nav-link">
+                    <FontAwesomeIcon icon="user-circle" /> Login as Patient
               </Link>
                 </h3>
               </Panel.Body>

@@ -1,18 +1,6 @@
 import React from "react";
 import "./Footer.css";
 import FontAwesomeIcon from "@fortawesome/react-fontawesome";
-import doctorIcon from '../Home/doctor-female.png';
-
-// import { Link } from "react-router-dom";
-// import { Row } from '../Grid';
-
-// const linkStyle = {
-//     color: "black",
-//     boxShadow: "3px 3px 10px black"
-// }
-// const navStyle = {
-//     backgroundColor: "#315659 !important;"
-// }
 
 const logoStyle = {
     width: "50px",
@@ -35,7 +23,7 @@ const Footer = () => (
             <div className="col-xs-6 col-sm-6 col-md-2 col-lg-2 blah">
                 <h5> Resources </h5>
                 <ul className="list-unstyled quick-links">
-                    <li><a href=""><p className="icon"><i className="fa fa-angle-double-right">Readme</i></p></a></li>
+                    <li><a href=""><p className="icon"><i className="fa fa-angle-double-right"></i>Readme</p></a></li>
                 </ul>
             </div>
             <div className="col-xs-6 col-sm-6 col-md-2 col-lg-2 blah">
