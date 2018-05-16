@@ -38,7 +38,7 @@ const Nav = () => (
   </div>
   <div className="collapse navbar-collapse" id="navigationbar" style={linkStyle}>
     <ul className="nav navbar-nav">
-    <Link to="/"><li><a style={linkStyle}> <FontAwesomeIcon icon="home" /> Home</a></li> </Link>
+    <Link to="/"><li style={linkStyle}><FontAwesomeIcon icon="home" /> Home</li> </Link>
     </ul>
   </div> {/* <!-- /.navbar-collapse --> */}
   </div>{/* <!-- /.container-fluid --> */}

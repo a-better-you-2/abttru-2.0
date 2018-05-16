@@ -52,6 +52,15 @@ body {
   background-color: #315659
 }
 
+.progtrckr-doing {
+  color: rgb(96, 195, 228) !important;
+}
+
+.progtrckr-todo,
+.progtrckr-done {
+  color:#EFFFFA !important;
+}
+
 .input-wizard {
   background-color: #EFFFFA;
   color: #315659
