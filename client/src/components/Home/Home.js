@@ -37,7 +37,7 @@ class Home extends React.Component {
                 <h3 className="welcome">
                   <Link to="/doctorLogin">
                     {/* <FontAwesomeIcon icon="user-md" />  */}
-                    <img src={doctorIcon} alt="doctor icon" id="doctor-icon" /> Login as Doctor
+                    <FontAwesomeIcon icon="user-md"/> Login as Doctor
               </Link>
                 </h3>
               </Panel.Body>

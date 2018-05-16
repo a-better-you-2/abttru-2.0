@@ -5,7 +5,7 @@ import React from 'react';
 const StepOne = (props) => (
 
 
-    <div>
+    <div className="steppy">
         <br />
         <br />
         <form className="form-wizard">

@@ -19,7 +19,6 @@ class Guest extends React.Component {
           <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4"></div>
         </div>
         <h5>
-
         </h5>
         <ControlledCarousel pathName={this.props.match.path} />
       </div>
