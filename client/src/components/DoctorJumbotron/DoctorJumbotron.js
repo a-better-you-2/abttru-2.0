@@ -4,6 +4,7 @@ import { Jumbotron, Image } from "react-bootstrap";
 import FontAwesomeIcon from "@fortawesome/react-fontawesome";
 // import axios from "axios";
 import { Link } from "react-router-dom";
+import './DoctorJumbotron.css';
 
 
 
@@ -12,10 +13,10 @@ const DoctorJumbotron = (props) => {
     return (
         <Jumbotron className="jumbo">
             <div className="row">
-                <div className="col-xs-2 col-md-1 col-lg-1">
+                <div className="col-xs-2 col-md-2 col-lg-2">
                 </div>
-                <div className="col-xs-10 col-md-3 col-lg-3">
-                    <Image id="doctor_photo" src={props.doctor_photo} thumbnail responsive />
+                <div className="col-xs-10 col-md-2 col-lg-2 prof">
+                    <Image id="doctor_photo" src={props.doctor_photo} thumbnail />
                 </div>
                 <div className="col-xs-12 col-md-1 col-lg-1">
                 </div>

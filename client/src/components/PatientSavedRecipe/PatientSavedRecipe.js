@@ -30,13 +30,12 @@ class PatientSavedRecipe extends React.Component {
     notes: [],
     note_text: "",
     isUserPage: false,
-    showJumbo: false
+    showJumbo: true
   };
 
   componentDidMount() {
     this.setState({
       loading: true,
-      showJumbo: false
     })
     axios.get(`/api/abttru/user/${this.state.initial_user_id}`)
       .then(res => {
@@ -248,12 +247,12 @@ class PatientSavedRecipe extends React.Component {
                   </div>
                   <div className="row">
                     <div className="col-xs-0 col-sm-0 col-md-2 cold-lg-2"></div>
-                    <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                    <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4 display">
                       <div className="card-holder">
                         {this.makeCard()}
                       </div>
                     </div>
-                    <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                    <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4 display">
                       {piePlot}
                     </div>
                     <div className="col-xs-0 col-sm-0 col-md-2 cold-lg-2"></div>
