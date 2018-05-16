@@ -46,8 +46,6 @@ class UserLogin extends Component {
                     })
                     this.props.history.push(`/user/${id}`);
                 }
-
-                // console.log(this.state);
             })
     }
 
@@ -56,8 +54,11 @@ class UserLogin extends Component {
         return (
             <div>
                 <Container>
-                    {/* <h1>USER LOGIN</h1> */}
-                    <Logo />
+                <div className="row">
+                    <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4"></div>
+                        <Logo className="col-xs-4 col-sm-4 col-md-4 col-lg-4" />
+                    <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4"></div>
+                </div>
                     <Row>
                         <Col size="xs-12 sm- 12 md-12 lg-12">
                             <form>

@@ -25,13 +25,6 @@ class DoctorLogin extends Component {
 
     handleFormSubmit = event => {
         // When the form is submitted, prevent its default behavior, get recipes update the recipes state
-        // event.preventDefault();
-        // axios.getArticles(this.state.articleSearch, this.state.startDate, this.state.endDate)
-        //     .then(res => this.setState({ articles: res.data.response.docs }))
-        //     .catch(err => console.log(err));
-        // console.log(this.state.articles);
-
-        // When the form is submitted, prevent its default behavior, get recipes update the recipes state
         event.preventDefault();
         axios.post(`/api/abttru/doctorLogin`, this.state)
             .then(res => {
@@ -55,40 +48,38 @@ class DoctorLogin extends Component {
         return (
             <div>
                 <Container>
-                    <Logo />
-                    <Row>
-                        <Col size="xs-12 sm- 12 md-12 lg-12">
-
-                            <form>
-                                {/* <h1>HELLO DOCTOR!!</h1> */}
-
-
-                                <Row>
-                                    <Col size="xs-0 sm-0 md-4 lg-4"></Col>
-                                    <Col size="xs-12 sm-12 md-4 lg-4">
-                                        <Input
-                                            name="email"
-                                            value={this.state.email}
-                                            onChange={this.handleInputChange}
-                                            placeholder="Enter Email"
-                                        />
-                                        <br />
-                                        <Input
-                                            name="password"
-                                            value={this.state.password}
-                                            onChange={this.handleInputChange}
-                                            placeholder="Password"
-                                        />
-                                        <br />
-                                    </Col>
-                                    <Col size="xs-0 sm-0 md-4 lg-4">
-                                        <Button onClick={this.handleFormSubmit} type="success" className="input-lg login">Login</Button>
-                                    </Col>
-                                </Row>
-
-                            </form>
-                        </Col>
-                    </Row>
+                <div className="row">
+                    <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4"></div>
+                        <Logo className="col-xs-4 col-sm-4 col-md-4 col-lg-4" />
+                    <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4"></div>
+                </div>
+                <Row>
+                    {/* <Col size="xs-12 sm- 12 md-12 lg-12"> */}
+                    <form>
+                        <Row>
+                            <Col size="xs-0 sm-0 md-4 lg-4"></Col>
+                            <Col size="xs-12 sm-12 md-4 lg-4">
+                                <Input
+                                    name="email"
+                                    value={this.state.email}
+                                    onChange={this.handleInputChange}
+                                    placeholder="Enter Email"
+                                />
+                                <br />
+                                <Input
+                                    name="password"
+                                    value={this.state.password}
+                                    onChange={this.handleInputChange}
+                                    placeholder="Password"
+                                />
+                                <br />
+                                <Button onClick={this.handleFormSubmit} className="input-lg login">Login</Button>
+                            </Col>
+                            <Col size="xs-0 sm-0 md-4 lg-4"></Col>
+                        </Row>
+                    </form>
+                    {/* </Col> */}
+                </Row>
                 </Container>
             </div>
         );

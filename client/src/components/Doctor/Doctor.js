@@ -1,8 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-// import { Table } from "react-bootstrap";
-// import FontAwesomeIcon from "@fortawesome/react-fontawesome";
 import "./Doctor.css";
 import DoctorJumbotron from '../DoctorJumbotron/DoctorJumbotron'
 
@@ -29,9 +27,9 @@ class Doctor extends React.Component {
   render() {
     const savedSelect = this.state.patients.map(patient => (
       <li id={patient._id} key={patient._id}>
-        <div className="pic">
+        <div className="patient">
           <Link to={{ pathname: `/show/${patient._id}`, params: { data: this.state, doctor_id: this.props.match.params.id } }}>
-            <img className="img-responsive" src={patient.user_photo} alt="alt"></img>
+            <img src={patient.user_photo} alt="alt"></img>
           </Link>
         </div>
         <div className="row info">
