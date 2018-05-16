@@ -37,7 +37,7 @@ ol.progtrckr li.progtrckr-todo {
 }
 
 ol.progtrckr li.progtrckr-doing {
-  color: black;
+  color: #effffa;
   border-bottom: 4px solid #CCCCCC;
 }
 
@@ -112,5 +112,6 @@ ol.progtrckr li.progtrckr-done:hover:before {
   width: 95%;
   margin-top: 80px;
 }
+
 
 
