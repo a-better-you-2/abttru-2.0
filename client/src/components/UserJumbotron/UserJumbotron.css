@@ -48,3 +48,20 @@
     margin-bottom: 5px;
     font-size: 14px;
 }
+
+.health-icon {
+    height: 50px;
+    width: 50px;
+    float: left;
+}
+
+.tab-icon {
+    height: 20px;
+    width: 20px;
+}
+
+@media screen and (min-width: 767px) {
+    .health-icon {
+        margin: auto;
+    }
+}
