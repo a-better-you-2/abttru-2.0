@@ -7,9 +7,9 @@ h1 {
     background-color: #315659;
 }
 
-a {
+/* a {
     color: #EFFFFA !important;
-}
+} */
 
 #abttru-logo {
     display: table;
@@ -36,5 +36,5 @@ a {
 }
 
 #nav-link {
-    color: #197278
+    color: #EFFFFA !important
 }
