@@ -33,6 +33,9 @@ class User extends React.Component {
       .then(res => {
         console.log(res.data);
         this.setState(res.data);
+        if (res.data.diet_restriction === "") {
+          this.setState({ diet_restriction: "None" });
+        }
       })
       .catch(err => console.log(err))
   }
