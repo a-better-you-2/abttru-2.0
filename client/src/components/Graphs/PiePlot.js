@@ -42,6 +42,13 @@ class PiePlot extends Component {
         // console.log(result.recipe.digest);
         let recipeDigest = this.props.digestData;
         let recipeYield = this.props.yieldData;
+        // declare a variable containing the colors of each plotly graph
+        let ultimateColors = [
+            ['#2E5894', '#8FD400', '#9C2542'],
+            ['#0095B7', '#2D383A', '#1AB385', '#A50B5E'],
+            ['#ABAD48', '#469496', '#436CB9', '#469A84', '#353839', '#2D5DA1', '#64609A'],
+            ['#E97451', '#FC80A5', '#C62D42', '#C9A0DC', '#76D7EA', '#FF8833', '#29AB87', '#AF593E', '#01786F', '#FFCBA4', '#FCD667', '#ED0A3F', '#FBE870']
+        ];
 
         // create object that will contain the 'data' property for each distinct plot (macros, fats, minerals, vitamins)
         let plotObjects = [
@@ -52,7 +59,10 @@ class PiePlot extends Component {
                     name: 'Macronutrients',
                     hoverinfo: 'label+percent+name',
                     hole: .6,
-                    type: 'pie'
+                    type: 'pie',
+                    marker: {
+                        colors: ultimateColors[0]
+                    }
                 },
                 layout: {
                     paper_bgcolor: 'transparent',
@@ -64,7 +74,7 @@ class PiePlot extends Component {
                             },
                             showarrow: false,
                             text: 'Macros',
-                            x: 0.3,
+                            x: 0.5,
                             y: 0.5
                         }
                     ],
@@ -89,7 +99,10 @@ class PiePlot extends Component {
                     name: 'Lipids',
                     hoverinfo: 'label+percent+name',
                     hole: .6,
-                    type: 'pie'
+                    type: 'pie',
+                    marker: {
+                        colors: ultimateColors[1]
+                    }
                 },
                 layout: {
 
@@ -124,7 +137,10 @@ class PiePlot extends Component {
                     name: 'Minerals',
                     hoverinfo: 'label+percent+name',
                     hole: .6,
-                    type: 'pie'
+                    type: 'pie',
+                    marker: {
+                        colors: ultimateColors[2]
+                    }
                 },
                 layout: {
 
@@ -137,7 +153,7 @@ class PiePlot extends Component {
                             },
                             showarrow: false,
                             text: 'Minerals',
-                            x: 0.3,
+                            x: 0.5,
                             y: 0.5
                         }
                     ],
@@ -159,7 +175,10 @@ class PiePlot extends Component {
                     name: 'Vitamins',
                     hoverinfo: 'label+percent+name',
                     hole: .6,
-                    type: 'pie'
+                    type: 'pie',
+                    marker: {
+                        colors: ultimateColors[3]
+                    }
                 },
                 layout: {
 
@@ -172,7 +191,7 @@ class PiePlot extends Component {
                             },
                             showarrow: false,
                             text: 'Vitamins',
-                            x: 0.27,
+                            x: 0.5,
                             y: 0.5
                         }
                     ],
@@ -300,7 +319,7 @@ class PiePlot extends Component {
                     {/* <Col xs={12}> */}
                     <div className="graphButtons">
                         <Button id="pie" onClick={this.switchPlot} value={0}>Macros</Button>
-                        <Button id="pie" onClick={this.switchPlot} value={1}>Lipids</Button>
+                        <Button id="pie" onClick={this.switchPlot} value={1}>Fats</Button>
                         <Button id="pie" onClick={this.switchPlot} value={2}>Minerals</Button>
                         <Button id="pie" onClick={this.switchPlot} value={3}>Vitamins</Button>
                     </div>

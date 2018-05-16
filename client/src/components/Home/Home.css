@@ -3,6 +3,14 @@ h1 {
     text-align: center;
 }
 
+.panel-body {
+    background-color: #315659;
+}
+
+a {
+    color: #EFFFFA !important;
+}
+
 #abttru-logo {
     display: table;
     margin: 0 auto;
