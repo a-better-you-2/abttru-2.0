@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { Panel } from "react-bootstrap";
 import Logo from './Logo/Logo';
 import FontAwesomeIcon from "@fortawesome/react-fontawesome";
-import doctorIcon from './doctor-female.png'
 import "./Home.css";
 
 class Home extends React.Component {

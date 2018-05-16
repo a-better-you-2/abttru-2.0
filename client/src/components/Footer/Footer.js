@@ -1,18 +1,6 @@
 import React from "react";
 import "./Footer.css";
 import FontAwesomeIcon from "@fortawesome/react-fontawesome";
-import doctorIcon from '../Home/doctor-female.png';
-
-// import { Link } from "react-router-dom";
-// import { Row } from '../Grid';
-
-// const linkStyle = {
-//     color: "black",
-//     boxShadow: "3px 3px 10px black"
-// }
-// const navStyle = {
-//     backgroundColor: "#315659 !important;"
-// }
 
 const logoStyle = {
     width: "50px",
