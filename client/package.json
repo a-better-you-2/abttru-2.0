@@ -10,6 +10,7 @@
     "@fortawesome/react-fontawesome": "^0.0.18",
     "axios": "^0.18.0",
     "bootstrap": "^4.1.0",
+    "moment": "^2.22.1",
     "plotly.js": "^1.37.1",
     "radium": "^0.24.0",
     "react": "^16.3.2",

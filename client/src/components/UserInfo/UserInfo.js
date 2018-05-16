@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { Panel, Button } from "react-bootstrap";
 import FontAwesomeIcon from "@fortawesome/react-fontawesome";
+import Moment from 'moment';
 import "./UserInfo.css";
 
 class UserInfo extends React.Component {
@@ -16,12 +17,15 @@ class UserInfo extends React.Component {
     diet_restriction: ""
   };
 
+
+
   componentDidMount() {
     console.log(this.props)
     axios.get(`/api/abttru/user/${this.state.patient_id}`)
       .then(res => {
         this.setState(res.data);
         console.log(this.state);
+
       })
 
       .catch(err => console.log(err));
@@ -51,6 +55,10 @@ class UserInfo extends React.Component {
   }
 
   render() {
+    Moment.locale('en');
+    var dob = this.state.dob;
+
+
     return (
       <div className="container">
         <Panel className="patient-panel"
@@ -61,7 +69,7 @@ class UserInfo extends React.Component {
           <Panel.Body>
             <div>
               <h5>
-                <Link to={`/doctor/${this.state.doctor_id}`}id="patients">
+                <Link to={`/doctor/${this.state.doctor_id}`} id="patients">
                   <FontAwesomeIcon icon="list" /> My Patients
               </Link>
               </h5>
@@ -82,7 +90,7 @@ class UserInfo extends React.Component {
                     <h4>Waist Measure:{" "}{this.state.waist}</h4>
                   </div>
                   <div className="col-xs-12 col-sm-12 col-md-5 col-lg-5">
-                    <h4>DOB:{" "}{this.state.dob}</h4>
+                    <h4>DOB:{" "}{Moment(dob).add(1, 'days').format('MMMM Do YYYY')}</h4>
                     <h4>Diet Recommendation:{" "}{this.state.diet_recommendation}</h4>
                     <h4>Diet Restriction:{" "}{this.state.diet_restriction}</h4>
                     <h4>Systolic BP:{" "}{this.state.bp_systolic}</h4>
