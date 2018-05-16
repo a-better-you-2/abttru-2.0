@@ -2,3 +2,24 @@
 h1 {
     text-align: center;
 }
+
+#abttru-logo {
+    margin: auto;
+    /* border-radius: 50%; */
+}
+
+#img-div {
+    border-radius: 60%;
+    background-color: #315659;
+    margin: 10px auto 15px auto;
+    width: 90%;
+}
+
+.img-responsive {
+    height: 200px !important;
+}
+
+#doctor-icon {
+    height: 30px;
+    width: 30px;
+}
