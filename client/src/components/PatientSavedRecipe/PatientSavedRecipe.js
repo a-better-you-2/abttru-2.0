@@ -7,7 +7,7 @@ import RecipeCard from "./SavedRecipeCard";
 import UserJumbotron from '../UserJumbotron/'
 import "./PatientSavedRecipe.css"
 import PiePlot from "../Graphs/PiePlot";
-import { PacmanLoader } from 'react-spinners';
+import { MoonLoader } from 'react-spinners';
 // import { css } from 'emotion';
 
 
@@ -30,20 +30,23 @@ class PatientSavedRecipe extends React.Component {
     notes: [],
     note_text: "",
     isUserPage: false,
-    showJumbo: true
+    showResults: true,
+    loading: false
 
   };
 
   componentDidMount() {
     this.setState({
-      loading: true
+      loading: true,
+      showResults: false
     })
     axios.get(`/api/abttru/user/${this.state.initial_user_id}`)
       .then(res => {
         console.log(res.data);
         this.setState(res.data);
         this.setState({
-          loading: false
+          loading: false,
+          showResults: true
         });
         if (res.data.recipes.length < 1) {
           return;
@@ -54,16 +57,25 @@ class PatientSavedRecipe extends React.Component {
   }
 
   getData = () => {
+    this.setState({ showResults: false, loading: true });
     let allUri = this.state.recipes.map(recipe => (recipe.recipe_uri));
     console.log(allUri);
     let length = allUri.length;
     console.log(length);
     if (length === 0) {
-      this.setState({ recipe_index: 0 });
+      this.setState({
+        recipe_index: 0,
+        showResults: true,
+        loading: false
+      });
     } else {
       let randomRecipe = Math.floor(Math.random() * length);
       console.log(randomRecipe);
-      this.setState({ recipe_index: randomRecipe });
+      this.setState({
+        recipe_index: randomRecipe,
+        showResults: true,
+        loading: false
+      });
       console.log(this.state.recipe_index);
     }
 
@@ -80,6 +92,7 @@ class PatientSavedRecipe extends React.Component {
   }
 
   changeRecipe = (e) => {
+    this.setState({ loading: true, showResults: false })
     console.log(e.target.id);
     const id = e.target.id;
     const uri = id.replace(/[#]/gi, '%23', /[:]/gi, '%3A', /[/]/, '%2F');
@@ -88,7 +101,7 @@ class PatientSavedRecipe extends React.Component {
         console.log(recipe.data);
         const pos = this.state.recipes.map(function (e) { return e.recipe_uri; }).indexOf(id);
         console.log(pos)
-        this.setState({ recipe_data: recipe.data, recipe_index: pos });
+        this.setState({ recipe_data: recipe.data, recipe_index: pos, loading: false, showResults: true });
       })
   }
 
@@ -209,28 +222,31 @@ class PatientSavedRecipe extends React.Component {
       <div>
         <div className="savedPage">
           <div>
-            {this.state.showJumbo ?
+            <div>
+              <UserJumbotron
+                className={"col-md-12"}
+                userId={this.state.initial_user_id}
+                risk_factor={this.state.risk_factor}
+                diet_label={this.state.diet_recommendation}
+                health_label={this.state.diet_restriction}
+                isUserPage={this.state.isUserPage}
+                user_photo={this.state.user_photo}
+              />
               <div>
-                <UserJumbotron
-                  className={"col-md-12"}
-                  userId={this.state.initial_user_id}
-                  risk_factor={this.state.risk_factor}
-                  diet_label={this.state.diet_recommendation}
-                  health_label={this.state.diet_restriction}
-                  isUserPage={this.state.isUserPage}
-                  user_photo={this.state.user_photo}
-                />
-                <div>
-                  <div className="row">
-                    <div className="col-xs-0 col-sm-0 col-md-4 cold-lg-4"></div>
-                    <div className="col-xs-12 col-sm-12 col-md-4 cold-lg-4 sweet-loader">
-                      <PacmanLoader
-                        loading={true}
-                        color={'#197278'}
-                      />
-                    </div>
-                    <div className="col-xs-0 col-sm-0 col-md-4 cold-lg-4"></div>
+                <div className="row">
+                  <div className="col-xs-0 col-sm-0 col-md-4 cold-lg-4"></div>
+                  <div className="col-xs-12 col-sm-12 col-md-4 cold-lg-4 sweet-loader">
+                    <MoonLoader
+                      loading={this.state.loading}
+                      size={250}
+                      color={'#197278'}
+                    />
                   </div>
+                  <div className="col-xs-0 col-sm-0 col-md-4 cold-lg-4"></div>
+                </div>
+              </div>
+              {this.state.showResults ? (
+                <div>
                   <div className="row">
                     <div className="col-xs-12 col-sm-12 col-md-6">
                       <div className="btn-group">
@@ -256,9 +272,9 @@ class PatientSavedRecipe extends React.Component {
                     </div>
                     <div className="col-xs-0 col-sm-0 col-md-2 cold-lg-2"></div>
                   </div>
-                </div>
-              </div>
-              : null}
+                </div>)
+                : null}
+            </div>
           </div>
         </div>
 

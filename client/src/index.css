@@ -33,3 +33,18 @@ body {
 .jumbo-div {
   margin-bottom: 50px;
 }
+
+
+
+#height{
+  width: 49%;
+  margin-left: 1px;
+  margin-right: 1px;
+}
+
+.add-panel,
+.patient-panel,
+.container {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}

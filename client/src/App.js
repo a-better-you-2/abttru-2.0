@@ -17,11 +17,7 @@ import Footer from './components/Footer/Footer';
 import "./App.css";
 
 class App extends Component {
-  state = {
-
-  }
   render() {
-    console.log(this.state)
     return (
       <BrowserRouter keyLength={12}>
         <div id="davey-test">

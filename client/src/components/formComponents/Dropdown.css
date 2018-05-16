@@ -219,16 +219,13 @@
   
   form {
     margin: auto;
-    width: 50%;
     text-align: left;
   }
   
   @media (min-width: 651px) {
     form {
       margin: auto;
-      width: 50%;
       text-align: left;
-      padding-left: 100px;
     }
   
     .bp-label {
@@ -242,5 +239,11 @@
       left: 10px;
     }
   }
+
+  .review-info {
+    text-align: left;
+  }
+
+
   
   

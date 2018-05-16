@@ -5,22 +5,22 @@ const StepFour = (props) => (
         <div>
                 <br />
                 <br />
-                <p>First Name: {props.first_name}</p>
-                <p>Last Name: {props.last_name}</p>
-                <p>Email: {props.email}</p>
-                <p>Password: {props.password}</p>
-                <p>Photo Link: {props.user_photo}</p>
-                <p>DOB: {props.dob}</p>
-                <p>Sex: {props.sex}</p>
-                <p>Height: {props.heightFoot}' {props.heightInch}"</p>
-                <p>Weight: {props.weight}</p>
-                <p>Waist Measurement: {props.waist}</p>
-                <p>Blood Pressure -- Systolic: {props.bp_systolic}</p>
-                <p>Blood Pressure -- Diastolic: {props.bp_diastolic}</p>
-                <p>Health Risk Factor: {props.risk_factor}</p>
-                <p>Diet Recommendation: {props.diet_recommendation}</p>
-                <p>Diet restriction: {props.diet_restriction}</p>
-        </div>
+                <h5 className="review-info">First Name:{" "}{props.first_name}</h5>
+                <h5 className="review-info">Last Name:{" "}{props.last_name}</h5>
+                <h5 className="review-info">Email:{" "}{props.email}</h5>
+                <h5 className="review-info">Password:{" "} ****************************</h5>
+                <h5 className="review-info">IMG:{" "} {props.user_photo}</h5>
+                <h5 className="review-info">DOB: {" "}{props.dob}</h5>
+                <h5 className="review-info">Sex:{" "}{props.sex}</h5>
+                <h5 className="review-info">Height: {" "}{props.heightFoot}' {props.heightInch}"</h5>
+                <h5 className="review-info">Weight:{" "}{props.weight}</h5>
+                <div><h5 className="review-info">Waist Measurement:{" "} {props.waist}</h5></div>
+                <h5 className="review-info">BP -- Systolic:{" "} {props.bp_systolic}</h5>
+                <h5 className="review-info">BP -- Diastolic: {" "}{props.bp_diastolic}</h5>
+                <h5 className="review-info">Health Risk Factor: {" "}{props.risk_factor}</h5>
+                <h5 className="review-info">Diet Recommendation: {" "}{props.diet_recommendation}</h5>
+                <h5 className="review-info"> Diet restriction: {" "}{props.diet_restriction}</h5>
+        </div >
 )
 
 export default StepFour;

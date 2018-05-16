@@ -53,7 +53,8 @@ class UserInfo extends React.Component {
   render() {
     return (
       <div className="container">
-        <Panel key={this.state._id}>
+        <Panel className="patient-panel"
+          key={this.state._id}>
           <Panel>
             <h4>{this.state.name}</h4>
           </Panel>

@@ -24,9 +24,16 @@
     margin-left: 10px;
 }
 
-@media screen and (max-width: 600px) {
+.carousel-inner {
+    height: 370px;
+}
+
+@media screen and (max-width: 650px) {
   .js-plotly-plot {
     margin-left: 10px;
+  }
+  .carousel-inner {
+      height: 675px;
   }
 }
 
@@ -54,3 +61,14 @@ form {
 MoonLoader {
 text-align: center;
 }
+
+.Carousel-outer {
+    height: 110%;
+}
+
+
+
+
+
+
+
