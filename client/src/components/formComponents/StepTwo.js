@@ -9,7 +9,7 @@ const StepTwo = (props) => {
             <br />
             <form>
 
-                <h2> Weight:</h2>
+                <h3> Weight:</h3>
                 <input className="input-wizard col-xs-12 col-sm-12 col-md-12 col-lg-12" type="text"
                     name="weight"
                     placeholder="Weight (LBS)"
@@ -18,7 +18,7 @@ const StepTwo = (props) => {
 
                 <br /><br />
 
-                <h2>Waist Measurement:</h2>
+                <h3>Waist Measurement:</h3>
                 <select className="input-wizard col-xs-12 col-sm-12 col-md-12 col-lg-12"
                     name="waist"
                     placeholder="Waist Measurement"
@@ -65,7 +65,7 @@ const StepTwo = (props) => {
             <br />
             <form>
 
-                <h2>Date of Birth:</h2>
+                <h3>Date of Birth:</h3>
                 <input className="input-wizard col-xs-12 col-sm-12 col-md-12 col-lg-12" type="date"
                     name="dob"
                     value={props.dob}
@@ -74,7 +74,7 @@ const StepTwo = (props) => {
 
                 <br /><br />
 
-                <h2>Sex:</h2>
+                <h3>Sex:</h3>
                 <select className="input-wizard col-xs-12 col-sm-12 col-md-12 col-lg-12" value={props.sex} name="sex" onChange={props.onChange}>
                     <option value="" disabled></option>
                     <option value="Male">Male</option>
@@ -83,7 +83,7 @@ const StepTwo = (props) => {
 
                 <br /><br />
 
-                <h2> Height:</h2>
+                <h3> Height:</h3>
 
                 <select
                     className="input-wizard col-xs-6 col-sm-6 col-md-6 col-lg-6"
@@ -99,7 +99,6 @@ const StepTwo = (props) => {
                     <option value="6">6'</option>
                     <option value="7">7'</option>
                 </select>
-                <br /><br />
                 <select
                     className="input-wizard height col-xs-6 col-sm-6 col-md-6 col-lg-6"
                     id="height"
@@ -124,7 +123,7 @@ const StepTwo = (props) => {
 
                 <br /><br />
 
-                <h2>Weight:</h2>
+                <h3>Weight:</h3>
                 <input
                     className="input-wizard col-xs-12 col-sm-12 col-md-12 col-lg-12"
                     type="text"
@@ -137,7 +136,7 @@ const StepTwo = (props) => {
                 <br /><br />
 
 
-                <h2> Waist Measurement:</h2>
+                <h3> Waist Measurement:</h3>
                 <select
                     className="input-wizard col-xs-12 col-sm-12 col-md-12 col-lg-12"
                     name="waist"

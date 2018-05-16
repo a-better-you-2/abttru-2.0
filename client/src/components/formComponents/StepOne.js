@@ -10,7 +10,7 @@ const StepOne = (props) => (
         <br />
         <form className="form-wizard">
 
-            <h2>First Name:</h2>
+            <h3>First Name:</h3>
 
             <input className="input-wizard col-xs-12 col-sm-12 col-md-12 col-lg-12" type="text" name="first_name"
                 placeholder="First Name"
@@ -20,7 +20,7 @@ const StepOne = (props) => (
 
             <br /><br />
 
-            <h2>Last Name:</h2>
+            <h3>Last Name:</h3>
 
             <input className="input-wizard col-xs-12 col-sm-12 col-md-12 col-lg-12" type="text"
                 name="last_name"
@@ -31,7 +31,7 @@ const StepOne = (props) => (
 
             <br /><br />
 
-            <h2>Email:</h2>
+            <h3>Email:</h3>
 
             <input className="input-wizard col-xs-12 col-sm-12 col-md-12 col-lg-12" type="text"
                 name="email"
@@ -41,7 +41,7 @@ const StepOne = (props) => (
 
             <br />
 
-            <h2>Password:</h2>
+            <h3>Password:</h3>
 
             <input className="input-wizard col-xs-12 col-sm-12 col-md-12 col-lg-12" type="password"
                 name="password"
@@ -51,7 +51,7 @@ const StepOne = (props) => (
 
             <br /><br />
 
-            <h2>Link to photo:</h2>
+            <h3>Link to photo:</h3>
 
             <input className="input-wizard col-xs-12 col-sm-12 col-md-12 col-lg-12" type="text"
                 name="user_photo"
