@@ -24,7 +24,7 @@ class ControlledCarousel extends React.Component {
   handleInputChange = event => {
     // Destructure the name and value properties off of event.target
     // Update the appropriate state
-    console.log(this.props.pathName);
+    // console.log(this.props.pathName);
     const { name, value } = event.target;
     this.setState({
       [name]: value
@@ -38,13 +38,13 @@ class ControlledCarousel extends React.Component {
       showCarousel: false,
       loading: true
     });
-    console.log(this.props)
+    // console.log(this.props)
     let firstIndex = Math.floor(Math.random() * 20);
-    console.log(firstIndex);
+    // console.log(firstIndex);
     axios.get(`https://api.edamam.com/search?q=${this.state.name}&app_id=6ee418a4&app_key=38910f6a58e3c348dd000cd7a9fc1139&calories=591-722&from=${firstIndex}&Diet=${this.props.diet_label}&Health=${this.props.health_label}`)
       .then(res => {
-        console.log(res);
-        console.log(res.data);
+        // console.log(res);
+        // console.log(res.data);
         this.setState({
           data: res.data.hits,
           showCarousel: true,

@@ -7,16 +7,16 @@
 
 .btn-primary:hover,
 .btn-primary:focus {
-    background-color: #108d6f;
-    border-color: #108d6f;
+    background-color:#315659;
+    color: #EFFFFA;
     box-shadow: none;
     outline: none;
 }
 
 .btn-primary {
     color: #fff;
-    background-color: #007b5e;
-    border-color: #007b5e;
+    background-color:#315659;
+    color: #EFFFFA;
 }
 
 section {
@@ -131,6 +131,9 @@ section .section-title {
 
 .save-note {
     margin: 0 auto;
+    background-color:#315659;
+    color: #EFFFFA;
+    width:40%;
 
 }
 

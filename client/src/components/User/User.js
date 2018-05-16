@@ -27,11 +27,11 @@ class User extends React.Component {
   };
 
   componentDidMount() {
-    console.log(this.props);
+    // console.log(this.props);
     // axios.get(`/api/abttru/${this.props.match.params.id}`)
     axios.get(`/api/abttru/user/${this.props.match.params.id}`)
       .then(res => {
-        console.log(res.data);
+        // console.log(res.data);
         this.setState(res.data);
       })
       .catch(err => console.log(err))

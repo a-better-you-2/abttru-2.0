@@ -32,20 +32,14 @@ class Doctor extends React.Component {
             <img src={patient.user_photo} alt="alt"></img>
           </Link>
         </div>
-        <div className="row info">
+        <div className="info">
           <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <h4>{patient.first_name}{" "}{patient.last_name}</h4>
-          </div>
-          <div className="row">
-            <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-              {patient.risk_factor}
-            </div>
-            <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-              {patient.diet_recommendation}
-            </div>
+            <h6>{patient.risk_factor}</h6>
+            <br/>
+            <h6>{patient.diet_recommendation}</h6>
           </div>
         </div>
-
       </li>
     ))
     return (

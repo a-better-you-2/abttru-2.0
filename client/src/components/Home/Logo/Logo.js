@@ -4,7 +4,7 @@ import "../Home.css";
 
 const Logo = () => (
     <div id="img-div">
-        <img src={abttruLogo} className="img-responsive" id="abttru-logo" alt="alt" />
+        <img src={abttruLogo} id="abttru-logo" alt="alt" />
     </div>
 );
 

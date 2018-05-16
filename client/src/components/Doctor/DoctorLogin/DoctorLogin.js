@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Input from "../../Input/Input";
-import Button from "../../Button/Button";
 import { Container, Row, Col } from "../../Grid";
 import Logo from '../../Home/Logo/Logo';
 import axios from "axios";
@@ -55,7 +54,7 @@ class DoctorLogin extends Component {
                 </div>
                 <Row>
                     {/* <Col size="xs-12 sm- 12 md-12 lg-12"> */}
-                    <form>
+                    <form className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                         <Row>
                             <Col size="xs-0 sm-0 md-4 lg-4"></Col>
                             <Col size="xs-12 sm-12 md-4 lg-4">
@@ -73,7 +72,7 @@ class DoctorLogin extends Component {
                                     placeholder="Password"
                                 />
                                 <br />
-                                <Button onClick={this.handleFormSubmit} className="input-lg login">Login</Button>
+                                <button onClick={this.handleFormSubmit} className="input-lg login">Login</button>
                             </Col>
                             <Col size="xs-0 sm-0 md-4 lg-4"></Col>
                         </Row>

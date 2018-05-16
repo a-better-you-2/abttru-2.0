@@ -6,11 +6,10 @@ import { Button } from "react-bootstrap";
 
 class PiePlot extends Component {
 
-    constructor(props) {
-        super(props);
-        console.log(this.props);
+    // constructor(props) {
+    //     super(props);
 
-    }
+    // }
 
     state = {
         data: [],
@@ -22,7 +21,7 @@ class PiePlot extends Component {
     }
 
     componentDidMount() {
-        console.log(this.props);
+        // console.log(this.props);
         this.createPlot();
     }
 

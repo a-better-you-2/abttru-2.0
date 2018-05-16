@@ -42,7 +42,7 @@ class PatientSavedRecipe extends React.Component {
     })
     axios.get(`/api/abttru/user/${this.state.initial_user_id}`)
       .then(res => {
-        console.log(res.data);
+        // console.log(res.data);
         this.setState(res.data);
         this.setState({
           loading: false,
@@ -59,9 +59,9 @@ class PatientSavedRecipe extends React.Component {
   getData = () => {
     this.setState({ showResults: false, loading: true });
     let allUri = this.state.recipes.map(recipe => (recipe.recipe_uri));
-    console.log(allUri);
+    // console.log(allUri);
     let length = allUri.length;
-    console.log(length);
+    // console.log(length);
     if (length === 0) {
       this.setState({
         recipe_index: 0,
@@ -70,24 +70,24 @@ class PatientSavedRecipe extends React.Component {
       });
     } else {
       let randomRecipe = Math.floor(Math.random() * length);
-      console.log(randomRecipe);
+      // console.log(randomRecipe);
       this.setState({
         recipe_index: randomRecipe,
         showResults: true,
         loading: false
       });
-      console.log(this.state.recipe_index);
+      // console.log(this.state.recipe_index);
     }
 
     let recipeUri = allUri[this.state.recipe_index];
-    console.log(recipeUri);
+    // console.log(recipeUri);
     let edemamUri = recipeUri.replace(/[#]/gi, '%23', /[:]/gi, '%3A', /[/]/, '%2F');
-    console.log(edemamUri);
+    // console.log(edemamUri);
     axios.get(`https://api.edamam.com/search?r=${edemamUri}&app_id=76461587&app_key=b829a690de0595f2fa5b7cb02db4cd99`)
       .then((recipe) => {
         // console.log(recipe.data);
         this.setState({ recipe_data: recipe.data })
-        console.log(this.state.recipe_data[0]);
+        // console.log(this.state.recipe_data[0]);
       })
   }
 
@@ -203,7 +203,7 @@ class PatientSavedRecipe extends React.Component {
           </a>
         </div>
         <div className="info">
-          <h4>{recipe.recipe_name}</h4>
+          <h6>{recipe.recipe_name}</h6>
           <div className="button" id={recipe.recipe_uri} onClick={this.changeRecipe}>GET RECIPE CARD</div>
         </div>
       </li>

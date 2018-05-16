@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import Input from "../../Input/Input";
-import Button from "../../Button/Button";
 import { Container, Row, Col } from "../../Grid";
 import Logo from '../../Home/Logo/Logo';
 import axios from "axios";
+import "./UserLogin.css"
 
 
 
@@ -56,13 +56,11 @@ class UserLogin extends Component {
                 <Container>
                 <div className="row">
                     <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4"></div>
-                        <Logo className="col-xs-4 col-sm-4 col-md-4 col-lg-4" />
+                    <Logo className="col-xs-4 col-sm-4 col-md-4 col-lg-4" />
                     <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4"></div>
                 </div>
                     <Row>
-                        <Col size="xs-12 sm- 12 md-12 lg-12">
-                            <form>
-                                <Row>
+                            <form className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                                     <Col size="xs-0 sm-0 md-4 lg-4"></Col>
                                     <Col size="xs-12 sm-12 md-4 lg-4">
                                         <Input
@@ -79,13 +77,10 @@ class UserLogin extends Component {
                                             placeholder="Password"
                                         />
                                         <br />
+                                        <button className="input-lg login" id="login" onClick={this.handleFormSubmit}>Login</button>
                                     </Col>
-                                    <Col size="xs-0 sm-0 md-4 lg-4">
-                                        <Button className="input-lg login-button" onClick={this.handleFormSubmit} type="success">Login</Button>
-                                    </Col>
-                                </Row>
+                                    <Col size="xs-0 sm-0 md-4 lg-4"></Col>
                             </form>
-                        </Col>
                     </Row>
                 </Container>
             </div >

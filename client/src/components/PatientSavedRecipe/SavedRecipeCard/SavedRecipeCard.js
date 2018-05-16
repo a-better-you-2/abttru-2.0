@@ -41,7 +41,7 @@ const SavedRecipeCard = props => (
                         </div>
                         <a>
                             <Button
-                                className="save-note note-btn btn btn-success"
+                                className="save-note"
                                 id={props.recipe_id}
                                 onClick={props.saveNote}>
                                 ADD NOTES

@@ -12,7 +12,8 @@
 
   .save.btn.btn-default  {
     background-color:transparent;
-    color: #096e19;
+    background-color:#315659;
+    color: #EFFFFA;
     font-size: 16px;
     position: relative;
     top: -3px;
@@ -31,6 +32,7 @@
 .dropdown-toggle { 
   width: 100px;
   height: 20px;
+  margin-left: 10px;
 
 }
 .dropdown-menu {
@@ -67,7 +69,7 @@
 }
 
 .pic {
-  padding-top: 5px;
+  padding: 10px;
   width: 25%;
   height: auto;
 }
@@ -84,7 +86,7 @@
 }
 
 .open>.dropdown-menu {
-  width: 330px;
+  width: 100%;
   height: auto;
   display: block;
 }
