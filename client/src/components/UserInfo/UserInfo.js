@@ -61,7 +61,7 @@ class UserInfo extends React.Component {
           <Panel.Body>
             <div>
               <h5>
-                <Link to={`/doctor/${this.state.doctor_id}`}>
+                <Link to={`/doctor/${this.state.doctor_id}`}id="patients">
                   <FontAwesomeIcon icon="list" /> My Patients
               </Link>
               </h5>
