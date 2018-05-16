@@ -1,18 +1,24 @@
 const db = require("../models");
+const bcrypt = require('bcrypt');
 
 module.exports = {
   login: function (req, res) {
     console.log(req.body)
     db.Doctor
-      .findOne({})
-      .where('email').equals(req.body.email)
-      .where('password').equals(req.body.password)
-      .then(doctor => {
-        req.session.doctor = doctor;
-        res.json(doctor);
-        console.log(req.body);
-        console.log(req.session);
-      })
+      .findOne(
+        { email: req.body.email },
+        function (err, user) {
+          if (err) throw err;
+          if (user) {
+            user.comparePassword(req.body.password, function (err, isMatch) {
+              if (err) throw err;
+              req.session.user = user;
+              res.json(user);
+              console.log(req.body);
+              console.log(req.session);
+            })
+          }
+        })
       .catch(err => res.status(422).json(err))
   },
   findAll: function (req, res) {
