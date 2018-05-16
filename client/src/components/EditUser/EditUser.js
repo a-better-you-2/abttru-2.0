@@ -1,7 +1,7 @@
 import React from "react";
 // import { Link } from "react-router-dom";
 import axios from "axios";
-import { Panel, Button} from "react-bootstrap";
+import { Panel, Button } from "react-bootstrap";
 // import FontAwesomeIcon from "@fortawesome/react-fontawesome";
 import Step1 from '../formComponents/StepOne';
 import Step2 from '../formComponents/StepTwo';
@@ -99,7 +99,7 @@ class EditUser extends React.Component {
 
     return (
       <div className="container">
-        <Panel>
+        <Panel className="edit-patient">
           <div className="App">
 
             <div className='step-progress'>

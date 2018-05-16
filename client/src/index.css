@@ -47,7 +47,10 @@ body {
 
 .add-panel,
 .patient-panel,
-.progtrckr-todo::before {
+.progtrckr-todo::before,
+.multi-step,
+.footer-buttons,
+.edit-patient {
 
   background-color: #315659
 }
@@ -70,3 +73,12 @@ body {
   padding-left: 10%;
   color: #EFFFFA;
 }
+
+.patient-panel {
+  color:#EFFFFA;
+}
+
+ol.progtrckr,
+ li.progtrckr-todo:before {
+   background-color: #315659 !important;
+ }
