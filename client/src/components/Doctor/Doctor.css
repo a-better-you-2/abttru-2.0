@@ -18,10 +18,10 @@
     width: 25%;
   }
 
-  .img-responsive {
-    margin-right: 10px;
-    margin-left: 10px;
-    height: 100px;
+  .patient {
+    width: 100px;
+    height: auto;
+    padding: 2px;
   }
 
   

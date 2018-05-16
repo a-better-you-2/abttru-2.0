@@ -2,7 +2,7 @@ import React from 'react';
 
 
 const StepThree = (props) => (
-    <div>
+    <div className="steppy">
         <br />
         <br />
         <form>

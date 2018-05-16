@@ -1,10 +1,12 @@
+
 .form-control {
-    margin-left: auto !important;
-    margin-right: auto !important;
+    display: table;
+    margin: 0 auto;
+    text-align: center;
 }
 
-.login-button {
+.login {
     width: 100%;
-    background-color: "#315659";
-    color: "#EFFFFA"
+    background-color:#315659;
+    color: #EFFFFA;
 }

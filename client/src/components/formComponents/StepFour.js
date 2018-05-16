@@ -2,7 +2,7 @@ import React from 'react';
 
 
 const StepFour = (props) => (
-        <div>
+        <div className="steppy">
                 <br />
                 <br />
                 <h5 className="review-info">First Name:{" "}{props.first_name}</h5>

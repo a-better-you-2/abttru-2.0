@@ -4,7 +4,7 @@ const StepTwo = (props) => {
     const pathName = props.pathName;
     console.log(pathName);
     if (pathName === '/edit/:id') {
-        return <div>
+        return <div className="steppy">
             <br />
             <br />
             <form>
@@ -60,7 +60,7 @@ const StepTwo = (props) => {
         </div>
     }
     else {
-        return <div>
+        return <div className="steppy">
             <br />
             <br />
             <form>

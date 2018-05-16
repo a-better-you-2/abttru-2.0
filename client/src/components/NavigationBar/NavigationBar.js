@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import FontAwesomeIcon from "@fortawesome/react-fontawesome";
 import "./Nav.css";
 
 const linkStyle = {
@@ -31,12 +33,12 @@ const Nav = () => (
     <span className="icon-bar" ></span>
     <span className="icon-bar" ></span>
     </button>
-    <a href="" className="navbar-left logo"><img src={require('./ABTTRU-LOGO.png')} style={logoStyle} alt="logo"/></a>
+    <Link to="/"><div className="navbar-left logo"><img src={require('./ABTTRU-LOGO.png')} style={logoStyle} alt="logo"/></div></Link>
     {/* <a className="navbar-brand" href="" style={brandStyle}>A Better You</a> */}
   </div>
   <div className="collapse navbar-collapse" id="navigationbar" style={linkStyle}>
     <ul className="nav navbar-nav">
-    <li><a href="#section2" style={linkStyle}>Log Out</a></li>  
+    <Link to="/"><li><a style={linkStyle}> <FontAwesomeIcon icon="home" /> Home</a></li> </Link>
     </ul>
   </div> {/* <!-- /.navbar-collapse --> */}
   </div>{/* <!-- /.container-fluid --> */}
