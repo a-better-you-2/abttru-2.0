@@ -122,7 +122,7 @@ class ControlledCarousel extends React.Component {
                 {/* <Carousel.Caption> */}
                 <h2 id="recipe-title">{data.recipe.label}</h2>
                 <img width={225} height={225} alt="recipeImage" id="pic" src={data.recipe.image} />
-                <h2 id="recipe-link"><a href={data.recipe.url} target="_blank">Tap HERE for the recipe</a></h2>
+                <a href={data.recipe.url} target="_blank"><h2 id="recipe-link">Tap HERE for the recipe</h2></a>
                 <Button className="save-button" id={data.recipe.uri} name={data.recipe.label} img={data.recipe.image} link={data.recipe.url} onClick={this.saveRecipe}>SAVE RECIPE</Button>
                 {/* </Carousel.Caption> */}
               </Col>
@@ -153,7 +153,7 @@ class ControlledCarousel extends React.Component {
                 placeholder="Search ingredients(e.g. chicken)"
               />
               <br />
-              <Button onClick={this.getRecipes.bind(this)} color="primary">Get Recipes</Button>
+              <Button onClick={this.getRecipes.bind(this)} color="primary" id="get">Get Recipes</Button>
             </form>
           </div>
           <div className="col-xs-0 col-sm-0 col-md-3 col-lg-2"></div>

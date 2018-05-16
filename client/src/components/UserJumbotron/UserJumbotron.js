@@ -36,12 +36,12 @@ class UserJumbotron extends React.Component {
             return "#315659";
         }
         else {
-            return "";
+            return "#EFFFFA";
         }
     }
     savedTabColor = () => {
         if (this.props.isUserPage) {
-            return "";
+            return "#EFFFFA";
         }
         else {
             return "#315659";
@@ -103,11 +103,11 @@ class UserJumbotron extends React.Component {
                     <div className="col-xs-1 col-md-1 col-lg-1 col-xs-1 "></div>
                     <div className="col-xs-10 col-md-10 col-lg-10 col-xs-10 tabGroup">
                         <Link to={{ pathname: `/user/${this.props.userId}`, params: { id: this.props.userId } }}>
-                            <button id="profileTab" style={{ backgroundColor: this.profileTabColor() }}><FontAwesomeIcon icon="user-plus" />New Search </button>
+                            <button id="profileTab" style={{ backgroundColor: this.profileTabColor() }}><p style={{ color: this.savedTabColor() }} id="tabs"><FontAwesomeIcon icon="user-plus" />New Search  </p></button>
                         </Link>
 
                         <Link to={{ pathname: `/savedrecipes/${this.props.userId}`, params: { id: this.props.userId } }} >
-                            <button id="savedTab" style={{ backgroundColor: this.savedTabColor() }}> <FontAwesomeIcon icon="utensils" /> Saved Recipes </button>
+                            <button id="savedTab" style={{ backgroundColor: this.savedTabColor() }}><p style={{ color: this.profileTabColor() }} id="tabs"><FontAwesomeIcon icon="utensils" />  Saved Recipes</p></button>
                         </Link>
                     </div>
                     <div className="col-xs-1 col-md-1 col-lg-1 col-sm-1"></div>

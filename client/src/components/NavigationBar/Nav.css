@@ -1,0 +1,7 @@
+.navbar-collapse.collapse.in { 
+    display: block!important; 
+}
+
+.navbar-toggle.collapsed {
+    margin-top: 20px;
+}

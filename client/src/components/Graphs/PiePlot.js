@@ -300,10 +300,10 @@ class PiePlot extends Component {
                     {/* <Row> */}
                     {/* <Col xs={12}> */}
                     <div className="graphButtons">
-                        <Button onClick={this.switchPlot} value={0}>Macros</Button>
-                        <Button onClick={this.switchPlot} value={1}>Lipids</Button>
-                        <Button onClick={this.switchPlot} value={2}>Minerals</Button>
-                        <Button onClick={this.switchPlot} value={3}>Vitamins</Button>
+                        <Button id="pie" onClick={this.switchPlot} value={0}>Macros</Button>
+                        <Button id="pie" onClick={this.switchPlot} value={1}>Lipids</Button>
+                        <Button id="pie" onClick={this.switchPlot} value={2}>Minerals</Button>
+                        <Button id="pie" onClick={this.switchPlot} value={3}>Vitamins</Button>
                     </div>
                     {/* </Col> */}
                     {/* </Row> */}

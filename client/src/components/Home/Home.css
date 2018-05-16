@@ -9,10 +9,10 @@ h1 {
 }
 
 #img-div {
-    border-radius: 60%;
+    border-radius: 50%;
     background-color: #315659;
     margin: 10px auto 15px auto;
-    width: 90%;
+    width: 250px;
 }
 
 .img-responsive {

@@ -27,7 +27,24 @@
     border-radius: 50%;
 }
 
+@media screen and (max-width: 600px) {
+    #user_photo {
+        border-radius: 50%;
+        width: 200px;
+        height: auto;
+        display: table;
+        margin: 0 auto;
+        text-align: center;
+    }
+}
+
 .prof {
     padding: 0 !important;
     /* margin: 5px; */
+}
+
+#tabs {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-size: 14px;
 }

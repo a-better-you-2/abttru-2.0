@@ -12,7 +12,6 @@ class Guest extends React.Component {
   render() {
     return (
       <div className="container">
-        <h4>Guest Page</h4>
         <h5>
           <Link to="/">
             <FontAwesomeIcon icon="home" /> Go Back Home

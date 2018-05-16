@@ -1,8 +1,5 @@
 import React from "react";
 import "./Nav.css";
-// import { Link } from "react-router-dom";
-// import { Row } from '../Grid';
-
 
 const linkStyle = {
   color: "white",
@@ -11,14 +8,8 @@ const linkStyle = {
    // boxShadow: "3px 3px 10px black"
 }
 
-// const brandStyle = {
-//   float: "left",
-//   fontSize: "24px",
-//   color: "white"
-// }
-
 const navStyle = {
-  backgroundColor: "#315659 !important",
+  backgroundColor: "#315659",
   display: "inline-block",
   float: "right",
   color: "white",

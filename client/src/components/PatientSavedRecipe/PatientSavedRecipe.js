@@ -30,21 +30,20 @@ class PatientSavedRecipe extends React.Component {
     notes: [],
     note_text: "",
     isUserPage: false,
-    showJumbo: false
+    showJumbo: true
+
   };
 
   componentDidMount() {
     this.setState({
-      loading: true,
-      showJumbo: false
+      loading: true
     })
     axios.get(`/api/abttru/user/${this.state.initial_user_id}`)
       .then(res => {
         console.log(res.data);
         this.setState(res.data);
         this.setState({
-          loading: false,
-          showJumbo: true
+          loading: false
         });
         if (res.data.recipes.length < 1) {
           return;
@@ -60,14 +59,14 @@ class PatientSavedRecipe extends React.Component {
     let length = allUri.length;
     console.log(length);
     if (length === 0) {
-        this.setState({recipe_index: 0});
+      this.setState({ recipe_index: 0 });
     } else {
-        let randomRecipe = Math.floor(Math.random() * length);
-        console.log(randomRecipe);
-        this.setState({ recipe_index: randomRecipe });
-        console.log(this.state.recipe_index);
+      let randomRecipe = Math.floor(Math.random() * length);
+      console.log(randomRecipe);
+      this.setState({ recipe_index: randomRecipe });
+      console.log(this.state.recipe_index);
     }
- 
+
     let recipeUri = allUri[this.state.recipe_index];
     console.log(recipeUri);
     let edemamUri = recipeUri.replace(/[#]/gi, '%23', /[:]/gi, '%3A', /[/]/, '%2F');
@@ -222,17 +221,16 @@ class PatientSavedRecipe extends React.Component {
                   user_photo={this.state.user_photo}
                 />
                 <div>
-                <div className="row">
-              <div className="col-xs-0 col-sm-0 col-md-4 cold-lg-4"></div>
-              <div className="col-xs-12 col-sm-12 col-md-4 cold-lg-4 sweet-loader">
-                <PacmanLoader
-                  loading={this.state.loading}
-                  size={200}
-                  color={'#197278'}
-                />
-              </div>
-              <div className="col-xs-0 col-sm-0 col-md-4 cold-lg-4"></div>
-              </div>
+                  <div className="row">
+                    <div className="col-xs-0 col-sm-0 col-md-4 cold-lg-4"></div>
+                    <div className="col-xs-12 col-sm-12 col-md-4 cold-lg-4 sweet-loader">
+                      <PacmanLoader
+                        loading={true}
+                        color={'#197278'}
+                      />
+                    </div>
+                    <div className="col-xs-0 col-sm-0 col-md-4 cold-lg-4"></div>
+                  </div>
                   <div className="row">
                     <div className="col-xs-12 col-sm-12 col-md-6">
                       <div className="btn-group">
@@ -248,12 +246,12 @@ class PatientSavedRecipe extends React.Component {
                   </div>
                   <div className="row">
                     <div className="col-xs-0 col-sm-0 col-md-2 cold-lg-2"></div>
-                    <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                    <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4 display">
                       <div className="card-holder">
                         {this.makeCard()}
                       </div>
                     </div>
-                    <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                    <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4 display">
                       {piePlot}
                     </div>
                     <div className="col-xs-0 col-sm-0 col-md-2 cold-lg-2"></div>
