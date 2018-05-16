@@ -128,7 +128,7 @@ class Create extends React.Component {
       <div className="container">
         <Panel className="add-panel">
           <Panel>
-            <h4>Add Patient</h4>
+            <h3><strong>Add Patient</strong></h3>
           </Panel>
           <Panel.Body>
             <div>
@@ -136,7 +136,7 @@ class Create extends React.Component {
                 <Link to={{
                   pathname: `/doctor/${this.props.match.params.id}`
                 }}>
-                  <FontAwesomeIcon icon="list" /> Patient List
+                  <FontAwesomeIcon icon="list" /> Doctor Home
                 </Link>
               </h5>
 

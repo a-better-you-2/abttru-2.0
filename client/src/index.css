@@ -23,8 +23,6 @@ body {
   margin-bottom: 0px;
 }
 
-
-
 /* #davey-test { */
   /* box-sizing: border-box; */
   /* flex: 1 0 auto; */
@@ -33,8 +31,6 @@ body {
 .jumbo-div {
   margin-bottom: 50px;
 }
-
-
 
 #height{
   width: 49%;
@@ -62,5 +58,6 @@ body {
 }
 
 .steppy {
-  padding-left: 4px;
+  padding-left: 10%;
+  color: #EFFFFA;
 }
