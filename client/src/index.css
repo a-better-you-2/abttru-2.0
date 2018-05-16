@@ -49,6 +49,18 @@ body {
   margin-bottom: 30px;
 }
 
+.add-panel,
+.patient-panel,
+.progtrckr-todo::before {
+
+  background-color: #315659
+}
+
+.input-wizard {
+  background-color: #EFFFFA;
+  color: #315659
+}
+
 .steppy {
   padding-left: 4px;
 }
