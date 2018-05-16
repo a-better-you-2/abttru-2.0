@@ -132,11 +132,11 @@ class Create extends React.Component {
           </Panel>
           <Panel.Body>
             <div>
-              <h5>
+              <h5 >
                 <Link to={{
-                  pathname: `/doctor/${this.props.match.params.id}`
-                }}>
-                  <FontAwesomeIcon icon="list" /> Doctor Home
+                  pathname: `/doctor/${this.props.match.params.id}` 
+                }}  id="doc-home">
+                  <FontAwesomeIcon icon="list"  /> Doctor Home
                 </Link>
               </h5>
 
