@@ -45,7 +45,7 @@ Once registered by their doctor/dietitian, patients are able to log in, review t
 * Each recipe is accompanied by a simple nutritional breakdown of macros
 
 <!-- place gif of single guest search here -->
-![guest search](gifs/guest-search/gif)
+![guest search](gifs/guest-search.gif)
 
 #### Multiple Ingredients
 
