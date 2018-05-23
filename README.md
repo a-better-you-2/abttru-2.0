@@ -25,7 +25,7 @@ A React app created with a passion for food that connects you to recipes from al
 
 ### At a glance
 
-As a guest, you may be able to look up recipes from the web by typing ingredients into our form. Check out this[guest search](#guest-search) for an example.
+As a guest, you may be able to look up recipes from the web by typing ingredients into our form. Check out this [guest search](#guest-search) for an example.
 
 As a user, you may be either a doctor/dietitian or a patient. Doctors/dietitians are able to store patient health information such as age, sex, risk factors, and diet recommendations, as well as a login as password with our patient form. You can watch a doctor register a patient [here](#adding-a-patient).
 
@@ -113,8 +113,8 @@ Click/tap on any of your saved recipes' picture and take or delete notes.
 
 ## Collaborators
 
-We worked really hard to bring you a robust application and we're super proud of it. Our team members are composed by:
+We worked really hard to bring you a robust application and we're super proud of it. Our team members are composed of:
 
-* Alberto Vargas
-* David Coulombe
-* Joshua Bohde
+* [Alberto Vargas](https://github.com/a-vargasmarte)
+* [David Coulombe](https://github.com/DaveyStacks)
+* [Joshua Bohde](https://github.com/JBohde)
