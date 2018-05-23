@@ -52,6 +52,7 @@ Once registered by their doctor/dietitian, patients are able to log in, review t
 * Entering multiple ingredients separated by commas will yield recipes that include all ingredients searched.
 
   <!-- place gif of multiple ingredient guest search here  -->
+  ![guest-search-multiple](gifs/guest-search-multiple.gif)
 
 ### Adding a patient
 
@@ -63,15 +64,18 @@ Once registered by their doctor/dietitian, patients are able to log in, review t
 
 <!-- place gif of doctor going through form -->
 
+![multi-step](gifs/multi-step.gif)
+
 3. Once you go through adding patient information, you can go and check back on your patient list.
  > Hint: Mind the dropdown below your doctor dashboard.
 
 #### Edit patient information
 
-1. Selecting one of your patients from the doctor page brings up that patient's profile
-2. Clicking the 'edit' button brings back the multi-step form, allowing you to update any previously entered patient information
+1. Selecting one of your patients from the doctor page brings up that patient's profile.
+2. Clicking the 'edit' button brings back the multi-step form, allowing you to update any previously entered patient information.
 
 <!-- place gif of doctor editing patient info -->
+![edit-patient](gifs/edit-patient.gif)
 
 #### Delete patients
 
@@ -79,6 +83,7 @@ Once registered by their doctor/dietitian, patients are able to log in, review t
 2. Clicking delete will permanently delete that patient along with their information, saved recipes, and saved notes.
 
 <!-- place gif of doctor deleting patient -->
+![delete-patient](gifs/delete-patient.gif)
 
 ### Patient Search
 
@@ -86,27 +91,30 @@ Once registered, patients can use their given login and password in order to acc
 
 #### Detailed nutrition breakdown
 
-The patient recipe search will yield a detailed nutritional breakdown in different categories, including macronutrients, fats, vitamins, and minerals. Hover over or tap on each color to discover the % contribution of each nutrient **within** categories. All nutrition information is given per portion of the recipe
-    
-    > Within category percentages may be interpreted in the following way: 50% of all vitamins per portion of this recipe come from vitamin A.
+The patient recipe search will yield a detailed nutritional breakdown in different categories, including macronutrients, fats, vitamins, and minerals. Hover over or tap on each color to discover the % contribution of each nutrient **within** categories. All nutrition information is given per portion of the recipe.  
+
+> Within category percentages may be interpreted in the following way: 50% of all vitamins per portion of this recipe come from vitamin A.
 
  <!-- place gif going over each subplot  -->
+![patient-search](gifs/patient-search.gif)
 
 #### Saving and deleting recipes
 
 Patients can save recipes and revisit these by clicking the 'saved recipes' tab in their profile. Once multiple recipes are saved you can choose which one to display. Clicking/tapping the recipe picture will allow you to [write notes](#saving-and-deleting-notes) on your recipes and/or delete them.
 
 <!-- place gif going over saving and deleting recipes -->
+![delete-recipe](gifs/delete-recipe.gif)
 
 #### Saving and deleting notes
 Click/tap on any of your saved recipes' picture and take or delete notes.
 
 <!-- place gif going over saving and deleting notes -->
+![add-delete-notes](gifs/add-delete-notes.gif)
 
 ## Collaborators
 
 We worked really hard to bring you a robust application and we're super proud of it. Our team members are composed by:
 
 * Alberto Vargas
-* David Coulombe Vargas
+* David Coulombe
 * Joshua Bohde
