@@ -7,7 +7,8 @@ let doctorPassword;
 // This file empties the Books collection and inserts the books below
 
 mongoose.connect(
-    process.env.MONGODB_URI || "mongodb://localhost/aBetterYou",
+    // process.env.MONGODB_URI || "mongodb://localhost/aBetterYou",
+    process.env.MONGODB_URI || "mongodb://heroku_fpgs53h1:rglas4qvbobd74prkoskulikdt@ds035735.mlab.com:35735/heroku_fpgs53h1",
     {
         useMongoClient: true
     }
