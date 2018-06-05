@@ -27,7 +27,7 @@ A React app created with a passion for food that connects you to recipes from al
 
 As a guest, you may be able to look up recipes from the web by typing ingredients into our form. Check out this [guest search](#guest-search) for an example.
 
-As a user, you may be either a doctor/dietitian or a patient. Doctors/dietitians are able to store patient health information such as age, sex, risk factors, and diet recommendations, as well as a login as password with our patient form. You can watch a doctor register a patient [here](#adding-a-patient).
+As a user, you may be either a doctor/dietitian or a patient. Doctors/dietitians are able to store patient health information such as age, sex, risk factors, and diet recommendations, as well as a login and password with our patient form. You can watch a doctor register a patient [here](#adding-a-patient).
 
 Once registered by their doctor/dietitian, patients are able to log in, review their health dashboard, and search for recipes. The patient recipe search is refined to match his/her health dashboard. Additionally, patients have the ability to save and delete recipes and notes on these. Finally, patients have access to detailed nutritional information for each recipe so they can review the content of their food. Check out this [patient search](#patient-search) to see it in action! 
 

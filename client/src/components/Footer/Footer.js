@@ -19,17 +19,21 @@ const Footer = () => (
                 and helps your dietitian convey their recommendations to you dynamically.
                         You pick your ingredients, we make a better you.</p>
             </div>
-            {/* <div className="col-xs-12 col-sm-12 col-md-5 col-lg-5 "> */}
             <div className="col-xs-6 col-sm-6 col-md-2 col-lg-2 blah">
                 <h5> Resources </h5>
                 <ul className="list-unstyled quick-links">
-                    <li><a href=""><p className="icon"><i className="fa fa-angle-double-right"></i>Readme</p></a></li>
+                    <li><a href="https://github.com/a-better-you-2/abttru-2.0#abttru-20" target="_blank"><p className="icon"><i className="fa fa-angle-double-right"></i>Readme</p></a></li>
                 </ul>
             </div>
             <div className="col-xs-6 col-sm-6 col-md-2 col-lg-2 blah">
                 <h5> Navigation </h5>
                 <ul className="list-unstyled quick-links">
-                    <li><h3><a href=""><FontAwesomeIcon icon="user-md" className="icon" /> </a><a href=""><FontAwesomeIcon icon="user-circle" className="icon" /></a></h3></li>
+                    <li>
+                        <h3>
+                            <a href="/doctorLogin"><FontAwesomeIcon icon="user-md" className="icon" /> </a>
+                            <a href="/userLogin"><FontAwesomeIcon icon="user-circle" className="icon" /></a>
+                        </h3>
+                    </li>
                 </ul>
             </div>
 
