@@ -21,6 +21,7 @@ module.exports = {
         })
       .catch(err => res.status(422).json(err))
   },
+  
   findAll: function (req, res) {
     db.User
       .find(req.query)
@@ -28,6 +29,7 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err))
   },
+
   findById: function (req, res) {
     // var populateQuery = [{path: 'recipes'}, {path: 'notes', select: 'body'}]
     db.Doctor
@@ -41,6 +43,7 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err))
   },
+
   findPatientById: function (req, res) {
     // var populateQuery = [{path: 'recipes'}, {path: 'notes', select: 'body'}]
     db.User
@@ -53,6 +56,7 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err))
   },
+
   createUser: function (req, res) {
     db.User
       .create(req.body)
@@ -67,12 +71,14 @@ module.exports = {
       })
       .catch(err => res.status(422).json(err))
   },
+
   update: function (req, res) {
     db.User
       .findOneAndUpdate({ _id: req.params.id }, req.body)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err))
   },
+
   delete: function (req, res) {
     db.User
       .findById({ _id: req.params.id })

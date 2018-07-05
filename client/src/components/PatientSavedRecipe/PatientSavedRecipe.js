@@ -134,7 +134,7 @@ class PatientSavedRecipe extends React.Component {
     const isFlipped = e.target.getAttribute("isflipped");
     // card.classList.remove("hover");
     if (isFlipped === "false") {
-      document.getElementById(target).setAttribute("ispicked", "true");
+      document.getElementById(target).setAttribute("isflipped", "true");
       card.classList.toggle("hover");
       return;
     } else if (isFlipped === "true") {
