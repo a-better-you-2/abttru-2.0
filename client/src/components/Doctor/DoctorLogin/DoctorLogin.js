@@ -62,7 +62,7 @@ class DoctorLogin extends Component {
                                         name="email"
                                         value={this.state.email}
                                         onChange={this.handleInputChange}
-                                        placeholder="Enter Email"
+                                        placeholder="Enter 'doogie@gmail.com'"
                                     />
                                     <br />
                                     <Input
@@ -70,7 +70,7 @@ class DoctorLogin extends Component {
                                         type="password"
                                         value={this.state.password}
                                         onChange={this.handleInputChange}
-                                        placeholder="Password"
+                                        placeholder="Enter 'password'"
                                     />
                                     <br />
                                     <button onClick={this.handleFormSubmit} className="input-lg login">Login</button>

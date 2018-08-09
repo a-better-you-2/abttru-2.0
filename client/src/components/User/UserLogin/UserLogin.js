@@ -67,7 +67,7 @@ class UserLogin extends Component {
                                     name="email"
                                     value={this.state.email}
                                     onChange={this.handleInputChange}
-                                    placeholder="Enter Email"
+                                    placeholder="Enter 'johndoe@gmail.com'"
                                 />
                                 <br />
                                 <Input
@@ -75,7 +75,7 @@ class UserLogin extends Component {
                                     type="password"
                                     value={this.state.password}
                                     onChange={this.handleInputChange}
-                                    placeholder="Password"
+                                    placeholder="enter 'password'"
                                 />
                                 <br />
                                 <button className="input-lg login" id="login" onClick={this.handleFormSubmit}>Login</button>
