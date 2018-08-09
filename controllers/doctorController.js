@@ -3,7 +3,8 @@ const bcrypt = require('bcrypt');
 
 module.exports = {
   login: function (req, res) {
-    console.log(req.body)
+    console.log(req.body);
+    console.log("YES");
     db.Doctor
       .findOne(
         { email: req.body.email },
@@ -12,10 +13,12 @@ module.exports = {
           if (user) {
             user.comparePassword(req.body.password, function (err, isMatch) {
               if (err) throw err;
+              console.log("now here");
               req.session.user = user;
               res.json(user);
               console.log(req.body);
               console.log(req.session);
+              
             })
           }
         })

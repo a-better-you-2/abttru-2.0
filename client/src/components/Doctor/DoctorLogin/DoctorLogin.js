@@ -27,7 +27,7 @@ class DoctorLogin extends Component {
         event.preventDefault();
         axios.post(`/api/abttru/doctorLogin`, this.state)
             .then(res => {
-
+                console.log(res);
                 if (res.data == null) {
                     this.props.history.push("/doctorLogin")
                 }
@@ -40,6 +40,7 @@ class DoctorLogin extends Component {
                 }
 
                 console.log(this.state);
+                console.log("here");
             })
     };
 
