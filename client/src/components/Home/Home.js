@@ -26,7 +26,8 @@ class Home extends React.Component {
               <Panel.Body>
                 <h3 className="welcome">
                   <Link to="/guest" id="nav-link">
-                    <FontAwesomeIcon icon="user" /> Continue as Guest
+                    {/* <FontAwesomeIcon icon="user" />  */}
+                    DEMO VERSION - CLICK LINK BELOW
               </Link>
                 </h3>
               </Panel.Body>
