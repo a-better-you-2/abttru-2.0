@@ -38,8 +38,8 @@ app.get("*", function (req, res) {
 mongoose.Promise = Promise;
 
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/aBetterYou");
-// mongoose.connect(process.env.MONGODB_URI || "mongodb://heroku_fpgs53h1:rglas4qvbobd74prkoskulikdt@ds035735.mlab.com:35735/heroku_fpgs53h1");
+// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/aBetterYou");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://heroku_fpgs53h1:rglas4qvbobd74prkoskulikdt@ds035735.mlab.com:35735/heroku_fpgs53h1");
 
 app.listen(PORT, function () {
   console.log(`🌎 ==> Server now on port ${PORT}!`);
