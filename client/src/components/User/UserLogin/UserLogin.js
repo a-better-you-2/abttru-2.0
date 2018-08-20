@@ -5,7 +5,9 @@ import Logo from '../../Home/Logo/Logo';
 import axios from "axios";
 import "./UserLogin.css"
 
-
+const logStyle = {
+    textAlign:'center'
+}
 
 class UserLogin extends Component {
     state = {
@@ -59,8 +61,8 @@ class UserLogin extends Component {
                         <Logo className="col-xs-4 col-sm-4 col-md-4 col-lg-4" />
                         <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4"></div>
                     </div>
-                    <Row>
                         <form className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <Row>
                             <Col size="xs-0 sm-0 md-4 lg-4"></Col>
                             <Col size="xs-12 sm-12 md-4 lg-4">
                                 <Input
@@ -78,11 +80,11 @@ class UserLogin extends Component {
                                     placeholder="Password"
                                 />
                                 <br />
-                                <button className="input-lg login" id="login" onClick={this.handleFormSubmit}>Login</button>
+                                <button type="submit" onClick={this.handleFormSubmit} style={logStyle} className="btn-lg login">Login</button>
                             </Col>
                             <Col size="xs-0 sm-0 md-4 lg-4"></Col>
+                            </Row>
                         </form>
-                    </Row>
                 </Container>
             </div >
         );

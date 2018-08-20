@@ -13,7 +13,7 @@ class Home extends React.Component {
 
   render() {
     return (
-      <div className="container">
+      <div className="main-content">
         <div className="row">
           <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4"></div>
           <Logo className="col-xs-4 col-sm-4 col-md-4 col-lg-4" />
@@ -23,33 +23,31 @@ class Home extends React.Component {
           <div className="col-xs-3 col-sm-3 col-md-3 col-lg-3"></div>
           <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
             <Panel>
-              <Panel.Body>
-                <h3 className="welcome">
+              <div type="button" className="btn welcome">
+                <h3>
                   <Link to="/guest" id="nav-link">
                     <FontAwesomeIcon icon="user" /> Continue as Guest
               </Link>
                 </h3>
-              </Panel.Body>
+              </div>
             </Panel>
             <Panel>
-              <Panel.Body>
-                <h3 className="welcome">
+              <div  type="button"className="btn welcome">
+                <h3>
                   <Link to="/doctorLogin" id="nav-link">
-                    {/* <FontAwesomeIcon icon="user-md" />  */}
                     <FontAwesomeIcon icon="user-md" color="#EFFFFA" /> Login as Doctor
               </Link>
                 </h3>
-              </Panel.Body>
+              </div>
             </Panel>
             <Panel>
-              <Panel.Body>
-                <h3 className="welcome">
-
+              <div  type="button"className="btn welcome">
+                <h3>
                   <Link to="/userLogin" id="nav-link">
                     <FontAwesomeIcon icon="user-circle" /> Login as Patient
               </Link>
                 </h3>
-              </Panel.Body>
+              </div>
             </Panel>
           </div>
           <div className="col-xs-3 col-sm-3 col-md-3 col-lg-3"></div>

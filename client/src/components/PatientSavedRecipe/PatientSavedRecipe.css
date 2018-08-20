@@ -25,10 +25,6 @@
     z-index: 1;
   }
 
-  body { 
-    padding: 40px; 
-  }
-
 .dropdown-toggle { 
   width: 100px;
   height: 20px;

@@ -11,28 +11,28 @@ import './DoctorJumbotron.css';
 const DoctorJumbotron = (props) => {
 
     return (
-        <Jumbotron className="jumbo">
+        <Jumbotron>
             <div className="row">
                 <div className="col-xs-2 col-md-2 col-lg-2">
                 </div>
                 <div className="col-xs-10 col-md-2 col-lg-2 prof">
-                    <Image id="doctor_photo" src={props.doctor_photo} thumbnail />
+                    <Image id="doctor_photo" className="img-responsive" src={props.doctor_photo} thumbnail />
                 </div>
                 <div className="col-xs-12 col-md-1 col-lg-1">
                 </div>
                 <div className="col-xs-12 col-md-6 col-lg-6">
                     <div className="col-xs-12 col-md-12 col-lg-12">
-                        <h2>Dr.{' '}
+                        <h2 className="about-doc">Dr.{' '}
                             {/* <FontAwesomeIcon icon="vial" size="4x" color={fontAwesomeColor()} /> */}
                             {props.name}</h2>
                     </div>
                     <div className="col-xs-12 col-md-12 col-lg-12">
-                        <h3>Specialty:{' '}
+                        <h3 className="about-doc">Specialty:{' '}
                             {/* <FontAwesomeIcon icon="vial" size="4x" color={fontAwesomeColor()} /> */}
                             {props.specialty}</h3>
                     </div>
                     <div className="col-xs-12 col-md-12 col-lg-12">
-                        <h3>Facility Name:{' '}
+                        <h3 className="about-doc">Facility Name:{' '}
                             {/* <FontAwesomeIcon icon="heartbeat" size="4x" color="green" /> */}
                             {props.facility_name}</h3>
                     </div>
@@ -43,7 +43,7 @@ const DoctorJumbotron = (props) => {
                                 data: props.data,
                                 doctor_id: props.doctor_id
                             }
-                        }} > <button className="btn btn-success">
+                        }} > <button className="btn add-patient">
                                 <FontAwesomeIcon icon="user-plus" /> Add Patient
                             </button>
                         </Link>

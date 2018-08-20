@@ -3,7 +3,7 @@ import React from "react";
 
 const linkStyle = {
     color: "black",
-    boxShadow: "5px 5px 10px black"
+    boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.25)'
 }
 
 // This component lets us use a bootstrap input element without worrying about class names

@@ -43,7 +43,6 @@ class User extends React.Component {
   fontAwesomeColor = () => {
     if (this.state.risk_factor === "high-cholesterol") {
       return "red";
-
     }
     else {
       return "black";

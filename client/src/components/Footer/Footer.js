@@ -3,33 +3,31 @@ import "./Footer.css";
 import FontAwesomeIcon from "@fortawesome/react-fontawesome";
 
 const logoStyle = {
-    width: "50px",
+    width: "75px",
     height: "auto",
-    margin: "2px"
+    margin: "5px 5px 15px 5px",
+    float: "left"
 }
 
 const Footer = () => (
 
-    <footer className="footer">
+    <div className="footer" >
 
         <div className="row">
             <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4 about">
-                <a href="" className="navbar-left logo"><img src={require('./ABTTRU-LOGO.png')} style={logoStyle} alt="logo" /></a>
-                <p className="mission">Our application was created with a passion for food and connects you to recipes from all over the web,
-                and helps your dietitian convey their recommendations to you dynamically.
-                        You pick your ingredients, we make a better you.</p>
+                <img className="brand"src={require('./abttru-logo2.png')} style={logoStyle} alt="logo" /><p className="mission">Our application was created with a passion for food and connects you to recipes from all over the web, and helps your dietitian convey their recommendations to you dynamically. You pick the ingredients, we make a better you.</p>
             </div>
             <div className="col-xs-6 col-sm-6 col-md-2 col-lg-2 blah">
-                <h5> Resources </h5>
+                <h5 className="footnav"> Resources </h5>
                 <ul className="list-unstyled quick-links">
-                    <li><a href="https://github.com/a-better-you-2/abttru-2.0#abttru-20" target="_blank"><p className="icon"><i className="fa fa-angle-double-right"></i>Readme</p></a></li>
+                    <li><a href="https://github.com/a-better-you-2/abttru-2.0#abttru-20" target="_blank" rel="noopener noreferrer"><p className="icon"><i className="fa fa-angle-double-right"></i>Readme</p></a></li>
                 </ul>
             </div>
             <div className="col-xs-6 col-sm-6 col-md-2 col-lg-2 blah">
-                <h5> Navigation </h5>
+                <h5 className="footnav"> Navigation </h5>
                 <ul className="list-unstyled quick-links">
                     <li>
-                        <h3>
+                        <h3 className="footnav">
                             <a href="/doctorLogin"><FontAwesomeIcon icon="user-md" className="icon" /> </a>
                             <a href="/userLogin"><FontAwesomeIcon icon="user-circle" className="icon" /></a>
                         </h3>
@@ -48,7 +46,7 @@ const Footer = () => (
             </div>
         </div>
         {/* <div className="copy">&copy; A Better You 2018</div> */}
-    </footer>
+    </div>
 
 );
 

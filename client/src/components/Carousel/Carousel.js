@@ -141,7 +141,7 @@ class ControlledCarousel extends React.Component {
     }
 
     return (
-      <div className="container">
+      <div className="main-content">
         <div className="row">
           <div className="col-xs-0 col-sm-0 col-md-3 col-lg-2"></div>
           <div className="col-xs-12 col-sm-12 col-md-6 col-lg-8 carousel-div">

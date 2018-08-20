@@ -19,13 +19,32 @@
   }
 
   .patient {
-    width: 100px;
+    width: 100%;
     height: auto;
-    padding: 2px;
   }
 
-  #doc-home {
-    color: #EFFFFA !important;
+  .patient-photo {
+  
+    margin: 5px;
+    float: left;
   }
+
+  button#dropdownMenuButton {
+    width: auto;
+    height: auto;
+}
+
+@media screen and (max-width: 600px) {
+  .patient-photo {
+    padding: 0;
+    margin: 0;
+  }
+  .first-last {
+    font-size: 12px;
+  }
+  .health {
+    font-size: 10px;
+  }
+}
 
   

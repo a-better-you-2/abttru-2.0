@@ -1,34 +1,7 @@
-.footer {
-    position: sticky;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    padding: 1rem;
-    background-color: #315659;
-    border-top: 10px solid #197278;
-    color:white;
-    text-align: center;
-    padding-bottom: 0px;
-    margin-top: 150px;
-  }
-
-@media screen and (max-width: 600px) {
-    .footer {
-        background-color: #315659 !important;
-        color: white;
-        position: relative;
-        left:0;
-        bottom:0;
-        right:0;
-        clear: both;
-        padding: 10px;
-    }
-}
 
 .bitmoji {
     width: 50px;
     height: auto;
-    float: left;
 }
 
 .blah {
@@ -42,11 +15,34 @@
     text-align: center;
 }
 
-h5 {
-    text-align: center;
-}
-
-.icon {
+.icon,
+.footnav {
     margin: 5px;
     color: white;
+    text-align: center;
+}
+p.mission {
+    text-decoration: none;
+    padding: 5px;
+}
+.footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 10px 0 0 10px;
+    background-color: #2C3E50;
+    border-top: 5px solid #749541;
+    color:white;
+    font-size: 10px;
+  }
+
+@media screen and (max-width: 600px) {
+    .footer {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        padding: 5px;
+    }
 }

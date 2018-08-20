@@ -1,7 +1,18 @@
-.navbar-collapse.collapse.in { 
-    display: block!important; 
+.navbar {
+    background-color: #2C3E50;
+    width: 100%;
+    margin-bottom: 0px;
+  }
+
+.navbar.navbar-default .navbar-toggler-icon {
+    background-image: url('https://mdbootstrap.com/img/svg/hamburger2.svg?color=fff');
 }
 
-.navbar-toggle.collapsed {
-    margin-top: 20px;
+.nav-item {
+    color: white;
+    float:right;
+}
+
+.home {
+    margin-right: 5px;
 }

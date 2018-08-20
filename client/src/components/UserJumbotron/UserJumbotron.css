@@ -9,19 +9,12 @@
 }
 
 .tabGroup {
+    position: absolute;
+    bottom: 0;
     text-align: center;
     padding-top: 20px;
     font-size: 13px;
 }
-
-
-.jumbotron, .jumbo {
-    padding-bottom: 0px !important;
-    background-color: #197278 !important;
-    display: block;
-    color: #EFFFFA;
-
-  }
 
 #user_photo {
     border-radius: 50%;

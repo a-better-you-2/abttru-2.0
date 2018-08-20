@@ -15,7 +15,6 @@
     "radium": "^0.24.0",
     "react": "^16.3.2",
     "react-bootstrap": "^0.32.1",
-    "react-coverflow": "^0.2.14",
     "react-dom": "^16.3.2",
     "react-helmet": "^5.2.0",
     "react-history": "^0.18.2",

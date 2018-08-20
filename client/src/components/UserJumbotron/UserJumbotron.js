@@ -41,18 +41,18 @@ class UserJumbotron extends React.Component {
 
     profileTabColor = () => {
         if (this.props.isUserPage) {
-            return "#315659";
+            return "#2C3E50";
         }
         else {
-            return "#EFFFFA";
+            return "#F3F0DD";
         }
     }
     savedTabColor = () => {
         if (this.props.isUserPage) {
-            return "#EFFFFA";
+            return "#F3F0DD";
         }
         else {
-            return "#315659";
+            return "#2C3E50";
         }
     }
 
@@ -113,7 +113,7 @@ class UserJumbotron extends React.Component {
                     <div className="col-xs-1 col-md-1 col-lg-1">
                     </div>
                 </div>
-                <div className="row">
+                <div className="row search-saved">
                     <div className="col-xs-1 col-md-1 col-lg-1 col-xs-1 "></div>
                     <div className="col-xs-10 col-md-10 col-lg-10 col-xs-10 tabGroup">
                         <Link to={{ pathname: `/user/${this.props.userId}`, params: { id: this.props.userId } }}>

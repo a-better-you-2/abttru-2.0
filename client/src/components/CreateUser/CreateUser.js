@@ -39,8 +39,8 @@ class Create extends React.Component {
   }
 
   onChange = (e) => {
-    console.log(this.props);
-    console.log(this.state);
+    // console.log(this.props);
+    // console.log(this.state);
     this.setState({
       [e.target.name]: e.target.value
     });
@@ -48,11 +48,17 @@ class Create extends React.Component {
 
   onSubmit = (e) => {
     e.preventDefault();
-
-    console.log(this.props);
-    console.log(this.state);
+    // console.log(this.props);
+    // console.log(this.state);
+    if ((this.state.user_photo === "") && (this.state.sex === "Male")) {
+      console.log("MAN");
+      this.setState({user_photo: "http://www.92tangle.com/wp-content/uploads/2017/09/generic-headshot-male.png"});
+    } else if ((this.state.user_photo === "") && (this.state.sex === "Female")) {
+      console.log("WOMAN");
+      this.setState({user_photo: "http://www.uttyler.edu/images/headshot-fem.png"});
+      console.log(this.state.user_photo);
+    }
     if (this.state.first_name && this.state.password) {
-
       this.setState({
         isValid: true
       });

@@ -2,8 +2,8 @@ import React from 'react';
 
 const StepTwo = (props) => (
     <div>
-        <br />
-        <br />
+        {/* <br /> */}
+        {/* <br /> */}
         <form>
             <label>
                 Date of Birth: {"  "}

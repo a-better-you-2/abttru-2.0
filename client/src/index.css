@@ -1,13 +1,14 @@
-html,
-body,
-#root {
+
+
+html {
   height: 100%;
-  margin: 0;
-  padding: 0;
-  font-family: 'Montserrat', sans-serif;
-  background-color: #EFFFFA;
-  /* overflow: auto; */
   box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
 }
 
 body {
@@ -17,19 +18,17 @@ body {
   min-height: 100%;
 }
 
-.navbar {
-  background-color: #315659 !important;
-  width: 100%;
-  margin-bottom: 0px;
+.jumbotron {
+  background-color: #749541;
+  display: block;
+  color: #ffffff;
+  margin-bottom: 25px;
+  border-bottom: 2px solid #2C3E50;
 }
 
-/* #davey-test { */
-  /* box-sizing: border-box; */
-  /* flex: 1 0 auto; */
-/* } */
-
-.jumbo-div {
-  margin-bottom: 50px;
+.main-content {
+  margin-bottom: 250px;
+  padding: 10px;
 }
 
 #height{
@@ -39,8 +38,7 @@ body {
 }
 
 .add-panel,
-.patient-panel,
-.container {
+.patient-panel {
   margin-top: 30px;
   margin-bottom: 30px;
 }
@@ -52,7 +50,7 @@ body {
 .footer-buttons,
 .edit-patient {
 
-  background-color: #315659
+  background-color: #2C3E50
 }
 
 .progtrckr-doing {
@@ -66,7 +64,7 @@ body {
 
 .input-wizard {
   background-color: #EFFFFA;
-  color: #315659
+  color: #2C3E50
 }
 
 .steppy {
@@ -80,11 +78,11 @@ body {
 
 ol.progtrckr,
  li.progtrckr-todo:before {
-   background-color: #315659 !important;
+   background-color: #2C3E50 !important;
  }
 
  li.progtrckr-doing:before{
-   background-color: #315659 !important;
+   background-color: #2C3E50 !important;
    color: #EFFFFA !important;
    border: 1px solid #EFFFFA;
  }

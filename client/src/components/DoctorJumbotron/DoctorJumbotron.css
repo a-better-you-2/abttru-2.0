@@ -1,27 +1,32 @@
-.jumbotron {
-    padding-bottom: 50px;
-    /* background-color: #197278 !important;
-    display: block;
-    color: #EFFFFA; */
-  }
+
 
 #doctor_photo {
+    background-size:cover;
     border-radius: 50%;
-    width: 150px;
-    height: auto;
+    width: 175px;
+    height: 175px;
     display: table;
     margin-bottom: 25px;
     text-align: center;
+    
+}
+
+.add-patient {
+    background-color: #2C3E50;
+    color: #ffffff;
 }
 
 @media screen and (max-width: 600px) {
     #doctor_photo {
         border-radius: 50%;
         width: 200px;
-        height: auto;
+        height: 200px;
         display: table;
         margin: 0 auto;
         text-align: center;
+    }
+    .about-doc {
+        font-size: 24px;
     }
 }
 

@@ -4,6 +4,9 @@ import { Container, Row, Col } from "../../Grid";
 import Logo from '../../Home/Logo/Logo';
 import axios from "axios";
 
+const logStyle = {
+    textAlign:'center'
+}
 
 
 class DoctorLogin extends Component {
@@ -73,7 +76,7 @@ class DoctorLogin extends Component {
                                         placeholder="Password"
                                     />
                                     <br />
-                                    <button onClick={this.handleFormSubmit} className="input-lg login">Login</button>
+                                    <button type="submit" onClick={this.handleFormSubmit} style={logStyle} className="btn-lg login">Login</button>
                                 </Col>
                                 <Col size="xs-0 sm-0 md-4 lg-4"></Col>
                             </Row>
