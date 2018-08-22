@@ -1,6 +1,6 @@
 import React from "react";
 import FontAwesomeIcon from "@fortawesome/react-fontawesome";
-// import {Button, Table, FormGroup, FormControl} from "react-bootstrap";
+// import {Button, Table, FormGroup, FormControl} from "reactstrap";
 
 
 const UserStatsTable = props => (

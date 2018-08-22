@@ -10,7 +10,7 @@ import PatientSavedRecipe from "./components/PatientSavedRecipe";
 import Guest from "./components/Guest";
 import UserLogin from "./components/User/UserLogin/UserLogin";
 import DoctorLogin from "./components/Doctor/DoctorLogin/DoctorLogin";
-// import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
+// import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'reactstrap';
 import NavigationBar from './components/NavigationBar';
 import Footer from './components/Footer/Footer';
 
@@ -20,7 +20,7 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter keyLength={12}>
-        <div id="davey-test">
+        <div id="abttru">
           <NavigationBar />
           <div className="main">
             <Route exact path="/" component={Home} />

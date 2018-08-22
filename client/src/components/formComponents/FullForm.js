@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Panel, Button, Form, FormGroup, FormControl, Label, Alert } from "react-bootstrap";
+import { Panel, Button, Form, FormGroup, FormControl, Label, Alert } from "reactstrap";
 import axios from "axios";
 import Step1 from './StepOne';
 import Step2 from './StepTwo';

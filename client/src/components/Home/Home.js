@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Panel } from "react-bootstrap";
+import { Button } from "reactstrap";
 import Logo from './Logo/Logo';
 import FontAwesomeIcon from "@fortawesome/react-fontawesome";
 import "./Home.css";
@@ -20,9 +20,9 @@ class Home extends React.Component {
           <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4"></div>
         </div>
         <div className="row">
-          <div className="col-xs-3 col-sm-3 col-md-3 col-lg-3"></div>
-          <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-            <Panel>
+          <div className="col-xs-3 col-sm-3 col-md-4 col-lg-4"></div>
+          <div className="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+            <Button>
               <div type="button" className="btn welcome">
                 <h3>
                   <Link to="/guest" id="nav-link">
@@ -30,17 +30,17 @@ class Home extends React.Component {
               </Link>
                 </h3>
               </div>
-            </Panel>
-            <Panel>
-              <div  type="button"className="btn welcome">
+            </Button>
+            <Button>
+              <div type="button"className="btn welcome">
                 <h3>
                   <Link to="/doctorLogin" id="nav-link">
-                    <FontAwesomeIcon icon="user-md" color="#EFFFFA" /> Login as Doctor
+                    <FontAwesomeIcon icon="user-md" color="#F3F0DD" /> Login as Doctor
               </Link>
                 </h3>
               </div>
-            </Panel>
-            <Panel>
+            </Button>
+            <Button>
               <div  type="button"className="btn welcome">
                 <h3>
                   <Link to="/userLogin" id="nav-link">
@@ -48,9 +48,9 @@ class Home extends React.Component {
               </Link>
                 </h3>
               </div>
-            </Panel>
+            </Button>
           </div>
-          <div className="col-xs-3 col-sm-3 col-md-3 col-lg-3"></div>
+          <div className="col-xs-3 col-sm-3 col-md-4 col-lg-4"></div>
         </div>
       </div>
     )

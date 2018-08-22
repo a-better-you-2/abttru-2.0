@@ -1,7 +1,7 @@
 import React from "react";
 // import { Link } from "react-router-dom";
 import axios from "axios";
-import { Panel, Button } from "react-bootstrap";
+import { Card, Button } from "reactstrap";
 // import FontAwesomeIcon from "@fortawesome/react-fontawesome";
 import Step1 from '../formComponents/StepOne';
 import Step2 from '../formComponents/StepTwo';
@@ -99,7 +99,7 @@ class EditUser extends React.Component {
 
     return (
       <div className="container">
-        <Panel className="edit-patient">
+        <Card className="edit-patient">
           <div className="App">
 
             <div className='step-progress'>
@@ -115,7 +115,7 @@ class EditUser extends React.Component {
 
                 preventEnterSubmission={true}
 
-                nextTextOnFinalActionStep={"Click to Review Data"}
+                nextTextOnFinalActionStep={"Review"}
 
                 hocValidationAppliedTo={[3]}
 
@@ -126,11 +126,9 @@ class EditUser extends React.Component {
                 onStepChange={(step) => window.sessionStorage.setItem('step', step)}
               />
             </div>
-
+            <Button className="btn-lg submit" onClick={this.onSubmit} color="primary">Submit</Button>
           </div>
-          <Button className="btn-lg btn-danger" onClick={this.onSubmit} color="primary">Submit</Button>
-        </Panel>
-
+        </Card>
       </div>
     )
   }

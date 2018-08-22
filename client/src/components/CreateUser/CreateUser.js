@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import { Panel, Button, Alert } from "react-bootstrap";
+import { Card, CardBody, Button, Alert } from "reactstrap";
 import FontAwesomeIcon from "@fortawesome/react-fontawesome";
 import Step1 from '../formComponents/StepOne';
 import Step2 from '../formComponents/StepTwo';
@@ -132,11 +132,11 @@ class Create extends React.Component {
       ]
     return (
       <div className="container">
-        <Panel className="add-panel">
-          <Panel>
-            <h3><strong>Add Patient</strong></h3>
-          </Panel>
-          <Panel.Body>
+        <Card className="add-panel">
+          <Card>
+            <h3 className="add-patient"><strong>Add Patient</strong></h3>
+          </Card>
+          <CardBody>
             <div>
               <h5 >
                 <Link to={{
@@ -178,8 +178,8 @@ class Create extends React.Component {
 
 
             </div>
-          </Panel.Body>
-        </Panel>
+          </CardBody>
+        </Card>
         <br />
         {!this.state.isValid && (
           <Alert color="danger">

@@ -13,7 +13,7 @@
   .save.btn.btn-default  {
     background-color:transparent;
     background-color:#315659;
-    color: #EFFFFA;
+    color: #F3F0DD;
     font-size: 16px;
     position: relative;
     top: -3px;
@@ -59,15 +59,22 @@
   overflow-x: hidden;
 }
 
-.info {
-  padding: 10px;
-  float:left;
+.recipe {
+  height: 125px;
 }
 
 .pic {
+  width: 100px;
+  height: 100px;
+  padding: 2px;
+  margin: 5px;
+  float: left;
+}
+
+.recipe-info {
   padding: 10px;
-  width: 25%;
-  height: auto;
+  float:left;
+  margin-right: 150px;
 }
 
 .card-holder {
@@ -103,3 +110,19 @@ panel {
   }
 } */
 
+@media screen and (max-width: 600px) {
+  .recipe {
+    height: 100px;
+  }
+  .pic {
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+    margin: 0;
+  }
+  .recipe-info {
+    padding: 10px;
+    float:left;
+    margin-right: 0px;
+  }
+}

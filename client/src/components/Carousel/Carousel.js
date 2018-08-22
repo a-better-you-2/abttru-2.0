@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Carousel, Row, Col } from "react-bootstrap";
+import { Button, Carousel, Row, Col } from "reactstrap";
 import { MoonLoader } from 'react-spinners';
 import PiePlot from "../Graphs/PiePlot";
 import Input from "../Input/Input";
@@ -98,14 +98,7 @@ class ControlledCarousel extends React.Component {
                 <h2 id="recipe-link"><a href={data.recipe.url} target="_blank">Tap HERE for the recipe</a></h2>
                 {/* </Carousel.Caption> */}
               </Col>
-              <Col xs={12} sm={12} md={5} lg={5}>
-                <PiePlot
-                  pathName={this.props.pathName}
-                  className="pieTry"
-                  digestData={data.recipe.digest}
-                  yieldData={data.recipe.yield}
-                />
-              </Col>
+
               <Col xs={0} sm={0} md={1} lg={1}></Col>
             </Row>
           </Carousel.Item>
@@ -115,7 +108,7 @@ class ControlledCarousel extends React.Component {
     else {
       searchedRecipeCard = this.state.data.map((data, index) =>
         <div>
-          <Carousel.Item>
+          {/* <Carousel.Item> */}
             <Row>
               <Col xs={0} sm={0} md={1} lg={1}></Col>
               <Col xs={12} sm={12} md={5} lg={5}>
@@ -135,7 +128,7 @@ class ControlledCarousel extends React.Component {
               </Col>
               <Col xs={0} sm={0} md={1} lg={1}></Col>
             </Row>
-          </Carousel.Item>
+          {/* </Carousel.Item> */}
         </div>
       )
     }

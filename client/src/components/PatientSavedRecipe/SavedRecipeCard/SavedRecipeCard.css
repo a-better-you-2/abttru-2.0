@@ -5,19 +5,7 @@
     background: #eee !important;
 }
 
-.btn-primary:hover,
-.btn-primary:focus {
-    background-color:#315659;
-    color: #EFFFFA;
-    box-shadow: none;
-    outline: none;
-}
 
-.btn-primary {
-    color: #fff;
-    background-color:#315659;
-    color: #EFFFFA;
-}
 
 section {
     padding: 60px 0;
@@ -25,7 +13,7 @@ section {
 
 section .section-title {
     text-align: center;
-    color: #007b5e;
+    color: #749541;
     margin-bottom: 50px;
     text-transform: uppercase;
 }
@@ -115,12 +103,12 @@ section .section-title {
 
 .backside .card a {
     font-size: 18px;
-    color: #007b5e !important;
+    color: #2C3E50 !important;
 }
 
 .frontside .card .card-title,
 .backside .card .card-title {
-    color: #007b5e !important;
+    color: #2C3E50 !important;
 }
 
 
@@ -131,8 +119,8 @@ section .section-title {
 
 .save-note {
     margin: 0 auto;
-    background-color:#315659;
-    color: #EFFFFA;
+    background-color:#2C3E50;
+    color: #F3F0DD;
     width:40%;
 
 }

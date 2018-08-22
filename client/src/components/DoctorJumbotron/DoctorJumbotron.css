@@ -1,14 +1,9 @@
-
-
 #doctor_photo {
     background-size:cover;
     border-radius: 50%;
-    width: 175px;
-    height: 175px;
-    display: table;
-    margin-bottom: 25px;
+    width: 200px;
+    height: 200px;
     text-align: center;
-    
 }
 
 .add-patient {

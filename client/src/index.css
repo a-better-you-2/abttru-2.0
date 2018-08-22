@@ -1,6 +1,8 @@
 
 
-html {
+html,
+#root,
+#abttru {
   height: 100%;
   box-sizing: border-box;
 }
@@ -16,6 +18,7 @@ body {
   margin: 0;
   padding-bottom: 6rem;
   min-height: 100%;
+  background-color:#F3F0DD;
 }
 
 .jumbotron {
@@ -26,9 +29,48 @@ body {
   border-bottom: 2px solid #2C3E50;
 }
 
-.main-content {
+/* .main-content {
   margin-bottom: 250px;
   padding: 10px;
+} */
+
+.btn-primary {
+    border: none;
+    text-decoration: none;
+    color: #fff;
+    background-color:#749541;
+    color: #F3F0DD;
+    margin: 2px;
+}
+
+/* .btn-primary:focus */
+.btn-primary:hover {
+    background-color:#8EB94E;
+    color: #F3F0DD;
+    box-shadow: none;
+    outline: none;
+}
+
+.submit,
+.delete {
+  border: none;
+  text-decoration: none;
+  color: #fff;
+  background-color:#EC0B43;
+  color: #F3F0DD;
+}
+
+/* .submit:focus */
+.submit:hover,
+.delete:hover {
+    background-color:#ED2154;
+    color: #F3F0DD;
+    box-shadow: none;
+    outline: none;
+}
+
+.delete {
+  float:left;
 }
 
 #height{
@@ -37,19 +79,20 @@ body {
   margin-right: 1px;
 }
 
-.add-panel,
-.patient-panel {
+.add-card,
+.patient-card,
+.edit-patient {
   margin-top: 30px;
   margin-bottom: 30px;
+  padding: 10px;
 }
 
-.add-panel,
-.patient-panel,
+.add-card,
+.patient-card,
 .progtrckr-todo::before,
 .multi-step,
 .footer-buttons,
 .edit-patient {
-
   background-color: #2C3E50
 }
 
@@ -59,21 +102,21 @@ body {
 
 .progtrckr-todo,
 .progtrckr-done {
-  color:#EFFFFA !important;
+  color:#F3F0DD !important;
 }
 
 .input-wizard {
-  background-color: #EFFFFA;
+  background-color: #F3F0DD;
   color: #2C3E50
 }
 
 .steppy {
   padding-left: 10%;
-  color: #EFFFFA;
+  color: #F3F0DD;
 }
 
 .patient-panel {
-  color:#EFFFFA;
+  color:#F3F0DD;
 }
 
 ol.progtrckr,
@@ -83,17 +126,27 @@ ol.progtrckr,
 
  li.progtrckr-doing:before{
    background-color: #2C3E50 !important;
-   color: #EFFFFA !important;
-   border: 1px solid #EFFFFA;
+   color: #F3F0DD !important;
+   border: 1px solid #F3F0DD;
  }
 
  ol.progtrckr, li.progtrckr-todo {
-   color: #EFFFFA !important;
+   color: #F3F0DD !important;
  }
  .progtrckr-doing {
-   border-bottom: 4px solid #EFFFFA !important;
+   border-bottom: 4px solid #F3F0DD !important;
  }
 
  li.progtrckr-todo {
-  border-bottom: 4px solid #EFFFFA !important;
+  border-bottom: 4px solid #F3F0DD !important;
+ }
+
+ @media screen and (max-width: 500px) {
+  .add-panel,
+  .patient-panel,
+  .edit-patient {
+    margin-top: 30px;
+    margin-bottom: 200px;
+    padding: 10px;
+  }
  }

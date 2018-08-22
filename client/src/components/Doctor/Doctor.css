@@ -19,14 +19,21 @@
   }
 
   .patient {
-    width: 100%;
-    height: auto;
+    height: 125px;
   }
 
   .patient-photo {
-  
+    width: 100px;
+    height: 100px;
+    padding: 2px;
     margin: 5px;
     float: left;
+  }
+
+  .patient-info {
+    padding: 10px;
+    float:left;
+    margin-right: 150px;
   }
 
   button#dropdownMenuButton {
@@ -35,9 +42,19 @@
 }
 
 @media screen and (max-width: 600px) {
+  .patient {
+    height: 100px;
+  }
   .patient-photo {
-    padding: 0;
+    width: 75px;
+    height: 75px;
+    padding: 10px;
     margin: 0;
+  }
+  .patient-info {
+    padding: 10px;
+    float:left;
+    margin-right: 0px;
   }
   .first-last {
     font-size: 12px;

@@ -27,17 +27,15 @@ class Doctor extends React.Component {
   render() {
     const savedSelect = this.state.patients.map(patient => (
       <li className="patient" id={patient._id} key={patient._id}>
-        {/* <div className="patient"> */}
+        
           <Link to={{ pathname: `/show/${patient._id}`, params: { data: this.state, doctor_id: this.props.match.params.id } }}>
             <img className="img-responsive patient-photo" src={patient.user_photo} alt="alt"></img>
           </Link>
-        {/* </div> */}
-        <div className="info">
+        
+        <div className="patient-info">
             <h4 className="first-last">{patient.first_name}{" "}{patient.last_name}</h4>
-            <h6 className="health"><strong>Risk Factor: </strong>{patient.risk_factor}</h6>
-            <br/>
+            <h6 className="health"><strong>Risk Factor: </strong>{patient.risk_factor}</h6><br />
             <h6 className="health"><strong>Diet Recommendation: </strong>{patient.diet_recommendation}</h6>
-
         </div>
       </li>
     ))

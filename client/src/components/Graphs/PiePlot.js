@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Plot from 'react-plotly.js';
 // import recipeData from './PlotData.json';
-import { Button } from "react-bootstrap";
+import { Button } from "reactstrap";
 // import './App.css';
 
 class PiePlot extends Component {

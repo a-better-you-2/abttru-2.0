@@ -71,7 +71,7 @@ ol.progtrckr li.progtrckr-todo:hover:before {
 
 ol.progtrckr li.progtrckr-doing:before {
   content: "\2022";
-  color: #EFFFFA;
+  color: #F3F0DD;
   background-color: #315659;
   width: 1.2em;
   line-height: 1.2em;

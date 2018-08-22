@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Carousel } from "react-bootstrap";
+import { Button, Carousel } from "reactstrap";
 import axios from "axios";
 
 class OurItem extends React.Component {

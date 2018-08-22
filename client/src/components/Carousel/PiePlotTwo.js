@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Plot from 'react-plotly.js';
-import { Button, Carousel, Row, Col } from "react-bootstrap";
+import { Button, Carousel, Row, Col } from "reactstrap";
 // import './App.css';
 
 class PiePlotTwo extends Component {
