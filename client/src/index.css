@@ -1,8 +1,7 @@
 
 
 html,
-#root,
-#abttru {
+#root {
   height: 100%;
   box-sizing: border-box;
 }
@@ -19,6 +18,7 @@ body {
   padding-bottom: 6rem;
   min-height: 100%;
   background-color:#F3F0DD;
+  
 }
 
 .jumbotron {
@@ -27,6 +27,14 @@ body {
   color: #ffffff;
   margin-bottom: 25px;
   border-bottom: 2px solid #2C3E50;
+}
+
+.main {
+  margin-bottom: 200px;
+}
+
+.row {
+  margin-right:0;
 }
 
 /* .main-content {
