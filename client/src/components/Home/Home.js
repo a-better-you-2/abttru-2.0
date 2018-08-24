@@ -34,7 +34,7 @@ class Home extends React.Component {
             <button type="button" className="btn btn-secondary welcome">
                 <h3>
                   <Link to="/doctorLogin" id="nav-link">
-                    <FontAwesomeIcon icon="user-md" color="#F3F0DD" /> Login as Doctor
+                    <FontAwesomeIcon icon="user-md" color="#FFFFFF" /> Login as Doctor
               </Link>
                 </h3>
             </button>
