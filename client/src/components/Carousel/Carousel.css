@@ -1,75 +1,66 @@
+.carousel-inner {
+    height: 350px;
+}
+
 #pic,
 .graphButtons {
     display: table;
     margin: 0 auto;
+    margin-top: 10px;
     text-align: center;
 }
 
-#pie,
-#get {
+#pie {
+    /* display: inline; */
     text-align: center;
     background-color: #749541;
-    /* border: 2px solid #2C3E50; */
     color: white;
-}
-
-.item {
-    height: 600x;
-    /* margin-bottom: 20px; */
-}
-
-/* Centered text */
-#recipe-link {
-    position: relative;
-    color: rgb(49, 86, 89);
-    margin-left: 10px;
-}
-
-.carousel-inner {
-    height: 370px;
+    margin: 1px;
+    width: 75px;
+    padding: 2px;
 }
 
 @media screen and (max-width: 650px) {
-  .js-plotly-plot {
-    margin-left: 10px;
-  }
-  .carousel-inner {
-      height: 675px;
+    .carousel-inner {
+        height: 700px;
+    }
+    .js-plotly-plot {
+    margin-left: 10%;
   }
 }
 
-.save-button {
-    background-color: rgb(49, 86, 89);
-    color: white;
-    position: relative;
-    margin-left: 35%;
+#recipe-info {
+    text-align:center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
+#label {
+    color:white;
+}
 
-.sweet-loader {
-    padding-top: 20px;
+.get-recipe,
+.save-recipe {
+    width: 125px;
+    margin:auto;
+}
+
+.recipe-display {
+    padding: 0px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.carousel-item {
+    background-color: #;
 }
 
 input,
 select,
 textarea,
 form {
-    width: 90%;
+    width: 100%;
     padding-left: 0;
     margin: 0;
 }
-
-MoonLoader {
-text-align: center;
-}
-
-.Carousel-outer {
-    height: 110%;
-}
-
-
-
-
-
-
 

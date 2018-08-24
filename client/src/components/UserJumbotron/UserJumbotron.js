@@ -61,9 +61,8 @@ class UserJumbotron extends React.Component {
         return (
             <Jumbotron className="jumbo">
                 <div className="row patient-profile">
-                    <div className="col-lg-1"></div>
-                    <div className="col-12 col-sm-12 col-md-3 col-lg-2 prof">
-                        <img class="img-responsive" id="user_photo" src={this.props.user_photo} alt="user_photo" />
+                    <div className="col-12 col-sm-12 col-md-3 col-lg-3 prof">
+                        <img id="user_photo" src={this.props.user_photo} alt="user_photo" />
                     </div>
                         <div className="col-12 col-sm-12 col-md-3 col-lg-3">
                             <div className="col-6 col-sm-6 col-md-12 col-lg-12 stats">

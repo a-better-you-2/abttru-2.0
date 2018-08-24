@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Input from "../../Input/Input";
 import { Container, Row, Col } from "../../Grid";
+import { Button } from "reactstrap";
 import Logo from '../../Home/Logo/Logo';
 import axios from "axios";
 import "./UserLogin.css"
@@ -57,11 +58,11 @@ class UserLogin extends Component {
             <div>
                 <Container>
                     <div className="row">
-                        <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4"></div>
-                        <Logo className="col-xs-4 col-sm-4 col-md-4 col-lg-4" />
-                        <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4"></div>
+                        <div className="col-4 col-sm-4 col-md-4 col-lg-4"></div>
+                        <Logo className="col-4 col-sm-4 col-md-4 col-lg-4" />
+                        <div className="col-4 col-sm-4 col-md-4 col-lg-4"></div>
                     </div>
-                        <form className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <form className="col-12 col-sm-12 col-md-12 col-lg-12">
                         <Row>
                             <Col size="xs-0 sm-0 md-4 lg-4"></Col>
                             <Col size="xs-12 sm-12 md-4 lg-4">
@@ -80,7 +81,7 @@ class UserLogin extends Component {
                                     placeholder="Password"
                                 />
                                 <br />
-                                <button type="submit" onClick={this.handleFormSubmit} style={logStyle} className="btn-lg login">Login</button>
+                                <Button type="submit" onClick={this.handleFormSubmit} style={logStyle} className="btn-lg login">Login</Button>
                             </Col>
                             <Col size="xs-0 sm-0 md-4 lg-4"></Col>
                             </Row>

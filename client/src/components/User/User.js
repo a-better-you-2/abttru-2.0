@@ -53,7 +53,7 @@ class User extends React.Component {
   render() {
     return (
       <div className="jumbo-div">
-        <UserJumbotron
+        <UserJumbotron key={this.state.user_id}
           // className={"col-md-12"}
           userId={this.props.match.params.id}
           user_photo={this.state.user_photo}
@@ -66,7 +66,7 @@ class User extends React.Component {
         />
 
 
-        <ControlledCarousel userId={this.state.user_id} diet_label={this.state.diet_recommendation} health_label={this.state.diet_restriction} />
+        <ControlledCarousel userId={this.state.user_id}  captionText={""} diet_label={this.state.diet_recommendation} health_label={this.state.diet_restriction} />
       </div>
 
     )

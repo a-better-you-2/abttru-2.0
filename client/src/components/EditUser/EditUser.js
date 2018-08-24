@@ -11,7 +11,6 @@ import StepZilla from 'react-stepzilla';
 
 class EditUser extends React.Component {
   state = {
-
   };
 
   componentDidMount() {

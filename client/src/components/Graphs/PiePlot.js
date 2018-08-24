@@ -44,8 +44,8 @@ class PiePlot extends Component {
         let recipeYield = this.props.yieldData;
         // declare a variable containing the colors of each plotly graph
         let ultimateColors = [
-            ['#2E5894', '#8FD400', '#9C2542'],
-            ['#0095B7', '#2D383A', '#1AB385', '#A50B5E'],
+            ['#87A878', '#D3D88B', '#737F8A'],
+            ['#336699', '#DB93B0', '#F3726C', '#8FD694'],
             ['#ABAD48', '#469496', '#436CB9', '#469A84', '#353839', '#2D5DA1', '#64609A'],
             ['#E97451', '#FC80A5', '#C62D42', '#C9A0DC', '#76D7EA', '#FF8833', '#29AB87', '#AF593E', '#01786F', '#FFCBA4', '#FCD667', '#ED0A3F', '#FBE870']
         ];
@@ -70,7 +70,7 @@ class PiePlot extends Component {
                     annotations: [
                         {
                             font: {
-                                size: 14
+                                size: 14,
                             },
                             showarrow: false,
                             text: 'Macros',
@@ -105,13 +105,12 @@ class PiePlot extends Component {
                     }
                 },
                 layout: {
-
                     paper_bgcolor: 'transparent',
                     plot_bgcolor: 'transparent',
                     annotations: [
                         {
                             font: {
-                                size: 14
+                                size: 14,
                             },
                             showarrow: false,
                             text: 'Fats',
@@ -142,14 +141,13 @@ class PiePlot extends Component {
                         colors: ultimateColors[2]
                     }
                 },
-                layout: {
-
+                layout: {                  
                     paper_bgcolor: 'transparent',
                     plot_bgcolor: 'transparent',
                     annotations: [
                         {
                             font: {
-                                size: 14
+                                size: 14,    
                             },
                             showarrow: false,
                             text: 'Minerals',
@@ -181,13 +179,12 @@ class PiePlot extends Component {
                     }
                 },
                 layout: {
-
                     paper_bgcolor: 'transparent',
                     plot_bgcolor: 'transparent',
                     annotations: [
                         {
                             font: {
-                                size: 14
+                                size: 14, 
                             },
                             showarrow: false,
                             text: 'Vitamins',
@@ -289,9 +286,6 @@ class PiePlot extends Component {
         })
     }
 
-
-
-
     // console.log(this.state.plotData)
 
 
@@ -299,38 +293,26 @@ class PiePlot extends Component {
         if (this.props.pathName === "/guest") {
             return (
                 <div>
-                    {/* <Row> */}
-                    {/* <Col xs={12}> */}
-                    {/* </Col> */}
-                    {/* </Row> */}
-                    {/* <Row> */}
                     <Plot
                         data={[this.state.showingPlot]}
                         layout={this.state.plotLayout}
                     />
-                    {/* </Row> */}
                 </div>
             );
         }
         else {
             return (
                 <div>
-                    {/* <Row> */}
-                    {/* <Col xs={12}> */}
                     <div className="graphButtons">
                         <Button id="pie" onClick={this.switchPlot} value={0}>Macros</Button>
                         <Button id="pie" onClick={this.switchPlot} value={1}>Fats</Button>
                         <Button id="pie" onClick={this.switchPlot} value={2}>Minerals</Button>
                         <Button id="pie" onClick={this.switchPlot} value={3}>Vitamins</Button>
                     </div>
-                    {/* </Col> */}
-                    {/* </Row> */}
-                    {/* <Row> */}
                     <Plot
                         data={[this.state.showingPlot]}
                         layout={this.state.plotLayout}
                     />
-                    {/* </Row> */}
                 </div>
             );
         }

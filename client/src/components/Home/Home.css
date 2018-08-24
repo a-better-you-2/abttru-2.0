@@ -1,14 +1,8 @@
-.panel-body,
-h1 {
-    text-align: center;
-}
-
-.welcome,
 .btn-secondary {
     text-decoration: none;
     background-color: #749541;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.25);
-    margin: 0 auto;
+    margin: 5px;
     width: 100%;
     border-radius: .5em;
 }
@@ -20,6 +14,10 @@ h1 {
     height: 200px;
 }
 
+#abttru-logo {
+    margin: 0 auto;
+}
+
 #img-div {
     border-radius: 50%;
     background-color: white;
@@ -27,7 +25,8 @@ h1 {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.25);
     margin: 10px auto 15px auto;
     padding: 10px;
-    width: 250px;
+    width: 245px;
+    height: auto;
 }
 
 #doctor-icon {

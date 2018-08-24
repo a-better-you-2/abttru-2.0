@@ -7,7 +7,7 @@ import RecipeCard from "./SavedRecipeCard";
 import UserJumbotron from '../UserJumbotron/'
 import "./PatientSavedRecipe.css"
 import PiePlot from "../Graphs/PiePlot";
-import { MoonLoader } from 'react-spinners';
+import { RingLoader } from 'react-spinners';
 // import { css } from 'emotion';
 
 
@@ -197,11 +197,9 @@ class PatientSavedRecipe extends React.Component {
     // const id = this.state.user_id;
     const savedSelect = this.state.recipes.map(recipe => (
       <li className="recipe" id={recipe.recipe_uri} key={recipe._id}>
-        
           <a href={recipe.recipe_link} title={recipe.recipe_name} target="_blank">
             <img className="img-responsive pic" src={recipe.recipe_img} alt="alt"></img>
           </a>
-        
         <div className="recipe-info">
           <h6>{recipe.recipe_name}</h6>
           <div className="button" id={recipe.recipe_uri} onClick={this.changeRecipe}>GET RECIPE CARD</div>
@@ -234,21 +232,21 @@ class PatientSavedRecipe extends React.Component {
               />
               <div className="">
                 <div className="row">
-                  <div className="col-xs-0 col-sm-0 col-md-4 cold-lg-4"></div>
-                  <div className="col-xs-12 col-sm-12 col-md-4 cold-lg-4 sweet-loader">
-                    <MoonLoader
+                  <div className="col-3 col-sm-3 col-md-5 cold-lg-5"></div>
+                  <div className="col-6 col-sm-6 col-md-2 cold-lg-2 sweet-loader">
+                    <RingLoader
                       loading={this.state.loading}
-                      size={250}
-                      color={'#197278'}
+                      size={200}
+                      color={'#EC0B43'}
                     />
                   </div>
-                  <div className="col-xs-0 col-sm-0 col-md-4 cold-lg-4"></div>
+                  <div className="col-3 col-sm-3 col-md-5 cold-lg-5"></div>
                 </div>
               
               {this.state.showResults ? (
                 <div>
                   <div className="row">
-                    <div className="col-xs-12 col-sm-12 col-md-6">
+                    <div className="col-12 col-sm-12 col-md-6 col-lg-6">
                       <div className="dropdown">
                       <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           RECIPE BOX
@@ -258,19 +256,19 @@ class PatientSavedRecipe extends React.Component {
                         </ul>
                       </div>
                     </div>
-                    <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4"></div>
+                    <div className="col-12 col-sm-12 col-md-4 col-lg-4"></div>
                   </div>
                   <div className="row">
-                    <div className="col-xs-0 col-sm-0 col-md-2 cold-lg-2"></div>
-                    <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4 display">
+                    <div className="col-0 col-sm-0 col-md-1 cold-lg-1"></div>
+                    <div className="col-12 col-sm-12 col-md-5 col-lg-5 display">
                       <div className="card-holder">
                         {this.makeCard()}
                       </div>
                     </div>
-                    <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4 display">
+                    <div className="col-12 col-sm-12 col-md-5 col-lg-5 display">
                       {piePlot}
                     </div>
-                    <div className="col-xs-0 col-sm-0 col-md-2 cold-lg-2"></div>
+                    <div className="col-0 col-sm-0 col-md-1 col-lg-1"></div>
                   </div>
                 </div>)
                 : null}
