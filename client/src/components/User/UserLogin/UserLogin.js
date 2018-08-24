@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Input from "../../Input/Input";
-import { Container, Row, Col } from "../../Grid";
+import { Row, Col } from "../../Grid";
 import { Button } from "reactstrap";
 import Logo from '../../Home/Logo/Logo';
 import axios from "axios";
@@ -56,13 +56,12 @@ class UserLogin extends Component {
     render() {
         return (
             <div>
-                <Container>
                     <div className="row">
                         <div className="col-4 col-sm-4 col-md-4 col-lg-4"></div>
                         <Logo className="col-4 col-sm-4 col-md-4 col-lg-4" />
                         <div className="col-4 col-sm-4 col-md-4 col-lg-4"></div>
                     </div>
-                        <form className="col-12 col-sm-12 col-md-12 col-lg-12">
+                        <form>
                         <Row>
                             <Col size="xs-0 sm-0 md-4 lg-4"></Col>
                             <Col size="xs-12 sm-12 md-4 lg-4">
@@ -86,7 +85,6 @@ class UserLogin extends Component {
                             <Col size="xs-0 sm-0 md-4 lg-4"></Col>
                             </Row>
                         </form>
-                </Container>
             </div >
         );
     }

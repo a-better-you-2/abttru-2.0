@@ -23,18 +23,15 @@ const DoctorJumbotron = (props) => {
                 <div className="col-xs-12 col-md-6 col-lg-6">
                     <div className="col-xs-12 col-md-12 col-lg-12">
                         <h2 className="about-doc">Dr.{' '}
-                            {/* <FontAwesomeIcon icon="vial" size="4x" color={fontAwesomeColor()} /> */}
                             {props.name}</h2>
                     </div>
                     <div className="col-xs-12 col-md-12 col-lg-12">
-                        <h3 className="about-doc">Specialty:{' '}
-                            {/* <FontAwesomeIcon icon="vial" size="4x" color={fontAwesomeColor()} /> */}
-                            {props.specialty}</h3>
+                        <h3 className="about-doc">Specialty:<br />{' '}</h3>
+                            <h5>{props.specialty}</h5>
                     </div>
                     <div className="col-xs-12 col-md-12 col-lg-12">
-                        <h3 className="about-doc">Facility Name:{' '}
-                            {/* <FontAwesomeIcon icon="heartbeat" size="4x" color="green" /> */}
-                            {props.facility_name}</h3>
+                        <h3 className="about-doc">Facility Name:<br />{' '}</h3>
+                            <h5>{props.facility_name}</h5>
                     </div>
                     <div className="col-xs-12 col-md-12 col-lg-12">
                         <Link to={{

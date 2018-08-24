@@ -35,7 +35,7 @@ bcrypt.hash('marshmallow', SALT_WORK_FACTOR, function (err, hash) {
         password: "password",
         doctor_photo: "http://mccurdywriting.com/wp-content/uploads/2010/09/Doogie_Howser_MD_290x400-290x300.jpg",
         facility_name: "Eastman Medical Center",
-        specialty: "Genius Child Physician",
+        specialty: "Child Genius Physician",
         patients: [],
         created: Date(Date.now())
     }];
