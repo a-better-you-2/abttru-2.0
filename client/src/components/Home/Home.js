@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Button } from "reactstrap";
+// import { Button } from "reactstrap";
 import Logo from './Logo/Logo';
 import FontAwesomeIcon from "@fortawesome/react-fontawesome";
 import "./Home.css";
@@ -21,28 +21,28 @@ class Home extends React.Component {
         </div>
         <div className="row">
           <div className="col-0 col-sm-0 col-md-4 col-lg-4"></div>
-          <div className="col-12 col-sm-12 col-md-4 col-lg-4">
-            <Button>
+          <div className="col-12 col-sm-12 col-md-4 col-lg-4 home-buttons">
+            <button type="button" class="btn btn-primary welcome">
                 <h3>
                   <Link to="/guest" id="nav-link">
                     <FontAwesomeIcon icon="user" /> Continue as Guest
               </Link>
                 </h3>
-            </Button>
-            <Button>
+            </button>
+            <button type="button" class="btn btn-primary welcome">
                 <h3>
                   <Link to="/doctorLogin" id="nav-link">
                     <FontAwesomeIcon icon="user-md" color="#F3F0DD" /> Login as Doctor
               </Link>
                 </h3>
-            </Button>
-            <Button>
+            </button>
+            <button type="button" class="btn btn-primary welcome">
                 <h3>
                   <Link to="/userLogin" id="nav-link">
                     <FontAwesomeIcon icon="user-circle" /> Login as Patient
               </Link>
                 </h3>
-            </Button>
+            </button>
           </div>
           <div className="col-0 col-sm-0 col-md-4 col-lg-4"></div>
         </div>
