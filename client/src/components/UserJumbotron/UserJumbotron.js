@@ -67,31 +67,31 @@ class UserJumbotron extends React.Component {
                         <div className="col-12 col-sm-12 col-md-3 col-lg-3">
                             <div className="col-6 col-sm-6 col-md-12 col-lg-12 stats">
                                 <img src={cholesterolIcon} alt="cholesterol icon" className="health-icon" />
-                                <span> {this.props.risk_factor}</span>
+                                <span className="health_stats"> {this.props.risk_factor}</span>
                             </div>
                             <div className="col-6 col-sm-6 col-md-12 col-lg-12 stats">
                                 <img src={pressureIcon} alt="bp icon" className="health-icon" />
-                                <span> Normal</span>
+                                <span className="health_stats"> Normal</span>
                             </div>
                         </div>
                         <div className="col-12 col-sm-12 col-md-3 col-lg-3">
                             <div className="col-6 col-sm-6 col-md-12 col-lg-12 stats">
                                 <img src={glucoseIcon} alt="glucose icon" className="health-icon" />
-                                <span> Normal</span>
+                                <span className="health_stats"> Normal</span>
                             </div>
                             <div className="col-6 col-sm-6 col-md-12 col-lg-12 stats">
                                 <img src={tapeIcon} alt="tape icon" className="health-icon" />
-                                <span> Normal</span>
+                                <span className="health_stats"> Normal</span>
                             </div>
                         </div>
                         <div className="col-12 col-sm-12 col-md-3 col-lg-3">
                             <div className="col-6 col-sm-6 col-md-12 col-lg-12 stats">
                                 <img src={dietIcon} alt="diet icon" className="health-icon" />
-                                <span> {this.props.diet_label}</span>
+                                <span className="health_stats"> {this.props.diet_label}</span>
                             </div>
                             <div className="col-6 col-sm-6 col-md-12 col-lg-12 stats">
                                 <img src={restrictionIcon} alt="restriction icon" className="health-icon" />
-                                <span> {this.props.health_label}</span>
+                                <span className="health_stats"> {this.props.health_label}</span>
                             </div>
                         </div>
                 </div>
