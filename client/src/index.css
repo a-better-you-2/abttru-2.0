@@ -17,11 +17,18 @@ body {
   padding-bottom: 6rem;
   min-height: 100%;
   background-color:#F3F0DD;
-  overflow:hidden;
 }
 
 .row {
   margin: 0;
+}
+
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+  width:25px;
+  height:25px;
+  border-radius: 50%;
+  background-color: #749541;
 }
 
 .jumbotron {
@@ -121,6 +128,7 @@ button:focus:not(:active)::after {
 }
 
 .add-card,
+.add-panel.card,
 .patient-card,
 .edit-patient {
   margin-top: 30px;
@@ -129,7 +137,8 @@ button:focus:not(:active)::after {
 }
 
 .add-card,
-.patient-card,
+.card,
+.add-patient,
 .progtrckr-todo::before,
 .multi-step,
 .footer-buttons,

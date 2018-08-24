@@ -138,11 +138,11 @@ class Create extends React.Component {
           </Card>
           <CardBody>
             <div>
-              <h5 >
+              <h5 className="list" >
                 <Link to={{
                   pathname: `/doctor/${this.props.match.params.id}` 
                 }}  id="doc-home">
-                  <FontAwesomeIcon icon="list"  /> Doctor Home
+                  <FontAwesomeIcon icon="list"/> Doctor Home
                 </Link>
               </h5>
 

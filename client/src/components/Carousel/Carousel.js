@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Carousel, CarouselItem, CarouselControl, CarouselCaption } from "reactstrap";
+import { Button, Carousel, CarouselItem, CarouselControl } from "reactstrap";
 import { RingLoader } from 'react-spinners';
 import PiePlot from "../Graphs/PiePlot";
 import Input from "../Input/Input";
@@ -107,19 +107,22 @@ class ControlledCarousel extends React.Component {
     const pathName = this.props.pathName;
     let searchedRecipeCard;
     if (pathName === "/guest") {
-      searchedRecipeCard = this.state.data.map((data, index) =>
-        <div>
+      searchedRecipeCard = this.state.data.map((data, index) =>{
+        return (
           <CarouselItem
             onExiting={this.onExiting}
             onExited={this.onExited}
-            key={data.recipe.image}        
+            key={data.recipe.url}        
           >
-            <img width={250} height={250} alt="recipeImage" id="pic" src={data.recipe.image} />
-            <CarouselCaption captionHeader={data.recipe.label} />
-            <Button className="get-recipe" href={data.recipe.url} target="_blank">GET RECIPE</Button>
+            <img src={data.recipe.image} width={250} height={250} alt="recipeImage" id="pic" />
+            <div id="recipe-info">
+              <h4 id="label">{data.recipe.label}</h4>
+              <Button className="get-recipe" href={data.recipe.url} target="_blank">GET RECIPE</Button>
+            </div>
+            
           </CarouselItem>
-        </div>
-      )
+        )
+      })
     }
     else {
       searchedRecipeCard = this.state.data.map((data, index) => {
