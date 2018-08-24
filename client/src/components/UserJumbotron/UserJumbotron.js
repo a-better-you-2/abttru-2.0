@@ -96,8 +96,8 @@ class UserJumbotron extends React.Component {
                         </div>
                 </div>
                 <div className="row search-saved">
-                    <div className="col-1 col-md-1 col-lg-1 col-1 "></div>
-                    <div className="col-10 col-md-10 col-lg-10 col-10 tabGroup">
+                    <div className="col-0 col-md-0 col-lg-1 col-1 "></div>
+                    <div className="col-12 col-md-12 col-lg-10 col-10 tabGroup">
                         <Link to={{ pathname: `/user/${this.props.userId}`, params: { id: this.props.userId } }}>
                             <button id="profileTab" style={{ backgroundColor: this.profileTabColor() }}><p style={{ color: this.savedTabColor() }} id="tabs"><img src={searchIcon} alt="search icon" className="tab-icon" />New Search  </p></button>
                         </Link>
@@ -106,7 +106,7 @@ class UserJumbotron extends React.Component {
                             <button id="savedTab" style={{ backgroundColor: this.savedTabColor() }}><p style={{ color: this.profileTabColor() }} id="tabs"><img src={recipeIcon} alt="search icon" className="tab-icon" />  Saved Recipes</p></button>
                         </Link>
                     </div>
-                    <div className="col-1 col-md-1 col-lg-1 col-sm-1"></div>
+                    <div className="col-0 col-md-0 col-lg-1 col-sm-1"></div>
                 </div>
             </Jumbotron>
         );

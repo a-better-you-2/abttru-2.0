@@ -1,6 +1,7 @@
 .patient-profile {
     margin-bottom: 18px !important;
 }
+
 .health_stats {
     font-weight: bold;
 }
@@ -9,6 +10,10 @@
 #profileTab {
     border-radius: 80px 0 0 0;
     width: 50%;
+}
+
+.tabGroup {
+    padding-left:0;
 }
 
 #savedTab {
