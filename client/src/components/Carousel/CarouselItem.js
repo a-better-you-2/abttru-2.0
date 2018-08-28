@@ -1,6 +1,6 @@
 import React from "react";
-import { Button, Carousel } from "reactstrap";
-import axios from "axios";
+// import { Button, Carousel } from "reactstrap";
+// import axios from "axios";
 
 class OurItem extends React.Component {
     constructor(props, context) {

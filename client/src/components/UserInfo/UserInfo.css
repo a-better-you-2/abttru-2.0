@@ -5,6 +5,10 @@
     padding: 2px;
 }
 
+.health-stats {
+    display:inline;
+}
+
 .patients {
     text-align: center;
     color: #F3F0DD;

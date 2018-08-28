@@ -22,14 +22,6 @@
     text-align: center;
 }
 
-p.icon {
-    font-size: 15px;
-}
-
-p.mission {
-    text-decoration: none;
-    padding: 5px;
-}
 .footer {
     position: absolute;
     right: 0;

@@ -63,18 +63,18 @@ class UserInfo extends React.Component {
               </div>
                 <div className="row">
                   <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                    <h4>Email: {this.state.email}</h4>
-                    <h4>Risk Factor:{" "}{this.state.risk_factor}</h4>
-                    <h4>Height:{" "}{this.state.heightFoot}'{this.state.heightInch}"</h4>
-                    <h4>Weight:{" "}{this.state.weight}</h4>
-                    <h4>Waist Measure:{" "}{this.state.waist}</h4>
+                  <h5 className="health-stats">Email:{" "}</h5><span> {this.state.email}</span><br />
+                  <h5 className="health-stats">Risk Factor:{" "}</h5><span>{this.state.risk_factor}</span><br />
+                  <h5 className="health-stats">Height:{" "}</h5><span>{this.state.heightFoot}'{this.state.heightInch}"</span><br />
+                  <h5 className="health-stats">Weight:{" "}</h5><span>{this.state.weight}</span><br />
+                  <h5 className="health-stats">Waist Measure:{" "}</h5><span>{this.state.waist}</span><br />
                   </div>
                   <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                    <h4>DOB:{" "}{Moment(dob).add(1, 'days').format('MMMM Do YYYY')}</h4>
-                    <h4>Diet Recommendation:{" "}{this.state.diet_recommendation}</h4>
-                    <h4>Diet Restriction:{" "}{this.state.diet_restriction}</h4>
-                    <h4>Systolic BP:{" "}{this.state.bp_systolic}</h4>
-                    <h4>Diastolic BP:{" "}{this.state.bp_diastolic}</h4>
+                    <h5 className="health-stats">DOB:{" "}</h5><span>{Moment(dob).add(1, 'days').format('MMMM Do YYYY')}</span><br />
+                    <h5 className="health-stats">Diet Recommendation:{" "}</h5><span>{this.state.diet_recommendation}</span><br />
+                    <h5 className="health-stats">Diet Restriction:{" "}</h5><span>{this.state.diet_restriction}</span><br />
+                    <h5 className="health-stats">Systolic BP:{" "}</h5><span>{this.state.bp_systolic}</span><br />
+                    <h5 className="health-stats">Diastolic BP:{" "}</h5><span>{this.state.bp_diastolic}</span>
                   </div>
                 </div>
               </div>

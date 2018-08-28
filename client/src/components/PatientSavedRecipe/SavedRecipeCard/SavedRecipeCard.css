@@ -106,15 +106,37 @@ section .section-title {
     color: #2C3E50 !important;
 }
 
-.frontside .card .card-title,
+/* .frontside .card .card-title,
 .backside .card .card-title {
     color: #2C3E50 !important;
+} */
+
+#flip {
+    color: #ffffff;
+}
+
+.card .text-center h4 {
+    /* display: inline; */
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 0;
+    font-weight: 300;
+    line-height: 30px;
+    color: #fff;
+    text-align: center;
+    background: black;
+    opacity: .5;
+    border-bottom: 0;
+    
 }
 
 
 .card-title {
     background-color: #eee;
     height: 50px;
+    z-index: 1;
 }
 
 .save-note {

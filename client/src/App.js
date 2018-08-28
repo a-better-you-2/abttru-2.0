@@ -20,21 +20,25 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter keyLength={12}>
-        <div id="abttru">
-          <NavigationBar />
-          <div className="main">
-            <Route exact path="/" component={Home} />
-            <Route path="/doctor/:id" component={Doctor} />
-            <Route path="/doctorLogin" component={DoctorLogin} />
-            <Route path="/create/:id" component={CreateUser} />
-            <Route path="/edit/:id" component={EditUser} />
-            <Route path="/show/:id" component={UserInfo} />
-            <Route path="/user/:id" component={User} />
-            <Route path="/userLogin" component={UserLogin} />
-            <Route path="/savedrecipes/:id" component={PatientSavedRecipe} />
-            <Route path="/guest" component={Guest} />
-          </div>
-          <Footer />
+        <div className="abttru">
+          {/* <div className="abttru-content">
+            <div className="abttru-header"> */}
+              <NavigationBar />
+            {/* </div> */}
+            <div className="main">
+              <Route exact path="/" component={Home} />
+              <Route path="/doctor/:id" component={Doctor} />
+              <Route path="/doctorLogin" component={DoctorLogin} />
+              <Route path="/create/:id" component={CreateUser} />
+              <Route path="/edit/:id" component={EditUser} />
+              <Route path="/show/:id" component={UserInfo} />
+              <Route path="/user/:id" component={User} />
+              <Route path="/userLogin" component={UserLogin} />
+              <Route path="/savedrecipes/:id" component={PatientSavedRecipe} />
+              <Route path="/guest" component={Guest} />
+            </div>
+          {/* </div> */}
+            <Footer />
         </div>
       </BrowserRouter>
 

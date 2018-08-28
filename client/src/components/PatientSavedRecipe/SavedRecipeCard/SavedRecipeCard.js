@@ -1,6 +1,7 @@
 import React from "react";
 import { Button } from "reactstrap";
 import Input from '../../Input/Input';
+// import FontAwesomeIcon from "@fortawesome/react-fontawesome";
 import "./SavedRecipeCard.css";
 
 
@@ -10,8 +11,10 @@ const SavedRecipeCard = props => (
             <div className="frontside">
                 <div className="card">
                     <div className="card text-center">
-                        <img className=" img-fluid" src={props.recipe_img} id="card" isflipped="false" alt="card"></img>
-                        {/* <h4 className="card-title">{props.recipe_name}</h4> */}
+                        <img className=" img-fluid" src={props.recipe_img} id="card" isflipped="false" alt="card" />
+                       
+                        <h4 className="card-title">{props.recipe_name} </h4>
+                        
                     </div>
 
                 </div>
