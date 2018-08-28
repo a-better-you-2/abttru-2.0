@@ -202,7 +202,7 @@ class ControlledCarousel extends React.Component {
           <div className="col-12 col-sm-12 col-md-10 col-lg-8 recipe-display">
             {this.state.showCarousel ? (
                   <Carousel
-                    className="Carousel"
+                    className={this.props.className}
                     activeIndex={this.state.activeIndex}
                     next={this.next}
                     previous={this.previous}
