@@ -124,5 +124,11 @@ RingLoader {
     padding: 10px;
     float:left;
     margin-right: 0px;
+    width: 180px;
+  }
+  h6.recipe_name {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
   }
 }

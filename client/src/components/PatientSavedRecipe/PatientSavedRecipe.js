@@ -199,8 +199,8 @@ class PatientSavedRecipe extends React.Component {
             <img className="img-responsive pic" src={recipe.recipe_img} alt="alt"></img>
           </a>
         <div className="recipe-info">
-          <h6>{recipe.recipe_name}</h6>
-          <div className="button" id={recipe.recipe_uri} onClick={this.changeRecipe}>GET RECIPE CARD</div>
+          <h6 className="recipe_name">{recipe.recipe_name}</h6><br />
+          <button className="recipe-card-button" id={recipe.recipe_uri} onClick={this.changeRecipe}>GET RECIPE CARD</button>
         </div>
       </li>
     ))
