@@ -55,7 +55,7 @@ body {
     border: none;
     background-color:#749541;
     color: #ffffff;
-    margin: 5px;
+    margin: 4px;
 }
 
 /* .btn-primary:focus */
@@ -133,7 +133,7 @@ button:focus:not(:active)::after {
   margin-left: 1px;
   margin-right: 1px;
 }
-
+/*  */
 .add-card,
 .add-panel.card,
 .patient-card,
@@ -168,7 +168,7 @@ button:focus:not(:active)::after {
 }
 
 .steppy {
-  padding-left: 10%;
+  padding: 3%;
   color: #F3F0DD;
 }
 

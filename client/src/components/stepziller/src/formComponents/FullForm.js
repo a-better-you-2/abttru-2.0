@@ -107,7 +107,7 @@ class FullForm extends Component {
 
                         preventEnterSubmission={true}
 
-                        nextTextOnFinalActionStep={"Click to Review Data"}
+                        nextTextOnFinalActionStep={"Review Data"}
 
                         hocValidationAppliedTo={[3]}
 

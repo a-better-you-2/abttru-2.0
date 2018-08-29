@@ -91,7 +91,7 @@ class UserJumbotron extends React.Component {
                             </div>
                             <div className="col-6 col-sm-6 col-md-12 col-lg-12 stats">
                                 <img src={restrictionIcon} alt="restriction icon" className="health-icon" />
-                                <span className="health_stats"> {this.props.health_label}</span>
+                                <span className="health_stats"> {this.props.diet_restriction}</span>
                             </div>
                         </div>
                 </div>

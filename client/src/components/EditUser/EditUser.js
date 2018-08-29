@@ -124,8 +124,9 @@ class EditUser extends React.Component {
 
                 onStepChange={(step) => window.sessionStorage.setItem('step', step)}
               />
+              <Button className="btn-lg submit" onClick={this.onSubmit} color="primary">Submit</Button>
             </div>
-            <Button className="btn-lg submit" onClick={this.onSubmit} color="primary">Submit</Button>
+            
           </div>
         </Card>
       </div>

@@ -5,8 +5,6 @@
     background: #eee !important;
 }
 
-
-
 section {
     padding: 60px 0;
 }
@@ -102,8 +100,8 @@ section .section-title {
 }
 
 .backside .card a {
-    font-size: 18px;
-    color: #2C3E50 !important;
+    text-decoration: none;
+    color: #FFFFFF;
 }
 
 /* .frontside .card .card-title,
@@ -111,48 +109,90 @@ section .section-title {
     color: #2C3E50 !important;
 } */
 
-#flip {
+
+
+.flip-icon {
     color: #ffffff;
+    position: absolute;
+    bottom: 0px;
+    right: 25px;
+    background: black;
+    opacity: .5;
+    width: 25px;
+}
+
+a.recLink {
+    text-decoration: none;
+    color: white;
+    text-overflow: ellipsis;
 }
 
 .card .text-center h4 {
-    /* display: inline; */
     position: absolute;
-    bottom: 20px;
+    bottom: 30px;
     width: 100%;
     padding: 10px;
     margin-bottom: 0;
     font-weight: 300;
     line-height: 30px;
-    color: #fff;
+    color: #ffffff !important;
     text-align: center;
-    background: black;
-    opacity: .5;
+    background: rgba(25, 25, 25, 0.5);
     border-bottom: 0;
-    
 }
-
 
 .card-title {
-    background-color: #eee;
+    background-color: #2C3E50;
+    color: white;
+    font-size: 20px;
     height: 50px;
-    z-index: 1;
+    overflow: hidden;
 }
 
-.save-note {
+.notes {
+    margin:10px;
+}
+
+.save-note,
+.delete_recipe,
+.get-recipe {
+    text-decoration: none;
     margin: 0 auto;
-    background-color:#2C3E50;
-    color: #F3F0DD;
-    width:40%;
-
-}
-
-.note-btn{
+    color: #FFFFFF;
     width:40%;
 }
 
-/* .frontside .card .card-body img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-} */
+.delete-note {
+    line-height:0.5;
+    border: none;
+    color: #ff1744;
+    font-size: 30px;
+    font-style: italic;
+    float:right;
+    background: transparent;
+}
+
+/* .saved-card, */
+.card.text-center {
+    background: #FFFFFF;
+}
+
+#cardDiv {
+    position: relative;
+}
+
+svg.svg-inline--fa.fa-arrow-circle-right.fa-w-16.fa-2x.arrow-flip {
+    z-index: 1;
+    position: absolute;
+    bottom: 0;
+    right: 0px;
+    color: #749541;
+}
+
+svg.svg-inline--fa.fa-arrow-circle-left.fa-w-16.fa-2x.arrow-flip {
+    z-index: 1;
+    position: absolute;
+    bottom: 0;
+    right: 0px;
+    color: #2C3E50;
+}

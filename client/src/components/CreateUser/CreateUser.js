@@ -161,7 +161,7 @@ class Create extends React.Component {
 
                     preventEnterSubmission={true}
 
-                    nextTextOnFinalActionStep={"Click to Review Data"}
+                    nextTextOnFinalActionStep={"Review Data"}
 
                     hocValidationAppliedTo={[3]}
 
@@ -174,7 +174,7 @@ class Create extends React.Component {
                 </div>
 
               </div>
-              <Button className="btn-lg btn-danger" onClick={this.onSubmit} color="primary">Submit</Button>
+              <Button className="btn-lg submit" onClick={this.onSubmit} color="primary">Submit</Button>
 
 
             </div>

@@ -1,8 +1,5 @@
 import React from "react";
-// import { Link } from "react-router-dom";
-import { Button } from "reactstrap";
 import axios from "axios";
-// import FontAwesomeIcon from "@fortawesome/react-fontawesome";
 import RecipeCard from "./SavedRecipeCard";
 import UserJumbotron from '../UserJumbotron/'
 import "./PatientSavedRecipe.css"
@@ -117,7 +114,7 @@ class PatientSavedRecipe extends React.Component {
           recipe_name={recipe.recipe_name}
           recipe_link={recipe.recipe_link}
           recipe_id={recipe._id}
-          notes={recipe.notes.map(note => <div key={note._id} className="notes">{note.body}<Button className="delete" id={note._id} onClick={this.deleteNote}>x</Button></div>)}
+          notes={recipe.notes.map(note => <div key={note._id} className="notes">{note.body}<button className="delete-note" id={note._id} onClick={this.deleteNote}>x</button></div>)}
           note_text={this.state.note_text}
           onChange={this.onChange}
         />
@@ -128,17 +125,18 @@ class PatientSavedRecipe extends React.Component {
 
   flipCard = (e) => {
     console.log(e.target);
-    const card = document.querySelector("#cardDiv");
+    const card = document.querySelector("#card");
+    const cardDiv = document.querySelector("#cardDiv");
     const target = e.target.id;
     console.log(target);
-    const isFlipped = e.target.getAttribute("isflipped");
+    const isFlipped = card.getAttribute("isflipped");
     // card.classList.remove("hover");
     if (isFlipped === "false") {
-      document.getElementById(target).setAttribute("ispicked", "true");
-      card.classList.toggle("hover");
+      document.getElementById("card").setAttribute("ispicked", "true");
+      cardDiv.classList.toggle("hover");
       return;
     } else if (isFlipped === "true") {
-      card.classList.toggle("hover");
+      cardDiv.classList.toggle("hover");
       return;
     }
   }
