@@ -130,7 +130,7 @@ class PatientSavedRecipe extends React.Component {
     const target = e.target.id;
     console.log(target);
     const isFlipped = card.getAttribute("isflipped");
-    // card.classList.remove("hover");
+
     if (isFlipped === "false") {
       document.getElementById("card").setAttribute("ispicked", "true");
       cardDiv.classList.toggle("hover");
@@ -195,7 +195,7 @@ class PatientSavedRecipe extends React.Component {
     // const id = this.state.user_id;
     const savedSelect = this.state.recipes.map(recipe => (
       <li className="recipe" id={recipe.recipe_uri} key={recipe._id}>
-          <a href={recipe.recipe_link} title={recipe.recipe_name} target="_blank">
+          <a href={recipe.recipe_link} title={recipe.recipe_name} target="_blank" rel="noopener noreferrer">
             <img className="img-responsive pic" src={recipe.recipe_img} alt="alt"></img>
           </a>
         <div className="recipe-info">

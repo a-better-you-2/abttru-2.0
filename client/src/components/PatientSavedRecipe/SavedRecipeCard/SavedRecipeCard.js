@@ -7,13 +7,12 @@ import "./SavedRecipeCard.css";
 
 const SavedRecipeCard = props => (
     <div className="image-flip" key={props.recipe_id} id="cardDiv">
-       
         <div className="mainflip">
             <div className="frontside">
                 <div className="card">
                     <div className="card text-center">
                         <img className=" img-fluid" src={props.recipe_img} id="card" isflipped="false" alt="card" />
-                        <h4 className="card-title"><a className="recLink" href={props.recipe_link} target="_blank">{props.recipe_name}</a> </h4>
+                        <h4 className="card-title"><a className="recLink" href={props.recipe_link} target="_blank" rel="noopener noreferrer">{props.recipe_name}</a> </h4>
                     </div>
                     <FontAwesomeIcon icon="arrow-circle-right" size="2x" className="arrow-flip" onClick={props.flipCard} />
                 </div>
@@ -21,7 +20,7 @@ const SavedRecipeCard = props => (
             <div className="backside">
                 <div className="card">
                     <div className="card text-center" id="card" isflipped="false">
-                        <h3 className="card-title"><a href={props.recipe_link} target="_blank">{props.recipe_name}</a></h3>
+                        <h3 className="card-title"><a href={props.recipe_link} target="_blank" rel="noopener noreferrer">{props.recipe_name}</a></h3>
                         {props.notes}
                         <div className="row">
                             <div className="col-xs-0 col-sm-0 col-md-2 cold-lg-2"></div>
@@ -44,7 +43,7 @@ const SavedRecipeCard = props => (
                         <div id="button-holder">
                             <Button className="get-recipe">
                                 <a href={props.recipe_link} 
-                                target="_blank">
+                                target="_blank" rel='noopener noreferrer'>
                                 GET RECIPE</a>
                             </Button>
                             <Button
