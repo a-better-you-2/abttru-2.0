@@ -1,6 +1,7 @@
 import React from "react";
 import "./Footer.css";
-import FontAwesomeIcon from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser, faUserMd } from '@fortawesome/free-solid-svg-icons'
 
 const logoStyle = {
     width: "75px",
@@ -29,8 +30,8 @@ const Footer = () => (
                 <ul className="list-unstyled quick-links">
                     <li>
                         <h3 className="footnav">
-                            <a href="/doctorLogin"><FontAwesomeIcon icon="user-md" className="icon" /> </a>
-                            <a href="/userLogin"><FontAwesomeIcon icon="user-circle" className="icon" /></a>
+                            <a href="/doctorLogin"><FontAwesomeIcon icon={faUserMd} className="icon" /> </a>
+                            <a href="/userLogin"><FontAwesomeIcon icon={faUser}className="icon" /></a>
                         </h3>
                     </li>
                 </ul>

@@ -21,10 +21,7 @@ class App extends Component {
     return (
       <BrowserRouter keyLength={12}>
         <div className="abttru">
-          {/* <div className="abttru-content">
-            <div className="abttru-header"> */}
               <NavigationBar />
-            {/* </div> */}
             <div className="main">
               <Route exact path="/" component={Home} />
               <Route path="/doctor/:id" component={Doctor} />
@@ -37,7 +34,6 @@ class App extends Component {
               <Route path="/savedrecipes/:id" component={PatientSavedRecipe} />
               <Route path="/guest" component={Guest} />
             </div>
-          {/* </div> */}
             <Footer />
         </div>
       </BrowserRouter>

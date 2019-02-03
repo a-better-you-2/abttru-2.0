@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { Card, CardBody, Button, Alert } from "reactstrap";
-import FontAwesomeIcon from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Step1 from '../formComponents/StepOne';
 import Step2 from '../formComponents/StepTwo';
 import Step3 from '../formComponents/StepThree';
@@ -140,7 +140,7 @@ class Create extends React.Component {
             <div>
               <h5 className="list" >
                 <Link to={{
-                  pathname: `/doctor/${this.props.match.params.id}` 
+                  pathname: `/doctor/${this.props.match.params.id}`
                 }}  id="doc-home">
                   <FontAwesomeIcon icon="list"/> Doctor Home
                 </Link>

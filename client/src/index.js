@@ -2,9 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 import "./index.css";
-import fontawesome from "@fortawesome/fontawesome";
-import freeSolidIcons from "@fortawesome/fontawesome-free-solid";
+import { library, dom } from '@fortawesome/fontawesome-svg-core';
+import {fas}from "@fortawesome/free-solid-svg-icons";
 
-fontawesome.library.add(freeSolidIcons);
+library.add(fas);
+// Kicks off the process of finding <i> tags and replacing with <svg>
+dom.watch()
 
 ReactDOM.render(<App />, document.getElementById("root"));

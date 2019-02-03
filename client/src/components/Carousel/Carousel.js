@@ -9,7 +9,7 @@ import axios from "axios";
 class ControlledCarousel extends React.Component {
   constructor(props) {
     super(props);
-    
+
     // this.handleSelect = this.handleSelect.bind(this);
 
     this.state = {
@@ -68,13 +68,10 @@ class ControlledCarousel extends React.Component {
       showCarousel: false,
       loading: true
     });
-    console.log(this.props)
     let firstIndex = Math.floor(Math.random() * 20);
-    // console.log(firstIndex);
     axios.get(`https://api.edamam.com/search?q=${this.state.name}&app_id=6ee418a4&app_key=38910f6a58e3c348dd000cd7a9fc1139&calories=591-722&from=${firstIndex}&Diet=${this.props.diet_label}&Health=${this.props.health_label}`)
       .then(res => {
-        // console.log(res);
-        console.log(res.data);
+
         this.setState({
           data: res.data.hits,
           showCarousel: true,
@@ -88,7 +85,6 @@ class ControlledCarousel extends React.Component {
   saveRecipe = (event) => {
     const target = event.target;
     const id = this.props.userId;
-    console.log(id);
     const recipeObj = {
       user_id: id,
       recipe_name: target.getAttribute("name"),
@@ -96,14 +92,12 @@ class ControlledCarousel extends React.Component {
       recipe_link: target.getAttribute("link"),
       recipe_uri: target.id
     }
-    // console.log(recipeObj);
     axios.post(`/api/abttru/recipes/${id}`, recipeObj)
       .then(res => { console.log(res); })
       .catch(err => console.log(err));
   }
 
   render() {
-    // const { index, direction } = this.state;
     const pathName = this.props.pathName;
     let searchedRecipeCard;
     if (pathName === "/guest") {
@@ -112,14 +106,14 @@ class ControlledCarousel extends React.Component {
           <CarouselItem
             onExiting={this.onExiting}
             onExited={this.onExited}
-            key={data.recipe.url}        
+            key={data.recipe.url}
           >
             <img src={data.recipe.image} width={250} height={250} alt="recipeImage" id="pic" />
             <div id="recipe-info">
               <h4 id="label">{data.recipe.label}</h4>
               <Button className="get-recipe" href={data.recipe.url} target="_blank">GET RECIPE</Button>
             </div>
-            
+
           </CarouselItem>
         )
       })
@@ -127,7 +121,6 @@ class ControlledCarousel extends React.Component {
     else {
       searchedRecipeCard = this.state.data.map((data, index) => {
          return (
-          // <div src={data.recipe.uri}>
             <CarouselItem
               onExiting={this.onExiting}
               onExited={this.onExited}

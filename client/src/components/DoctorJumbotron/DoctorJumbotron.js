@@ -1,7 +1,7 @@
 
 import React from "react";
 import { Jumbotron } from "reactstrap";
-import FontAwesomeIcon from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import axios from "axios";
 import { Link } from "react-router-dom";
 import './DoctorJumbotron.css';

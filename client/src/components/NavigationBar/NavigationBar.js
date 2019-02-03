@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import FontAwesomeIcon from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHome } from '@fortawesome/free-solid-svg-icons'
 import "./Nav.css";
 
 const linkStyle = {
@@ -29,7 +30,7 @@ const Nav = () => (
     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation"><span className="navbar-toggler-icon"></span></button>
     <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div className="navbar-nav">
-        <Link to="/"><li className="nav-item"><FontAwesomeIcon icon="home" style={linkStyle}/><span className="home">Home </span></li></Link>
+        <Link to="/"><li className="nav-item"><FontAwesomeIcon icon={faHome} style={linkStyle}/><span className="home">Home </span></li></Link>
       </div>
     </div>
 </nav>

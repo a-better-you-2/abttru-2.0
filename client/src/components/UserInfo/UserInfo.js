@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { Card, CardBody, Button } from "reactstrap";
-import FontAwesomeIcon from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Moment from 'moment';
 import "./UserInfo.css";
 
@@ -56,7 +56,7 @@ class UserInfo extends React.Component {
                   <FontAwesomeIcon icon="list" /> My Patients
               </Link>
               </h5>
-              
+
               <h2 className="patients">{this.state.first_name + " " + this.state.last_name}</h2>
               <div className="row">
               <img id="user-thumb" src={this.state.user_photo} alt={this.state.first_name} />

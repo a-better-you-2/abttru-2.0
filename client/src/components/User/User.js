@@ -2,7 +2,7 @@ import React from "react";
 // import { Link } from "react-router-dom";
 // import { Row, Col, Jumbotron, Grid, Image, Tabs, Tab } from "reactstrap";
 import axios from "axios";
-// import FontAwesomeIcon from "@fortawesome/react-fontawesome";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./User.css"
 import UserJumbotron from '../UserJumbotron/'
 import ControlledCarousel from "../Carousel";

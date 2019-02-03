@@ -2,7 +2,7 @@ import React from "react";
 // import { Link } from "react-router-dom";
 import axios from "axios";
 import { Card, Button } from "reactstrap";
-// import FontAwesomeIcon from "@fortawesome/react-fontawesome";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Step1 from '../formComponents/StepOne';
 import Step2 from '../formComponents/StepTwo';
 import Step3 from '../formComponents/StepThree';
@@ -126,7 +126,7 @@ class EditUser extends React.Component {
               />
               <Button className="btn-lg submit" onClick={this.onSubmit} color="primary">Submit</Button>
             </div>
-            
+
           </div>
         </Card>
       </div>

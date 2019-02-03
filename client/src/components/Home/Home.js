@@ -2,7 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 // import { Button } from "reactstrap";
 import Logo from './Logo/Logo';
-import FontAwesomeIcon from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser, faUserMd } from '@fortawesome/free-solid-svg-icons'
 import "./Home.css";
 
 class Home extends React.Component {
@@ -27,21 +28,21 @@ class Home extends React.Component {
             <button type="button" className="btn btn-secondary welcome">
                 <h3>
                   <Link to="/guest" id="nav-link">
-                    <FontAwesomeIcon icon="user" /> Continue as Guest
+                    <FontAwesomeIcon icon={faUser} /> Continue as Guest
               </Link>
                 </h3>
             </button>
             <button type="button" className="btn btn-secondary welcome">
                 <h3>
                   <Link to="/doctorLogin" id="nav-link">
-                    <FontAwesomeIcon icon="user-md" color="#FFFFFF" /> Login as Doctor
+                    <FontAwesomeIcon icon={faUserMd} color="#FFFFFF" /> Login as Doctor
               </Link>
                 </h3>
             </button>
             <button type="button" className="btn btn-secondary welcome">
                 <h3>
                   <Link to="/userLogin" id="nav-link">
-                    <FontAwesomeIcon icon="user-circle" /> Login as Patient
+                    <FontAwesomeIcon icon={faUser} /> Login as Patient
               </Link>
                 </h3>
             </button>

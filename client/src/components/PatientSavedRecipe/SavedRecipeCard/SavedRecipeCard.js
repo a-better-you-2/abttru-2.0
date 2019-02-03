@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "reactstrap";
 import Input from '../../Input/Input';
-import FontAwesomeIcon from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./SavedRecipeCard.css";
 
 
@@ -42,7 +42,7 @@ const SavedRecipeCard = props => (
                         </div>
                         <div id="button-holder">
                             <Button className="get-recipe">
-                                <a href={props.recipe_link} 
+                                <a href={props.recipe_link}
                                 target="_blank" rel='noopener noreferrer'>
                                 GET RECIPE</a>
                             </Button>
@@ -52,9 +52,9 @@ const SavedRecipeCard = props => (
                                 onClick={props.saveNote}>
                                 ADD NOTES
                             </Button>
-                            <Button 
-                                className="delete_recipe" 
-                                id={props.recipe_id} 
+                            <Button
+                                className="delete_recipe"
+                                id={props.recipe_id}
                                 onClick={props.deleteRecipe}>
                                 DELETE RECIPE
                             </Button>
