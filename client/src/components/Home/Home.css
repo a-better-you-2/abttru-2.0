@@ -35,8 +35,11 @@
 }
 
 #nav-link {
+    text-decoration: none;
     color: #ffffff;
 }
 .welcome {
     width: 100%;
 }
+
+
