@@ -13,7 +13,6 @@ const logoStyle = {
 const Footer = () => (
 
     <div className="footer" >
-
         <div className="row">
             <div className="col-12 col-sm-12 col-md-4 col-lg-4 about">
                 <img className="brand"src={require('./abttru-logo2.png')} style={logoStyle} alt="logo" />
