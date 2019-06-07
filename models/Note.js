@@ -3,7 +3,7 @@ var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
 let noteSchema = new Schema({
-  // `body` is of type String
+  recipe_id: String,
   body: String
 });
 

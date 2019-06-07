@@ -1,0 +1,31 @@
+.isbn {
+    width: 10%;
+  }
+  
+  .name{
+    width: 20%;
+  }
+  
+  .risk_factor {
+    width: 20%;
+  }
+  
+  .diet_recommendaton {
+    width: 25%;
+  }
+
+  .diet_restriction {
+    width: 25%;
+  }
+
+  .patient {
+    width: 100px;
+    height: auto;
+    padding: 2px;
+  }
+
+  #doc-home {
+    color: #EFFFFA !important;
+  }
+
+  

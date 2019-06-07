@@ -1,0 +1,74 @@
+#pic,
+.graphButtons {
+    display: table;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#pie,
+#get {
+    text-align: center;
+    background-color: rgb(49, 86, 89) !important;
+    color: white;
+}
+
+.item {
+    height: 600x;
+    /* margin-bottom: 20px; */
+}
+
+/* Centered text */
+#recipe-link {
+    position: relative;
+    color: rgb(49, 86, 89);
+    margin-left: 10px;
+}
+
+.carousel-inner {
+    height: 370px;
+}
+
+@media screen and (max-width: 650px) {
+  .js-plotly-plot {
+    margin-left: 10px;
+  }
+  .carousel-inner {
+      height: 675px;
+  }
+}
+
+.save-button {
+    background-color: rgb(49, 86, 89);
+    color: white;
+    position: relative;
+    margin-left: 35%;
+}
+
+
+.sweet-loader {
+    padding-top: 20px;
+}
+
+input,
+select,
+textarea,
+form {
+    width: 90%;
+    padding-left: 0;
+    margin: 0;
+}
+
+MoonLoader {
+text-align: center;
+}
+
+.Carousel-outer {
+    height: 110%;
+}
+
+
+
+
+
+
+

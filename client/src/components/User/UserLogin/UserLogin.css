@@ -1,0 +1,12 @@
+
+.form-control {
+    display: table;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.login {
+    width: 100%;
+    background-color:#315659;
+    color: #EFFFFA;
+}

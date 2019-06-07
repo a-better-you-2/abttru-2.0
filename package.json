@@ -5,10 +5,19 @@
   "main": "server.js",
   "author": "abttru admin",
   "dependencies": {
+    "bcrypt": "^2.0.1",
     "body-parser": "^1.18.2",
     "express": "^4.15.4",
+    "express-session": "^1.15.6",
+    "history": "^4.7.2",
+    "moment": "^2.22.1",
     "mongoose": "^5.0.15",
-    "react-bootstrap": "^0.32.1"
+    "react-bootstrap": "^0.32.1",
+    "react-helmet": "^5.2.0",
+    "react-history": "^0.18.2",
+    "react-loader": "^2.4.5",
+    "react-spinners": "^0.3.2",
+    "react-stepzilla": "^4.7.2"
   },
   "devDependencies": {
     "concurrently": "^3.5.0",

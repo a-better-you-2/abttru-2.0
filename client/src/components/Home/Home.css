@@ -1,0 +1,40 @@
+.panel-body,
+h1 {
+    text-align: center;
+}
+
+.panel-body {
+    background-color: #315659;
+}
+
+/* a {
+    color: #EFFFFA !important;
+} */
+
+#abttru-logo {
+    display: table;
+    margin: 0 auto;
+    text-align: center;
+    /* border-radius: 50%; */
+    height: 200px !important;
+}
+
+#img-div {
+    border-radius: 60%;
+    background-color: #315659;
+    margin: 10px auto 15px auto;
+    width: 250px;
+}
+
+/* .img-responsive {
+    height: 200px !important;
+} */
+
+#doctor-icon {
+    height: 30px;
+    width: 30px;
+}
+
+#nav-link {
+    color: #EFFFFA !important
+}

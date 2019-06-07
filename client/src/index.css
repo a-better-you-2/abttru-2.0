@@ -1,8 +1,101 @@
-body {
+html,
+body,
+#root {
+  height: 100%;
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
-  background-image: url("./test.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #EFFFFA;
+  /* overflow: auto; */
+  box-sizing: border-box;
 }
+
+body {
+  position: relative;
+  margin: 0;
+  padding-bottom: 6rem;
+  min-height: 100%;
+}
+
+.navbar {
+  background-color: #315659 !important;
+  width: 100%;
+  margin-bottom: 0px;
+}
+
+/* #davey-test { */
+  /* box-sizing: border-box; */
+  /* flex: 1 0 auto; */
+/* } */
+
+.jumbo-div {
+  margin-bottom: 50px;
+}
+
+#height{
+  width: 49%;
+  margin-left: 1px;
+  margin-right: 1px;
+}
+
+.add-panel,
+.patient-panel,
+.container {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.add-panel,
+.patient-panel,
+.progtrckr-todo::before,
+.multi-step,
+.footer-buttons,
+.edit-patient {
+
+  background-color: #315659
+}
+
+.progtrckr-doing {
+  color: rgb(96, 195, 228) !important;
+}
+
+.progtrckr-todo,
+.progtrckr-done {
+  color:#EFFFFA !important;
+}
+
+.input-wizard {
+  background-color: #EFFFFA;
+  color: #315659
+}
+
+.steppy {
+  padding-left: 10%;
+  color: #EFFFFA;
+}
+
+.patient-panel {
+  color:#EFFFFA;
+}
+
+ol.progtrckr,
+ li.progtrckr-todo:before {
+   background-color: #315659 !important;
+ }
+
+ li.progtrckr-doing:before{
+   background-color: #315659 !important;
+   color: #EFFFFA !important;
+   border: 1px solid #EFFFFA;
+ }
+
+ ol.progtrckr, li.progtrckr-todo {
+   color: #EFFFFA !important;
+ }
+ .progtrckr-doing {
+   border-bottom: 4px solid #EFFFFA !important;
+ }
+
+ li.progtrckr-todo {
+  border-bottom: 4px solid #EFFFFA !important;
+ }

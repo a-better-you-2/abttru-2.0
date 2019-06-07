@@ -1,0 +1,32 @@
+.delete.btn.btn-default  {
+    background-color:transparent;
+    color: #ff1744;
+    font-size: 24px;
+    font-style: italic;
+    position: relative;
+    top: -3px;
+    right: 5px;
+    cursor: pointer;
+  }
+
+.save.btn.btn-default  {
+    background-color:transparent;
+    color: #096e19;
+    font-size: 16px;
+    position: relative;
+    top: -3px;
+    right: 5px;
+    cursor: pointer;
+  }
+
+  h6, h7 {
+    float:left;
+  }
+
+  h7 {
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  
+

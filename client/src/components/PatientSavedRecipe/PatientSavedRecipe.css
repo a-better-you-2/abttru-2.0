@@ -1,0 +1,109 @@
+
+.delete.btn.btn-default  {
+    background-color:transparent;
+    color: #ff1744;
+    font-size: 24px;
+    font-style: italic;
+    position: relative;
+    top: -3px;
+    right: 5px;
+    cursor: pointer;
+  }
+
+  .save.btn.btn-default  {
+    background-color:transparent;
+    background-color:#315659;
+    color: #EFFFFA;
+    font-size: 16px;
+    position: relative;
+    top: -3px;
+    right: 5px;
+    cursor: pointer;
+  }
+
+  .card {
+    z-index: 1;
+  }
+
+  body { 
+    padding: 40px; 
+  }
+
+.dropdown-toggle { 
+  width: 100px;
+  height: 20px;
+  margin-left: 10px;
+
+}
+.dropdown-menu {
+  width: 100%;
+}
+
+.btn-group img {
+  width: 100%;
+  height: auto;
+  float: left;
+  margin-bottom: 5px;
+}
+
+.dropdown-menu>li>a:hover { 
+  background: #f1f9fd ;
+  width: 100%;
+} 
+
+/* $search-blue */
+.dropdown-header { 
+  background: #ccc; font-size: 14px; font-weight: 700; padding-top: 5px; padding-bottom: 5px; margin-top: 10px; margin-bottom: 5px 
+}
+
+.scrollable-menu {
+  width: 100%;
+  height: auto;
+  max-height: 300px;
+  overflow-x: hidden;
+}
+
+.info {
+  padding: 10px;
+  float:left;
+}
+
+.pic {
+  padding: 10px;
+  width: 25%;
+  height: auto;
+}
+
+.card-holder {
+  display: table;
+  margin: 0 auto;
+  text-align: center;
+  padding: 25px 10px 10px 10px;
+}
+
+.open {
+  width: 100%;
+}
+
+.open>.dropdown-menu {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+panel {
+  width: 100%;
+}
+
+.display {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+}
+/* 
+@media screen and (max-width: 600px) {
+  .js-plotly-plot {
+    margin-top: 150px;
+    margin-left: -350px;
+  }
+} */
+
