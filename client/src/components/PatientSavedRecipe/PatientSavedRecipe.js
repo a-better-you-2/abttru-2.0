@@ -39,12 +39,11 @@ class PatientSavedRecipe extends React.Component {
     })
     axios.get(`/api/abttru/user/${this.state.initial_user_id}`)
       .then(res => {
-        // console.log(res.data);
         this.setState(res.data);
         this.setState({
           loading: false,
           showResults: true
-        });
+        }, () => console.log(this.state));
         if (res.data.recipes.length < 1) {
           return;
         } else {
@@ -56,9 +55,7 @@ class PatientSavedRecipe extends React.Component {
   getData = () => {
     this.setState({ showResults: false, loading: true });
     let allUri = this.state.recipes.map(recipe => (recipe.recipe_uri));
-    // console.log(allUri);
     let length = allUri.length;
-    // console.log(length);
     if (length === 0) {
       this.setState({
         recipe_index: 0,
@@ -67,24 +64,18 @@ class PatientSavedRecipe extends React.Component {
       });
     } else {
       let randomRecipe = Math.floor(Math.random() * length);
-      // console.log(randomRecipe);
       this.setState({
         recipe_index: randomRecipe,
         showResults: true,
         loading: false
       });
-      // console.log(this.state.recipe_index);
     }
 
     let recipeUri = allUri[this.state.recipe_index];
-    // console.log(recipeUri);
     let edemamUri = recipeUri.replace(/[#]/gi, '%23', /[:]/gi, '%3A', /[/]/, '%2F');
-    // console.log(edemamUri);
     axios.get(`https://api.edamam.com/search?r=${edemamUri}&app_id=76461587&app_key=b829a690de0595f2fa5b7cb02db4cd99`)
       .then((recipe) => {
-        // console.log(recipe.data);
         this.setState({ recipe_data: recipe.data })
-        // console.log(this.state.recipe_data[0]);
       })
   }
 
@@ -96,7 +87,7 @@ class PatientSavedRecipe extends React.Component {
     axios.get(`https://api.edamam.com/search?r=${uri}&app_id=76461587&app_key=b829a690de0595f2fa5b7cb02db4cd99`)
       .then((recipe) => {
         console.log(recipe.data);
-        const pos = this.state.recipes.map(function (e) { return e.recipe_uri; }).indexOf(id);
+        const pos = this.state.recipes.map(e => e.recipe_uri.indexOf(id));
         console.log(pos)
         this.setState({ recipe_data: recipe.data, recipe_index: pos, loading: false, showResults: true });
       })
@@ -123,22 +114,13 @@ class PatientSavedRecipe extends React.Component {
     return savedCard[this.state.recipe_index];
   }
 
-  flipCard = (e) => {
-    console.log(e.target);
+  flipCard = () => {
     const card = document.querySelector("#card");
-    const cardDiv = document.querySelector("#cardDiv");
-    const target = e.target.id;
-    console.log(target);
-    const isFlipped = card.getAttribute("isflipped");
-
-    if (isFlipped === "false") {
-      document.getElementById("card").setAttribute("ispicked", "true");
-      cardDiv.classList.toggle("hover");
+    const cardDiv = document.querySelector(".image-flip");
+    const isFlipped = JSON.parse(card.getAttribute("isflipped"));
+    if (!isFlipped) { card.setAttribute("ispicked", "true");}
+      cardDiv.classList.toggle("flip");
       return;
-    } else if (isFlipped === "true") {
-      cardDiv.classList.toggle("hover");
-      return;
-    }
   }
 
   onChange = (e) => {
@@ -240,7 +222,7 @@ class PatientSavedRecipe extends React.Component {
                   </div>
                   <div className="col-3 col-sm-3 col-md-5 cold-lg-5"></div>
                 </div>
-              
+
               {this.state.showResults ? (
                 <div>
                   <div className="row">

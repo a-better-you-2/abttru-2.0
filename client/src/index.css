@@ -164,7 +164,10 @@ button:focus:not(:active)::after {
 
 .input-wizard {
   background-color: #F3F0DD;
-  color: #2C3E50
+  color: #2C3E50;
+  border-radius: 5px;
+  height: 2em;
+  line-height: inherit;
 }
 
 .steppy {

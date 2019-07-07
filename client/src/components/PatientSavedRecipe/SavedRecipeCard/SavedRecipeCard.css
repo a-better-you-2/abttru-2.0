@@ -21,8 +21,8 @@ section .section-title {
     background: #ffffff;
 }
 
-/* .image-flip:hover .backside, */
-.image-flip.hover .backside {
+/* .image-flip:flip .backside, */
+.image-flip.flip .backside {
     -webkit-transform: rotateY(0deg);
     -moz-transform: rotateY(0deg);
     -o-transform: rotateY(0deg);
@@ -31,8 +31,8 @@ section .section-title {
     border-radius: .25rem;
 }
 
-/* .image-flip:hover .frontside, */
-.image-flip.hover .frontside {
+/* .image-flip:flip .frontside, */
+.image-flip.flip .frontside {
     -webkit-transform: rotateY(180deg);
     -moz-transform: rotateY(180deg);
     -o-transform: rotateY(180deg);

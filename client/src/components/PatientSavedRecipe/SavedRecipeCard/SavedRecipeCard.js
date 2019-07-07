@@ -6,7 +6,7 @@ import "./SavedRecipeCard.css";
 
 
 const SavedRecipeCard = props => (
-    <div className="image-flip" key={props.recipe_id} id="cardDiv">
+    <div className="image-flip" key={props.recipe_id}>
         <div className="mainflip">
             <div className="frontside">
                 <div className="card">

@@ -23,8 +23,8 @@ class Home extends React.Component {
           <div className="col-0 col-sm-0 col-md-4 col-lg-4"></div>
         </div>
         <div className="row">
-          <div className="col-0 col-sm-0 col-md-4 col-lg-4"></div>
-          <div className="col-12 col-sm-12 col-md-4 col-lg-4 home-buttons">
+          <div className="col-0 col-sm-0 col-md-3 col-lg-4"></div>
+          <div className="col-12 col-sm-12 col-md-6 col-lg-4 home-buttons">
             <button type="button" className="btn btn-secondary welcome">
                 <h3>
                   <Link to="/guest" id="nav-link">
@@ -47,7 +47,7 @@ class Home extends React.Component {
                 </h3>
             </button>
           </div>
-          <div className="col-0 col-sm-0 col-md-4 col-lg-4"></div>
+          <div className="col-0 col-sm-0 col-md-3 col-lg-4"></div>
         </div>
       </div>
     )
