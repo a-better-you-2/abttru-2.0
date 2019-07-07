@@ -29,45 +29,24 @@ class UserJumbotron extends React.Component {
         };
     }
 
-    fontAwesomeColor = () => {
-        if (this.props.risk_factor === "high-cholesterol") {
-            return "red";
+    fontAwesomeColor = () => (this.props.risk_factor === "high-cholesterol") ? "red" :"black";
 
-        }
-        else {
-            return "black";
-        }
-    }
+    profileTabColor = () => (this.props.isUserPage) ? "#2C3E50" : "#F3F0DD";
 
-    profileTabColor = () => {
-        if (this.props.isUserPage) {
-            return "#2C3E50";
-        }
-        else {
-            return "#F3F0DD";
-        }
-    }
-    savedTabColor = () => {
-        if (this.props.isUserPage) {
-            return "#F3F0DD";
-        }
-        else {
-            return "#2C3E50";
-        }
-    }
+    savedTabColor = () => (this.props.isUserPage) ? "#F3F0DD" : "#2C3E50";
 
     render() {
-
+        const { userId, user_photo, risk_factor, diet_label, diet_restriction } = this.props;
         return (
             <Jumbotron className="jumbo">
                 <div className="row patient-profile">
                     <div className="col-12 col-sm-12 col-md-3 col-lg-3 prof">
-                        <img id="user_photo" src={this.props.user_photo} alt="user_photo" />
+                        <img id="user_photo" src={user_photo} alt="user_photo" />
                     </div>
                         <div className="col-12 col-sm-12 col-md-3 col-lg-3">
                             <div className="col-6 col-sm-6 col-md-12 col-lg-12 stats">
                                 <img src={cholesterolIcon} alt="cholesterol icon" className="health-icon" />
-                                <span className="health_stats"> {this.props.risk_factor}</span>
+                                <span className="health_stats"> {risk_factor}</span>
                             </div>
                             <div className="col-6 col-sm-6 col-md-12 col-lg-12 stats">
                                 <img src={pressureIcon} alt="bp icon" className="health-icon" />
@@ -87,22 +66,24 @@ class UserJumbotron extends React.Component {
                         <div className="col-12 col-sm-12 col-md-3 col-lg-3">
                             <div className="col-6 col-sm-6 col-md-12 col-lg-12 stats">
                                 <img src={dietIcon} alt="diet icon" className="health-icon" />
-                                <span className="health_stats"> {this.props.diet_label}</span>
+                                <span className="health_stats">{diet_label}</span>
                             </div>
                             <div className="col-6 col-sm-6 col-md-12 col-lg-12 stats">
                                 <img src={restrictionIcon} alt="restriction icon" className="health-icon" />
-                                <span className="health_stats"> {this.props.diet_restriction}</span>
+                                <span className="health_stats">
+                                    {diet_restriction && diet_restriction.length > 0 ? diet_restriction : 'None'}
+                                </span>
                             </div>
                         </div>
                 </div>
                 <div className="row search-saved">
                     <div className="col-0 col-md-0 col-lg-1 col-1 "></div>
                     <div className="col-12 col-md-12 col-lg-10 col-10 tabGroup">
-                        <Link to={{ pathname: `/user/${this.props.userId}`, params: { id: this.props.userId } }}>
+                        <Link to={{ pathname: `/user/${userId}`, params: { id: userId } }}>
                             <button id="profileTab" style={{ backgroundColor: this.profileTabColor() }}><p style={{ color: this.savedTabColor() }} id="tabs"><img src={searchIcon} alt="search icon" className="tab-icon" />New Search  </p></button>
                         </Link>
 
-                        <Link to={{ pathname: `/savedrecipes/${this.props.userId}`, params: { id: this.props.userId } }} >
+                        <Link to={{ pathname: `/savedrecipes/${userId}`, params: { id: this.props.userId } }} >
                             <button id="savedTab" style={{ backgroundColor: this.savedTabColor() }}><p style={{ color: this.profileTabColor() }} id="tabs"><img src={recipeIcon} alt="search icon" className="tab-icon" />  Saved Recipes</p></button>
                         </Link>
                     </div>

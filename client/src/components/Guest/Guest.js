@@ -4,10 +4,6 @@ import Logo from '../Home/Logo/Logo';
 import "./Guest.css";
 
 class Guest extends React.Component {
-
-  componentDidMount() {
-    console.log(this.props.match);
-  }
   render() {
     return (
       <div className="container">

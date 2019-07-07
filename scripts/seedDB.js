@@ -17,7 +17,6 @@ mongoose.connect(
 
 bcrypt.hash('marshmallow', SALT_WORK_FACTOR, function (err, hash) {
     if (err) throw err;
-    console.log(hash);
     let doctorPassword = hash;
     let doctorSeed = [{
         name: "Randy K Mellow",
@@ -43,11 +42,10 @@ bcrypt.hash('marshmallow', SALT_WORK_FACTOR, function (err, hash) {
         .remove({})
         .then(() => db.Doctor.collection.insertMany(doctorSeed))
         .then(data => {
-            // console.log(data.doctorSeed.length + " doctors inserted");
             process.exit(0)
         })
         .catch(err => {
-            console.log(err);
+            res.send(err);
             process.exit(1);
         });
 

@@ -2,7 +2,6 @@ import React from 'react';
 
 const StepTwo = (props) => {
     const pathName = props.pathName;
-    console.log(pathName);
     if (pathName === '/edit/:id') {
         return <div className="steppy">
             <br />
